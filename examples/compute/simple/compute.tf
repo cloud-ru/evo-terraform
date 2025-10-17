@@ -86,7 +86,7 @@ resource "cloudru_evolution_compute" "test_compute" {
 
   # NOTE: Это обязательный параметр
   network_interfaces {
-    # NOTE: Это опциональный параметр
+    # NOTE: Это вычисляемый параметр
     # name = "ni-816839"
 
     # NOTE: Это опциональный параметр
