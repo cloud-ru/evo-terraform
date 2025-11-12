@@ -38,6 +38,10 @@ resource "cloudru_mcm_vm" "vm1" {
   # NOTE: Это опциональный параметр
   userdata = filebase64("./userdata.yml")
 
+  # NOTE: Это опциональный параметр
+  # Группа размещения для машины
+  server_group = "sg"
+
   # NOTE: Это обязательный параметр, минимум один диск должен быть указан.
   # Возможна модификация размеров дисков с ограниченими:
   # - первый диск - загрузочный - для openstack нельзя модифицировать, для vcenter можно только увеличить;
@@ -82,6 +86,12 @@ resource "cloudru_mcm_vm" "vm1" {
 
       # NOTE: Это вычисляемый параметр
       # power = true
+
+      # NOTE: Это опциональный параметр
+      security_groups = [
+        "sg1",
+        "sg2"
+      ]
     }
   ]
 
@@ -100,6 +110,46 @@ resource "cloudru_mcm_vm" "vm1" {
 
       # NOTE: Это вычисляемый параметр
       # floating_ip = "192.168.122.252"
+    }
+  ]
+}
+
+resource "cloudru_mcm_security_group" "name" {
+  # NOTE: Это вычисляемый параметр
+  # id = "123"
+
+  # NOTE: Это обязательный параметр
+  name = "terraform-created-sg"
+
+  # NOTE: Это опциональный параметр
+  description = "terraform-created-sg-desc"
+
+  # NOTE: Это обязательный параметр
+  platform_name = "openstack1"
+
+  # NOTE: Это опциональный параметр
+  rules = [
+    {
+      # NOTE: Это обязательный параметр
+      direction = "ingress" // доступные значения: "ingress", "egress"
+
+      # NOTE: Это обязательный параметр
+      protocol = "tcp" // доступные значения: "tcp", "udp", "icmp", "any"
+
+      # NOTE: Это опциональный параметр
+      port_range_min = "1"
+
+      # NOTE: Это опциональный параметр
+      port_range_max = "2"
+
+      # NOTE: Это опциональный параметр
+      remote_ip_prefix = "192.168.0.1/24" // remote_ip_prefix и remote_group_id концептуально взаимоисключающие параметры
+
+      # NOTE: Это опциональный параметр
+      remote_group_id = "1"
+
+      # NOTE: Это опциональный параметр
+      description = "sg-rule-desc"
     }
   ]
 }
