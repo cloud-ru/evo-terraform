@@ -1,23 +1,24 @@
-# cloudru_evolution_compute_security_group_rule
+
+# cloudru_evolution_compute_security_group_rule (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_security_group_rule" "resource_security_group_rule" {
-  port_range                       = "7f67b300-8215-4fd7-941a-03ec07b48d3a"
-  remote_ip_prefix                 = "52086e40-2edb-4913-867a-e1212d89b2a6"
-  security_group_id                = "617eda05-a88d-455c-95e1-050c2909e909"
-  description                      = "31e0d54d-0ea7-43a1-b77e-4bc59a688aa7"
-  direction                        = "TRAFFIC_DIRECTION_INGRESS"
-  ether_type                       = "ETHER_TYPE_IPV4"
+  ip_protocol                      = "IP_PROTOCOL_UDP"
+  port_range                       = "4b47200d-b4b9-4bd6-a690-ccc605eb6b96"
+  remote_ip_prefix                 = "8fe24058-b9ee-4362-bad2-cb2f46973fef"
+  security_group_id                = "fc5806b2-09b7-4585-a5b5-981475c75e93"
   remote_security_group_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "bbc9bcab-ba51-4b96-8aed-52694826a9e9"
-		name = "dd457695-1032-4062-9731-04353322007f"
+		id = "8ead4be2-47ff-421c-aa0c-00c956300abc"
+		name = "c6142bc4-b727-4d90-ab25-eb219896dcc3"
   }
-  ip_protocol                      = "IP_PROTOCOL_ANY"
+  description                      = "37230699-959c-443b-b6a3-4deae080c8cb"
+  direction                        = "TRAFFIC_DIRECTION_EGRESS"
+  ether_type                       = "ETHER_TYPE_IPV4"
 }
 ```
 

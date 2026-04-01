@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_placement_group
+
+# cloudru_evolution_compute_placement_group (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_placement_group" "resource_placement_group" {
+  name        = "dfe998b7-e47e-42ec-b001-155857b0e5c7"
   policy      = "PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY"
-  description = "0157edac-e90f-4456-80db-810b66180960"
-  project_id  = "6d7b92a7-bd7e-4649-a0b3-4360df4afb85"
-  name        = "5c39c1c6-b54d-4b2f-81c9-01aaca3d5654"
+  project_id  = "2a11b726-490c-4d98-9e73-487ec33c254c"
+  description = "63edc3c5-0b61-4530-8de7-3482e7ecfa1c"
 }
 ```
 
@@ -25,34 +26,13 @@ resource "cloudru_evolution_compute_placement_group" "resource_placement_group" 
 ### Optional
 
 - `description` (String) Описание группы размещения.
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
 
 ### Read-Only
 
 - `created_at` (String) Дата и время создания группы размещения.
 - `id` (String) Идентификатор группы размещения.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения группы размещения.
 - `zones` (Attributes List) Список зон, связанных с группой размещения. Зоны автоматически добавляются при создании первой виртуальной машины в группе. (see [below for nested schema](#nestedatt--zones))
-
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
 
 <a id="nestedatt--zones"></a>
 ### Nested Schema for `zones`

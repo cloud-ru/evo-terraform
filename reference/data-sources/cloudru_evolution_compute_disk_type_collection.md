@@ -1,14 +1,15 @@
-# cloudru_evolution_compute_disk_type_collection
+
+# cloudru_evolution_compute_disk_type_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_disk_type_collection" "datasource_disk_type" {
-  filter     = "7dd3c110-0cbc-4fb7-9969-752409fe4fc9"
-  project_id = "b7daf03b-bb67-4d24-b5be-54f089ea9204"
-  page_size  = 8643306177033002217
+  project_id = "d64b65b1-d816-411d-b0b9-c8a12ff526d4"
+  page_size  = 6994163646962389995
+  filter     = "501c436c-8389-4320-8e6a-e8653214d419"
 }
 
 output "data-disk_type" {

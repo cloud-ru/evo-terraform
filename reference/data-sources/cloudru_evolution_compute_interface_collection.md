@@ -1,14 +1,15 @@
-# cloudru_evolution_compute_interface_collection
+
+# cloudru_evolution_compute_interface_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_interface_collection" "datasource_interface" {
-  project_id = "35a0e030-b797-46d2-9e75-5d7b34a53f3a"
-  page_size  = 545135583584887540
-  filter     = "949460e2-9fa9-48fb-9e3d-9472fa35521e"
+  project_id = "858fa430-34be-46c7-8e87-85cf96c512ad"
+  page_size  = 3176766001924550018
+  filter     = "2a670d4a-1c24-4e61-8a5d-649e628d5cf3"
 }
 
 output "data-interface" {
@@ -37,8 +38,8 @@ output "data-interface" {
 
 Read-Only:
 
-- `allowed_address_pairs` (Attributes List) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--interfaces--allowed_address_pairs))
-- `created_at` (String) Дата и время создания сетевого интерфейсса.
+- `allowed_address_pairs` (Attributes) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--interfaces--allowed_address_pairs))
+- `created_at` (String) Дата и время создания сетевого интерфейса.
 - `description` (String) Описание интерфейса.
 - `external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--interfaces--external_ip))
 - `id` (String) Идентификатор интерфейса.
@@ -60,8 +61,16 @@ Read-Only:
 
 Read-Only:
 
+- `value` (Attributes List) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--interfaces--allowed_address_pairs--value))
+
+<a id="nestedatt--interfaces--allowed_address_pairs--value"></a>
+### Nested Schema for `interfaces.allowed_address_pairs.value`
+
+Read-Only:
+
 - `ip_address` (String) IP-адрес.
 - `mac_address` (String) MAC-адрес.
+
 
 
 <a id="nestedatt--interfaces--external_ip"></a>

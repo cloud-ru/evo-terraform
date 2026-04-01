@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_subnet_collection
+
+# cloudru_evolution_compute_subnet_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_subnet_collection" "datasource_subnet" {
-  project_id = "f4775cc4-0e28-4e23-a899-78bb58b33cf4"
-  page_size  = 4882962585880604265
-  filter     = "86264732-b086-446f-95b4-6ae41baad4cb"
-  order_by   = "28344144-e721-43b3-a518-a6fde944a2b5"
+  project_id = "e41d2261-cfa5-405a-a628-fd90fee56d8e"
+  page_size  = 4194281503636950858
+  filter     = "c89cd551-4cb9-4a68-bb94-6bb45c7102c4"
+  order_by   = "6b1a853c-8a66-46d3-b7c3-6b8fdc19f07a"
 }
 
 output "data-subnet" {
@@ -43,26 +44,23 @@ Read-Only:
 - `default` (Boolean) Признак основной подсети.
 - `default_gateway` (String) Адрес шлюза.
 - `description` (String) Описание подсети.
-- `dns_servers` (List of String) DNS серверы.
+- `dns_servers` (Attributes) DNS серверы. (see [below for nested schema](#nestedatt--subnets--dns_servers))
 - `id` (String) Идентификатор подсети.
 - `name` (String) Название подсети.
 - `project_id` (String) Идентификатор проекта.
 - `routed_network` (Boolean) Признак маршрутизируемой подсети.
 - `status` (String) Статус подсети.
 - `subnet_address` (String) Адрес подсети.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--subnets--tags))
 - `updated_at` (String) Дата и время изменения подсети.
 - `vpc_id` (String) Идентификатор виртуальной сети (VPC).
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--subnets--zone))
 
-<a id="nestedatt--subnets--tags"></a>
-### Nested Schema for `subnets.tags`
+<a id="nestedatt--subnets--dns_servers"></a>
+### Nested Schema for `subnets.dns_servers`
 
 Read-Only:
 
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
+- `value` (List of String) The repeated string value.
 
 
 <a id="nestedatt--subnets--zone"></a>

@@ -1,14 +1,15 @@
-# cloudru_evolution_vpc_static_route_collection
+
+# cloudru_evolution_vpc_static_route_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_vpc_static_route_collection" "datasource_static_route" {
-  vpc_id    = "6fd98d5b-e05c-4b19-8bb9-a664189ddbf7"
-  page_size = 614243221
-  filter    = "598db5e0-70ef-466f-b5ab-86a003d53eb6"
+  vpc_id    = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  page_size = 100
+  filter    = "ids in ['8fcc33c4-4580-4146-9b7f-e58943de078e']"
 }
 
 output "data-static_route" {
@@ -55,6 +56,7 @@ Read-Only:
 Read-Only:
 
 - `magic_router` (Attributes) Next Hop маршрута - Magic Router. (see [below for nested schema](#nestedatt--routes--next_hop--magic_router))
+- `vip` (Attributes) Next Hop маршрута - Virtual IP. (see [below for nested schema](#nestedatt--routes--next_hop--vip))
 - `virtual_machine` (Attributes) Next Hop маршрута - интерфейс Виртуальной машины. (see [below for nested schema](#nestedatt--routes--next_hop--virtual_machine))
 
 <a id="nestedatt--routes--next_hop--magic_router"></a>
@@ -71,6 +73,22 @@ Read-Only:
 Read-Only:
 
 - `id` (String) Идентификатор Magic Router.
+
+
+
+<a id="nestedatt--routes--next_hop--vip"></a>
+### Nested Schema for `routes.next_hop.vip`
+
+Read-Only:
+
+- `virtual_ip_identifier` (Attributes List) Список Virtual IP. (see [below for nested schema](#nestedatt--routes--next_hop--vip--virtual_ip_identifier))
+
+<a id="nestedatt--routes--next_hop--vip--virtual_ip_identifier"></a>
+### Nested Schema for `routes.next_hop.vip.virtual_ip_identifier`
+
+Read-Only:
+
+- `id` (String) Идентификатор Virtual IP.
 
 
 

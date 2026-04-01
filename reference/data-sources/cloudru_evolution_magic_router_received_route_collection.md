@@ -1,15 +1,16 @@
-# cloudru_evolution_magic_router_received_route_collection
+
+# cloudru_evolution_magic_router_received_route_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_magic_router_received_route_collection" "datasource_received_route" {
-  magic_router_id = "899a1cb2-1353-4412-9086-c66aeb442bef"
-  filter          = "60ea3012-c47c-4167-934f-5e033e1d09ac"
-  page_size       = 3137773863
-  project_id      = "d3db512b-4947-45db-b919-985f346be402"
+  project_id      = "66293b3d-1e9b-4a2a-b67a-d85a8bb87fa7"
+  magic_router_id = "4688e47d-d6f8-4af9-a7cc-b175bb2fe2f8"
+  filter          = "9c5fb914-c9a4-44c3-84cd-c50c2b424402"
+  page_size       = 625795438
 }
 
 output "data-received_route" {

@@ -1,113 +1,43 @@
-# cloudru_evolution_compute_vm
+
+# cloudru_evolution_compute_vm (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
-  placement_group_identifier = {
+  project_id          = "5ab15f6c-8ca5-4b8a-82d8-5cd177a77b88"
+  zone_identifier     = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "0fd0aabc-a3e4-4641-8ddb-99a5a67d73e0"
-		name = "27839970-7548-4d1c-8583-deddcf5f3458"
+		id = "5698ce84-e23c-47bf-93b1-36aba131b005"
+		name = "76ece28c-12f5-4502-a5e6-9a3ba4bf7a31"
   }
-  secondary_disks            = [{
-		# Нужно заполнить одно из значений - disk_identifier, disk_specs.
-		disk_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "12a02161-1ae1-4dd8-b39f-abca68cb93c7"
-		name = "7299eace-5a69-44c1-809d-9483ddb3d6ee"
-  }
-		disk_specs = {
-		name = "38b9b4dc-a682-4365-8f00-e3737405e7d6"
-		size = 5025234
-		disk_type = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "5f7bac51-969a-46be-b144-c089bd8940a7"
-		name = "6ee14ce5-6acb-466f-b2d1-7a7a18fb6767"
-  }
-		image_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "3cfd3c81-fdb8-457e-b15c-8905550952d7"
-		name = "cbae70cd-f826-4e9a-b2ca-29481cba8bcc"
-  }
-  }
+  description         = "2fc70447-fc71-4198-b22e-40328508d105"
+  cloud_init_userdata = "7899ca4f-fedd-4d96-869f-9ba3c2688e9d"
+  placement_group_id  = "abb7c8ba-14a1-4fdf-b920-e9ceeb727d01"
+  network_interfaces  = [{
+		interface_id = "9f98424f-cdd5-4016-b6b1-4c202c8ad619"
   }]
-  image_metadata             = {
-	4e363a9b-d638-4187-95dd-adffe697d121 = {
+  image_metadata      = {
+	bf2f3f5e-2538-4ccd-bf0f-729ade2a6b9c = {
 		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
-		string_value = "de03b2d9-eace-466c-ba41-2f10ca5a79df"
-		int_value = 1899979113
+		string_value = "d47a599e-92e6-4c29-96f3-8da81ef0170a"
+		int_value = 1733780166
 		bool_value = false
   }}
-  project_id                 = "633fd875-88ae-436d-8245-8226a8f293a4"
-  description                = "4fbc6e87-82d7-49a7-a9d6-8a04334748c6"
-  name                       = "5105682d-25c9-4773-b519-b12b45997af2"
-  zone_identifier            = {
+  name                = "e530d7a1-e374-4155-9604-a5d5eabd92e0"
+  flavor_identifier   = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "9ab1c73c-f959-4fcb-a7c5-4a8ebd395e9d"
-		name = "67080c31-bca8-483c-ae04-a7c5b079f85d"
+		id = "a3f58caa-f49f-4fca-b8c5-7be1f44a237f"
+		name = "3de76719-5a0f-47ce-81ca-686474797e5d"
   }
-  cloud_init_userdata        = "f80bd396-9334-4e75-a66c-c785651d221a"
-  network_interfaces         = [{
-		# Нужно заполнить одно из значений - interface_identifier, interface_specs.
-		interface_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "bf341ad3-535d-4e79-acdc-42cdc3fa07d7"
-		name = "79ff81ae-8d72-462f-b3cb-8bd8e0bf747d"
+  primary_disk        = {
+		disk_id = "fbaad1c8-cc19-4c27-afa9-0a4a0a604dca"
   }
-		interface_specs = {
-		ip_address = "9ef95879-1c74-4f22-a74a-ae9b8b8ef21e"
-		interface_security_enabled = true
-		external_ip = {
-		# Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
-		new_external_ip = false
-		attach_external_ip = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "a3a0fb20-ffd3-4dd0-9c09-241746f11cde"
-		name = "b6d71682-4819-4d17-b766-82fdf2fc0358"
-  }
-  }
-		type = "INTERFACE_TYPE_FIP"
-		subnet = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "62063841-5fdb-4c51-8471-802997053cb8"
-		name = "ab5fcdc5-3cf3-491a-99c5-96a0985eeeb6"
-  }
-		security_groups = [{
-		# Нужно заполнить одно из значений - id, name.
-		id = "ed7c8bd7-658e-4b01-b068-773d0cf22a4d"
-		name = "8b8c1939-0a8f-45dd-9be6-c0e7762268ef"
+  secondary_disks     = [{
+		disk_id = "2fbad3b8-c07a-4f37-bc60-96ba2f9fa8f4"
   }]
-  }
-  }]
-  flavor_identifier          = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "4abd6688-b691-462b-8fb0-3d4cf2392165"
-		name = "ac6cfdc7-6afc-41cb-83ed-93fade4cbcf6"
-  }
-  primary_disk               = {
-		# Нужно заполнить одно из значений - disk_identifier, disk_specs.
-		disk_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "41b5f132-44d8-44d9-ae3a-41510f4225db"
-		name = "d42d993b-b198-4caf-94e8-0e017b9b5345"
-  }
-		disk_specs = {
-		name = "c583dd41-a687-4709-9b46-9633ad4632d2"
-		size = 589366039
-		disk_type = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "8c9433f3-4461-44de-bfde-afc32da8b2ec"
-		name = "ffbda5ed-5f48-469e-b675-9c1ca2febe2a"
-  }
-		image_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "5b093c32-4549-4bd1-8bc0-5d645809f170"
-		name = "4124f303-3b4f-4496-b93e-adb66520ed8d"
-  }
-  }
-  }
 }
 ```
 
@@ -125,12 +55,10 @@ resource "cloudru_evolution_compute_vm" "resource_vm" {
 
 - `cloud_init_userdata` (String) Поле для автоматической настройки виртуальной машины при запуске.
 - `description` (String) Описание виртуальной машины.
-- `image_metadata` (Attributes Map) Метаданные образа. (see [below for nested schema](#nestedatt--image_metadata))
+- `disk_identifiers` (Attributes List) Параметры дисков. Первый диск в списке станет загрузочным для виртуальной машины. (see [below for nested schema](#nestedatt--disk_identifiers))
+- `image_metadata` (Attributes Map) Метаданные образа. Для некоторых образов поле является обязательным. (see [below for nested schema](#nestedatt--image_metadata))
 - `network_interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces))
-- `placement_group_identifier` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--placement_group_identifier))
-- `primary_disk` (Attributes) Параметры рутового диска. (see [below for nested schema](#nestedatt--primary_disk))
-- `secondary_disks` (Attributes List) Параметры дисков. (see [below for nested schema](#nestedatt--secondary_disks))
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
+- `placement_group_id` (String) Идентификатор группы размещения.
 
 ### Read-Only
 
@@ -148,7 +76,6 @@ resource "cloudru_evolution_compute_vm" "resource_vm" {
 - `remote_console_url` (String) WebSocket URL виртуальной консоли.
 - `remote_console_ws` (String) WebSocket URL удаленной консоли.
 - `status` (String) Статус виртуальной машины.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения виртуальной машины.
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
@@ -170,6 +97,14 @@ Optional:
 - `name` (String) Название зоны доступности.
 
 
+<a id="nestedatt--disk_identifiers"></a>
+### Nested Schema for `disk_identifiers`
+
+Optional:
+
+- `disk_id` (String) Идентификатор диска.
+
+
 <a id="nestedatt--image_metadata"></a>
 ### Nested Schema for `image_metadata`
 
@@ -185,187 +120,7 @@ Optional:
 
 Optional:
 
-- `interface_identifier` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces--interface_identifier))
-- `interface_specs` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces--interface_specs))
-
-<a id="nestedatt--network_interfaces--interface_identifier"></a>
-### Nested Schema for `network_interfaces.interface_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор сетевого интерфейса.
-- `name` (String) Название сетевого интерфейса.
-
-
-<a id="nestedatt--network_interfaces--interface_specs"></a>
-### Nested Schema for `network_interfaces.interface_specs`
-
-Required:
-
-- `subnet` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--network_interfaces--interface_specs--subnet))
-- `type` (String) Тип интерфейса.
-
-Optional:
-
-- `external_ip` (Attributes) Параметры назначенного IP-адреса. (see [below for nested schema](#nestedatt--network_interfaces--interface_specs--external_ip))
-- `interface_security_enabled` (Boolean) Возможность добавить сетевой интерфейс в группу безопасности: true — можно, false — нельзя.
-- `ip_address` (String) Внутренний IP-адрес.
-- `security_groups` (Attributes List) Параметры группы безопасности. (see [below for nested schema](#nestedatt--network_interfaces--interface_specs--security_groups))
-
-<a id="nestedatt--network_interfaces--interface_specs--subnet"></a>
-### Nested Schema for `network_interfaces.interface_specs.subnet`
-
-Optional:
-
-- `id` (String) Идентификатор подсети.
-- `name` (String) Название подсети.
-
-
-<a id="nestedatt--network_interfaces--interface_specs--external_ip"></a>
-### Nested Schema for `network_interfaces.interface_specs.external_ip`
-
-Optional:
-
-- `attach_external_ip` (Attributes) Прикрепляет существующий публичный IP-адрес к сетевому интерфейсу. Требуется указать идентификатор или название существующего IP-адреса. (see [below for nested schema](#nestedatt--network_interfaces--interface_specs--external_ip--attach_external_ip))
-- `new_external_ip` (Boolean) Если выбрано true, сетевому интерфейсу будет назначен новый публичный IP-адрес.
-
-<a id="nestedatt--network_interfaces--interface_specs--external_ip--attach_external_ip"></a>
-### Nested Schema for `network_interfaces.interface_specs.external_ip.attach_external_ip`
-
-Optional:
-
-- `id` (String) Идентификатор публичного IP-адреса.
-- `name` (String) Название публичного IP-адреса.
-
-
-
-<a id="nestedatt--network_interfaces--interface_specs--security_groups"></a>
-### Nested Schema for `network_interfaces.interface_specs.security_groups`
-
-Optional:
-
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
-
-
-
-
-<a id="nestedatt--placement_group_identifier"></a>
-### Nested Schema for `placement_group_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор группы размещения.
-- `name` (String) Название группы размещения.
-
-
-<a id="nestedatt--primary_disk"></a>
-### Nested Schema for `primary_disk`
-
-Optional:
-
-- `disk_identifier` (Attributes) Параметры диска. (see [below for nested schema](#nestedatt--primary_disk--disk_identifier))
-- `disk_specs` (Attributes) Параметры диска. (see [below for nested schema](#nestedatt--primary_disk--disk_specs))
-
-<a id="nestedatt--primary_disk--disk_identifier"></a>
-### Nested Schema for `primary_disk.disk_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор диска.
-- `name` (String) Название диска.
-
-
-<a id="nestedatt--primary_disk--disk_specs"></a>
-### Nested Schema for `primary_disk.disk_specs`
-
-Required:
-
-- `disk_type` (Attributes) Параметры типа диска. (see [below for nested schema](#nestedatt--primary_disk--disk_specs--disk_type))
-- `name` (String) Название диска.
-- `size` (Number) Размер диска.
-
-Optional:
-
-- `image_identifier` (Attributes) Параметры образа (для корневого диска). (see [below for nested schema](#nestedatt--primary_disk--disk_specs--image_identifier))
-
-<a id="nestedatt--primary_disk--disk_specs--disk_type"></a>
-### Nested Schema for `primary_disk.disk_specs.disk_type`
-
-Optional:
-
-- `id` (String) Идентификатор типа диска.
-- `name` (String) Название типа диска.
-
-
-<a id="nestedatt--primary_disk--disk_specs--image_identifier"></a>
-### Nested Schema for `primary_disk.disk_specs.image_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор образа.
-- `name` (String) Название образа.
-
-
-
-
-<a id="nestedatt--secondary_disks"></a>
-### Nested Schema for `secondary_disks`
-
-Optional:
-
-- `disk_identifier` (Attributes) Параметры диска. (see [below for nested schema](#nestedatt--secondary_disks--disk_identifier))
-- `disk_specs` (Attributes) Параметры диска. (see [below for nested schema](#nestedatt--secondary_disks--disk_specs))
-
-<a id="nestedatt--secondary_disks--disk_identifier"></a>
-### Nested Schema for `secondary_disks.disk_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор диска.
-- `name` (String) Название диска.
-
-
-<a id="nestedatt--secondary_disks--disk_specs"></a>
-### Nested Schema for `secondary_disks.disk_specs`
-
-Required:
-
-- `disk_type` (Attributes) Параметры типа диска. (see [below for nested schema](#nestedatt--secondary_disks--disk_specs--disk_type))
-- `name` (String) Название диска.
-- `size` (Number) Размер диска.
-
-Optional:
-
-- `image_identifier` (Attributes) Параметры образа (для корневого диска). (see [below for nested schema](#nestedatt--secondary_disks--disk_specs--image_identifier))
-
-<a id="nestedatt--secondary_disks--disk_specs--disk_type"></a>
-### Nested Schema for `secondary_disks.disk_specs.disk_type`
-
-Optional:
-
-- `id` (String) Идентификатор типа диска.
-- `name` (String) Название типа диска.
-
-
-<a id="nestedatt--secondary_disks--disk_specs--image_identifier"></a>
-### Nested Schema for `secondary_disks.disk_specs.image_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор образа.
-- `name` (String) Название образа.
-
-
-
-
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
+- `interface_id` (String) Идентификатор сетевого интерфейса.
 
 
 <a id="nestedatt--disks"></a>
@@ -418,16 +173,6 @@ Read-Only:
 
 - `id` (String) Идентификатор группы размещения.
 - `name` (String) Название группы размещения.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--zone"></a>

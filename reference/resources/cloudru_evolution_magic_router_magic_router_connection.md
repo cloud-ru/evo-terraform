@@ -1,16 +1,17 @@
-# cloudru_evolution_magic_router_magic_router_connection
+
+# cloudru_evolution_magic_router_magic_router_connection (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_magic_router_magic_router_connection" "resource_magic_router_connection" {
-  magic_router_id = "2d912194-f306-48c5-af9c-15bd04f84649"
-  target_mr_id    = "a83dbd1c-1086-4bcc-b889-245e3e8ad330"
-  comment         = "a24aa09b-6567-4d6e-acf0-a70f36456e84"
-  name            = "13e3941e-d0c2-48f8-b4a9-3a5aca12817b"
-  description     = "4195f9de-c5fe-4876-9bf1-db802c03eeff"
+  magic_router_id = "d53d7529-e971-4936-97b5-36090da990e3"
+  description     = "6d85161e-5259-4921-8800-4f0605575657"
+  comment         = "208b9642-bbe2-489e-8145-439dd0384b61"
+  target_mr_id    = "71c957b7-e15c-4fc2-a9d0-78b3141a6623"
+  name            = "b2a2eb3d-b156-4b29-92c8-6683564c575c"
 }
 ```
 

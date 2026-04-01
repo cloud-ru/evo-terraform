@@ -1,14 +1,15 @@
-# cloudru_evolution_kafka_specification_collection
+
+# cloudru_evolution_kafka_specification_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_kafka_specification_collection" "datasource_specification" {
+  version_id           = "00000000-0000-0000-0000-000000000000"
   availability_zone_id = "00000000-0000-0000-0000-000000000000"
   cluster_id           = "00000000-0000-0000-0000-000000000000"
-  version_id           = "00000000-0000-0000-0000-000000000000"
 }
 
 output "data-specification" {

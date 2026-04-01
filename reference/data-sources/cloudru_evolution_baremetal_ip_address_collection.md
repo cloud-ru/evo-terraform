@@ -1,14 +1,15 @@
-# cloudru_evolution_baremetal_ip_address_collection
+
+# cloudru_evolution_baremetal_ip_address_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_baremetal_ip_address_collection" "datasource_ip_address" {
+  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   subnet_id  = "ce36cc50-88cb-4c63-8b32-5fbcd3e2d072"
   page_size  = 50
-  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
 }
 
 output "data-ip_address" {

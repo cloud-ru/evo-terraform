@@ -1,10 +1,11 @@
-# cloudru_evolution_postgresql_database_collection
+
+# cloudru_evolution_postgresql_database_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_postgresql_database_collection" "datasource_database" {
   cluster_id = "00000000-0000-0000-0000-000000000000"
 }

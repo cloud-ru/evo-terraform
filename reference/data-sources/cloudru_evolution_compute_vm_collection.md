@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_vm_collection
+
+# cloudru_evolution_compute_vm_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_vm_collection" "datasource_vm" {
-  project_id = "bdb09d9c-fa33-45d1-b260-20a07786e592"
-  page_size  = 1806790653565555266
-  filter     = "ff14f9ff-84ae-470c-8a1c-dde33f1e25b3"
-  order_by   = "7c098fd6-57e1-459d-83f7-1ca2b0d19a58"
+  filter     = "cd003c2a-d923-4e09-84f0-e19e3840d241"
+  order_by   = "edb5bbc2-d3aa-4c98-8f47-a12054a40a13"
+  project_id = "3377c33d-7c5d-407b-84df-35547472ab8e"
+  page_size  = 6299046504991998098
 }
 
 output "data-vm" {
@@ -56,7 +57,6 @@ Read-Only:
 - `remote_console_url` (String) WebSocket URL виртуальной консоли.
 - `remote_console_ws` (String) WebSocket URL удаленной консоли.
 - `status` (String) Статус виртуальной машины.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--vms--tags))
 - `updated_at` (String) Дата и время изменения виртуальной машины.
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--vms--zone))
 
@@ -110,16 +110,6 @@ Read-Only:
 
 - `id` (String) Идентификатор группы размещения.
 - `name` (String) Название группы размещения.
-
-
-<a id="nestedatt--vms--tags"></a>
-### Nested Schema for `vms.tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--vms--zone"></a>

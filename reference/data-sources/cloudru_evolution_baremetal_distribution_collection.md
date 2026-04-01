@@ -1,13 +1,14 @@
-# cloudru_evolution_baremetal_distribution_collection
+
+# cloudru_evolution_baremetal_distribution_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_baremetal_distribution_collection" "datasource_distribution" {
-  filter    = "name='Alma Linux'"
   page_size = 50
+  filter    = "name='Alma Linux'"
 }
 
 output "data-distribution" {

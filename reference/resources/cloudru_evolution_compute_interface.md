@@ -1,47 +1,40 @@
-# cloudru_evolution_compute_interface
+
+# cloudru_evolution_compute_interface (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  zone_identifier             = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "9dce4e53-a088-4e54-8cb4-e24271baa533"
-		name = "c1706f6c-2a7c-4a71-a0b0-dd15b8329569"
-  }
+  description                 = "dbdc2193-352e-487e-b011-e5ad21422190"
+  subnet_id                   = "8c71e446-f68b-4374-977a-ba46c787e935"
+  name                        = "c715dc76-6e89-45a0-a439-ffc2ef0fff08"
+  allowed_address_pairs       = [{
+		ip_address = "70ce9334-d5b3-4011-9758-9e22e32f42bb"
+		mac_address = "79bed2e6-1ece-48c9-8758-088692587888"
+  }]
   external_ip_specs           = {
 		# Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
-		new_external_ip = true
+		new_external_ip = false
 		attach_external_ip = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "d72b8159-7a8d-4578-83f1-3442a1f3e937"
-		name = "c35ac416-3c0b-46c8-96a8-12c508bf05d4"
+		id = "7e299cf1-283b-4683-a712-5274faf7a0f1"
+		name = "2666ebd4-6df9-4cb8-a849-b4afad42671b"
   }
   }
-  description                 = "ee3dfebf-c85f-4309-98f2-1a2eb9b2d8ac"
-  allowed_address_pairs       = [{
-		ip_address = "fbbf3033-9f94-4433-b796-f46f9e269c47"
-		mac_address = "6873f390-acd0-47ce-8994-88e1b94cb76b"
-  }]
   security_groups_identifiers = [{
 		# Нужно заполнить одно из значений - id, name.
-		id = "d33722e1-57ec-4adc-97ce-47927dc0dd25"
-		name = "3f718147-6119-4930-a3d9-67686e74f6b7"
+		id = "fb1e5649-6e34-41a1-8969-8dac8707b2f3"
+		name = "d43b869d-0887-48f7-a3be-10f137741b4e"
   }]
-  project_id                  = "73d66af1-9e92-4f47-8a99-b49a8dd262ee"
-  vm_identifier               = {
+  zone_identifier             = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "8016561f-5db7-41a6-997b-5e9c6a53365e"
-		name = "b1aac1a0-6e3d-4ed8-abd6-25cd5e2568ba"
+		id = "a7edc645-ca89-4e76-abb9-ee32d5b12920"
+		name = "24fe5776-83de-464e-937a-48ab31551f14"
   }
-  subnet_identifier           = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "71dc966a-2556-4874-a729-01c18a79c068"
-		name = "8d0dde83-9188-4d19-94db-949b5ab3e36e"
-  }
-  name                        = "0654740a-868d-4823-b08e-6263a9335bce"
+  vm_id                       = "3e5989e4-33d6-4055-8f3c-b546f2d3518f"
+  project_id                  = "485f9822-4076-4bab-abcb-6791cd5a6c2e"
 }
 ```
 
@@ -52,23 +45,23 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 
 - `name` (String) Название интерфейса.
 - `project_id` (String) Идентификатор проекта.
-- `security_groups_identifiers` (Attributes List) Параметры группы безопасности. (see [below for nested schema](#nestedatt--security_groups_identifiers))
-- `subnet_identifier` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--subnet_identifier))
-- `vm_identifier` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm_identifier))
 - `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
 
 ### Optional
 
-- `allowed_address_pairs` (Attributes List) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--allowed_address_pairs))
+- `allowed_address_pairs` (Attributes) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--allowed_address_pairs))
 - `description` (String) Описание интерфейса.
 - `external_ip_specs` (Attributes) Параметры публичного IP-адреса, который будет назначен сетевому интерфейсу. (see [below for nested schema](#nestedatt--external_ip_specs))
 - `interface_security_enabled` (Boolean) Возможность добавить сетевой интерфейс в группу безопасности: true — можно, false — нельзя.
 - `ip_address` (String) IP-адрес.
+- `security_groups_identifiers` (Attributes) Параметры группы безопасности. (see [below for nested schema](#nestedatt--security_groups_identifiers))
+- `subnet_id` (String) Идентификатор подсети.
 - `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы:DIRECT_IP, REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
+- `vm_id` (String) Идентификатор виртуальной машины.
 
 ### Read-Only
 
-- `created_at` (String) Дата и время создания сетевого интерфейсса.
+- `created_at` (String) Дата и время создания сетевого интерфейса.
 - `external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--external_ip))
 - `id` (String) Идентификатор интерфейса.
 - `primary` (Boolean) Признак основного сетевого интерфейса.
@@ -78,33 +71,6 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 - `updated_at` (String) Дата и время изменения сетевого интерфейса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
-
-<a id="nestedatt--security_groups_identifiers"></a>
-### Nested Schema for `security_groups_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
-
-
-<a id="nestedatt--subnet_identifier"></a>
-### Nested Schema for `subnet_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор подсети.
-- `name` (String) Название подсети.
-
-
-<a id="nestedatt--vm_identifier"></a>
-### Nested Schema for `vm_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор виртуальной машины.
-- `name` (String) Название виртуальной машины.
-
 
 <a id="nestedatt--zone_identifier"></a>
 ### Nested Schema for `zone_identifier`
@@ -120,11 +86,19 @@ Optional:
 
 Required:
 
+- `value` (Attributes List) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--allowed_address_pairs--value))
+
+<a id="nestedatt--allowed_address_pairs--value"></a>
+### Nested Schema for `allowed_address_pairs.value`
+
+Required:
+
 - `ip_address` (String) IP-адрес.
 
 Optional:
 
 - `mac_address` (String) MAC-адрес.
+
 
 
 <a id="nestedatt--external_ip_specs"></a>
@@ -142,6 +116,23 @@ Optional:
 
 - `id` (String) Идентификатор публичного IP-адреса.
 - `name` (String) Название публичного IP-адреса.
+
+
+
+<a id="nestedatt--security_groups_identifiers"></a>
+### Nested Schema for `security_groups_identifiers`
+
+Required:
+
+- `value` (Attributes List) Идентификатор или название группы безопасности. (see [below for nested schema](#nestedatt--security_groups_identifiers--value))
+
+<a id="nestedatt--security_groups_identifiers--value"></a>
+### Nested Schema for `security_groups_identifiers.value`
+
+Optional:
+
+- `id` (String) Идентификатор группы безопасности.
+- `name` (String) Название группы безопасности.
 
 
 

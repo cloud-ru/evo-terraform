@@ -1,14 +1,15 @@
-# cloudru_evolution_magic_router_vpc_connection_collection
+
+# cloudru_evolution_magic_router_vpc_connection_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_magic_router_vpc_connection_collection" "datasource_vpc_connection" {
-  page_size       = 3930544744
-  project_id      = "be7d7586-2421-4844-bc5a-4cc02cf4c498"
-  magic_router_id = "c2574dee-87b4-4746-a01d-0e1a3af19656"
+  project_id      = "51e8e1ff-a05d-4681-84a8-faa255bf12d7"
+  magic_router_id = "a72fa17c-de26-44a6-be6e-f9640ea8f1c5"
+  page_size       = 1409810072
 }
 
 output "data-vpc_connection" {

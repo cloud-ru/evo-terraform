@@ -1,22 +1,23 @@
-# cloudru_evolution_compute_subnet
+
+# cloudru_evolution_compute_subnet (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  prefix_length   = 576452199
-  project_id      = "f2cf8557-ca2f-4545-95fe-800e00700d4b"
-  dns_servers     = ["bba1949e-d8eb-477f-9c65-59a3ec28904f","7bc1077c-072e-4a72-a4db-b59521df9ead","6f9f0406-4ab3-4e14-9011-0973ee1ea952","f989e256-7681-4d2a-bbde-fd6163d13e97","0e4a262c-a688-4b7c-9dae-d9c089d7d0de","2d1509ac-339c-4946-b60f-2cbf3df261dd","c3dd97e4-95be-4a2a-b8ad-867d59c030d4","024b7155-d5cb-4fe7-9797-15cdcde421ae","aba69b68-a31f-40f8-ba97-40629941e97f","9da8981c-5802-4487-a3bc-24b7a3c7adb8"]
-  name            = "d9d77b2e-dd84-494c-9198-1f3c92425718"
-  description     = "57b6d583-c42f-40bb-9adb-8292eb3f8da1"
-  subnet_address  = "56e11e1a-adfb-49f0-af48-216410dd9465"
   zone_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "7de5e264-006f-460c-9c74-f6c6b476de67"
-		name = "73f6df4e-da83-4797-98de-887b515f9193"
+		id = "55ffa4e8-e778-4948-964c-b93168a87849"
+		name = "bfd589e7-90cc-4a7c-b97f-00b4329cbcc3"
   }
+  dns_servers     = ["cfd0dcc8-3df6-4d40-9908-bd78f0e5f996","456bc6e9-5ffb-425e-972f-8f323782bb6f","aed5324e-d937-4bf2-b8ef-eaea55ea0113","40e49a38-becd-48d5-bd24-a794943a9ede","646e9c6f-7aef-4c38-889e-22cec642dc82","803d2cd2-cfa2-4b5d-a127-4edde8b42a27","ccbeda78-2178-4d51-b140-9dc258154667","a9b34f7a-210c-4a4c-bc75-3eb344947a49","9f3310f6-34b3-43ed-b93c-3468e5726f37","243e32de-6c0c-47be-a901-0bdedb7cad89"]
+  project_id      = "20c7f871-d382-4091-a916-da9c396cc73a"
+  name            = "5870eee9-2d78-4b54-98fd-a34e7ccd97bb"
+  description     = "e7e843fa-98ff-4866-a71b-98a46f7bfad1"
+  subnet_address  = "72611ec8-e63e-472b-ba72-d644cd66a2dc"
+  prefix_length   = 1769035265
 }
 ```
 
@@ -34,11 +35,10 @@ resource "cloudru_evolution_compute_subnet" "resource_subnet" {
 - `default` (Boolean) Признак основной подсети.
 - `default_gateway` (String) Адрес шлюза.
 - `description` (String) Описание подсети.
-- `dns_servers` (List of String) DNS серверы.
+- `dns_servers` (Attributes) DNS серверы. (see [below for nested schema](#nestedatt--dns_servers))
 - `prefix_length` (Number) Маска подсети.
 - `routed_network` (Boolean) Признак маршрутизируемой подсети.
 - `subnet_address` (String) Адрес подсети.
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
 - `vpc_id` (String) Идентификатор виртуальной сети (VPC).
 
 ### Read-Only
@@ -46,7 +46,6 @@ resource "cloudru_evolution_compute_subnet" "resource_subnet" {
 - `created_at` (String) Дата и время создания подсети.
 - `id` (String) Идентификатор подсети.
 - `status` (String) Статус подсети.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения подсети.
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
@@ -59,23 +58,12 @@ Optional:
 - `name` (String) Название зоны доступности.
 
 
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
+<a id="nestedatt--dns_servers"></a>
+### Nested Schema for `dns_servers`
 
 Optional:
 
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
+- `value` (List of String) The repeated string value.
 
 
 <a id="nestedatt--zone"></a>

@@ -1,32 +1,38 @@
-# cloudru_evolution_vpc_static_route
+
+# cloudru_evolution_vpc_static_route (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
-  project_id  = "a2d14b53-f1e1-4840-b581-224a6e96cf67"
+  project_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  description = "Route to internal network"
+  vpc_id      = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   next_hop    = {
-		# Нужно заполнить одно из значений - magic_router, virtual_machine.
+		# Нужно заполнить одно из значений - magic_router, virtual_machine, vip.
 		magic_router = {
 		magic_router_identifier = {
-		id = "50636d64-e5b2-4e7c-9207-90b6407d5c6e"
+		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   }
-		az_name = "6f8e117a-37c4-4638-87a0-c84122d8ccd7"
+		az_name = "ru.AZ-1"
   }
 		virtual_machine = {
 		virtual_machine_identifier = {
-		id = "e7958b56-96cc-4790-b39f-947f9b9c4427"
+		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   }
 		network_interface = {
-		id = "a9f8a681-7829-4f37-bd08-d4c4c53ac603"
+		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   }
   }
+		vip = {
+		virtual_ip_identifier = [{
+		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  }]
   }
-  description = "83d02b02-2546-4146-8fb7-c5d243c8deb5"
-  vpc_id      = "196145a7-9f74-4685-b892-fbaa2f58a963"
-  subnet      = "5398a938-141e-4427-bfe9-c0070bd0b92d"
+  }
+  subnet      = "192.168.0.0/24"
 }
 ```
 
@@ -59,6 +65,7 @@ resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
 Optional:
 
 - `magic_router` (Attributes) Next Hop маршрута - Magic Router. (see [below for nested schema](#nestedatt--next_hop--magic_router))
+- `vip` (Attributes) Next Hop маршрута - Virtual IP. (see [below for nested schema](#nestedatt--next_hop--vip))
 - `virtual_machine` (Attributes) Next Hop маршрута - интерфейс Виртуальной машины. (see [below for nested schema](#nestedatt--next_hop--virtual_machine))
 
 <a id="nestedatt--next_hop--magic_router"></a>
@@ -75,6 +82,22 @@ Required:
 Required:
 
 - `id` (String) Идентификатор Magic Router.
+
+
+
+<a id="nestedatt--next_hop--vip"></a>
+### Nested Schema for `next_hop.vip`
+
+Required:
+
+- `virtual_ip_identifier` (Attributes List) Список Virtual IP. (see [below for nested schema](#nestedatt--next_hop--vip--virtual_ip_identifier))
+
+<a id="nestedatt--next_hop--vip--virtual_ip_identifier"></a>
+### Nested Schema for `next_hop.vip.virtual_ip_identifier`
+
+Required:
+
+- `id` (String) Идентификатор Virtual IP.
 
 
 

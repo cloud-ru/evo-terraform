@@ -1,17 +1,18 @@
-# cloudru_evolution_nlb_target_group
+
+# cloudru_evolution_nlb_target_group (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_nlb_target_group" "resource_target_group" {
-  name            = "target-group-01"
   target_vm_specs = [{
 		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
 		interface_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   }]
   project_id      = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  name            = "target-group-01"
 }
 ```
 

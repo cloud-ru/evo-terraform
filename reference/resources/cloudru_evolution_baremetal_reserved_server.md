@@ -1,26 +1,27 @@
-# cloudru_evolution_baremetal_reserved_server
+
+# cloudru_evolution_baremetal_reserved_server (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_baremetal_reserved_server" "resource_reserved_server" {
-  hostname      = "hostname"
-  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
-  login         = "user"
-  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
-  without_fip   = true
-  description   = "Description"
-  flavor_id     = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
-  name          = "Server name"
-  zone_id       = "10B39F12-8041-4F73-BBFF-4AE20B162168"
-  password      = "7bef9d51-7a2c-4732-8f74-b3a2a744aeb4"
-  kernel_slug   = "alma-linux-9-x64"
-  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
   ip_id         = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  hostname      = "hostname"
+  description   = "Description"
+  name          = "Server name"
+  flavor_id     = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
+  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
   log_group_id  = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  sds_disks_ids = ["b3c5c689-2021-40a8-98be-0e6fcb5006c6","d0ff948e-fd4d-4bb0-8602-026d443a8ce0","c9d75b3f-4f95-4652-8738-74e81d38f74f","25e78cd5-dd69-49a5-a005-e81b1dab5325","e6eb2e6d-7212-49e6-b783-8ea4ddb4b931","1c8a703a-31b7-4792-aa1c-d0ffb567619e","e66f879e-f12f-4e78-8aaa-ca68f7b3733f","e83c6a41-fd92-4d68-9cbb-82bc17a4755a","425365de-6f85-40b1-944f-ccbb43bcee08","ce13a54c-2d60-4a00-86a3-7719c5ae7d0b"]
+  sds_disks_ids = ["e777956f-48b5-4a0a-88f3-dfd4d0dfa61e","d9b816a3-b9ea-4cc9-8b83-57d0f6031444","f28c1564-a377-4395-b585-f7d5548ba272","d5c89896-69ba-4797-a7ec-ce5b1a358d4d","9b9c8dd0-12ee-44ac-aa12-e57e22024806","2f034805-61fc-4467-a525-0f6812de083c","28890df5-a222-46a7-b173-3f938259ed6f","cdc0802b-b43d-4e24-a681-ade2e3e3cfe8","e6a350d4-94f1-4aea-a243-c7fdc27fd3f6","a35ce2f1-928a-427f-97b1-5030d6720817"]
+  zone_id       = "10B39F12-8041-4F73-BBFF-4AE20B162168"
+  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
+  login         = "user"
+  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
+  kernel_slug   = "alma-linux-9-x64"
+  password      = "943430f3-3bfb-4a5c-8f67-15fdb279bb96"
+  without_fip   = true
 }
 ```
 

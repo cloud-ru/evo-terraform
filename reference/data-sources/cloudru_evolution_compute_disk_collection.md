@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_disk_collection
+
+# cloudru_evolution_compute_disk_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_disk_collection" "datasource_disk" {
-  project_id = "7f2b218d-91f6-41b4-b20f-0d28b72474bc"
-  page_size  = 3815463599589642891
-  filter     = "5cd2d275-20ca-4a8c-b99f-241257b5b36e"
-  order_by   = "c7cc7458-5d27-4426-b182-2d5694f2d882"
+  project_id = "8bcbd60f-63a3-41d5-bef2-6deff30c54a9"
+  page_size  = 8834771433460472876
+  filter     = "14ca9444-7560-48b1-aafc-2853fc410fb0"
+  order_by   = "17a670f0-b621-4bc3-a2c4-01af99ca21d6"
 }
 
 output "data-disk" {
@@ -53,7 +54,6 @@ Read-Only:
 - `shared` (Boolean) Признак общедоступного диска.
 - `size` (Number) Размер диска.
 - `status` (String) Статус диска.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--disks--tags))
 - `updated_at` (String) Дата и время изменения диска.
 - `vms` (Attributes List) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--disks--vms))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--disks--zone))
@@ -75,16 +75,6 @@ Read-Only:
 
 - `id` (String) Идентификатор образа.
 - `name` (String) Название образа.
-
-
-<a id="nestedatt--disks--tags"></a>
-### Nested Schema for `disks.tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--disks--vms"></a>

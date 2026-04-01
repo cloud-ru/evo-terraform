@@ -1,20 +1,21 @@
-# cloudru_evolution_compute_nat_gateway
+
+# cloudru_evolution_compute_nat_gateway (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
-  vpc_id          = "a2a0b252-03b2-407b-b900-73d2110574a0"
-  project_id      = "a510307e-32c8-4c9d-a2ce-58a959c70d42"
-  name            = "d7cec2f0-6997-41af-8090-dc1e46275766"
-  description     = "82959b93-ac38-44ee-a882-836b0dcbbfef"
+  name            = "c30e3a58-d242-4747-9715-ebd58759653f"
+  description     = "8525bb7c-e1ca-412f-8bd3-fe93c6eb7723"
   zone_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "9f5b0e25-117e-456f-afcc-5c2941e19b9c"
-		name = "d6d65191-51ad-426a-8c89-149ab2fa5f9d"
+		id = "9bd81aba-fd16-4fa9-93e7-4944a5ffa73f"
+		name = "5eea5738-e85c-4ca3-9ea8-9f17764d81a5"
   }
+  project_id      = "ca75a38a-09ad-46ff-8006-546757cf085a"
+  vpc_id          = "97b219ea-8bf9-4cf0-8b50-d8eb89b7ddb1"
 }
 ```
 

@@ -1,15 +1,16 @@
-# cloudru_evolution_magic_router_static_route_collection
+
+# cloudru_evolution_magic_router_static_route_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_magic_router_static_route_collection" "datasource_static_route" {
-  page_size       = 2591073956
-  project_id      = "f172df8a-2cf1-427d-8d7f-478d9ea3369f"
-  magic_router_id = "a1ed8136-4e11-4e89-bd9b-ed1cd8ee076a"
-  filter          = "70c13df3-acf2-41e9-a3d5-511c76b0cf10"
+  page_size       = 626320294
+  project_id      = "e47c19f7-3a03-4b3d-9a63-44b26f8bb15d"
+  magic_router_id = "ed27f792-fb8a-4db6-a49c-c3128957a88e"
+  filter          = "c6c71249-71ce-414a-abc3-1872337f701b"
 }
 
 output "data-static_route" {

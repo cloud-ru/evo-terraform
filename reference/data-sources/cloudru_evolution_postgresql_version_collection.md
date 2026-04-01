@@ -1,10 +1,11 @@
-# cloudru_evolution_postgresql_version_collection
+
+# cloudru_evolution_postgresql_version_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_postgresql_version_collection" "datasource_version" {
   product_type = "postgresql"
 }

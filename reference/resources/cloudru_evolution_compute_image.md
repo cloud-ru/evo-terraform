@@ -1,25 +1,23 @@
-# cloudru_evolution_compute_image
+
+# cloudru_evolution_compute_image (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_image" "resource_image" {
-  user_data_template = "2f058845-e95c-40a6-b4a0-1f339c222df5"
-  name               = "8ec24e9a-afef-4ed2-aa64-c8bbb6df989f"
-  description        = "37d245c3-7449-433b-87ac-b1d08b0a3db1"
-  min_ram            = 437007170
+  display_name       = "67bca0ed-6954-4974-b58b-32c4544e5551"
+  icon               = "ebce7f6b-1711-4c21-aa68-dfb8c2d3385c"
+  user_data_template = "a188f38a-9586-4823-b88e-3f1a21ed6a34"
+  project_id         = "f91a69d4-d0f8-4aed-a9e5-953a5045d11b"
+  description        = "7921661e-190c-4c20-9325-b71df0f21db0"
+  name               = "d643ee05-4c4b-4636-b889-3b91407b1192"
   zone_identifiers   = [{
 		# Нужно заполнить одно из значений - id, name.
-		id = "5954153d-d932-4831-9880-34b6dce57d01"
-		name = "04255f20-7ef8-4b95-bca7-4f69d85935f9"
+		id = "8331c16a-d2fa-460c-bf8f-2733090cfb80"
+		name = "1807acad-d7ee-44f2-8e19-f7f5b8bb50a9"
   }]
-  project_id         = "5e6ec8ad-356f-4ef2-a4fd-3f4d1c6d6c9d"
-  display_name       = "7035e4f7-44e0-489c-b0d2-b69eaa6a0199"
-  icon               = "91791943-30d5-4c76-887c-1b01d1c9d813"
-  min_disk           = 1839111830
-  min_cpu            = 204833853
 }
 ```
 
@@ -30,7 +28,7 @@ resource "cloudru_evolution_compute_image" "resource_image" {
 
 - `name` (String) Название образа.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifiers` (Attributes List) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifiers))
+- `zone_identifiers` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifiers))
 
 ### Optional
 
@@ -54,10 +52,18 @@ resource "cloudru_evolution_compute_image" "resource_image" {
 <a id="nestedatt--zone_identifiers"></a>
 ### Nested Schema for `zone_identifiers`
 
+Required:
+
+- `value` (Attributes List) Идентификатор или название зоны доступности. (see [below for nested schema](#nestedatt--zone_identifiers--value))
+
+<a id="nestedatt--zone_identifiers--value"></a>
+### Nested Schema for `zone_identifiers.value`
+
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
+
 
 
 <a id="nestedatt--image_metadata"></a>

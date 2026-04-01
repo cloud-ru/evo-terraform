@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_external_ip_collection
+
+# cloudru_evolution_compute_external_ip_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_external_ip_collection" "datasource_external_ip" {
-  project_id = "f58edd6f-d8ee-440f-94c7-c934a01af4fa"
-  page_size  = 288098782785055490
-  filter     = "f0fa9fe1-7a34-4c83-be14-5b3e66b64b0f"
-  order_by   = "1e7bedd7-b611-406f-b800-29eb860318fb"
+  filter     = "cae624ed-9a90-4e8f-ade5-c0d4c5542dd0"
+  order_by   = "b07ff0af-5f03-46e6-a1a6-d1f03229fa15"
+  project_id = "14d151ae-03a7-4973-8784-47ddea5bc7f9"
+  page_size  = 648547839048363601
 }
 
 output "data-external_ip" {
@@ -48,7 +49,6 @@ Read-Only:
 - `nat_gateway` (Attributes) Параметры SNAT-шлюза. (see [below for nested schema](#nestedatt--external_ips--nat_gateway))
 - `project_id` (String) Идентификатор проекта.
 - `status` (String) Статус публичного IP-адреса.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--external_ips--tags))
 - `updated_at` (String) Дата и время изменения публичного IP-адреса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--external_ips--vm))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--external_ips--zone))
@@ -71,16 +71,6 @@ Read-Only:
 - `id` (String) Идентификатор SNAT-шлюза.
 - `name` (String) Название SNAT-шлюза.
 - `status` (String) Статус SNAT-шлюза.
-
-
-<a id="nestedatt--external_ips--tags"></a>
-### Nested Schema for `external_ips.tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--external_ips--vm"></a>

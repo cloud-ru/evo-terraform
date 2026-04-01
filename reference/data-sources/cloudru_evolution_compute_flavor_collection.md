@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_flavor_collection
+
+# cloudru_evolution_compute_flavor_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_flavor_collection" "datasource_flavor" {
-  page_size  = 4504213079710206246
-  filter     = "a52b062e-060b-4c52-943d-ced6adcdf976"
-  order_by   = "2a5a5357-c871-4c3d-a122-01bbed853127"
-  project_id = "127d7b35-297d-4288-ba53-ca371e971316"
+  filter     = "5925eafd-15fb-4a2c-893d-5b0785663a52"
+  order_by   = "115d5066-cc47-4bd4-b733-d5d4a6ebc377"
+  project_id = "0fa04857-b2fa-431b-9cd6-1814d935530e"
+  page_size  = 5310123126522253488
 }
 
 output "data-flavor" {
@@ -45,6 +46,7 @@ Read-Only:
 - `id` (String) Идентификатор флейвора.
 - `name` (String) Название флейвора.
 - `oversubscription` (String) Гарантированная доля vCPU.
+- `pci_device_limit` (Number) Лимит на устройства, присоединяемые к ВМ, занимающие pci-слоты.
 - `ram` (Number) Объем оперативной памяти (RAM) в ГБ.
 - `type` (String) Тип флейвора.
 - `zones` (Attributes List) Параметры зоны доступности. (see [below for nested schema](#nestedatt--flavors--zones))

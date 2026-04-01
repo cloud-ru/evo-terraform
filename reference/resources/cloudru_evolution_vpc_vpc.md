@@ -1,14 +1,15 @@
-# cloudru_evolution_vpc_vpc
+
+# cloudru_evolution_vpc_vpc (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_vpc_vpc" "resource_vpc" {
-  description = "629737d5-f923-4dd3-a614-fb50c4fe806d"
-  name        = "063bfcc7-42da-464a-bd12-299ad5c92f23"
-  project_id  = "5eb7b414-c41d-4489-bd80-ae4eeb3979e9"
+  project_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  description = "Main VPC for production"
+  name        = "my-vpc"
 }
 ```
 

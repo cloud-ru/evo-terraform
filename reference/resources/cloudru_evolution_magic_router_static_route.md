@@ -1,23 +1,24 @@
-# cloudru_evolution_magic_router_static_route
+
+# cloudru_evolution_magic_router_static_route (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
-  next_hop_magic_router = {
-		az_name = "b98ad8d0-9291-45a8-be54-29f4b2b63373"
-		magic_router_connection_id = "9101d3cf-4267-4f71-98e2-86965147888c"
-  }
-  magic_router_id       = "545bef3e-8dba-48a1-8c2c-b51beab81203"
-  subnet                = "e382dbaf-cf20-4332-95c3-1069036c8eba"
-  description           = "517632b1-2d61-4589-97da-5895687799c1"
+  vpc_connection_id     = "51146c89-ede6-44bc-8933-f3bb3645767d"
+  magic_router_id       = "edecdd97-6ebd-4cb5-9b13-81bbf3a1ad56"
+  description           = "07978a2d-fa75-4eb7-b347-0c04f0038129"
   next_hop_vpc          = {
-		az_name = "bf9b48c3-59d7-4604-a2e1-621b9e45f94a"
-		vpc_connection_id = "487a1486-6c68-4b9d-9748-be325918805b"
+		az_name = "d2acf859-849d-4786-953d-5927a42c292a"
+		vpc_connection_id = "f99564b0-bf70-4bfc-ae3e-6ef346ec02b1"
   }
-  vpc_connection_id     = "9fe533e3-0ffa-4ac7-857e-e527c14b7c36"
+  subnet                = "ade3c7e4-f232-4718-bb35-618a4616588b"
+  next_hop_magic_router = {
+		az_name = "255262c6-3c54-44c0-a0f9-28677c8d01c7"
+		magic_router_connection_id = "aff7139a-e0bb-46e4-8cfc-ad0000df2d0e"
+  }
 }
 ```
 

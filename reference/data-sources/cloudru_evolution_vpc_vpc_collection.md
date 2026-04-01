@@ -1,14 +1,15 @@
-# cloudru_evolution_vpc_vpc_collection
+
+# cloudru_evolution_vpc_vpc_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_vpc_vpc_collection" "datasource_vpc" {
-  project_id = "998dd647-7b92-4862-9717-b515c5fb7f80"
-  page_size  = 1804882658
-  filter     = "93fe3fdf-7a40-491c-862b-f15563b4d1eb"
+  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  page_size  = 100
+  filter     = "ids in ['8fcc33c4-4580-4146-9b7f-e58943de078e']"
 }
 
 output "data-vpc" {

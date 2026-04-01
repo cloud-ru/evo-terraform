@@ -1,14 +1,15 @@
-# cloudru_evolution_magic_router_vpc_connection
+
+# cloudru_evolution_magic_router_vpc_connection (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_magic_router_vpc_connection" "resource_vpc_connection" {
-  name            = "bcb5d4b2-86a9-4f15-8290-f90572a4456a"
-  magic_router_id = "c094abfc-d939-439d-bf49-76b9aff434b4"
-  vpc_id          = "57dc223d-33ed-4f9a-b475-6e759689f468"
+  name            = "d2b674bb-2781-418c-b51c-180c7f194cca"
+  magic_router_id = "027915e3-d83b-4404-be50-26a9644d34f4"
+  vpc_id          = "4c9a1640-e0ef-4c66-8c47-07b718b71d0b"
 }
 ```
 

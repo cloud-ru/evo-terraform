@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_security_group_collection
+
+# cloudru_evolution_compute_security_group_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_security_group_collection" "datasource_security_group" {
-  project_id = "fb6ce1b4-6001-45bd-84a1-66cbbb124d05"
-  page_size  = 5806137374686705803
-  filter     = "efe83f27-34ac-4763-b081-8fc5f6f67623"
-  order_by   = "526c3570-58b8-4066-b389-0777e5ad3262"
+  project_id = "61517fd0-7a75-470a-960c-035b00bf2227"
+  page_size  = 1781337212368272872
+  filter     = "53c4df04-83cb-4d02-84d6-4f1b48ee1d4b"
+  order_by   = "be04d35c-2601-42fd-90b2-9b45670df73a"
 }
 
 output "data-security_group" {
@@ -48,19 +49,8 @@ Read-Only:
 - `name` (String) Название группы безопасности.
 - `project_id` (String) Идентификатор проекта.
 - `status` (String) Статус группы безопасности.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--security_groups--tags))
 - `updated_at` (String) Дата и время изменения группы безопасности.
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--security_groups--zone))
-
-<a id="nestedatt--security_groups--tags"></a>
-### Nested Schema for `security_groups.tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
 
 <a id="nestedatt--security_groups--zone"></a>
 ### Nested Schema for `security_groups.zone`

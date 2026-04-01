@@ -1,31 +1,28 @@
-# cloudru_evolution_compute_disk
+
+# cloudru_evolution_compute_disk (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_disk" "resource_disk" {
-  project_id           = "e673acd3-5ee7-4815-a139-1e598e201114"
-  image_identifier     = {
+  size                 = 233092189
+  bootable             = false
+  image_id             = "7b9a40b8-cc51-4242-87bd-58452ae7b087"
+  project_id           = "c33bcba7-5dc1-44da-ba1a-0261d5bb7a52"
+  name                 = "01d1a84f-9182-459e-9d8e-df1e82526b4a"
+  zone_identifier      = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "8a28e7ca-f3c1-49a1-9738-d4e4d544a228"
-		name = "52fdc415-3b2b-4672-b2ac-86571847e77e"
+		id = "140cfa47-d961-4440-b67d-9d0f5662ff35"
+		name = "e82179a0-61a0-4036-9c73-2f15638816ae"
   }
   disk_type_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "f13a5fec-8612-4557-88d0-dbfbd9ba0ff7"
-		name = "6ba339ed-d20f-434a-ad23-d185218adbf8"
+		id = "fb5b66dd-042a-4ab1-978a-3c8a3c689944"
+		name = "2d8bc87a-dca6-4c49-bf79-48011a3e9b49"
   }
-  name                 = "44e273b1-6651-44da-b8a0-1e49ffe87601"
-  size                 = 679969654
-  zone_identifier      = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "ec42023a-07be-49f9-a382-48b8bd0501f0"
-		name = "428e8192-59c6-422e-a8e2-85fe212f19fa"
-  }
-  description          = "76ed0012-41fc-4a73-a48e-9e6d04c6df7b"
-  bootable             = false
+  description          = "ae77d9f6-36cf-42bd-96b4-0279bcdd9043"
 }
 ```
 
@@ -45,10 +42,9 @@ resource "cloudru_evolution_compute_disk" "resource_disk" {
 - `bootable` (Boolean) Признак загрузочного диска.
 - `description` (String) Описание диска.
 - `encrypted` (Boolean) Признак зашифрованного диска.
-- `image_identifier` (Attributes) Параметры образа. (see [below for nested schema](#nestedatt--image_identifier))
+- `image_id` (String) Идентификатор образа.
 - `readonly` (Boolean) Признак диска только для чтения.
 - `shared` (Boolean) Признак общедоступного диска.
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
 
 ### Read-Only
 
@@ -58,7 +54,6 @@ resource "cloudru_evolution_compute_disk" "resource_disk" {
 - `image` (Attributes) Параметры образа. (see [below for nested schema](#nestedatt--image))
 - `serial_id` (String) Серийный номер диска.
 - `status` (String) Статус диска.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения диска.
 - `vms` (Attributes List) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vms))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
@@ -81,24 +76,6 @@ Optional:
 - `name` (String) Название зоны доступности.
 
 
-<a id="nestedatt--image_identifier"></a>
-### Nested Schema for `image_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор образа.
-- `name` (String) Название образа.
-
-
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
-
 <a id="nestedatt--disk_type"></a>
 ### Nested Schema for `disk_type`
 
@@ -116,16 +93,6 @@ Read-Only:
 
 - `id` (String) Идентификатор образа.
 - `name` (String) Название образа.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--vms"></a>

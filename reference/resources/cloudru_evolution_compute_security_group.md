@@ -1,19 +1,20 @@
-# cloudru_evolution_compute_security_group
+
+# cloudru_evolution_compute_security_group (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_security_group" "resource_security_group" {
+  project_id      = "2d4b5fc1-5ceb-4cd2-b2c4-a4b3eabfd176"
+  name            = "2716fd8d-8e87-4f5f-960f-aeec64459d62"
+  description     = "baebe797-6b24-4086-a7d9-73a054c0af5f"
   zone_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "35c9e081-d348-44da-8708-cfe6db7a3ade"
-		name = "4da0b9a1-6f24-4cbe-8e21-9ff0123763ad"
+		id = "3a9da6a5-c3e7-4b83-b825-14d7a791f337"
+		name = "290ea5d7-3e1c-4318-b525-1b83a81edd30"
   }
-  project_id      = "19c34002-9022-4394-b87f-aadac8dc6768"
-  description     = "b9b4d58c-8acf-4115-9099-a76c0f77bda6"
-  name            = "3c7dd105-b8f2-4744-bc39-221447b07303"
 }
 ```
 
@@ -29,7 +30,6 @@ resource "cloudru_evolution_compute_security_group" "resource_security_group" {
 ### Optional
 
 - `description` (String) Описание группы безопасности.
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
 
 ### Read-Only
 
@@ -39,7 +39,6 @@ resource "cloudru_evolution_compute_security_group" "resource_security_group" {
 - `id` (String) Идентификатор группы безопасности.
 - `ingress_rules_count` (Number) Количество правил для входящего трафика.
 - `status` (String) Статус группы безопасности.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения группы безопасности.
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
@@ -50,25 +49,6 @@ Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
-
-
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--zone"></a>

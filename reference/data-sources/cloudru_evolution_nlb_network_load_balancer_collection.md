@@ -1,10 +1,11 @@
-# cloudru_evolution_nlb_network_load_balancer_collection
+
+# cloudru_evolution_nlb_network_load_balancer_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_nlb_network_load_balancer_collection" "datasource_network_load_balancer" {
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 10
@@ -108,7 +109,7 @@ Read-Only:
 
 Read-Only:
 
-- `disabled` (Boolean) Флаг отключения проверки доступности. Позволяет отключить проверку, сохранив ее параметры. По умолчанию: `false` (проверка включена, если объект инициализирован).
+- `disabled` (Boolean) Отключение проверки доступности: `true` — отключена, `false` — включена. По умолчанию: `false`.
 - `healthy_threshold` (Number) Количество успешных последовательных проверок, необходимых для того, чтобы считать ранее недоступный хост доступным.
 - `http` (Attributes) Метод проверки доступности путем отправки HTTP-запроса. (see [below for nested schema](#nestedatt--balancers--rules--health_check--http))
 - `interval` (String) Временной интервал между проверками доступности.

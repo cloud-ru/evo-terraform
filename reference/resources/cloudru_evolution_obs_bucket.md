@@ -1,4 +1,5 @@
-# cloudru_evolution_obs_bucket
+
+# cloudru_evolution_obs_bucket (Resource)
 
 
 
@@ -15,9 +16,17 @@
 
 - `cors_rules` (Attributes List) (see [below for nested schema](#nestedatt--cors_rules))
 - `lifecycle_rules` (Attributes List) Конфигурации жизненного цикла. (see [below for nested schema](#nestedatt--lifecycle_rules))
+- `log_group_id` (String) ID лог-группы для бакета (требует User Plane API).
 - `policy` (String) Политики бакета.
+- `quota` (Number) Квота бакета в МБ (требует User Plane API).
+- `storage_class` (String) Класс хранения бакета (требует User Plane API).
 - `tags` (Attributes List) Теги бакета. (see [below for nested schema](#nestedatt--tags))
 - `versioning` (Boolean) Версионирование.
+
+### Read-Only
+
+- `id` (String) Terraform resource ID (bucket name).
+- `uuid` (String) UUID бакета из User Plane API (опционально).
 
 <a id="nestedatt--cors_rules"></a>
 ### Nested Schema for `cors_rules`

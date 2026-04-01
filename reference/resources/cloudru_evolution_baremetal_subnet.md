@@ -1,19 +1,20 @@
-# cloudru_evolution_baremetal_subnet
+
+# cloudru_evolution_baremetal_subnet (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_baremetal_subnet" "resource_subnet" {
-  name            = "name"
-  address         = "10.20.30.0/24"
-  default_gateway = "10.20.30.1"
-  description     = "description"
-  dns_servers     = ["d79eaa18-6b6e-48df-9cfa-968cfe0a6eda","a38f9042-af2d-4a17-98f1-ca0b1f9f0ec0","c1fc511c-0bd8-4024-8a51-cb2ded28fc4a","9cdc4378-0672-444a-87b8-b8170dcff883","d09c7222-18fc-4346-adf7-30512973afaa","2d970f74-3acf-4b34-ba0f-60e24f31289e","61f5acc2-3bc2-4eed-a052-d45110305c6b","1b498ede-d1d2-462b-9bd1-dd7b912f3f43","655eb5b9-e196-492c-b030-4ec3ad52b2c9","7365c02c-fa82-4705-af28-6704fe355a0e"]
   project_id      = "a3dab871-5355-49a8-817a-9c5e59fad149"
-  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
+  address         = "10.20.30.0/24"
+  dns_servers     = ["38e1844a-ee56-4b37-b9be-f6b8a479567b","274c2261-e1fd-414e-9d94-2803eb2c357b","d3363c84-9200-4c49-915e-f1702e1f6cf6","95770a72-f411-481b-91ad-843846717d20","882c698c-ef07-478b-a31c-277d824b6fe7","a2c89394-6bd2-42ce-bca0-c44dacc1d8c4","fa63c31e-c655-4cfd-9762-b07a2f2bbe22","81f20922-4d5f-433d-a3c1-45247e7a72b8","8e6da692-fca3-4568-b2ad-500f89a92d67","5f2c5ab0-daa4-48ac-bd4b-ddd3c2033369"]
+  description     = "description"
+  default_gateway = "10.20.30.1"
   zone_id         = "10B39F12-8041-4F73-BBFF-4AE20B162168"
+  name            = "name"
+  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
 }
 ```
 

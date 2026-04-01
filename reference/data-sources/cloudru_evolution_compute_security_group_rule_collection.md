@@ -1,15 +1,16 @@
-# cloudru_evolution_compute_security_group_rule_collection
+
+# cloudru_evolution_compute_security_group_rule_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_compute_security_group_rule_collection" "datasource_security_group_rule" {
-  security_group_id = "a8d176e0-6cf2-4dc5-a23e-632aadbcc05e"
-  page_size         = 532416504333958479
-  filter            = "b4de3f96-4820-4bdc-87b7-1768ff57fdfa"
-  order_by          = "eda98e09-6a14-4342-b029-02ac38d48bed"
+  security_group_id = "f9f529f6-7272-4a67-b21b-defc63f4df23"
+  page_size         = 7446352816170551675
+  filter            = "54135c69-f896-4f4f-9a3e-c4df687b0411"
+  order_by          = "eec0eb39-3808-4e43-86be-aee687f2d133"
 }
 
 output "data-security_group_rule" {

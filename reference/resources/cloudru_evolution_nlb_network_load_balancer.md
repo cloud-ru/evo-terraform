@@ -1,28 +1,13 @@
-# cloudru_evolution_nlb_network_load_balancer
+
+# cloudru_evolution_nlb_network_load_balancer (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_balancer" {
-  name                    = "balancer-01"
-  external_address_spec   = {
-		allocate = true
-  }
   project_id              = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  internal_address_spec   = {
-		allocate = true
-		subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-		ipv_4 = "192.168.0.28/24"
-  }
-  availability_zone_specs = [{
-		subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e","d7650912-c92b-4b9a-9e92-ba756ad822b4"]
-		# Нужно заполнить одно из значений - id, name.
-		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-		name = "ru.AZ-1"
-  }]
-  vpc_id                  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   rules                   = [{
 		name = "rule-01"
 		target_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
@@ -46,7 +31,23 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
   }
 		algorithm = "ALG_ROUND_ROBIN"
   }]
+  name                    = "balancer-01"
+  external_address_spec   = {
+		allocate = true
+  }
   description             = "Description"
+  internal_address_spec   = {
+		allocate = true
+		subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+		ipv_4 = "192.168.0.28/24"
+  }
+  vpc_id                  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  availability_zone_specs = [{
+		subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e","d7650912-c92b-4b9a-9e92-ba756ad822b4"]
+		# Нужно заполнить одно из значений - id, name.
+		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+		name = "ru.AZ-1"
+  }]
 }
 ```
 
@@ -127,7 +128,7 @@ Required:
 
 Optional:
 
-- `disabled` (Boolean) Флаг отключения проверки доступности. Позволяет отключить проверку, сохранив ее параметры. По умолчанию: `false` (проверка включена, если объект инициализирован).
+- `disabled` (Boolean) Отключение проверки доступности: `true` — отключена, `false` — включена. По умолчанию: `false`.
 - `http` (Attributes) Метод проверки доступности путем отправки HTTP-запроса. (see [below for nested schema](#nestedatt--rules--health_check--http))
 - `tcp` (Attributes) Метод проверки доступности путем установки TCP-соединения. (see [below for nested schema](#nestedatt--rules--health_check--tcp))
 
@@ -150,7 +151,7 @@ Required:
 
 Optional:
 
-- `allocate` (Boolean) Флаг, указывающий на необходимость выделения IP-адреса.
+- `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
 
 
 <a id="nestedatt--internal_address_spec"></a>
@@ -158,7 +159,7 @@ Optional:
 
 Optional:
 
-- `allocate` (Boolean) Флаг, указывающий на необходимость выделения IP-адреса. При значении false все остальные параметры игнорируются.
+- `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
 - `ipv_4` (String) IP-адрес из указанной подсети, который должен быть назначен балансировщику.
 - `subnet_id` (String) Идентификатор подсети, из которой будет выделен IP-адрес. Обязательный параметр, если IP-адрес необходим.
 

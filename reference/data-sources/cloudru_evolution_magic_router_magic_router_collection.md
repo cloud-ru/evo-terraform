@@ -1,13 +1,14 @@
-# cloudru_evolution_magic_router_magic_router_collection
+
+# cloudru_evolution_magic_router_magic_router_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_magic_router_magic_router_collection" "datasource_magic_router" {
-  page_size  = 254429549
-  project_id = "d2251651-91de-4ad0-ae73-5efa6b2c27e5"
+  page_size  = 1719071282
+  project_id = "3ec895a2-6921-485a-a420-d685b3e60726"
 }
 
 output "data-magic_router" {

@@ -1,10 +1,11 @@
-# cloudru_evolution_baremetal_subnet_collection
+
+# cloudru_evolution_baremetal_subnet_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_baremetal_subnet_collection" "datasource_subnet" {
   project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   filter     = "name='subnetFoo' AND is_primary=true"

@@ -1,14 +1,15 @@
-# cloudru_evolution_postgresql_specification_collection
+
+# cloudru_evolution_postgresql_specification_collection (Data Source)
 
 
 
 ## Example Usage
 
-```
+```terraform
 data "cloudru_evolution_postgresql_specification_collection" "datasource_specification" {
+  version_name = 17
   product_type = "postgresql"
   cluster_id   = "00000000-0000-0000-0000-000000000000"
-  version_name = 17
 }
 
 output "data-specification" {

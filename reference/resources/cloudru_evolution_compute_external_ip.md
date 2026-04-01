@@ -1,24 +1,21 @@
-# cloudru_evolution_compute_external_ip
+
+# cloudru_evolution_compute_external_ip (Resource)
 
 
 
 ## Example Usage
 
-```
+```terraform
 resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
-  project_id           = "e34e4ab0-8430-4ad1-84be-81a1a6e4f31b"
-  name                 = "eed6e208-3ae6-4038-93a2-41a40cb451d6"
-  description          = "f3b03f11-5703-44fd-a209-a3c93106f058"
-  zone_identifier      = {
+  project_id      = "99727ecf-fe2e-4089-806a-79dcd3a038d9"
+  name            = "65f7d3c8-56d9-4364-8da6-1f7f78ac8cc6"
+  zone_identifier = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "f557a747-512d-478b-8aa8-cff66c1d5639"
-		name = "7cf270a8-99b8-486d-ae4f-8aa8a982735a"
+		id = "f95ceace-149a-4454-ace2-7170b192b19e"
+		name = "f8f6fd93-0d1f-47c1-bcde-ddb13c1a874b"
   }
-  interface_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "4f154207-9162-4c65-9437-c6639e756a20"
-		name = "4e5fcc17-f742-4b62-b34d-dd78b0309a5b"
-  }
+  description     = "6bfc8acb-4d9f-4446-b5fc-ff6577df4d5f"
+  interface_id    = "4ff7a78b-8283-402b-b8ce-65ba7cfe46bb"
 }
 ```
 
@@ -33,8 +30,7 @@ resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
 ### Optional
 
 - `description` (String) Описание публичного IP-адреса.
-- `interface_identifier` (Attributes) Параметры интерфейса. (see [below for nested schema](#nestedatt--interface_identifier))
-- `tag_identifiers` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tag_identifiers))
+- `interface_id` (String) Идентификатор сетевого интерфейса.
 - `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
 
 ### Read-Only
@@ -45,28 +41,9 @@ resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
 - `ip_address` (String) IP-адрес.
 - `nat_gateway` (Attributes) Параметры SNAT-шлюза. (see [below for nested schema](#nestedatt--nat_gateway))
 - `status` (String) Статус публичного IP-адреса.
-- `tags` (Attributes List) Параметры тегов. (see [below for nested schema](#nestedatt--tags))
 - `updated_at` (String) Дата и время изменения публичного IP-адреса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
-
-<a id="nestedatt--interface_identifier"></a>
-### Nested Schema for `interface_identifier`
-
-Optional:
-
-- `id` (String) Идентификатор сетевого интерфейса.
-- `name` (String) Название сетевого интерфейса.
-
-
-<a id="nestedatt--tag_identifiers"></a>
-### Nested Schema for `tag_identifiers`
-
-Optional:
-
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
-
 
 <a id="nestedatt--zone_identifier"></a>
 ### Nested Schema for `zone_identifier`
@@ -95,16 +72,6 @@ Read-Only:
 - `id` (String) Идентификатор SNAT-шлюза.
 - `name` (String) Название SNAT-шлюза.
 - `status` (String) Статус SNAT-шлюза.
-
-
-<a id="nestedatt--tags"></a>
-### Nested Schema for `tags`
-
-Read-Only:
-
-- `color` (String) Цвет тега.
-- `id` (String) Идентификатор тега.
-- `name` (String) Название тега.
 
 
 <a id="nestedatt--vm"></a>
