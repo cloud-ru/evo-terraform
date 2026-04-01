@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_vpc_vpc_collection" "datasource_vpc" {
-  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 100
   filter     = "ids in ['8fcc33c4-4580-4146-9b7f-e58943de078e']"
+  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
 }
 
 output "data-vpc" {

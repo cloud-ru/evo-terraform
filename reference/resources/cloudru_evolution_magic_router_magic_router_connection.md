@@ -7,11 +7,11 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_magic_router_connection" "resource_magic_router_connection" {
-  magic_router_id = "d53d7529-e971-4936-97b5-36090da990e3"
-  description     = "6d85161e-5259-4921-8800-4f0605575657"
-  comment         = "208b9642-bbe2-489e-8145-439dd0384b61"
-  target_mr_id    = "71c957b7-e15c-4fc2-a9d0-78b3141a6623"
-  name            = "b2a2eb3d-b156-4b29-92c8-6683564c575c"
+  comment         = "1a04af22-34ef-4ada-8a53-459b2ff1e1cc"
+  magic_router_id = "91afd0c7-b67d-4156-ac53-03a49eec2dc3"
+  target_mr_id    = "6c36772f-925d-4807-9402-cbbb9d86b554"
+  name            = "fad7c9f3-7582-429f-a85a-932903ed0459"
+  description     = "c3c14575-7355-4f34-ad70-0477b4ba36ab"
 }
 ```
 

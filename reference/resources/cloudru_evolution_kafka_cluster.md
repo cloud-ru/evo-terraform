@@ -7,23 +7,25 @@
 
 ```terraform
 resource "cloudru_evolution_kafka_cluster" "resource_cluster" {
-  cruise_control_enabled                = false
-  version_id                            = "00000000-0000-0000-0000-000000000000"
   brokers                               = 3
+  storage_gib                           = 40
+  subnet_id                             = "00000000-0000-0000-0000-000000000000"
   project_id                            = "00000000-0000-0000-0000-000000000000"
   ui_enabled                            = false
-  storage_gib                           = 40
-  parameters                            = {
-	f2c025ca-d1f1-48b6-9756-b133828e75f3 = "c4ffd1ca-3d4b-4077-bdbc-50aa461203d0"}
-  subnet_id                             = "00000000-0000-0000-0000-000000000000"
-  cruise_control_rebalance_auto_enabled = false
   name                                  = "name-of-cluster_1"
+
+  parameters                            = {
+	4613e40f-a78e-46f3-b292-77a1b9353b98 = "8716ec11-2ad1-4282-b590-307637ed1286"}
+  cruise_control_enabled                = false
+  description                           = "Some short text."
+
   logging                               = {
 		enabled = true
 		log_group_id = "00000000-0000-0000-0000-000000000000"
   }
-  description                           = "Some short text."
   specification_id                      = "00000000-0000-0000-0000-000000000000"
+  cruise_control_rebalance_auto_enabled = false
+  version_id                            = "00000000-0000-0000-0000-000000000000"
 }
 ```
 

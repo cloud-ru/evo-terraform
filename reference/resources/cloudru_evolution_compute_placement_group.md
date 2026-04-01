@@ -7,10 +7,10 @@
 
 ```terraform
 resource "cloudru_evolution_compute_placement_group" "resource_placement_group" {
-  name        = "dfe998b7-e47e-42ec-b001-155857b0e5c7"
   policy      = "PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY"
-  project_id  = "2a11b726-490c-4d98-9e73-487ec33c254c"
-  description = "63edc3c5-0b61-4530-8de7-3482e7ecfa1c"
+  description = "e7ea91a4-990b-4134-91ee-8cac79a925d3"
+  project_id  = "3c5c00f2-675e-4dc2-b3ba-9d72b7996bd9"
+  name        = "e3504c93-09d6-4e06-8ac4-5ce476d57862"
 }
 ```
 

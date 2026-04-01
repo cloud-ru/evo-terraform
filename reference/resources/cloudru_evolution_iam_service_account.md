@@ -7,13 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_iam_service_account" "resource_service_account" {
-  target      = {
-		# Нужно заполнить одно из значений - customer_id, project_id.
-		customer_id = "5ed5da41-3e77-4673-bc3e-26464fbf6881"
-		project_id = "713938c7-5eb0-440e-82f3-daba1f8f72bf"
+  description = "dd9f9877-a8fc-47d0-afed-fe8d2f70139f"
+
+  target = {
+    # Нужно заполнить одно из значений - customer_id, project_id.
+    customer_id = "4b7831bb-1483-4de4-b449-8ba729e6ab45"
+    project_id  = "d690acea-99c3-4668-8a0e-edec905828c1"
   }
-  name        = "193b5e21-826b-4c66-a6db-2b1f71c8f660"
-  description = "546c3c35-14e9-405e-bc3d-6f4c69419d3f"
+  name = "c9b29ee5-60fe-4491-9e82-96f90927786d"
 }
 ```
 

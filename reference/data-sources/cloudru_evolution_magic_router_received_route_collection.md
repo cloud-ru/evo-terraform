@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_magic_router_received_route_collection" "datasource_received_route" {
-  project_id      = "66293b3d-1e9b-4a2a-b67a-d85a8bb87fa7"
-  magic_router_id = "4688e47d-d6f8-4af9-a7cc-b175bb2fe2f8"
-  filter          = "9c5fb914-c9a4-44c3-84cd-c50c2b424402"
-  page_size       = 625795438
+  filter          = "908c45d9-3849-4f2b-afc0-ae5d133d06b5"
+  page_size       = 3399439599
+  project_id      = "4a32fe4c-6ea6-4a79-a55c-b9677c90d6f3"
+  magic_router_id = "91fbfee0-a3d7-4884-839b-354150c8f88e"
 }
 
 output "data-received_route" {

@@ -7,17 +7,19 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
-  vpc_connection_id     = "51146c89-ede6-44bc-8933-f3bb3645767d"
-  magic_router_id       = "edecdd97-6ebd-4cb5-9b13-81bbf3a1ad56"
-  description           = "07978a2d-fa75-4eb7-b347-0c04f0038129"
-  next_hop_vpc          = {
-		az_name = "d2acf859-849d-4786-953d-5927a42c292a"
-		vpc_connection_id = "f99564b0-bf70-4bfc-ae3e-6ef346ec02b1"
-  }
-  subnet                = "ade3c7e4-f232-4718-bb35-618a4616588b"
+  subnet = "e7932466-039f-46bc-8882-722c41c2e236"
+
   next_hop_magic_router = {
-		az_name = "255262c6-3c54-44c0-a0f9-28677c8d01c7"
-		magic_router_connection_id = "aff7139a-e0bb-46e4-8cfc-ad0000df2d0e"
+    az_name                    = "411a103a-f1f8-4b00-bccb-d1f714a6314c"
+    magic_router_connection_id = "2375e925-8e33-44b7-b161-78e7a57a4d84"
+  }
+  vpc_connection_id = "6b5172a0-1efd-42d2-9565-dfc7ea38a91e"
+  magic_router_id   = "cd828b95-ef20-462e-9624-c25555397a10"
+  description       = "67437544-7021-414b-891a-74a05f773f39"
+
+  next_hop_vpc = {
+    az_name           = "36bff51b-d5c9-4530-b8e7-a5b14e70a8a2"
+    vpc_connection_id = "89407598-c7c2-47a0-8924-6c4dedd23050"
   }
 }
 ```

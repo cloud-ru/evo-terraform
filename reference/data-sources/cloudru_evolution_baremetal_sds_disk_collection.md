@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_baremetal_sds_disk_collection" "datasource_sds_disk" {
+  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   zone_id    = "10B39F12-8041-4F73-BBFF-4AE20B162168"
   page_size  = 50
-  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
 }
 
 output "data-sds_disk" {

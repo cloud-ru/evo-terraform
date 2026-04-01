@@ -7,29 +7,32 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
+  specification_id            = "00000000-0000-0000-0000-000000000000"
+  initial_database            = "myapp_db"
+  version                     = 17
+
   logging                     = {
 		enabled = true
 		log_group_id = "00000000-0000-0000-0000-000000000000"
   }
-  initial_database            = "myapp_db"
-  initial_database_lc_collate = "C"
   initial_database_lc_ctype   = "C"
-  project_id                  = "00000000-0000-0000-0000-000000000000"
   primary_standby_mode        = true
-  recovery_spec               = {
-		cluster_id = "00000000-0000-0000-0000-000000000000"
-		pitr = Thu, 01 Jan 2026 12:00:00 UTC
-		backup_id = "00000000-0000-0000-0000-000000000000"
-  }
   description                 = "Production PostgreSQL cluster"
-  version                     = 17
+
   storage                     = {
 		pg_data_gb = 100
 		pg_wal_gb = 40
   }
   name                        = "awesome-postgres-cluster"
   subnet_id                   = "00000000-0000-0000-0000-000000000000"
-  specification_id            = "00000000-0000-0000-0000-000000000000"
+  project_id                  = "00000000-0000-0000-0000-000000000000"
+  initial_database_lc_collate = "C"
+
+  recovery_spec               = {
+		cluster_id = "00000000-0000-0000-0000-000000000000"
+		pitr = Thu, 01 Jan 2026 12:00:00 UTC
+		backup_id = "00000000-0000-0000-0000-000000000000"
+  }
 }
 ```
 

@@ -7,9 +7,9 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_vpc_connection" "resource_vpc_connection" {
-  name            = "d2b674bb-2781-418c-b51c-180c7f194cca"
-  magic_router_id = "027915e3-d83b-4404-be50-26a9644d34f4"
-  vpc_id          = "4c9a1640-e0ef-4c66-8c47-07b718b71d0b"
+  name            = "b9085ba1-4b16-4fc2-88e1-776dcb0ed389"
+  magic_router_id = "b209abe8-e43e-495b-9d48-fb5260e4530e"
+  vpc_id          = "7e850d5a-c45b-44d8-9476-eeda7aa96b19"
 }
 ```
 

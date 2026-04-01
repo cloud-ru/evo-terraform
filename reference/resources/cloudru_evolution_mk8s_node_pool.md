@@ -7,52 +7,63 @@
 
 ```terraform
 resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
-  scale_policy                  = {
-		# Нужно заполнить одно из значений - fixed_scale, auto_scale.
-		fixed_scale = {
-		count = 1
-  }
-		auto_scale = {
-		min_count = 1
-		max_count = 3
-		initial_count = 1
-  }
-  }
-  cluster_id                    = "00000000-0000-0000-0000-000000000000"
-  name                          = "cloudru-example-nodepool"
-  update_configuration          = {
-		strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
-		rolling_update_policy = {
-		max_surge = 25
-		max_unavailable = 25
-  }
-  }
   machine_configuration_request = {
 		flavor_id = "00000000-0000-0000-0000-000000000000"
+
 		disk = {
 		type_name = "SSD"
 		size = 30
   }
   }
-  network_configuration_request = {
-		nodes_subnet_id = "00000000-0000-0000-0000-000000000000"
-		security_group_id = "00000000-0000-0000-0000-000000000000"
-  }
-  version                       = "v1.34.1"
+  name                          = "cloudru-example-nodepool"
+
   taints                        = {
 		taints = [{
 		key = "cloudru_taint_key"
 		value = "cloudru_taint_value"
 		effect = "EFFECT_NO_EXECUTE"
   }]
+
   }
+
   labels                        = {
 		labels = {
-	a1f9d642-b47b-47f9-9946-2407d9128d02 = "266f40f0-966b-4494-ba65-f89d7afbae1a"}
+	82f73879-5849-4ad5-92d3-7c852dba4a76 = "6ec43301-4e81-425e-b021-1d0e08632990"}
   }
+
   remote_access                 = {
 		ssh_key_id = "00000000-0000-0000-0000-000000000000"
 		username = "cloudru"
+  }
+  cluster_id                    = "00000000-0000-0000-0000-000000000000"
+
+  scale_policy                  = {
+		# Нужно заполнить одно из значений - fixed_scale, auto_scale.
+
+		fixed_scale = {
+		count = 1
+  }
+
+		auto_scale = {
+		min_count = 1
+		max_count = 3
+		initial_count = 1
+  }
+  }
+
+  network_configuration_request = {
+		nodes_subnet_id = "00000000-0000-0000-0000-000000000000"
+		security_group_id = "00000000-0000-0000-0000-000000000000"
+  }
+  version                       = "v1.34.1"
+
+  update_configuration          = {
+		strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
+
+		rolling_update_policy = {
+		max_surge = 25
+		max_unavailable = 25
+  }
   }
 }
 ```

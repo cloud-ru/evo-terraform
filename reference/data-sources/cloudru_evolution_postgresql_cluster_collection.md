@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_postgresql_cluster_collection" "datasource_cluster" {
-  project_id   = "00000000-0000-0000-0000-000000000000"
   page_size    = 100
   product_type = "postgresql"
+  project_id   = "00000000-0000-0000-0000-000000000000"
 }
 
 output "data-cluster" {

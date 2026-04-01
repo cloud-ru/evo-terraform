@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_mk8s_addon_collection" "datasource_addon" {
-  page_size  = 10
   filter     = "isBillable = true"
   order_by   = "createdAt desc"
   project_id = "00000000-0000-0000-0000-000000000000"
+  page_size  = 10
 }
 
 output "data-addon" {

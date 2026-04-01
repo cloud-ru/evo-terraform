@@ -7,21 +7,21 @@
 
 ```terraform
 resource "cloudru_evolution_baremetal_reserved_server" "resource_reserved_server" {
-  ip_id         = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  hostname      = "hostname"
-  description   = "Description"
-  name          = "Server name"
   flavor_id     = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
-  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  log_group_id  = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  sds_disks_ids = ["e777956f-48b5-4a0a-88f3-dfd4d0dfa61e","d9b816a3-b9ea-4cc9-8b83-57d0f6031444","f28c1564-a377-4395-b585-f7d5548ba272","d5c89896-69ba-4797-a7ec-ce5b1a358d4d","9b9c8dd0-12ee-44ac-aa12-e57e22024806","2f034805-61fc-4467-a525-0f6812de083c","28890df5-a222-46a7-b173-3f938259ed6f","cdc0802b-b43d-4e24-a681-ade2e3e3cfe8","e6a350d4-94f1-4aea-a243-c7fdc27fd3f6","a35ce2f1-928a-427f-97b1-5030d6720817"]
-  zone_id       = "10B39F12-8041-4F73-BBFF-4AE20B162168"
-  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
-  login         = "user"
-  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
-  kernel_slug   = "alma-linux-9-x64"
-  password      = "943430f3-3bfb-4a5c-8f67-15fdb279bb96"
   without_fip   = true
+  description   = "Description"
+  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
+  log_group_id  = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  hostname      = "hostname"
+  login         = "user"
+  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  sds_disks_ids = ["a4948b60-4ebd-48c2-9ab6-3797145ced22", "a95c8fc6-55db-4df4-9f03-309eadd5a759", "feca400b-1887-4250-996c-355e62426e59", "fd5ec53c-1c8c-449f-90d6-435f54599672", "ac5e29fe-2203-47b7-bea0-2f3eff886aff", "6c8ccdf2-3734-4e5c-9ef5-d53d0e881454", "b8afce69-a4d6-49ab-b517-da407e27d56b", "0dcf530e-0ea3-4d9f-9d58-e20f8a00f16c", "22eaeeed-2624-4cf5-a7a8-c40feff26a60", "b14982fd-bd06-4b3f-bbc4-54d864e8d61a"]
+  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
+  kernel_slug   = "alma-linux-9-x64"
+  password      = "efff437b-ed34-43e0-9ab8-6d7a1749eace"
+  ip_id         = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  name          = "Server name"
+  zone_id       = "10B39F12-8041-4F73-BBFF-4AE20B162168"
 }
 ```
 

@@ -7,34 +7,44 @@
 
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  description                 = "dbdc2193-352e-487e-b011-e5ad21422190"
-  subnet_id                   = "8c71e446-f68b-4374-977a-ba46c787e935"
-  name                        = "c715dc76-6e89-45a0-a439-ffc2ef0fff08"
-  allowed_address_pairs       = [{
-		ip_address = "70ce9334-d5b3-4011-9758-9e22e32f42bb"
-		mac_address = "79bed2e6-1ece-48c9-8758-088692587888"
-  }]
-  external_ip_specs           = {
-		# Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
-		new_external_ip = false
-		attach_external_ip = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "7e299cf1-283b-4683-a712-5274faf7a0f1"
-		name = "2666ebd4-6df9-4cb8-a849-b4afad42671b"
+  security_groups_identifiers = {
+    value = [{
+      # Нужно заполнить одно из значений - id, name.
+      id   = "1cdaa67c-2bb4-4f70-a43e-f71a61337e2c"
+      name = "f69f55d3-40a8-4f75-aa74-a63f80fa2705"
+    }]
+
   }
+  vm_id       = "f34d699c-d1d8-4423-b499-34357e675731"
+  subnet_id   = "5c23ae6b-cc2a-42f1-b6bc-6777813c7880"
+  description = "6bf99e6f-e8df-49e0-9c1c-5092030dd1c6"
+  name        = "b832f521-f35c-4836-87af-77ab8a70883e"
+
+  allowed_address_pairs = {
+    value = [{
+      ip_address  = "221721d2-2ed1-4ff1-a31b-57ec30b589b5"
+      mac_address = "100eef3a-2119-4112-ac1f-2170d3a4daea"
+    }]
+
   }
-  security_groups_identifiers = [{
-		# Нужно заполнить одно из значений - id, name.
-		id = "fb1e5649-6e34-41a1-8969-8dac8707b2f3"
-		name = "d43b869d-0887-48f7-a3be-10f137741b4e"
-  }]
-  zone_identifier             = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "a7edc645-ca89-4e76-abb9-ee32d5b12920"
-		name = "24fe5776-83de-464e-937a-48ab31551f14"
+
+  zone_identifier = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "03d88664-e91a-4a42-af71-29232677a22d"
+    name = "3d10d8d7-095b-46a3-95f2-f0b08ed0d95b"
   }
-  vm_id                       = "3e5989e4-33d6-4055-8f3c-b546f2d3518f"
-  project_id                  = "485f9822-4076-4bab-abcb-6791cd5a6c2e"
+
+  external_ip_specs = {
+    # Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
+    new_external_ip = false
+
+    attach_external_ip = {
+      # Нужно заполнить одно из значений - id, name.
+      id   = "b26dc822-4eb1-4892-bdef-3d9feadab848"
+      name = "bdb0ead7-5479-4ee5-900e-b75c7a44e67f"
+    }
+  }
+  project_id = "058f40f4-8692-423f-acb3-2309abf21dd1"
 }
 ```
 

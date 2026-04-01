@@ -7,32 +7,38 @@
 
 ```terraform
 resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
-  project_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  subnet      = "192.168.0.0/24"
   description = "Route to internal network"
   vpc_id      = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  next_hop    = {
-		# Нужно заполнить одно из значений - magic_router, virtual_machine, vip.
-		magic_router = {
-		magic_router_identifier = {
-		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  project_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+
+  next_hop = {
+    # Нужно заполнить одно из значений - magic_router, virtual_machine, vip.
+
+    magic_router = {
+      magic_router_identifier = {
+        id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      }
+      az_name = "ru.AZ-1"
+    }
+
+    virtual_machine = {
+      virtual_machine_identifier = {
+        id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      }
+
+      network_interface = {
+        id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      }
+    }
+
+    vip = {
+      virtual_ip_identifier = [{
+        id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      }]
+
+    }
   }
-		az_name = "ru.AZ-1"
-  }
-		virtual_machine = {
-		virtual_machine_identifier = {
-		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  }
-		network_interface = {
-		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  }
-  }
-		vip = {
-		virtual_ip_identifier = [{
-		id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  }]
-  }
-  }
-  subnet      = "192.168.0.0/24"
 }
 ```
 

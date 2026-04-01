@@ -7,37 +7,41 @@
 
 ```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
-  project_id          = "5ab15f6c-8ca5-4b8a-82d8-5cd177a77b88"
+  project_id          = "ccbdecda-4dc6-411f-af5f-b48a8bce665d"
+
+  disk_identifiers    = [{
+		disk_id = "d04aaf3e-5ae9-4cc6-8186-465552e86adc"
+  }]
+
+  name                = "2c4753ae-94cc-4473-bbaf-370abe02ce5d"
+  description         = "fe293caa-f69e-4d06-ab6a-a56be4b06130"
+
   zone_identifier     = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "5698ce84-e23c-47bf-93b1-36aba131b005"
-		name = "76ece28c-12f5-4502-a5e6-9a3ba4bf7a31"
+		id = "52526269-4a22-48e6-b490-e4e56d1d8686"
+		name = "3eed7594-2ff6-45d5-9e8f-f7c20ba070aa"
   }
-  description         = "2fc70447-fc71-4198-b22e-40328508d105"
-  cloud_init_userdata = "7899ca4f-fedd-4d96-869f-9ba3c2688e9d"
-  placement_group_id  = "abb7c8ba-14a1-4fdf-b920-e9ceeb727d01"
-  network_interfaces  = [{
-		interface_id = "9f98424f-cdd5-4016-b6b1-4c202c8ad619"
-  }]
-  image_metadata      = {
-	bf2f3f5e-2538-4ccd-bf0f-729ade2a6b9c = {
-		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
-		string_value = "d47a599e-92e6-4c29-96f3-8da81ef0170a"
-		int_value = 1733780166
-		bool_value = false
-  }}
-  name                = "e530d7a1-e374-4155-9604-a5d5eabd92e0"
+  cloud_init_userdata = "58ab1285-4c49-4a87-9f28-626a99db7235"
+
   flavor_identifier   = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "a3f58caa-f49f-4fca-b8c5-7be1f44a237f"
-		name = "3de76719-5a0f-47ce-81ca-686474797e5d"
+		id = "2a2921ea-fe13-4dc8-b4a2-0885f5400367"
+		name = "5b7fd4ea-19b4-4627-bc00-bfde0963ef3f"
   }
-  primary_disk        = {
-		disk_id = "fbaad1c8-cc19-4c27-afa9-0a4a0a604dca"
-  }
-  secondary_disks     = [{
-		disk_id = "2fbad3b8-c07a-4f37-bc60-96ba2f9fa8f4"
+
+  network_interfaces  = [{
+		interface_id = "f81a9503-739f-4d9e-b664-983c81e5f38c"
   }]
+
+
+  image_metadata      = {
+	73bc6414-501a-4545-ba27-c5cb1f732872 = {
+		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
+		string_value = "17909795-f79e-4037-9bca-63c3f5376af0"
+		int_value = 801329956
+		bool_value = false
+  }}
+  placement_group_id  = "c5463302-4040-4303-bbc4-267b2419e29d"
 }
 ```
 

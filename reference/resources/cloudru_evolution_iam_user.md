@@ -7,13 +7,13 @@
 
 ```terraform
 resource "cloudru_evolution_iam_user" "resource_user" {
-  last_name    = "c5a8c115-dacf-473c-bb33-1b9f477fedce"
-  middle_name  = "b66876bc-134e-48e7-b844-98d78f588fff"
-  account_type = "USER_ACCOUNT_TYPE_FEDERATED"
-  idp_id       = "ff039ed5-46a2-403d-80b0-0ec7a80d6227"
-  email        = "3afd635e-0776-4cab-9b1d-bef687916b99"
-  first_name   = "f64c134a-8207-4378-ad00-617121d8f622"
-  customer_id  = "a3ab1644-6a83-435c-983b-6c3e2cebbb0a"
+  idp_id       = "3e856852-539b-4298-bdd4-e924f8c875a6"
+  email        = "eedb4936-e218-4f0b-aa0a-3849123432d2"
+  first_name   = "ef005352-17c2-4b50-b358-27df9186bc80"
+  middle_name  = "cf5c73f8-48a3-4b33-9870-62c3cc7eaf62"
+  customer_id  = "2ae1b87e-c5d6-4d56-abe9-a806b6d734b7"
+  last_name    = "8c7850b4-c183-4b3c-8467-d41d689f9645"
+  account_type = "USER_ACCOUNT_TYPE_LOCAL"
 }
 ```
 

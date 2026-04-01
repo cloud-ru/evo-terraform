@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_vm_collection" "datasource_vm" {
-  filter     = "cd003c2a-d923-4e09-84f0-e19e3840d241"
-  order_by   = "edb5bbc2-d3aa-4c98-8f47-a12054a40a13"
-  project_id = "3377c33d-7c5d-407b-84df-35547472ab8e"
-  page_size  = 6299046504991998098
+  project_id = "3ea87c5c-0b96-4464-b324-cfdfac8d98be"
+  page_size  = 4305190634957586343
+  filter     = "ac901d3b-8469-4f76-b853-ed7e8eb4ee04"
+  order_by   = "cb448edb-b87a-4759-a62d-dc09e673c0b3"
 }
 
 output "data-vm" {

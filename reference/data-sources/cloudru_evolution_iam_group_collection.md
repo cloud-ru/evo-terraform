@@ -7,12 +7,12 @@
 
 ```terraform
 data "cloudru_evolution_iam_group_collection" "datasource_group" {
-  page_size = 5437509919510634454
-  target    = {
-		# Нужно заполнить одно из значений - customer_id, project_id.
-		customer_id = "20acbf9c-80e2-4bb2-ae13-c78b9057f5c9"
-		project_id = "640a5a5a-9654-4080-a524-fc7d9983eeab"
+  target = {
+    # Нужно заполнить одно из значений - customer_id, project_id.
+    customer_id = "1f796b06-b4a7-42a6-aada-5750b8b28861"
+    project_id  = "65a32047-0a46-4752-a0bf-615d4b701ba3"
   }
+  page_size = 8259529306787587171
 }
 
 output "data-group" {

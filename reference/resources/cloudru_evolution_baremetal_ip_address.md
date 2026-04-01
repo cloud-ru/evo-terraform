@@ -7,9 +7,9 @@
 
 ```terraform
 resource "cloudru_evolution_baremetal_ip_address" "resource_ip_address" {
-  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   subnet_id  = "4e7aafdb-c48f-4204-b600-e5c6b5443345"
   address    = "128.0.0.2"
+  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
 }
 ```
 

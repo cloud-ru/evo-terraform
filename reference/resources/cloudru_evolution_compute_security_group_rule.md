@@ -7,18 +7,19 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group_rule" "resource_security_group_rule" {
-  ip_protocol                      = "IP_PROTOCOL_UDP"
-  port_range                       = "4b47200d-b4b9-4bd6-a690-ccc605eb6b96"
-  remote_ip_prefix                 = "8fe24058-b9ee-4362-bad2-cb2f46973fef"
-  security_group_id                = "fc5806b2-09b7-4585-a5b5-981475c75e93"
+  security_group_id = "bc9e5407-8521-4e6e-a06c-97e3c0d7b96f"
+
   remote_security_group_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "8ead4be2-47ff-421c-aa0c-00c956300abc"
-		name = "c6142bc4-b727-4d90-ab25-eb219896dcc3"
+    # Нужно заполнить одно из значений - id, name.
+    id   = "a10734b4-00a7-4a20-8d08-3f29433c8fe5"
+    name = "971d59be-4f6d-4dd9-a7c7-46abf55dbeee"
   }
-  description                      = "37230699-959c-443b-b6a3-4deae080c8cb"
-  direction                        = "TRAFFIC_DIRECTION_EGRESS"
-  ether_type                       = "ETHER_TYPE_IPV4"
+  description      = "6214f48e-ae23-43c7-8877-b99fdb031764"
+  ether_type       = "ETHER_TYPE_IPV4"
+  ip_protocol      = "IP_PROTOCOL_TCP"
+  remote_ip_prefix = "6d6d9176-685d-4c32-a336-3505bc9ab0c8"
+  direction        = "TRAFFIC_DIRECTION_EGRESS"
+  port_range       = "2482e5ca-5dc0-4a61-8a7d-4acec352047f"
 }
 ```
 

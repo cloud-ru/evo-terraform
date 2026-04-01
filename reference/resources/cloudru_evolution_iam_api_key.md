@@ -7,11 +7,11 @@
 
 ```terraform
 resource "cloudru_evolution_iam_api_key" "resource_api_key" {
-  name               = "c5190a70-41fe-4f1d-be13-85e3da5a74db"
-  description        = "cfec48b4-de3c-401e-a17b-48fcafebc51e"
-  service_account_id = "91ff1695-3078-414b-bbff-ad5451237d6c"
+  name               = "ac5d8529-c5dd-43a7-8b93-7b4c6a2d1aad"
+  description        = "0f4b4215-1b73-42fe-b29b-a351d30dc045"
+  product_codes      = ["7b9740b5-457d-4482-92ac-ed53e5877162", "df75526f-8f61-4dfe-9f4f-f492d1cad33f", "ceae8a09-1a85-4eb8-baa5-e9b361e463dd", "7db6f20e-9972-4329-bc20-54f31717623d", "331ddd57-0403-4c97-a5d8-b62bccc410e0", "45a076c8-a103-441f-8ac1-a2ada7853e5d", "99fd7006-a67b-48a2-a291-3e396e87baf3", "34b38d26-1b3f-4d18-914b-04d6076fb030", "624b73d9-7557-47cb-8eee-cd0b4c37a57d", "ea6a1f9c-d20c-43b8-94e8-54b31a22a0a7"]
   enabled            = true
-  product_codes      = ["3f6cc2b3-6fd4-4f65-82d4-fd306fec7021","5aba11b2-5e79-4ab2-a826-c50cc2ec0f34","15fce318-0bc5-419b-91b1-dd496bf3d690","9f40bd73-3a84-499f-9f34-55c38a0f1b48","0667a667-61d5-4c0e-88f1-877daaa67279","63a53fbc-f6b0-4895-84d5-847c9b5f06f0","c550899a-f044-4453-92e1-edc201287a0d","5aabc399-711c-4ca5-a8ed-eb8ae6c3c85b","4f1f1020-7c93-41ff-bde6-f98adfdcbd40","768cc7c4-b808-419a-8d8c-6f444bd5ed8d"]
+  service_account_id = "996307d7-7a7c-4c63-9864-540371b35b5f"
 }
 ```
 

@@ -7,8 +7,8 @@
 
 ```terraform
 data "cloudru_evolution_nlb_target_group_collection" "datasource_target_group" {
-  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 10
+  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
 }
 
 output "data-target_group" {

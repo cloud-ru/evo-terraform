@@ -7,17 +7,21 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  zone_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "55ffa4e8-e778-4948-964c-b93168a87849"
-		name = "bfd589e7-90cc-4a7c-b97f-00b4329cbcc3"
+  project_id     = "b191e0ae-1d6a-4632-9d2f-cad4078b9a70"
+  name           = "69571af2-ea85-4ef8-9e26-edc8dad81c33"
+  subnet_address = "9b32fb80-fc70-4337-8a91-2fb37170811e"
+
+  dns_servers = {
+    value = ["117000c5-9da0-4941-9898-274fef339380", "25228404-f665-4ca7-8525-0c37fb47f28a", "76c42805-4715-46c6-8f18-cdcaf503e222", "8a563e89-bc15-455b-a1b9-6630cfab07c5", "9745a051-c932-4a2c-8d86-2bab1ccddbe5", "bce8d8f0-842b-4eb6-b248-a3b478fea8de", "0f507464-02d9-48b0-bb99-af9030daf9a1", "8c9cd9a9-e97b-4df6-a2f3-1f2c4c951ed1", "286a8d26-2dbb-4e4c-abd0-a66e54b9e4c4", "a20fe61b-baa2-4582-bf34-60588388b9d4"]
   }
-  dns_servers     = ["cfd0dcc8-3df6-4d40-9908-bd78f0e5f996","456bc6e9-5ffb-425e-972f-8f323782bb6f","aed5324e-d937-4bf2-b8ef-eaea55ea0113","40e49a38-becd-48d5-bd24-a794943a9ede","646e9c6f-7aef-4c38-889e-22cec642dc82","803d2cd2-cfa2-4b5d-a127-4edde8b42a27","ccbeda78-2178-4d51-b140-9dc258154667","a9b34f7a-210c-4a4c-bc75-3eb344947a49","9f3310f6-34b3-43ed-b93c-3468e5726f37","243e32de-6c0c-47be-a901-0bdedb7cad89"]
-  project_id      = "20c7f871-d382-4091-a916-da9c396cc73a"
-  name            = "5870eee9-2d78-4b54-98fd-a34e7ccd97bb"
-  description     = "e7e843fa-98ff-4866-a71b-98a46f7bfad1"
-  subnet_address  = "72611ec8-e63e-472b-ba72-d644cd66a2dc"
-  prefix_length   = 1769035265
+
+  zone_identifier = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "7fde68ed-581c-47a4-a560-174c826f4282"
+    name = "5548a42b-989a-4f29-9d3a-a8ee57ae2157"
+  }
+  prefix_length = 736077352
+  description   = "7fe767d7-8cfb-47fb-8915-d1c333fbee54"
 }
 ```
 
