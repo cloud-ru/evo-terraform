@@ -30,4 +30,6 @@ resource "cloudru_evolution_compute_interface" "example" {
   external_ip_specs = {
     new_external_ip = true
   }
+
+  type = "INTERFACE_TYPE_REGULAR"
 }
