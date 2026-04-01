@@ -2,3 +2,5 @@
 /site
 .env
 .DS_Store
+.local
+.claude
