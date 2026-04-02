@@ -45,6 +45,9 @@ provider "cloudru" {
         baremetal_endpoint = "baremetal.api.cloud.ru:443"
         # ===
 
+        # Managed Kubernetes
+        mk8s_endpoint = "mk8s.api.cloud.ru:443"
+
         # === Продукты группы Network ===
         # VPC
         vpc_endpoint = "vpc.api.cloud.ru:443"
