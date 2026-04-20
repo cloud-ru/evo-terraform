@@ -1,5 +1,4 @@
-
-# cloudru_evolution_vpc_static_route_collection (Data Source)
+# cloudru_evolution_vpc_static_route_collection
 
 
 

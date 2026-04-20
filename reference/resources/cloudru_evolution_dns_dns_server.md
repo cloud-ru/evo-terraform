@@ -1,5 +1,4 @@
-
-# cloudru_evolution_dns_dns_server (Resource)
+# cloudru_evolution_dns_dns_server
 
 
 

@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_subnet_collection (Data Source)
+# cloudru_evolution_compute_subnet_collection
 
 
 
@@ -7,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_subnet_collection" "datasource_subnet" {
-  page_size  = 2803728834496862021
-  filter     = "16b040ce-af8a-42fa-a1aa-417cd3a88bf3"
-  order_by   = "b5f9048c-e6d7-4099-af5d-dccd6addc3f1"
-  project_id = "91354cf8-f35f-444a-ac23-d785a028f848"
+  project_id = "371ba5fb-ea87-4ad7-9013-da3d8e00fd83"
+  page_size  = 1240515577822179732
+  filter     = "41a522d1-f520-41b8-b47d-9adef40cf435"
+  order_by   = "bd25b634-4f1b-40d7-b709-4de054b8c011"
 }
 
 output "data-subnet" {

@@ -1,5 +1,4 @@
-
-# cloudru_evolution_magic_router_received_route_collection (Data Source)
+# cloudru_evolution_magic_router_received_route_collection
 
 
 
@@ -7,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_magic_router_received_route_collection" "datasource_received_route" {
-  filter          = "908c45d9-3849-4f2b-afc0-ae5d133d06b5"
-  page_size       = 3399439599
-  project_id      = "4a32fe4c-6ea6-4a79-a55c-b9677c90d6f3"
-  magic_router_id = "91fbfee0-a3d7-4884-839b-354150c8f88e"
+  page_size       = 2611849050
+  project_id      = "f0c78688-2127-46eb-aac1-25dad3fbd673"
+  magic_router_id = "d0d3dc29-6db4-4ce4-a2b1-a8b9bb1a8bb8"
+  filter          = "3305584a-d2ba-41f7-9c93-43f67fd13ffd"
 }
 
 output "data-received_route" {

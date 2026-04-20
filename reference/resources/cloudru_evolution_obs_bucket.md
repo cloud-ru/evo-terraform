@@ -1,9 +1,8 @@
-
-# cloudru_evolution_obs_bucket (Resource)
-
+# cloudru_evolution_obs_bucket
 
 
-# Example usage
+
+## Example Usage
 
 ```terraform
 resource "cloudru_evolution_obs_bucket" "test_bucket" {
@@ -11,25 +10,23 @@ resource "cloudru_evolution_obs_bucket" "test_bucket" {
   versioning = true
 
   storage_class = "STANDARD"
-  
+
   quota         = 1024
 
-  log_group_id = var.bucket_log_group_id != "" ? var.bucket_log_group_id : null
+  log_group_id = var.bucket_log_group_id
 
-  policy = <<-POLICY
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::tf-obs-test-bucket/*",
-      "Condition": {}
-    }
-  ]
-}
-  POLICY
+  policy = jsonencode({
+      Version = "2012-10-17"
+      Statement = [
+        {
+          Effect   = "Deny"
+          Principal = "*",
+          Action = "s3:GetObject",
+          Resource = "arn:aws:s3:::tf-obs-test-bucket/*",
+          Condition = {}
+        }
+      ]
+    })
 
   tags = [
     {
@@ -38,7 +35,7 @@ resource "cloudru_evolution_obs_bucket" "test_bucket" {
     },
     {
       key   = "owner"
-      value = "test-user"
+      value = "my-user"
     },
     {
       key   = "project"

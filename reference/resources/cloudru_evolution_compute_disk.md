@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_disk (Resource)
+# cloudru_evolution_compute_disk
 
 
 
@@ -7,24 +6,22 @@
 
 ```terraform
 resource "cloudru_evolution_compute_disk" "resource_disk" {
-  bootable = true
-
-  zone_identifier = {
-    # Нужно заполнить одно из значений - id, name.
-    id   = "d50026a0-f77b-4472-85bc-b6c93369a24e"
-    name = "88ca16fc-56b7-48ea-a27a-2a53eb77646e"
+  image_id             = "a6b10d20-6f7c-4f24-85e2-b8f01817a0b7"
+  project_id           = "f48632f4-448f-4682-8594-6d0fc218dffc"
+  description          = "6fc70e39-3d6e-4f8d-8caf-0ff9b5cf144b"
+  bootable             = true
+  zone_identifier      = {
+		# Нужно заполнить одно из значений - id, name.
+		id = "2654f8c3-cc6c-42ec-af13-d30c23829dc3"
+		name = "e835bf12-200f-4827-a0aa-28102f02a99c"
   }
-  size = 42138284
-
   disk_type_identifier = {
-    # Нужно заполнить одно из значений - id, name.
-    id   = "9d8525b4-8394-430c-8b96-9ed0e3c45202"
-    name = "2dbac3c5-5f2e-46d8-a67d-5a5a49f67004"
+		# Нужно заполнить одно из значений - id, name.
+		id = "21e6127a-720e-4d1e-964d-717d0188ffce"
+		name = "4b391bba-b98d-4fa8-92c1-173911260185"
   }
-  name        = "996d0274-817d-4984-be2e-e9e9d93c10d7"
-  image_id    = "f04acd9d-11e0-4b8b-9211-4a132ec83f2c"
-  project_id  = "e4361f6f-35ad-405b-86de-65c8db1d64ff"
-  description = "e52c275a-d6a4-4c4f-a2ac-09ddf709cb60"
+  name                 = "26621914-d504-4dfe-9efc-ea973ac6dff2"
+  size                 = 1119648060
 }
 ```
 

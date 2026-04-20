@@ -1,5 +1,4 @@
-
-# cloudru_evolution_vpc_vpc (Resource)
+# cloudru_evolution_vpc_vpc
 
 
 
@@ -7,9 +6,9 @@
 
 ```terraform
 resource "cloudru_evolution_vpc_vpc" "resource_vpc" {
+  name        = "my-vpc"
   project_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   description = "Main VPC for production"
-  name        = "my-vpc"
 }
 ```
 

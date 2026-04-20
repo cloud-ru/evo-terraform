@@ -1,5 +1,4 @@
-
-# cloudru_evolution_redis_specification_collection (Data Source)
+# cloudru_evolution_redis_specification_collection
 
 
 

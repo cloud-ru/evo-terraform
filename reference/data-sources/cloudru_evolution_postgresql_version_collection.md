@@ -1,5 +1,4 @@
-
-# cloudru_evolution_postgresql_version_collection (Data Source)
+# cloudru_evolution_postgresql_version_collection
 
 
 

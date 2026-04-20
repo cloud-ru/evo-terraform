@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_security_group_rule_collection (Data Source)
+# cloudru_evolution_compute_security_group_rule_collection
 
 
 
@@ -7,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_security_group_rule_collection" "datasource_security_group_rule" {
-  security_group_id = "8868948e-4c88-4c34-88fe-4feee92504f3"
-  page_size         = 1341353349090749579
-  filter            = "0119e3af-67ac-4337-8734-428e4a03aef9"
-  order_by          = "cf98c1ad-21de-4453-8ea9-beed6808547f"
+  page_size         = 6109547321050346604
+  filter            = "72d768b6-9b0b-4792-9e29-f1a2e4ae5477"
+  order_by          = "6c02e12a-51a1-42a4-9c22-fce83959af3f"
+  security_group_id = "d671de1b-6d8f-42d2-bdf9-a8aed5eb82e1"
 }
 
 output "data-security_group_rule" {

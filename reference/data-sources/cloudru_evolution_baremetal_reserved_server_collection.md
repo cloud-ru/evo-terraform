@@ -7,11 +7,11 @@
 
 ```terraform
 data "cloudru_evolution_baremetal_reserved_server_collection" "datasource_reserved_server" {
-  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   page_size  = 50
   filter     = "name='reserve_name'"
   order_by   = "RESERVED_SERVERS_ORDER_BY_HOSTNAME"
   direction  = "DIRECTION_ASC"
+  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
 }
 
 output "data-reserved_server" {

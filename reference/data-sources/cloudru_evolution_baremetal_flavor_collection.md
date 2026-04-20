@@ -7,11 +7,11 @@
 
 ```terraform
 data "cloudru_evolution_baremetal_flavor_collection" "datasource_flavor" {
-  page_size  = 50
   project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   filter     = "zone_id='10B39F12-8041-4F73-BBFF-4AE20B162168' AND cores_max=4"
   order_by   = "FLAVORS_ORDER_BY_MEM_SIZE"
   direction  = "DIRECTION_ASC"
+  page_size  = 50
 }
 
 output "data-flavor" {

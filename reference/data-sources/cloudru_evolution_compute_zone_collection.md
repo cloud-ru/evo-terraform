@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_zone_collection (Data Source)
+# cloudru_evolution_compute_zone_collection
 
 
 
@@ -7,9 +6,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_zone_collection" "datasource_zone" {
-  project_id = "a543d553-35b1-478f-bcd2-23fb824c6679"
-  page_size  = 7756060284807826880
-  filter     = "bad93318-d497-49da-98c9-ea7407fda3f2"
+  project_id = "ec05ff1f-f104-4eea-9b45-a5afa58a85dc"
+  page_size  = 2756011045282455786
+  filter     = "5ebc1e07-f5a2-44bc-bf1b-4943a3de6133"
 }
 
 output "data-zone" {

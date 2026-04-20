@@ -1,5 +1,4 @@
-
-# cloudru_evolution_redis_cluster (Resource)
+# cloudru_evolution_redis_cluster
 
 
 
@@ -7,21 +6,20 @@
 
 ```terraform
 resource "cloudru_evolution_redis_cluster" "resource_cluster" {
-  version_id       = "00000000-0000-0000-0000-000000000000"
-  specification_id = "00000000-0000-0000-0000-000000000000"
-  storage_gb       = 15
-
+  name       = "name-of-cluster_1"
+  version_id = "00000000-0000-0000-0000-000000000000"
+  replicas   = 2
+  storage_gb = 15
+  type       = "STANDALONE"
+  project_id = "00000000-0000-0000-0000-000000000000"
   logging = {
     enabled      = true
     log_group_id = "00000000-0000-0000-0000-000000000000"
   }
   user_description = "Some short text."
+  specification_id = "00000000-0000-0000-0000-000000000000"
   shards           = 3
-  name             = "name-of-cluster_1"
-  type             = "STANDALONE"
-  replicas         = 2
   subnet_id        = "00000000-0000-0000-0000-000000000000"
-  project_id       = "00000000-0000-0000-0000-000000000000"
 }
 ```
 

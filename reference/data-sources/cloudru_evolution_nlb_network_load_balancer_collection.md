@@ -1,5 +1,4 @@
-
-# cloudru_evolution_nlb_network_load_balancer_collection (Data Source)
+# cloudru_evolution_nlb_network_load_balancer_collection
 
 
 
@@ -7,8 +6,8 @@
 
 ```terraform
 data "cloudru_evolution_nlb_network_load_balancer_collection" "datasource_network_load_balancer" {
-  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 10
+  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
 }
 
 output "data-network_load_balancer" {

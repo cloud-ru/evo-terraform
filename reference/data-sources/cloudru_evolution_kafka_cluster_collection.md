@@ -1,5 +1,4 @@
-
-# cloudru_evolution_kafka_cluster_collection (Data Source)
+# cloudru_evolution_kafka_cluster_collection
 
 
 
@@ -7,9 +6,9 @@
 
 ```terraform
 data "cloudru_evolution_kafka_cluster_collection" "datasource_cluster" {
+  page_size    = 20
   product_type = "kafka"
   project_id   = "00000000-0000-0000-0000-000000000000"
-  page_size    = 20
 }
 
 output "data-cluster" {

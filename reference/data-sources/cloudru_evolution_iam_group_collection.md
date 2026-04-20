@@ -1,5 +1,4 @@
-
-# cloudru_evolution_iam_group_collection (Data Source)
+# cloudru_evolution_iam_group_collection
 
 
 
@@ -7,12 +6,12 @@
 
 ```terraform
 data "cloudru_evolution_iam_group_collection" "datasource_group" {
-  target = {
-    # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "1f796b06-b4a7-42a6-aada-5750b8b28861"
-    project_id  = "65a32047-0a46-4752-a0bf-615d4b701ba3"
+  target    = {
+		# Нужно заполнить одно из значений - customer_id, project_id.
+		customer_id = "8d62442c-5849-40d4-a0ca-981264d8e1ef"
+		project_id = "556b5573-1272-4dc0-9986-a92eb47ac1bc"
   }
-  page_size = 8259529306787587171
+  page_size = 2722752746595014191
 }
 
 output "data-group" {

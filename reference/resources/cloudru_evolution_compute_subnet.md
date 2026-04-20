@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_subnet (Resource)
+# cloudru_evolution_compute_subnet
 
 
 
@@ -7,21 +6,17 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  project_id     = "b191e0ae-1d6a-4632-9d2f-cad4078b9a70"
-  name           = "69571af2-ea85-4ef8-9e26-edc8dad81c33"
-  subnet_address = "9b32fb80-fc70-4337-8a91-2fb37170811e"
-
-  dns_servers = {
-    value = ["117000c5-9da0-4941-9898-274fef339380", "25228404-f665-4ca7-8525-0c37fb47f28a", "76c42805-4715-46c6-8f18-cdcaf503e222", "8a563e89-bc15-455b-a1b9-6630cfab07c5", "9745a051-c932-4a2c-8d86-2bab1ccddbe5", "bce8d8f0-842b-4eb6-b248-a3b478fea8de", "0f507464-02d9-48b0-bb99-af9030daf9a1", "8c9cd9a9-e97b-4df6-a2f3-1f2c4c951ed1", "286a8d26-2dbb-4e4c-abd0-a66e54b9e4c4", "a20fe61b-baa2-4582-bf34-60588388b9d4"]
-  }
-
+  project_id      = "a84cc33f-c4ef-47cf-99c1-a2c815adfde6"
+  name            = "1628c6a5-1205-4d34-af00-fdb41dcd7bf5"
   zone_identifier = {
-    # Нужно заполнить одно из значений - id, name.
-    id   = "7fde68ed-581c-47a4-a560-174c826f4282"
-    name = "5548a42b-989a-4f29-9d3a-a8ee57ae2157"
+		# Нужно заполнить одно из значений - id, name.
+		id = "2eb5a34e-d65f-4e58-b94b-a21b75a9e3b5"
+		name = "a68c1bf2-1980-4f3f-87b2-a910fbf5c446"
   }
-  prefix_length = 736077352
-  description   = "7fe767d7-8cfb-47fb-8915-d1c333fbee54"
+  description     = "848dd3f1-fda4-45a8-830c-a568eb8e9a40"
+  subnet_address  = "b07a84fb-7102-4e23-9184-bdbcba5b69d2"
+  dns_servers     = ["b24aa14f-a450-4729-8688-bf5cf5fa0c10","f66d70b7-c12d-4659-b95f-75dfc0eda543","5ac6ef0e-3754-46be-b113-3ebdd8234bc6","d31da7a0-a5f0-4c50-acca-b833546fe9b2","5ec6a871-f269-4529-bf0c-07d71adc12f8","8b50fa00-618d-47bb-80f4-ce96544cb85c","2bf6d23e-58dc-4e61-86fa-dd5edfc1ce91","e83de588-ba49-421e-a894-9126adaff92a","91c9a639-5380-40d5-9bf9-f1d66156f2e8","fd596287-58fd-4877-8741-41a3c7d00c94"]
+  prefix_length   = 899135700
 }
 ```
 

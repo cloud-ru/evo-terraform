@@ -1,5 +1,4 @@
-
-# cloudru_evolution_dns_public_zone (Resource)
+# cloudru_evolution_dns_public_zone
 
 
 

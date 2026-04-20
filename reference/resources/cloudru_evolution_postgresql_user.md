@@ -1,5 +1,4 @@
-
-# cloudru_evolution_postgresql_user (Resource)
+# cloudru_evolution_postgresql_user
 
 
 
@@ -7,9 +6,9 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_user" "resource_user" {
-  password   = "SecurePass123!"
   name       = "username"
   cluster_id = "00000000-0000-0000-0000-000000000000"
+  password   = "SecurePass123!"
 }
 ```
 

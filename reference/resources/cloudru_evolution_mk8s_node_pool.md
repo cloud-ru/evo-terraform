@@ -1,5 +1,4 @@
-
-# cloudru_evolution_mk8s_node_pool (Resource)
+# cloudru_evolution_mk8s_node_pool
 
 
 
@@ -7,64 +6,56 @@
 
 ```terraform
 resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
-  machine_configuration_request = {
-		flavor_id = "00000000-0000-0000-0000-000000000000"
-
-		disk = {
-		type_name = "SSD"
-		size = 30
+  labels = {
+    labels = {
+      9ae59cc9-945d-46a8-b21d-6f368ca005f0 = "88f17eb0-2752-45a8-80fa-059ae4382e6b"
   }
+}
+scale_policy = {
+  # Нужно заполнить одно из значений - fixed_scale, auto_scale.
+  fixed_scale = {
+    count = 1
   }
-  name                          = "cloudru-example-nodepool"
-
-  taints                        = {
-		taints = [{
-		key = "cloudru_taint_key"
-		value = "cloudru_taint_value"
-		effect = "EFFECT_NO_EXECUTE"
-  }]
-
+  auto_scale = {
+    min_count     = 1
+    max_count     = 3
+    initial_count = 1
   }
-
-  labels                        = {
-		labels = {
-	82f73879-5849-4ad5-92d3-7c852dba4a76 = "6ec43301-4e81-425e-b021-1d0e08632990"}
+}
+remote_access = {
+  ssh_key_id = "00000000-0000-0000-0000-000000000000"
+  username   = "cloudru"
+}
+machine_configuration_request = {
+  flavor_id = "00000000-0000-0000-0000-000000000000"
+  disk = {
+    type_name = "SSD"
+    size      = 30
   }
-
-  remote_access                 = {
-		ssh_key_id = "00000000-0000-0000-0000-000000000000"
-		username = "cloudru"
+}
+name    = "cloudru-example-nodepool"
+version = "v1.34.1"
+update_configuration = {
+  strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
+  rolling_update_policy = {
+    max_surge       = 25
+    max_unavailable = 25
   }
-  cluster_id                    = "00000000-0000-0000-0000-000000000000"
-
-  scale_policy                  = {
-		# Нужно заполнить одно из значений - fixed_scale, auto_scale.
-
-		fixed_scale = {
-		count = 1
-  }
-
-		auto_scale = {
-		min_count = 1
-		max_count = 3
-		initial_count = 1
-  }
-  }
-
-  network_configuration_request = {
-		nodes_subnet_id = "00000000-0000-0000-0000-000000000000"
-		security_group_id = "00000000-0000-0000-0000-000000000000"
-  }
-  version                       = "v1.34.1"
-
-  update_configuration          = {
-		strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
-
-		rolling_update_policy = {
-		max_surge = 25
-		max_unavailable = 25
-  }
-  }
+}
+taints = {
+  taints = [
+    {
+      key    = "cloudru_taint_key"
+      value  = "cloudru_taint_value"
+      effect = "EFFECT_NO_EXECUTE"
+    }
+  ]
+}
+network_configuration_request = {
+  nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
+  security_group_id = "00000000-0000-0000-0000-000000000000"
+}
+cluster_id = "00000000-0000-0000-0000-000000000000"
 }
 ```
 

@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_flavor_collection (Data Source)
+# cloudru_evolution_compute_flavor_collection
 
 
 
@@ -7,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_flavor_collection" "datasource_flavor" {
-  project_id = "a18c72f1-89f6-4265-a552-e9ab9cfb1744"
-  page_size  = 5785660784620996322
-  filter     = "1d695ee2-8b76-4d33-ad66-56442f04eaeb"
-  order_by   = "9f06016d-86ed-44d4-9d06-b4d8451e2936"
+  project_id = "d0f170b7-bc8f-48f0-8aeb-363d6c352d1e"
+  page_size  = 8406346369027309563
+  filter     = "b86f7fdd-3354-41de-8064-68d804aaf489"
+  order_by   = "0e2e5d78-dbcb-4afe-ad44-c927e4d79541"
 }
 
 output "data-flavor" {

@@ -7,14 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_baremetal_subnet" "resource_subnet" {
-  description     = "description"
-  dns_servers     = ["52b7833b-62d4-4060-8f24-22cf59480eb1", "92454563-bdaa-4399-b8d5-06b7a50b94cf", "1868b892-88c4-4f76-b3df-1305967e1332", "bc33d5b1-cd67-4b6b-87c5-20406dbd7ce4", "6ecb5382-349f-4cc2-b26d-86e8a6ad83c6", "72ecd956-3bb4-4e38-8396-d8e38383d41c", "e6d2b3af-0d82-49e4-b14e-cba1650bb3b6", "0a4d8d8a-e3e9-4b36-ae20-d635194ba6d4", "e3cea57a-b047-4cce-b376-f57f97a97be2", "200ebbb6-8920-400c-a7cb-a5bd6fafd035"]
-  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
-  name            = "name"
   address         = "10.20.30.0/24"
   default_gateway = "10.20.30.1"
+  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
+  name            = "name"
+  dns_servers     = ["1.1.1.1", "8.8.8.8"]
   project_id      = "a3dab871-5355-49a8-817a-9c5e59fad149"
   zone_id         = "10B39F12-8041-4F73-BBFF-4AE20B162168"
+  description     = "description"
 }
 ```
 

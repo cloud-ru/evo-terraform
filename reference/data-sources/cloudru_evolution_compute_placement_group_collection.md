@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_placement_group_collection (Data Source)
+# cloudru_evolution_compute_placement_group_collection
 
 
 
@@ -7,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_placement_group_collection" "datasource_placement_group" {
-  project_id = "776d61ec-4e50-47c9-94ad-4f40dd37333e"
-  page_size  = 38749179579864627
-  filter     = "31ffb807-fa32-443b-84bf-7221a72d0ae1"
-  order_by   = "5e5717f4-c2da-409b-a1af-2a8aa2194888"
+  project_id = "b6566897-9c04-41a2-a745-b38252ca6abe"
+  page_size  = 7152065293237830051
+  filter     = "9770eb7d-364e-4ff3-95b7-14b957ba6c5d"
+  order_by   = "639a27e1-8acf-4dce-8990-085b92529c7e"
 }
 
 output "data-placement_group" {

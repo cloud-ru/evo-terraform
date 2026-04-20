@@ -1,5 +1,4 @@
-
-# cloudru_evolution_nlb_network_load_balancer (Resource)
+# cloudru_evolution_nlb_network_load_balancer
 
 
 
@@ -7,57 +6,53 @@
 
 ```terraform
 resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_balancer" {
-  vpc_id      = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  description = "Description"
-
+  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   internal_address_spec = {
     allocate  = true
     subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     ipv_4     = "192.168.0.28/24"
   }
-
+  availability_zone_specs = [
+    {
+      subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e", "d7650912-c92b-4b9a-9e92-ba756ad822b4"]
+      # Нужно заполнить одно из значений - id, name.
+      id   = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      name = "ru.AZ-1"
+    }
+  ]
   external_address_spec = {
     allocate = true
   }
-
-  availability_zone_specs = [{
-    subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e", "d7650912-c92b-4b9a-9e92-ba756ad822b4"]
-    # Нужно заполнить одно из значений - id, name.
-    id   = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-    name = "ru.AZ-1"
-  }]
-
-
-  rules = [{
-    name            = "rule-01"
-    target_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-
-    listeners = [{
-      name        = "http-80"
-      port        = 80
-      target_port = 80
-    }]
-
-
-    health_check = {
-      disabled            = true
-      port                = 80
-      timeout             = "5s"
-      interval            = "30s"
-      unhealthy_threshold = 3
-      healthy_threshold   = 3
-      # Нужно заполнить одно из значений - tcp, http.
-      tcp = {}
-
-      http = {
-        path = "/health"
+  name   = "balancer-01"
+  vpc_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  rules = [
+    {
+      name            = "rule-01"
+      target_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+      listeners = [
+        {
+          name        = "http-80"
+          port        = 80
+          target_port = 80
+        }
+      ]
+      health_check = {
+        disabled            = true
+        port                = 80
+        timeout             = "5s"
+        interval            = "30s"
+        unhealthy_threshold = 3
+        healthy_threshold = 3
+        # Нужно заполнить одно из значений - tcp, http.
+        tcp = {}
+        http = {
+          path = "/health"
+        }
       }
+      algorithm = "ALG_ROUND_ROBIN"
     }
-    algorithm = "ALG_ROUND_ROBIN"
-  }]
-
-  name       = "balancer-01"
-  project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  ]
+  description = "Description"
 }
 ```
 

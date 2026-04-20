@@ -7,21 +7,21 @@
 
 ```terraform
 resource "cloudru_evolution_baremetal_reserved_server" "resource_reserved_server" {
-  flavor_id     = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
-  without_fip   = true
   description   = "Description"
-  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
-  log_group_id  = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  hostname      = "hostname"
-  login         = "user"
-  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  sds_disks_ids = ["a4948b60-4ebd-48c2-9ab6-3797145ced22", "a95c8fc6-55db-4df4-9f03-309eadd5a759", "feca400b-1887-4250-996c-355e62426e59", "fd5ec53c-1c8c-449f-90d6-435f54599672", "ac5e29fe-2203-47b7-bea0-2f3eff886aff", "6c8ccdf2-3734-4e5c-9ef5-d53d0e881454", "b8afce69-a4d6-49ab-b517-da407e27d56b", "0dcf530e-0ea3-4d9f-9d58-e20f8a00f16c", "22eaeeed-2624-4cf5-a7a8-c40feff26a60", "b14982fd-bd06-4b3f-bbc4-54d864e8d61a"]
-  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
-  kernel_slug   = "alma-linux-9-x64"
-  password      = "efff437b-ed34-43e0-9ab8-6d7a1749eace"
-  ip_id         = "4846d669-228d-4fd0-9226-fe586cb59c31"
-  name          = "Server name"
   zone_id       = "10B39F12-8041-4F73-BBFF-4AE20B162168"
+  subnet_id     = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  sds_disks_ids = ["6e4b294d-ee30-4b1d-9dbc-07b0a1f8c03f", "bcf52e6d-9b61-4ed9-8861-de073047ab80"]
+  log_group_id  = "4846d669-228d-4fd0-9226-fe586cb59c31"
+  public_key_id = "940cfc96-7410-4add-aecd-dcf858edc341"
+  without_fip   = true
+  project_id    = "a3dab871-5355-49a8-817a-9c5e59fad149"
+  hostname      = "hostname"
+  kernel_slug   = "alma-linux-9-x64"
+  name          = "Server name"
+  flavor_id     = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
+  password      = "password"
+  login         = "user"
+  ip_id         = "4846d669-228d-4fd0-9226-fe586cb59c31"
 }
 ```
 

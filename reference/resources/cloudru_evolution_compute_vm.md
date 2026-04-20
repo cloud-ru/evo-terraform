@@ -1,5 +1,4 @@
-
-# cloudru_evolution_compute_vm (Resource)
+# cloudru_evolution_compute_vm
 
 
 
@@ -7,41 +6,37 @@
 
 ```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
-  project_id          = "ccbdecda-4dc6-411f-af5f-b48a8bce665d"
-
-  disk_identifiers    = [{
-		disk_id = "d04aaf3e-5ae9-4cc6-8186-465552e86adc"
+  cloud_init_userdata = "e22004d4-32b4-4cbf-b342-c36d60528650"
+  network_interfaces  = [{
+		interface_id = "7ef2b040-3dd5-4061-ae2b-ce7b0b909a0f"
   }]
-
-  name                = "2c4753ae-94cc-4473-bbaf-370abe02ce5d"
-  description         = "fe293caa-f69e-4d06-ab6a-a56be4b06130"
-
-  zone_identifier     = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "52526269-4a22-48e6-b490-e4e56d1d8686"
-		name = "3eed7594-2ff6-45d5-9e8f-f7c20ba070aa"
-  }
-  cloud_init_userdata = "58ab1285-4c49-4a87-9f28-626a99db7235"
-
+  project_id          = "f964cc96-7c89-4bf1-a6f6-06e6d8519ded"
+  secondary_disks     = [{
+		disk_id = "b80202ea-afbb-4a7f-8dae-b56937f52a75"
+  }]
+  image_metadata      = {
+	072f11da-f440-4b1b-a36d-88c70125b9ae = {
+		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
+		string_value = "46b3ca17-2155-4be4-8b65-3b287e94a140"
+		int_value = 990453349
+		bool_value = true
+  }}
+  name                = "a224ff61-3da0-469a-8c19-290a33a6dd93"
   flavor_identifier   = {
 		# Нужно заполнить одно из значений - id, name.
-		id = "2a2921ea-fe13-4dc8-b4a2-0885f5400367"
-		name = "5b7fd4ea-19b4-4627-bc00-bfde0963ef3f"
+		id = "6440ddd8-602b-49ae-9273-6281a56316f5"
+		name = "713951c5-7663-4ea5-ac23-8ab7db43fa8e"
   }
-
-  network_interfaces  = [{
-		interface_id = "f81a9503-739f-4d9e-b664-983c81e5f38c"
-  }]
-
-
-  image_metadata      = {
-	73bc6414-501a-4545-ba27-c5cb1f732872 = {
-		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
-		string_value = "17909795-f79e-4037-9bca-63c3f5376af0"
-		int_value = 801329956
-		bool_value = false
-  }}
-  placement_group_id  = "c5463302-4040-4303-bbc4-267b2419e29d"
+  placement_group_id  = "1bb1ad39-229f-40c8-b7cf-80b3b144d24e"
+  primary_disk        = {
+		disk_id = "20c93ff8-da92-43d4-a703-6e1b3c731ad1"
+  }
+  zone_identifier     = {
+		# Нужно заполнить одно из значений - id, name.
+		id = "d7aaeb38-a61e-47fe-ab90-6e32eb38cc16"
+		name = "1543dd39-2998-4b3c-899b-0a5e20cd0cd6"
+  }
+  description         = "270a5602-c516-4532-951b-c3fffcab5cbc"
 }
 ```
 

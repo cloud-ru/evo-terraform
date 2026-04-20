@@ -1,5 +1,4 @@
-
-# cloudru_evolution_iam_service_account_collection (Data Source)
+# cloudru_evolution_iam_service_account_collection
 
 
 
@@ -7,14 +6,13 @@
 
 ```terraform
 data "cloudru_evolution_iam_service_account_collection" "datasource_service_account" {
-  filter    = "c7dd7998-9811-43b1-9e46-ff2b5125362f"
-  page_size = 6800564675912413936
-
-  target = {
-    # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "eff40a5d-975f-4f69-8f5d-a69ac2a42495"
-    project_id  = "46573da5-9c08-4284-81df-9ec5fbb56a2b"
+  target    = {
+		# Нужно заполнить одно из значений - customer_id, project_id.
+		customer_id = "4f1e6f2b-9352-4462-8853-b76eddd5ee74"
+		project_id = "99120daf-19af-4ee7-85c7-91efcc34eab5"
   }
+  filter    = "de1d7c0a-cb47-423d-9ff0-4bd7dca620ab"
+  page_size = 673345058992365420
 }
 
 output "data-service_account" {
