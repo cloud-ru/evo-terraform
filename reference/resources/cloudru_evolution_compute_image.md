@@ -10,11 +10,13 @@ resource "cloudru_evolution_compute_image" "resource_image" {
   project_id         = "9fa94813-a128-4117-b451-3bf40c84b030"
   description        = "8e371dbc-0ded-4651-8c29-c55668d200d5"
   user_data_template = "f8b1049e-d15d-4da1-a605-4d0995888132"
-  zone_identifiers   = [{
-		# Нужно заполнить одно из значений - id, name.
-		id = "e4f033e6-4cbc-4e82-8cd4-353194a66e9c"
-		name = "a0cf84f4-fdb2-4da8-ac85-61beba1c3e99"
-  }]
+  zone_identifiers = {
+    value = [{
+      # Нужно заполнить одно из значений - id, name.
+      id   = "da1df7c5-c1e6-4bb4-96fe-6ec2db39dcc7"
+      name = "c7cbaa61-d682-4839-8f78-0d923138dc4b"
+    }]
+  }
   name               = "806b787b-caaf-46fd-ba6f-00f60559cd72"
   icon               = "1adef4d5-74b9-42f2-b844-2d740e4075e0"
 }

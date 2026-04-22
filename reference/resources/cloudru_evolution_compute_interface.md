@@ -6,29 +6,33 @@
 
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  security_groups_identifiers = [{
-		# Нужно заполнить одно из значений - id, name.
-		id = "39a6179d-37f5-42a1-9ca7-603302f8e7a7"
-		name = "8a76523a-7556-4266-9937-ace2b84281b9"
-  }]
-  external_ip_specs           = {
-		# Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
-		new_external_ip = false
-		attach_external_ip = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "52ccaadd-dab0-4c50-9ee6-ccefe8a3a2e2"
-		name = "2dfadd56-fbf6-4b65-8810-c2aee1d4a453"
+  security_groups_identifiers = {
+    value = [{
+      # Нужно заполнить одно из значений - id, name.
+      id   = "1cdaa67c-2bb4-4f70-a43e-f71a61337e2c"
+      name = "f69f55d3-40a8-4f75-aa74-a63f80fa2705"
+    }]
   }
+  external_ip_specs = {
+    # Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
+    new_external_ip = false
+    attach_external_ip = {
+      # Нужно заполнить одно из значений - id, name.
+      id   = "52ccaadd-dab0-4c50-9ee6-ccefe8a3a2e2"
+      name = "2dfadd56-fbf6-4b65-8810-c2aee1d4a453"
+    }
   }
   vm_id                       = "d818bfc4-ec97-412f-9dff-71f278f064ee"
   name                        = "f6c404ff-f651-4b6a-b870-53e6f7cb62e4"
   description                 = "8ce78838-eb03-4400-99f2-19ff4e44b9bf"
   subnet_id                   = "ed73b329-270a-4141-a711-16b3dcb81daf"
   project_id                  = "4f806715-02d9-4920-ba51-f713b7cf728d"
-  allowed_address_pairs       = [{
-		ip_address = "d38e4642-4171-4f6e-9aef-d38f27f89c99"
-		mac_address = "b3180d4e-7614-4aec-8d63-124c2beb4ebd"
-  }]
+  allowed_address_pairs = {
+    value = [{
+      ip_address  = "221721d2-2ed1-4ff1-a31b-57ec30b589b5"
+      mac_address = "100eef3a-2119-4112-ac1f-2170d3a4daea"
+    }]
+  }
   zone_identifier             = {
 		# Нужно заполнить одно из значений - id, name.
 		id = "5ab029e1-5a91-4337-9012-de8940da6df5"
