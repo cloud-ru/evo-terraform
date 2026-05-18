@@ -1,4 +1,5 @@
-# cloudru_evolution_postgresql_cluster_collection
+
+# cloudru_evolution_postgresql_cluster_collection (Data Source)
 
 
 
@@ -53,7 +54,6 @@ Read-Only:
 - `status` (String) Статус кластера.
 - `storage` (Attributes) Размеры дисков кластера. (see [below for nested schema](#nestedatt--clusters--storage))
 - `subnet_id` (String) Идентификатор подсети.
-- `sync_replication` (Boolean) Синхронная репликация. Возможные значения: - `true` --- синхронная репликация включена. - `false` --- синхронная репликация отключена.
 - `version` (String) Версия продукта.
 
 <a id="nestedatt--clusters--backup"></a>

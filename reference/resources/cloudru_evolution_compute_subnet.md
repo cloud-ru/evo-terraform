@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_subnet
+
+# cloudru_evolution_compute_subnet (Resource)
 
 
 
@@ -6,17 +7,25 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  project_id      = "a84cc33f-c4ef-47cf-99c1-a2c815adfde6"
-  name            = "1628c6a5-1205-4d34-af00-fdb41dcd7bf5"
-  zone_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "2eb5a34e-d65f-4e58-b94b-a21b75a9e3b5"
-		name = "a68c1bf2-1980-4f3f-87b2-a910fbf5c446"
+  project_id      = "4df86f3f-4a53-4b12-b254-98387785eaf6"
+  name            = "1904f16d-07a9-4428-a439-bb90a6edd890"
+  description     = "395cd358-2f18-4bd0-9c4f-67c2f7e09721"
+  vpc_id          = "07816271-6662-4040-a072-fb0663104ea4"
+  default         = true
+  subnet_address  = "c2d8843b-7b70-4cb7-b21c-3338e39f2335"
+  routed_network  = true
+  default_gateway = "aa01babf-2299-4632-a474-10ca94ba13ed"
+
+  dns_servers = {
+    value = ["f0d5075d-79b3-4ac8-b92d-ac80f0eb74b6", "7bc4105b-bb6b-44b6-a595-58d7029a48f1", "9d93c0d5-39b6-4968-a33c-5bc44fa0698b", "c751c6d4-07be-40f3-ba46-2969591cf4b1", "24c8a610-4448-41d7-b359-cccd07156249", "21262acf-e8e2-4fa2-a782-01ae9bc060cb", "36bed6a7-a398-455f-b5a7-85a40f54d4c0", "cb824c31-aaf8-48f7-bf77-f4d2345048f2", "a1fc6b1f-b9de-471c-bbdf-d37988923d3a", "2412c1a0-5414-4e24-b9e9-76e5ed124b16"]
   }
-  description     = "848dd3f1-fda4-45a8-830c-a568eb8e9a40"
-  subnet_address  = "b07a84fb-7102-4e23-9184-bdbcba5b69d2"
-  dns_servers     = ["b24aa14f-a450-4729-8688-bf5cf5fa0c10","f66d70b7-c12d-4659-b95f-75dfc0eda543","5ac6ef0e-3754-46be-b113-3ebdd8234bc6","d31da7a0-a5f0-4c50-acca-b833546fe9b2","5ec6a871-f269-4529-bf0c-07d71adc12f8","8b50fa00-618d-47bb-80f4-ce96544cb85c","2bf6d23e-58dc-4e61-86fa-dd5edfc1ce91","e83de588-ba49-421e-a894-9126adaff92a","91c9a639-5380-40d5-9bf9-f1d66156f2e8","fd596287-58fd-4877-8741-41a3c7d00c94"]
-  prefix_length   = 899135700
+
+  zone_identifier = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "6c6ffb78-1958-4a1c-81a0-3e9d0608fad6"
+    name = "031c2ab2-dc2f-43de-b84f-f300ae36aad3"
+  }
+  prefix_length = 1163662981
 }
 ```
 

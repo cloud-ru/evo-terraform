@@ -1,4 +1,5 @@
-# cloudru_evolution_mk8s_node_pool
+
+# cloudru_evolution_mk8s_node_pool (Resource)
 
 
 
@@ -6,56 +7,65 @@
 
 ```terraform
 resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
-  labels = {
-    labels = {
-      9ae59cc9-945d-46a8-b21d-6f368ca005f0 = "88f17eb0-2752-45a8-80fa-059ae4382e6b"
+  cluster_id = "00000000-0000-0000-0000-000000000000"
+  name       = "cloudru-example-nodepool"
+  version    = "v1.34.1"
+
+  update_configuration = {
+    strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
+
+    rolling_update_policy = {
+      max_surge       = 25
+      max_unavailable = 25
+    }
   }
-}
-scale_policy = {
-  # Нужно заполнить одно из значений - fixed_scale, auto_scale.
-  fixed_scale = {
-    count = 1
+
+  scale_policy = {
+    # Нужно заполнить одно из значений - fixed_scale, auto_scale.
+
+    fixed_scale = {
+      count = 1
+    }
+
+    auto_scale = {
+      min_count     = 1
+      max_count     = 3
+      initial_count = 1
+    }
   }
-  auto_scale = {
-    min_count     = 1
-    max_count     = 3
-    initial_count = 1
-  }
-}
-remote_access = {
-  ssh_key_id = "00000000-0000-0000-0000-000000000000"
-  username   = "cloudru"
-}
-machine_configuration_request = {
-  flavor_id = "00000000-0000-0000-0000-000000000000"
-  disk = {
-    type_name = "SSD"
-    size      = 30
-  }
-}
-name    = "cloudru-example-nodepool"
-version = "v1.34.1"
-update_configuration = {
-  strategy = "NODE_POOL_UPDATE_STRATEGY_ROLLING_UPDATE"
-  rolling_update_policy = {
-    max_surge       = 25
-    max_unavailable = 25
-  }
-}
-taints = {
-  taints = [
-    {
+
+  taints = {
+    taints = [{
       key    = "cloudru_taint_key"
       value  = "cloudru_taint_value"
       effect = "EFFECT_NO_EXECUTE"
+    }]
+
+  }
+
+  labels = {
+    labels = {
+    b0295e96-a4cc-4368-873e-80375e108575 = "35a70dcf-7829-4019-914e-27e8b333bb12" }
+  }
+
+  remote_access = {
+    ssh_key_id = "00000000-0000-0000-0000-000000000000"
+    username   = "cloudru"
+  }
+
+  machine_configuration_request = {
+    flavor_id = "00000000-0000-0000-0000-000000000000"
+
+    disk = {
+      type_name = "SSD"
+      size      = 30
     }
-  ]
-}
-network_configuration_request = {
-  nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
-  security_group_id = "00000000-0000-0000-0000-000000000000"
-}
-cluster_id = "00000000-0000-0000-0000-000000000000"
+  }
+
+  network_configuration_request = {
+    nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
+    security_group_id = "00000000-0000-0000-0000-000000000000"
+  }
 }
 ```
 

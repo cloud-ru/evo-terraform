@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_image
+
+# cloudru_evolution_compute_image (Resource)
 
 
 
@@ -6,19 +7,24 @@
 
 ```terraform
 resource "cloudru_evolution_compute_image" "resource_image" {
-  display_name       = "dd24da2b-881e-4632-90e8-8fb739b8573a"
-  project_id         = "9fa94813-a128-4117-b451-3bf40c84b030"
-  description        = "8e371dbc-0ded-4651-8c29-c55668d200d5"
-  user_data_template = "f8b1049e-d15d-4da1-a605-4d0995888132"
+  project_id         = "ed5dcfb7-401f-44f4-8bef-2581bd024f5a"
+  name               = "c4b18f72-d9cd-44d7-b44c-7f40f9290fb7"
+  description        = "346d0b4c-a653-4630-8679-f132ff4dfd03"
+  display_name       = "da49a44c-230e-482a-b5d2-387e5d851ec6"
+  icon               = "802f85a9-5232-417a-acbc-1b096b13adbb"
+  min_cpu            = 707495593
+  min_ram            = 1012236560
+  min_disk           = 478196030
+  user_data_template = "c8d013ec-d50d-469e-8d09-e4d7d8038c62"
+
   zone_identifiers = {
     value = [{
       # Нужно заполнить одно из значений - id, name.
-      id   = "da1df7c5-c1e6-4bb4-96fe-6ec2db39dcc7"
-      name = "c7cbaa61-d682-4839-8f78-0d923138dc4b"
+      id   = "c4c7fb3e-fe88-41a3-baa7-2e8b16aff55d"
+      name = "8c9806d3-3345-4465-9d6f-f1debe589496"
     }]
+
   }
-  name               = "806b787b-caaf-46fd-ba6f-00f60559cd72"
-  icon               = "1adef4d5-74b9-42f2-b844-2d740e4075e0"
 }
 ```
 

@@ -1,4 +1,5 @@
-# cloudru_evolution_iam_user
+
+# cloudru_evolution_iam_user (Resource)
 
 
 
@@ -6,13 +7,16 @@
 
 ```terraform
 resource "cloudru_evolution_iam_user" "resource_user" {
-  middle_name  = "8932f396-d091-4f87-9176-923224dbe962"
-  idp_id       = "6af309a1-8517-4bd7-b21d-c586bb82ad0d"
+  email       = "5cec2c82-a095-4c7a-9568-1bdbd7b267b1"
+  first_name  = "2d481b2d-3ac4-4600-aaa1-0711feb0cbcb"
+  last_name   = "4b4b92bd-5bf8-4934-9365-00f42e2d8941"
+  middle_name = "62f8e0a0-5b19-4ad6-bf5c-0ad822e66960"
+  enabled     = false
+  # Варианты значений параметра account_type:
+  # USER_ACCOUNT_TYPE_FEDERATED, USER_ACCOUNT_TYPE_LOCAL
   account_type = "USER_ACCOUNT_TYPE_LOCAL"
-  customer_id  = "5d2125b7-cc9a-4bd6-a9d0-e0cf6491b196"
-  email        = "857dba7c-5210-47bb-9e6f-084afd2dd11d"
-  first_name   = "3063c024-7f1b-4ef2-a37e-647fe96b0e3c"
-  last_name    = "cdfbf742-4035-4828-a40e-7f3539bb4fec"
+  customer_id  = "971ed607-d69a-48da-a29b-bf4e3a8473c3"
+  idp_id       = "3afe6252-63ff-451a-8a18-af602119d30a"
 }
 ```
 

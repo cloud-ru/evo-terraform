@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_interface
+
+# cloudru_evolution_compute_interface (Resource)
 
 
 
@@ -6,38 +7,50 @@
 
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  security_groups_identifiers = {
+  project_id                 = "1d2f6231-e7b8-4c01-be66-347e71c71709"
+  name                       = "30030a2d-85f8-4256-86e3-3d59fc96ecfc"
+  description                = "8376aee5-7732-4d5f-afbe-6ebf359b4429"
+  ip_address                 = "8dbf7114-dd6e-42af-9295-f27a081caca3"
+  interface_security_enabled = false
+
+  allowed_address_pairs = {
     value = [{
-      # Нужно заполнить одно из значений - id, name.
-      id   = "1cdaa67c-2bb4-4f70-a43e-f71a61337e2c"
-      name = "f69f55d3-40a8-4f75-aa74-a63f80fa2705"
+      ip_address  = "13c47e9b-cc55-460c-baed-bf3c1ab66adb"
+      mac_address = "ab054010-0ad8-4386-9da6-66c0e33563ad"
     }]
+
   }
+  # Варианты значений параметра type:
+  # INTERFACE_TYPE_REGULAR, INTERFACE_TYPE_SYSTEM, INTERFACE_TYPE_SERVICE, INTERFACE_TYPE_GATEWAY, INTERFACE_TYPE_FIP, INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_VIP
+  type = "INTERFACE_TYPE_DIRECT_IP"
+
+  zone_identifier = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "ab645597-220d-4928-9dc0-c489f620b600"
+    name = "61317660-f06a-49f7-ba66-5230ddcfd153"
+  }
+
   external_ip_specs = {
     # Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
     new_external_ip = false
+
     attach_external_ip = {
       # Нужно заполнить одно из значений - id, name.
-      id   = "52ccaadd-dab0-4c50-9ee6-ccefe8a3a2e2"
-      name = "2dfadd56-fbf6-4b65-8810-c2aee1d4a453"
+      id   = "91f9c81a-2979-4c04-83bb-21277c7e22ff"
+      name = "0591ab61-9313-41f6-b6ca-e0d3816c4936"
     }
   }
-  vm_id                       = "d818bfc4-ec97-412f-9dff-71f278f064ee"
-  name                        = "f6c404ff-f651-4b6a-b870-53e6f7cb62e4"
-  description                 = "8ce78838-eb03-4400-99f2-19ff4e44b9bf"
-  subnet_id                   = "ed73b329-270a-4141-a711-16b3dcb81daf"
-  project_id                  = "4f806715-02d9-4920-ba51-f713b7cf728d"
-  allowed_address_pairs = {
+
+  security_groups_identifiers = {
     value = [{
-      ip_address  = "221721d2-2ed1-4ff1-a31b-57ec30b589b5"
-      mac_address = "100eef3a-2119-4112-ac1f-2170d3a4daea"
+      # Нужно заполнить одно из значений - id, name.
+      id   = "459ae66e-7bcb-4353-97cc-6ead7101dc03"
+      name = "22073719-e159-4e5e-b0ef-6c43fc93aa73"
     }]
+
   }
-  zone_identifier             = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "5ab029e1-5a91-4337-9012-de8940da6df5"
-		name = "9305efc5-d453-4c7f-a874-7e2e3eb95cf6"
-  }
+  vm_id     = "1e5aa49d-a54e-4098-a943-4723c15a7026"
+  subnet_id = "254ed25a-3e4a-4900-92e4-028183c2c6ee"
 }
 ```
 

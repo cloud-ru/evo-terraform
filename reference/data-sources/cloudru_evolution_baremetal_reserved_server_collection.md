@@ -7,11 +7,15 @@
 
 ```terraform
 data "cloudru_evolution_baremetal_reserved_server_collection" "datasource_reserved_server" {
+  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   page_size  = 50
   filter     = "name='reserve_name'"
-  order_by   = "RESERVED_SERVERS_ORDER_BY_HOSTNAME"
-  direction  = "DIRECTION_ASC"
-  project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
+  # Варианты значений параметра order_by:
+  # RESERVED_SERVERS_ORDER_BY_HOSTNAME, RESERVED_SERVERS_ORDER_BY_DESCRIPTION, RESERVED_SERVERS_ORDER_BY_OS_KERNEL_SLUG, RESERVED_SERVERS_ORDER_BY_RESERVED_AT, RESERVED_SERVERS_ORDER_BY_SERVER_STATUS
+  order_by = "RESERVED_SERVERS_ORDER_BY_HOSTNAME"
+  # Варианты значений параметра direction:
+  # DIRECTION_ASC, DIRECTION_DESC
+  direction = "DIRECTION_ASC"
 }
 
 output "data-reserved_server" {

@@ -7,14 +7,17 @@
 
 ```terraform
 resource "cloudru_evolution_baremetal_subnet" "resource_subnet" {
+  name            = "name"
+  description     = "description"
   address         = "10.20.30.0/24"
   default_gateway = "10.20.30.1"
-  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
-  name            = "name"
   dns_servers     = ["1.1.1.1", "8.8.8.8"]
   project_id      = "a3dab871-5355-49a8-817a-9c5e59fad149"
+  is_default      = true
+  vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
+  is_primary      = false
+  vlan_id         = 1
   zone_id         = "10B39F12-8041-4F73-BBFF-4AE20B162168"
-  description     = "description"
 }
 ```
 

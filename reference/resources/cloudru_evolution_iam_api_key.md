@@ -1,4 +1,5 @@
-# cloudru_evolution_iam_api_key
+
+# cloudru_evolution_iam_api_key (Resource)
 
 
 
@@ -6,11 +7,25 @@
 
 ```terraform
 resource "cloudru_evolution_iam_api_key" "resource_api_key" {
-  description        = "4494fe55-8f2d-4112-b429-f5e690916244"
-  service_account_id = "bdfc63fc-0a15-40da-99de-3a1996682894"
-  product_codes      = ["b918d25a-19ff-40c8-a4f4-63d58b20fe2a","423e03f8-ae87-49ae-b7e5-1f9c3ab9aed0","3806863f-4087-4548-885c-7691afc769e3","1068e6a3-dc7e-4108-a096-bc737f73ba1c","ba8f0614-c87f-4a88-8bb9-8896c6f7967f","bc42b68a-9d81-4396-a673-0ac2a5a5e2af","c137c040-daf9-4621-8120-3fad9b2308dc","019fa797-7ef4-49a5-a5a8-d28928e90959","45534663-f7ad-453f-a87f-807c64eca5d1","f38475c7-18e4-444c-9ec5-248c7f533f94"]
-  name               = "9ac7221d-b3c8-4562-b719-aeb034bbd086"
-  enabled            = false
+  name               = "dc8e5212-aaed-4d44-8d73-36d90c3596e8"
+  description        = "30c553eb-4103-43fa-acf5-ca56962831f2"
+  service_account_id = "c9a59169-760f-4c87-82e4-b9db0fae5ac8"
+  product_codes      = ["ab7851d6-ed15-4fc2-bee0-c140e6d1a7ba", "036e76f2-afb9-4cef-b5a1-b1df94daf1e1", "e52cebbc-7114-4fce-be55-363c68a68143", "6993c9d2-acdb-4b1f-ae8a-19e2d4dd885b", "fa6cf65e-7e9f-4561-98bf-7b97e8c41135", "a074542e-bae9-4c29-bd9f-20f85b991221", "5957dee2-905f-4278-adb7-179488829c5c", "cf8bb215-5ce4-4645-b864-9bde2b51eaca", "35564f09-b22f-47f8-bd0a-1d230f23e524", "9ac4cf9d-7419-447e-8627-0be0700c5e0b"]
+
+  restrictions = {
+    ip_addresses = ["fbd9335c-4848-4a55-8051-5921ca502cee", "b0ab6988-d0ad-4310-ace3-9023c91e6a06", "6fde3ea0-074f-458d-b89c-3fa86caa171b", "8f894190-0d56-49d3-ad47-61b34b4015b2", "9cd69d1d-111d-4811-8afb-75b358395127", "b1c8df23-d8b9-4b3d-a358-4f7d3942fd58", "59d6bbb8-d269-40f8-bbda-670cf06eb8f7", "1aae82dd-b79a-488a-b813-45d8be794098", "0f1fdbd7-912f-4a06-91ca-3a10708e4dbe", "387c2e8a-4996-437c-9b73-1e26cce4cef3"]
+
+    time_range = {
+      time_slots = [{
+        start = 1005632745
+        end   = 1491332890
+      }]
+
+      timezone = 1964594989
+    }
+  }
+  enabled    = true
+  expires_at = "Mon, 18 May 2026 15:40:47 UTC"
 }
 ```
 

@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_disk_type_collection
+
+# cloudru_evolution_compute_disk_type_collection (Data Source)
 
 
 
@@ -6,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_disk_type_collection" "datasource_disk_type" {
-  project_id = "5e319d9c-eec1-4447-9103-794675ceadab"
-  page_size  = 8409539331940829205
-  filter     = "32ed03e8-14f2-42fa-aa05-0def8bbae382"
+  project_id = "d98b01c9-2304-4cb2-9ddd-74e547c3af88"
+  page_size  = 3615937449573221407
+  filter     = "cb5e0b6e-dee3-49de-9777-abc8eac80628"
 }
 
 output "data-disk_type" {

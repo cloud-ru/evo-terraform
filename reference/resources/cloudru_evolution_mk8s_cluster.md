@@ -1,4 +1,5 @@
-# cloudru_evolution_mk8s_cluster
+
+# cloudru_evolution_mk8s_cluster (Resource)
 
 
 
@@ -6,43 +7,56 @@
 
 ```terraform
 resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
-  name = "cloudru-example-cluster"
-  bootstrap_managed_addons = {
-    horizontal_pod_autoscaling = {
-      enabled = true
-    }
-    persistent_disk_csi_driver = {
-      enabled = true
-    }
-    kube_proxy = {
-      enabled = true
-    }
-    coredns = {
-      enabled = true
-    }
-  }
+  name       = "cloudru-example-cluster"
   project_id = "00000000-0000-0000-0000-000000000000"
+
+  logging_service = {
+    enabled      = true
+    log_group_id = "00000000-0000-0000-0000-000000000000"
+  }
+
+  monitoring_service = {
+    enabled = true
+  }
+  # Варианты значений параметра release_channel:
+  # RELEASE_CHANNEL_RAPID, RELEASE_CHANNEL_REGULAR, RELEASE_CHANNEL_STABLE
+  release_channel = "RELEASE_CHANNEL_REGULAR"
+
+  audit_service = {
+    enabled = true
+  }
+
   identity_configuration = {
     cluster_sa_id = "00000000-0000-0000-0000-000000000000"
   }
-  control_plane_zones = ["00000000-0000-0000-0000-000000000000"]
+
+  key_management_service = {
+    enabled = true
+    kek_id  = "00000000-0000-0000-0000-000000000000"
+  }
+  control_plane_zones   = ["00000000-0000-0000-0000-000000000000"]
+  control_plane_version = "v1.34.1"
+
   sizing_configuration = {
     master_count = 1
     flavor_id    = "00000000-0000-0000-0000-000000000000"
   }
-  control_plane_version = "v1.34.1"
+
   network_configuration_request = {
     services_subnet_cidr = "10.96.0.0/12"
     pods_subnet_cidr     = "10.1.0.0/16"
     kube_api_internet    = true
+
     network_plugin = {
       # Нужно заполнить одно из значений - cilium, calico.
+
       cilium = {
         enabled = true
         # Нужно заполнить одно из значений - version, app_version.
         version     = "1.16.7-sbc.3"
         app_version = "v1.16.7"
       }
+
       calico = {
         enabled = true
         # Нужно заполнить одно из значений - version, app_version.
@@ -51,6 +65,24 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
       }
     }
     private_vip_subnet_id = "00000000-0000-0000-0000-000000000000"
+  }
+
+  bootstrap_managed_addons = {
+    horizontal_pod_autoscaling = {
+      enabled = true
+    }
+
+    persistent_disk_csi_driver = {
+      enabled = true
+    }
+
+    kube_proxy = {
+      enabled = true
+    }
+
+    coredns = {
+      enabled = true
+    }
   }
 }
 ```
@@ -71,7 +103,7 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
 
 - `audit_service` (Attributes) Параметры аудит-логирования событий компонентов кластера. (see [below for nested schema](#nestedatt--audit_service))
 - `bootstrap_managed_addons` (Attributes) Конфигурация плагинов, которые будут установлены автоматически при создании кластера. Плагины можно отключить, если вы планируете использовать сторонние решения или установить их позже. (see [below for nested schema](#nestedatt--bootstrap_managed_addons))
-- `control_plane_zones` (List of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — две и более.
+- `control_plane_zones` (List of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — три и более.
 - `key_management_service` (Attributes) Параметры шифрования ресурсов кластера. (see [below for nested schema](#nestedatt--key_management_service))
 - `logging_service` (Attributes) Параметры логирования событий компонентов кластера. (see [below for nested schema](#nestedatt--logging_service))
 - `monitoring_service` (Attributes) Параметры мониторинга компонентов кластера. (see [below for nested schema](#nestedatt--monitoring_service))

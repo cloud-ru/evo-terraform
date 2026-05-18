@@ -62,7 +62,7 @@ The host "registry.terraform.io" given in provider source address "registry.terr
 
 Проверьте правильность имени провайдера в файле конфигурации. Корректно — `cloudru`:
 
-```hcl
+```none
 terraform {
   required_providers {
     cloudru = {
@@ -124,7 +124,7 @@ The argument "project_id" is required, but no definition was found.
 
 Добавьте отсутствующий обязательный параметр в блок провайдера или определите его через переменные:
 
-```hcl
+```none
 provider "cloudru" {
   project_id = var.project_id  # Добавьте эту строку
 }
@@ -156,7 +156,7 @@ The "for_each" argument must be a map, or set of strings, and you have provided 
 
 Преобразуйте список в множество или карту:
 
-```hcl
+```none
 # Вместо:
 for_each = var.list_of_strings
 
@@ -292,7 +292,7 @@ terraform plan
 
 5. Используйте переменные для конфиденциальных данных:
 
-   ```hcl
+   ```none
    variable "api_key" {
      type = string
      sensitive = true
@@ -303,8 +303,8 @@ terraform plan
 
 ## Дополнительная информация
 
-- [Документация Terraform Provider для Cloud.ru](https://cloud.ru/docs/terraform-evolution)
-- [Примеры конфигураций](https://github.com/cloud-ru/evo-terraform)
+- [Документация Terraform Provider для Cloud.ru](https://cloud.ru/docs/terraform-evolution/ug/index?source-platform=Evolution)
+- [Примеры конфигураций](https://cloud.ru/docs/terraform-evolution/ug/topics/reference?source-platform=Evolution)
 - [Репозиторий провайдера на GitHub](https://github.com/cloud-ru/evo-terraform)
 
 Если проблема не решается с помощью этого руководства, обратитесь [в техническую поддержку Cloud.ru](https://cloud.ru/docs/overview/support/index), предоставив:

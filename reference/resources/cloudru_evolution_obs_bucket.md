@@ -11,7 +11,11 @@ resource "cloudru_evolution_obs_bucket" "test_bucket" {
 
   storage_class = "STANDARD"
 
-  quota         = 1024
+  quota         = 1
+
+  quota_unit = "GB"
+
+  quota_type = "BUCKET_SIZE"
 
   log_group_id = var.bucket_log_group_id
 
@@ -117,7 +121,9 @@ resource "cloudru_evolution_obs_bucket" "test_bucket" {
 - `lifecycle_rules` (Attributes List) Конфигурации жизненного цикла. (see [below for nested schema](#nestedatt--lifecycle_rules))
 - `log_group_id` (String) ID лог-группы для бакета (требует User Plane API).
 - `policy` (String) Политики бакета.
-- `quota` (Number) Квота бакета в МБ (требует User Plane API).
+- `quota` (Number) Квота бакета (требует User Plane API).
+- `quota_type` (String) Тип квоты
+- `quota_unit` (String) Единица изменения квоты
 - `storage_class` (String) Класс хранения бакета (требует User Plane API).
 - `tags` (Attributes List) Теги бакета. (see [below for nested schema](#nestedatt--tags))
 - `versioning` (Boolean) Версионирование.

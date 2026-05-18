@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_nat_gateway
+
+# cloudru_evolution_compute_nat_gateway (Resource)
 
 
 
@@ -6,15 +7,16 @@
 
 ```terraform
 resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
-  name            = "e6203a36-0fd6-4351-b9e9-015b1364b359"
-  description     = "deb7260d-81ad-4b49-a19c-215f6d60e5c5"
-  vpc_id          = "b4efda3a-4363-4d39-8e02-697f8dacea6b"
+  project_id  = "8f7f12f8-3946-469f-aa1a-494ba260d737"
+  name        = "9c197fb8-6927-4941-8cdb-09541552fd57"
+  description = "cddf7a0e-9fc6-48e1-a5c3-79809289c5ef"
+  vpc_id      = "2f9d63cf-394d-4eb8-8c5e-22fde91b8bb0"
+
   zone_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "01a7e9c5-525d-47b3-a9f5-cc682715d7fd"
-		name = "f23f7fde-da2e-452f-ace1-1b3f588e4de0"
+    # Нужно заполнить одно из значений - id, name.
+    id   = "ec36e4fb-7ae2-43d1-bc9c-c1c16c336454"
+    name = "3c2cf587-eba4-40af-bf9d-9c70d01549d8"
   }
-  project_id      = "cad7722a-684c-4ac5-a89a-fe5e4723dcc2"
 }
 ```
 

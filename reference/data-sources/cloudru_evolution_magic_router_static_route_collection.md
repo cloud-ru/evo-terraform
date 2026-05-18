@@ -1,4 +1,5 @@
-# cloudru_evolution_magic_router_static_route_collection
+
+# cloudru_evolution_magic_router_static_route_collection (Data Source)
 
 
 
@@ -6,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_magic_router_static_route_collection" "datasource_static_route" {
-  magic_router_id = "61eadfed-bbc3-4e89-a77e-dc5a60955f45"
-  filter          = "b8aeb138-ea80-4d36-8c30-f94d2bf17f25"
-  page_size       = 2394852064
-  project_id      = "bf996050-8c3f-4ad8-a36b-7c92df574be7"
+  page_size       = 3151472805
+  project_id      = "c17356b7-3f6a-4269-95d2-323c6e27a4b8"
+  magic_router_id = "b8ce1bbf-0823-43a6-93f5-a2d158882db6"
+  filter          = "e4b0fa56-ad86-485b-a963-592f06251097"
 }
 
 output "data-static_route" {

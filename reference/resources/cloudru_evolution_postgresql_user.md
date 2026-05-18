@@ -1,4 +1,5 @@
-# cloudru_evolution_postgresql_user
+
+# cloudru_evolution_postgresql_user (Resource)
 
 
 
@@ -6,7 +7,12 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_user" "resource_user" {
-  name       = "username"
+  name = "username"
+
+  granted_roles = [{
+    name = "pg_read_all_data"
+  }]
+
   cluster_id = "00000000-0000-0000-0000-000000000000"
   password   = "SecurePass123!"
 }
@@ -27,7 +33,6 @@ resource "cloudru_evolution_postgresql_user" "resource_user" {
 
 ### Read-Only
 
-- `id` (String) Имя пользователя.
 - `supported_roles` (Attributes List) Доступные роли. (see [below for nested schema](#nestedatt--supported_roles))
 
 <a id="nestedatt--granted_roles"></a>

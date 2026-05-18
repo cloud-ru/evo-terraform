@@ -1,4 +1,5 @@
-# cloudru_evolution_postgresql_database
+
+# cloudru_evolution_postgresql_database (Resource)
 
 
 
@@ -6,9 +7,11 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_database" "resource_database" {
-  cluster_id = "00000000-0000-0000-0000-000000000000"
   name       = "myapp_production"
   owner      = "username"
+  lc_collate = "C"
+  lc_ctype   = "C"
+  cluster_id = "00000000-0000-0000-0000-000000000000"
 }
 ```
 

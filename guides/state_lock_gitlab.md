@@ -62,7 +62,7 @@ Project ID указан в разделе **Проект → Settings → Genera
 
 Пример (GitLab.com, один state `prod`):
 
-```hcl path=null start=null
+```none path=null start=null
 terraform {
   backend "http" {
     address        = "https://gitlab.com/api/v4/projects/1234567/terraform/state/prod"
@@ -80,7 +80,7 @@ terraform {
 
 Если GitLab self‑hosted, замените `https://gitlab.com` на ваш домен, например:
 
-```hcl path=null start=null
+```none path=null start=null
 address        = "https://gitlab.example.com/api/v4/projects/1234567/terraform/state/prod"
 ```
 

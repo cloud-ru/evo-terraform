@@ -1,4 +1,5 @@
-# cloudru_evolution_compute_disk
+
+# cloudru_evolution_compute_disk (Resource)
 
 
 
@@ -6,22 +7,27 @@
 
 ```terraform
 resource "cloudru_evolution_compute_disk" "resource_disk" {
-  image_id             = "a6b10d20-6f7c-4f24-85e2-b8f01817a0b7"
-  project_id           = "f48632f4-448f-4682-8594-6d0fc218dffc"
-  description          = "6fc70e39-3d6e-4f8d-8caf-0ff9b5cf144b"
-  bootable             = true
-  zone_identifier      = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "2654f8c3-cc6c-42ec-af13-d30c23829dc3"
-		name = "e835bf12-200f-4827-a0aa-28102f02a99c"
+  project_id  = "886e0e4b-fc16-4bdb-b9d5-eb0b1d643454"
+  name        = "2f20b7c6-f9ec-4f60-bef6-4ba4cb9b8466"
+  description = "6098d640-6df9-4fd2-bd6d-0ffdccfc4e19"
+  size        = 1229413371
+  readonly    = false
+  shared      = true
+  encrypted   = false
+  bootable    = true
+
+  zone_identifier = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "c30803d0-618f-4a84-a1a5-a4ca0b44f740"
+    name = "269528d6-3089-4fb1-b8a6-3b2a86ea8ce4"
   }
+
   disk_type_identifier = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "21e6127a-720e-4d1e-964d-717d0188ffce"
-		name = "4b391bba-b98d-4fa8-92c1-173911260185"
+    # Нужно заполнить одно из значений - id, name.
+    id   = "4d726d08-2d59-430a-8eef-08c68358cff0"
+    name = "5f4b6a77-fe63-4c9d-b0e8-4d1e22784f26"
   }
-  name                 = "26621914-d504-4dfe-9efc-ea973ac6dff2"
-  size                 = 1119648060
+  image_id = "cfde685a-8c94-4072-9e30-c48dd95b5879"
 }
 ```
 

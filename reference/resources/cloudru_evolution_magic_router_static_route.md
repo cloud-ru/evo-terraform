@@ -1,4 +1,5 @@
-# cloudru_evolution_magic_router_static_route
+
+# cloudru_evolution_magic_router_static_route (Resource)
 
 
 
@@ -6,18 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
-  next_hop_vpc          = {
-		az_name = "8a8ddad5-0780-4c76-aae6-7a522713d541"
-		vpc_connection_id = "56c8d35c-b35b-467d-9b45-f23b8008d900"
+  magic_router_id = "45eb5df5-60f2-4ad3-9751-2af70ec9018a"
+  subnet          = "de938503-49d2-4dff-91cf-6bf9d88008e2"
+  description     = "9701726d-2621-4866-8f4e-4cc954761b6d"
+
+  next_hop_vpc = {
+    az_name           = "b128d540-bada-4b1e-827a-3e88646baca6"
+    vpc_connection_id = "d325a73e-85cc-4c73-b58f-8c7ace0479ad"
   }
-  next_hop_magic_router = {
-		az_name = "abc9bf6c-f2a5-470b-abe2-67905f3a47a5"
-		magic_router_connection_id = "aa7a8b6c-ae51-402e-97fd-a7bb97569da0"
-  }
-  magic_router_id       = "b11882a1-2632-4199-a82f-464d65f5c96a"
-  description           = "f1abae5c-88a5-40f6-87b5-cff259fee342"
-  vpc_connection_id     = "97fb3a9b-d66e-47fc-a6dc-fb06e4bcdc38"
-  subnet                = "b3dd231d-d5da-41ec-be79-32c5127a5ca0"
 }
 ```
 

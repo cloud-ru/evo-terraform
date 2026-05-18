@@ -1,4 +1,5 @@
-# cloudru_evolution_magic_router_magic_router_connection_collection
+
+# cloudru_evolution_magic_router_magic_router_connection_collection (Data Source)
 
 
 
@@ -6,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_magic_router_magic_router_connection_collection" "datasource_magic_router_connection" {
-  project_id      = "da64dfa8-9533-4213-8a69-2e1cb9d3e96f"
-  magic_router_id = "3d7ecae4-1403-446a-bc54-e561543f402f"
-  page_size       = 1968017903
+  page_size       = 1643168998
+  project_id      = "d008da04-0a14-41d5-a407-e6862e8e4c88"
+  magic_router_id = "61e53b3a-49e1-4b56-bfee-979fb615e5c9"
 }
 
 output "data-magic_router_connection" {

@@ -1,4 +1,5 @@
-# cloudru_evolution_iam_permission
+
+# cloudru_evolution_iam_permission (Resource)
 
 
 
@@ -6,14 +7,15 @@
 
 ```terraform
 resource "cloudru_evolution_iam_permission" "resource_permission" {
+  resource_id = "6cfc9d2d-da4c-4b0e-a4aa-92b69beea8d4"
+  subject_id  = "d20de92a-4e22-46de-8d89-4add8eccc559"
+  expires_at  = "Mon, 18 May 2026 15:40:47 UTC"
+
   role_identifier = {
-		# Нужно заполнить одно из значений - role_name, role_id.
-		role_name = "b6600265-e446-432c-9e1d-653d5fa89086"
-		role_id = "d2dcdff5-b76e-4d6d-bd85-6edd4484eece"
+    # Нужно заполнить одно из значений - role_name, role_id.
+    role_name = "4f5edcb3-7abc-455b-b627-8e175979d210"
+    role_id   = "acd6ec4a-6d2a-4089-81bd-757b0962b50e"
   }
-  expires_at      = "Tue, 31 Mar 2026 14:54:47 UTC"
-  resource_id     = "1ffcc224-e8ae-42a5-bfdf-8ff3e789195b"
-  subject_id      = "efc30090-8fd8-4c41-9c65-e2f72df7788e"
 }
 ```
 
