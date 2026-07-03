@@ -7,25 +7,23 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  project_id      = "4df86f3f-4a53-4b12-b254-98387785eaf6"
-  name            = "1904f16d-07a9-4428-a439-bb90a6edd890"
-  description     = "395cd358-2f18-4bd0-9c4f-67c2f7e09721"
-  vpc_id          = "07816271-6662-4040-a072-fb0663104ea4"
-  default         = true
-  subnet_address  = "c2d8843b-7b70-4cb7-b21c-3338e39f2335"
-  routed_network  = true
-  default_gateway = "aa01babf-2299-4632-a474-10ca94ba13ed"
-
-  dns_servers = {
-    value = ["f0d5075d-79b3-4ac8-b92d-ac80f0eb74b6", "7bc4105b-bb6b-44b6-a595-58d7029a48f1", "9d93c0d5-39b6-4968-a33c-5bc44fa0698b", "c751c6d4-07be-40f3-ba46-2969591cf4b1", "24c8a610-4448-41d7-b359-cccd07156249", "21262acf-e8e2-4fa2-a782-01ae9bc060cb", "36bed6a7-a398-455f-b5a7-85a40f54d4c0", "cb824c31-aaf8-48f7-bf77-f4d2345048f2", "a1fc6b1f-b9de-471c-bbdf-d37988923d3a", "2412c1a0-5414-4e24-b9e9-76e5ed124b16"]
-  }
-
-  zone_identifier = {
+  project_id = "a91333fa-2939-408c-b3ee-34bd5eac4a97"
+  zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "6c6ffb78-1958-4a1c-81a0-3e9d0608fad6"
-    name = "031c2ab2-dc2f-43de-b84f-f300ae36aad3"
+    id   = "98b01f01-e25c-4242-91fe-135f8b2f6605"
+    name = "fee60dd5-fc11-4037-8f8a-498201672ffe"
   }
-  prefix_length = 1163662981
+  name            = "5592206b-d6b5-4aa3-a8ff-0983ddc2739d"
+  description     = "081d27b0-57a0-40f4-893d-67e600c7f660"
+  vpc_id          = "ab358605-c2fb-42f8-b9e4-f5d1609e2673"
+  default         = true
+  subnet_address  = "6f317c13-32ef-47af-b967-86ce1a93bd14"
+  routed_network  = false
+  default_gateway = "5d877b46-ad9b-43d3-bc0a-0e07a0e4d60c"
+  dns_servers = {
+    value = ["4b64b724-a3f8-442e-904a-3794aba3c797", "5e1c3e78-2fc8-45df-8e5c-11df5a543398", "f83e7d4a-5762-4215-8086-d14dabc90017", "045fdf52-f36f-47ea-8256-fcaf60544078", "81ac6e89-75c6-4b95-a3ac-714b88017c1f", "9526d9e2-f3b4-40f1-852e-ad1625d24503", "83862415-f037-407d-8f2a-4b2b40081877", "06a582cd-60ae-42fc-9cdc-ee3129b14118", "125805c9-c94b-45a1-a4c7-26effe0ef9b1", "eb615838-a2d4-46e9-8047-cf56107b7b1c"]
+  }
+  prefix_length = 1307396155
 }
 ```
 
@@ -36,7 +34,7 @@ resource "cloudru_evolution_compute_subnet" "resource_subnet" {
 
 - `name` (String) Название подсети.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
@@ -55,15 +53,18 @@ resource "cloudru_evolution_compute_subnet" "resource_subnet" {
 - `id` (String) Идентификатор подсети.
 - `status` (String) Статус подсети.
 - `updated_at` (String) Дата и время изменения подсети.
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
+
+Read-Only:
+
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--dns_servers"></a>
@@ -72,13 +73,3 @@ Optional:
 Optional:
 
 - `value` (List of String) The repeated string value.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

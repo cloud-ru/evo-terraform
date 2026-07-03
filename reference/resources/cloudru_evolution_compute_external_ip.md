@@ -7,16 +7,18 @@
 
 ```terraform
 resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
-  project_id  = "abca3992-63e1-4bb0-bd4c-487ac08fd3c9"
-  name        = "cfab0bc2-33a1-4f6d-9d6d-95436712df8d"
-  description = "4f8aa57e-ebd1-431b-bc90-9223de48f5b8"
-
-  zone_identifier = {
+  project_id = "dc98c6de-6e75-42c8-b0b6-c2dc44d3e938"
+  zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "bd07f927-c467-4f8b-b2ff-dc4ed8ead77e"
-    name = "4ed0026f-1596-4b49-bf65-67343f6e09b4"
+    id   = "cd013a45-3d2f-4017-96dc-f6f13c5ad36e"
+    name = "7d4da5a1-7f4e-49dc-8097-deeb4300fead"
   }
-  interface_id = "6fe1db02-d213-4e5f-b677-37a74b5bbb39"
+  name        = "5902c9db-f2d9-4aff-858c-028f05572d90"
+  description = "15ec9993-6381-4a83-af1c-dcd4744b8e47"
+  # Нужно заполнить одно из значений - interface
+  network_interface = {
+    id = "9248c978-1e98-4fb1-9be8-538e4cf03702"
+  }
 }
 ```
 
@@ -31,38 +33,43 @@ resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
 ### Optional
 
 - `description` (String) Описание публичного IP-адреса.
-- `interface_id` (String) Идентификатор сетевого интерфейса.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `network_interface` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interface))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Read-Only
 
 - `created_at` (String) Дата и время создания публичного IP-адреса.
 - `id` (String) Идентификатор публичного IP-адреса.
-- `interface` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--interface))
 - `ip_address` (String) IP-адрес.
 - `nat_gateway` (Attributes) Параметры SNAT-шлюза. (see [below for nested schema](#nestedatt--nat_gateway))
 - `status` (String) Статус публичного IP-адреса.
 - `updated_at` (String) Дата и время изменения публичного IP-адреса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--network_interface"></a>
+### Nested Schema for `network_interface`
+
+Optional:
+
+- `id` (String) Идентификатор сетевого интерфейса.
+
+Read-Only:
+
+- `name` (String) Название сетевого интерфейса.
+- `status` (String) Статус сетевого интерфейса.
+
+
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
 
-
-<a id="nestedatt--interface"></a>
-### Nested Schema for `interface`
-
 Read-Only:
 
-- `id` (String) Идентификатор сетевого интерфейса.
-- `name` (String) Название сетевого интерфейса.
-- `status` (String) Статус сетевого интерфейса.
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--nat_gateway"></a>
@@ -83,13 +90,3 @@ Read-Only:
 - `id` (String) Идентификатор виртуальной машины.
 - `name` (String) Название виртуальной машины.
 - `status` (String) Статус виртуальной машины.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

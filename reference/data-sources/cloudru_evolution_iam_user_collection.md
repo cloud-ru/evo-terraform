@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_iam_user_collection" "datasource_user" {
-  customer_id = "33dfedb1-1194-4167-9878-dce67cb28b2d"
-  filter      = "1929ca67-d7d4-4047-91f9-1c09611660a5"
-  page_size   = 6393662481568394915
+  customer_id = "5ad2db5a-cef5-499e-9765-b035e655eed2"
+  filter      = "ccc7c98f-db88-41ce-9278-5b42deb6ef46"
+  page_size   = 4978326120350610051
 }
 
 output "data-user" {
@@ -26,7 +26,7 @@ output "data-user" {
 
 ### Optional
 
-- `filter` (String) Filter - фильтрующее выражение. email=user_email@test.com - опциональный фильтр по email адресу (поддерживается частичный поиск: email=*ail@test*). account_type=USER_ACCOUNT_TYPE_LOCAL - опциональный фильтр по типу аккаунта. Объединение фильтров: только AND оператор поддерживается. Пример: email=user_email@test.com AND account_type=USER_ACCOUNT_TYPE_FEDERATED.
+- `filter` (String) Filter - фильтрующее выражение. email=user_email@test.com - фильтр по email (поддерживается частичный поиск). account_type=USER_ACCOUNT_TYPE_LOCAL - фильтр по типу учетной записи. Объединение фильтров: поддерживается только оператор AND.
 - `page_size` (Number) PageSize - количество элементов на странице.
 
 ### Read-Only
@@ -38,12 +38,9 @@ output "data-user" {
 
 Read-Only:
 
-- `account_type` (String) AccountType - тип аккаунта пользователя.
-- `created_at` (String) CreatedAt - дата создания пользователя.
-- `email` (String) Email - email адрес пользователя.
+- `account_type` (String) AccountType - тип учетной записи пользователя.
+- `created_at` (String) CreatedAt - время создания пользователя.
+- `email` (String) Email - электронная почта пользователя.
 - `enabled` (Boolean) Enabled - флаг активности пользователя.
-- `first_name` (String) FirstName - имя пользователя.
 - `id` (String) ID - идентификатор пользователя.
-- `last_name` (String) LastName - фамилия пользователя.
-- `middle_name` (String) MiddleName - отчество пользователя.
-- `updated_at` (String) UpdatedAt - дата обновления пользователя.
+- `updated_at` (String) UpdatedAt - время последнего обновления пользователя.

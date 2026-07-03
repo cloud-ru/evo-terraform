@@ -12,7 +12,6 @@ resource "cloudru_evolution_artifact_registry_registry" "resource_registry" {
   # DEBIAN, RPM, GENERIC
   registry_type               = "DOCKER"
   retention_policy_is_enabled = true
-
   retention_policy = {
     only_untagged = false
     action        = "DELETE"

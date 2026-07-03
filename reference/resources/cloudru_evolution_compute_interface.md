@@ -7,50 +7,42 @@
 
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  project_id                 = "1d2f6231-e7b8-4c01-be66-347e71c71709"
-  name                       = "30030a2d-85f8-4256-86e3-3d59fc96ecfc"
-  description                = "8376aee5-7732-4d5f-afbe-6ebf359b4429"
-  ip_address                 = "8dbf7114-dd6e-42af-9295-f27a081caca3"
-  interface_security_enabled = false
-
+  project_id = "f32ce910-3b6b-4687-b67b-551688dbd596"
+  zone = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "1ab255dc-2e7a-4484-b4b2-72821ec770bb"
+    name = "591e736c-1dec-4644-9722-550b99d4ee34"
+  }
+  name                       = "404aa452-fefa-4ecd-97e4-7b8a85596ad1"
+  description                = "7e076fd1-a75c-4e1d-bda5-386aad6f351c"
+  ip_address                 = "7e9c2358-5847-49ef-93a3-5b746044f6c0"
+  interface_security_enabled = true
+  # Нужно заполнить одно из значений - new_external_ip, attach_external_ip
+  attach_external_ip = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "3546a7d5-25a3-4bfc-8c26-a067e4d16089"
+    name = "b2adad17-d8c5-439c-a6be-2a7fa97312ab"
+  }
   allowed_address_pairs = {
     value = [{
-      ip_address  = "13c47e9b-cc55-460c-baed-bf3c1ab66adb"
-      mac_address = "ab054010-0ad8-4386-9da6-66c0e33563ad"
+      ip_address  = "3be17319-5903-4164-b264-298d1707c051"
+      mac_address = "78ffbee1-6377-4148-ab07-3cd1910f6ef4"
     }]
-
   }
   # Варианты значений параметра type:
   # INTERFACE_TYPE_REGULAR, INTERFACE_TYPE_SYSTEM, INTERFACE_TYPE_SERVICE, INTERFACE_TYPE_GATEWAY, INTERFACE_TYPE_FIP, INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_VIP
-  type = "INTERFACE_TYPE_DIRECT_IP"
-
-  zone_identifier = {
+  type = "INTERFACE_TYPE_FIP"
+  vm = {
+    id = "cb47cfb0-6801-40cc-9e8d-fc9cdfaf870f"
+  }
+  subnet = {
+    id = "839073bf-e901-4744-91f9-0c5c555d068e"
+  }
+  security_groups = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "ab645597-220d-4928-9dc0-c489f620b600"
-    name = "61317660-f06a-49f7-ba66-5230ddcfd153"
-  }
-
-  external_ip_specs = {
-    # Нужно заполнить одно из значений - new_external_ip, attach_external_ip.
-    new_external_ip = false
-
-    attach_external_ip = {
-      # Нужно заполнить одно из значений - id, name.
-      id   = "91f9c81a-2979-4c04-83bb-21277c7e22ff"
-      name = "0591ab61-9313-41f6-b6ca-e0d3816c4936"
-    }
-  }
-
-  security_groups_identifiers = {
-    value = [{
-      # Нужно заполнить одно из значений - id, name.
-      id   = "459ae66e-7bcb-4353-97cc-6ead7101dc03"
-      name = "22073719-e159-4e5e-b0ef-6c43fc93aa73"
-    }]
-
-  }
-  vm_id     = "1e5aa49d-a54e-4098-a943-4723c15a7026"
-  subnet_id = "254ed25a-3e4a-4900-92e4-028183c2c6ee"
+    id   = "37fee44e-21bd-4fdd-9ca2-82663cbc61b2"
+    name = "d3cbeb6f-60d4-42bb-b0fd-ed0d372024e9"
+  }]
 }
 ```
 
@@ -61,40 +53,78 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 
 - `name` (String) Название интерфейса.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `security_groups` (Attributes List) Параметры групп безопасности. (see [below for nested schema](#nestedatt--security_groups))
+- `subnet` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--subnet))
+- `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
 - `allowed_address_pairs` (Attributes) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--allowed_address_pairs))
+- `attach_external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--attach_external_ip))
 - `description` (String) Описание интерфейса.
-- `external_ip_specs` (Attributes) Параметры публичного IP-адреса, который будет назначен сетевому интерфейсу. (see [below for nested schema](#nestedatt--external_ip_specs))
 - `interface_security_enabled` (Boolean) Возможность добавить сетевой интерфейс в группу безопасности: true — можно, false — нельзя.
 - `ip_address` (String) IP-адрес.
-- `security_groups_identifiers` (Attributes) Параметры группы безопасности. (see [below for nested schema](#nestedatt--security_groups_identifiers))
-- `subnet_id` (String) Идентификатор подсети.
 - `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы:DIRECT_IP, REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
-- `vm_id` (String) Идентификатор виртуальной машины.
 
 ### Read-Only
 
 - `created_at` (String) Дата и время создания сетевого интерфейса.
-- `external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--external_ip))
 - `id` (String) Идентификатор интерфейса.
 - `primary` (Boolean) Признак основного сетевого интерфейса.
-- `security_groups` (Attributes List) Параметры групп безопасности. (see [below for nested schema](#nestedatt--security_groups))
 - `status` (String) Статус интерфейса.
-- `subnet` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--subnet))
 - `updated_at` (String) Дата и время изменения сетевого интерфейса.
-- `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--security_groups"></a>
+### Nested Schema for `security_groups`
+
+Optional:
+
+- `id` (String) Идентификатор группы безопасности.
+- `name` (String) Название группы безопасности.
+
+Read-Only:
+
+- `status` (String) Статус группы безопасности.
+
+
+<a id="nestedatt--subnet"></a>
+### Nested Schema for `subnet`
+
+Optional:
+
+- `id` (String) Идентификатор подсети.
+
+Read-Only:
+
+- `name` (String) Название подсети.
+- `status` (String) Статус подсети.
+
+
+<a id="nestedatt--vm"></a>
+### Nested Schema for `vm`
+
+Optional:
+
+- `id` (String) Идентификатор виртуальной машины.
+
+Read-Only:
+
+- `name` (String) Название виртуальной машины.
+- `status` (String) Статус виртуальной машины.
+
+
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
+
+Read-Only:
+
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--allowed_address_pairs"></a>
@@ -117,87 +147,15 @@ Optional:
 
 
 
-<a id="nestedatt--external_ip_specs"></a>
-### Nested Schema for `external_ip_specs`
-
-Optional:
-
-- `attach_external_ip` (Attributes) Прикрепляет существующий публичный IP-адрес к сетевому интерфейсу. Требуется указать идентификатор или название существующего IP-адреса. (see [below for nested schema](#nestedatt--external_ip_specs--attach_external_ip))
-- `new_external_ip` (Boolean) Если выбрано true, сетевому интерфейсу будет назначен новый публичный IP-адрес.
-
-<a id="nestedatt--external_ip_specs--attach_external_ip"></a>
-### Nested Schema for `external_ip_specs.attach_external_ip`
+<a id="nestedatt--attach_external_ip"></a>
+### Nested Schema for `attach_external_ip`
 
 Optional:
 
 - `id` (String) Идентификатор публичного IP-адреса.
 - `name` (String) Название публичного IP-адреса.
 
-
-
-<a id="nestedatt--security_groups_identifiers"></a>
-### Nested Schema for `security_groups_identifiers`
-
-Required:
-
-- `value` (Attributes List) Идентификатор или название группы безопасности. (see [below for nested schema](#nestedatt--security_groups_identifiers--value))
-
-<a id="nestedatt--security_groups_identifiers--value"></a>
-### Nested Schema for `security_groups_identifiers.value`
-
-Optional:
-
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
-
-
-
-<a id="nestedatt--external_ip"></a>
-### Nested Schema for `external_ip`
-
 Read-Only:
 
-- `id` (String) Идентификатор публичного IP-адреса.
 - `ip_address` (String) Публичный IP-адрес.
-- `name` (String) Название публичного IP-адреса.
 - `status` (String) Статус публичного IP-адреса.
-
-
-<a id="nestedatt--security_groups"></a>
-### Nested Schema for `security_groups`
-
-Read-Only:
-
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
-- `status` (String) Статус группы безопасности.
-
-
-<a id="nestedatt--subnet"></a>
-### Nested Schema for `subnet`
-
-Read-Only:
-
-- `id` (String) Идентификатор подсети.
-- `name` (String) Название подсети.
-- `status` (String) Статус подсети.
-
-
-<a id="nestedatt--vm"></a>
-### Nested Schema for `vm`
-
-Read-Only:
-
-- `id` (String) Идентификатор виртуальной машины.
-- `name` (String) Название виртуальной машины.
-- `status` (String) Статус виртуальной машины.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

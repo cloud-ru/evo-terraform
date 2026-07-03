@@ -7,12 +7,12 @@
 
 ```terraform
 resource "cloudru_evolution_compute_placement_group" "resource_placement_group" {
-  project_id  = "877ebbf2-5422-49d7-a897-4ab61c750bc1"
-  name        = "96c86469-ada1-46ee-b2a5-6d9eb9ca5294"
-  description = "c207c0e3-b715-4214-8be7-8ce486e33009"
+  project_id  = "a48d1f7b-82a4-4bde-a88f-1dce6e55eb36"
+  name        = "0b58df1a-37c4-4c2b-bf82-e857a9a2c06f"
+  description = "d5de6856-ab68-4fca-83a5-880143c5b16a"
   # Варианты значений параметра policy:
   # PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY, PLACEMENT_GROUP_POLICY_ANTI_AFFINITY
-  policy = "PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY"
+  policy = "PLACEMENT_GROUP_POLICY_ANTI_AFFINITY"
 }
 ```
 

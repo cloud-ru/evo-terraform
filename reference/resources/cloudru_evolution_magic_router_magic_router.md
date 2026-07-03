@@ -7,16 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_magic_router" "resource_magic_router" {
-  project_id  = "a66b9794-822c-4866-9641-8ddeb9793e8e"
-  name        = "91a59ddb-3276-4507-a909-87b081694120"
-  description = "890e3ab3-3bfd-447a-8fb2-570c80d36a7d"
-  tag_ids     = ["34c87ae5-b816-4e2b-8ae2-415b5e14d962", "6e9ce778-ed1d-4ced-accd-63d8aeb1f4e1", "90ea4d0a-92fb-497f-890d-f4522504fb7b", "88ba5bb5-6f6d-4f05-89c8-6a5260b28732", "c390247f-3949-434c-ba86-9111399c97c1", "5e7cd7a6-132a-4233-b804-189d71388c56", "f246ffef-06d0-4a98-ac01-347b3d056752", "dc33ae0a-98f9-4275-bb38-21b622a65f46", "d544fe97-6ff2-4b55-91c0-dc3333371cf7", "1bb78deb-7048-49e6-adb2-81ce28293365"]
-
+  project_id  = "dab787a4-be05-46d3-a335-3ba09f6b805b"
+  name        = "346b6d51-fea1-4232-9e32-58eeb281edff"
+  description = "bbfdf155-5177-42e5-a6d9-077b1df0354b"
+  tag_ids     = ["21e2c083-2dd7-4d7b-920a-46132a2639d5", "05508f20-7843-4277-9b46-b953c472d0aa", "2f6d69fe-b7b5-44e7-8e91-54fcbcce36ce", "7b858dc2-01e2-4ff4-a52b-e86579f2d39c", "b1964dc8-a8a5-4d37-882d-5aa9b80d9f12", "e7e13a73-3f16-48bf-a88c-6d4ffee1c2f8", "3afa1b9c-8c78-496e-86fe-4c937b1fabb8", "db4a2a28-98f1-4041-b797-2fe7f210d470", "bec36ca4-7ae8-420b-9fdf-3dae68d35305", "991c7b71-7890-406f-bfc2-abf8af3afb14"]
   vpc_connections = [{
-    vpc_id = "99286a1d-583c-4beb-b555-9920fa50868c"
-    name   = "b2eb66ea-b328-4f9b-8c93-1abc44b4f935"
+    vpc_id = "8c3b9ede-8a4b-4780-b5d2-ae91652ce1ec"
+    name   = "c7137650-8477-45ef-8b2f-a854cadb83c9"
   }]
-
 }
 ```
 

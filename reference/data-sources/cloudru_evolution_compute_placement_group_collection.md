@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_placement_group_collection" "datasource_placement_group" {
-  project_id = "82d234d8-d990-4cf9-824e-11fd9ff44d15"
-  page_size  = 1892377523982779347
-  filter     = "0cabe3e0-9bf3-4db2-9158-ea7a6209bf56"
-  order_by   = "c60605fb-2c17-4bf9-bfc6-a6b5b3254792"
+  project_id = "b9cc0757-ddb5-4b4c-9a20-6618be064851"
+  page_size  = 3032944570124018784
+  filter     = "fd4495f7-4a24-410b-bf1e-ade91dee6ce6"
+  order_by   = "7f386ac9-a6ce-4ce6-9b44-303b192ffea2"
 }
 
 output "data-placement_group" {

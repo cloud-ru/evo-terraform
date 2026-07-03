@@ -7,16 +7,15 @@
 
 ```terraform
 resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
-  project_id  = "8f7f12f8-3946-469f-aa1a-494ba260d737"
-  name        = "9c197fb8-6927-4941-8cdb-09541552fd57"
-  description = "cddf7a0e-9fc6-48e1-a5c3-79809289c5ef"
-  vpc_id      = "2f9d63cf-394d-4eb8-8c5e-22fde91b8bb0"
-
-  zone_identifier = {
+  project_id = "46ea9e05-077b-4b3b-8bf2-3890fba3a0e0"
+  zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "ec36e4fb-7ae2-43d1-bc9c-c1c16c336454"
-    name = "3c2cf587-eba4-40af-bf9d-9c70d01549d8"
+    id   = "4ff7d409-876a-4614-900d-c00377972a3e"
+    name = "a561f24f-acb6-454d-9284-c1ec8f9919d6"
   }
+  name        = "667e2d80-8294-467c-97c0-28aca61518e6"
+  description = "b4df928b-e9ff-432c-ad30-5a4f4b1ccee3"
+  vpc_id      = "71c39217-f3f8-4ef6-83bd-e113ea499a7b"
 }
 ```
 
@@ -27,7 +26,7 @@ resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
 
 - `name` (String) Название SNAT-шлюза.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
@@ -41,15 +40,18 @@ resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
 - `id` (String) Идентификатор SNAT-шлюза.
 - `status` (String) Статус SNAT-шлюза.
 - `updated_at` (String) Дата и время изменения SNAT-шлюза.
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
+
+Read-Only:
+
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--external_ip"></a>
@@ -61,13 +63,3 @@ Read-Only:
 - `ip_address` (String) Публичный IP-адрес.
 - `name` (String) Название публичного IP-адреса.
 - `status` (String) Статус публичного IP-адреса.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

@@ -7,24 +7,20 @@
 
 ```terraform
 resource "cloudru_evolution_compute_image" "resource_image" {
-  project_id         = "ed5dcfb7-401f-44f4-8bef-2581bd024f5a"
-  name               = "c4b18f72-d9cd-44d7-b44c-7f40f9290fb7"
-  description        = "346d0b4c-a653-4630-8679-f132ff4dfd03"
-  display_name       = "da49a44c-230e-482a-b5d2-387e5d851ec6"
-  icon               = "802f85a9-5232-417a-acbc-1b096b13adbb"
-  min_cpu            = 707495593
-  min_ram            = 1012236560
-  min_disk           = 478196030
-  user_data_template = "c8d013ec-d50d-469e-8d09-e4d7d8038c62"
-
-  zone_identifiers = {
-    value = [{
-      # Нужно заполнить одно из значений - id, name.
-      id   = "c4c7fb3e-fe88-41a3-baa7-2e8b16aff55d"
-      name = "8c9806d3-3345-4465-9d6f-f1debe589496"
-    }]
-
-  }
+  project_id = "07677660-d887-456c-b441-7c237957b016"
+  zones = [{
+    # Нужно заполнить одно из значений - id, name.
+    id   = "200aeb2f-ed52-4bf3-b2ff-d1e3c5b177fb"
+    name = "2dc4d32f-c59b-4cde-8f88-d267007a6079"
+  }]
+  name               = "54c12af8-9326-4106-954e-61866965c19c"
+  description        = "7abaefec-dd4a-4d90-b817-2497bf6dfd0c"
+  display_name       = "16b97cfe-b0e6-4b4e-ad2a-6fc59e298b2b"
+  icon               = "df3ffad0-51a9-4bb2-a8bf-b60477f29a0b"
+  min_cpu            = 1291666341
+  min_ram            = 807201402
+  min_disk           = 960301947
+  user_data_template = "181cd74f-da5f-45df-a84a-057f22971aab"
 }
 ```
 
@@ -35,7 +31,7 @@ resource "cloudru_evolution_compute_image" "resource_image" {
 
 - `name` (String) Название образа.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifiers` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifiers))
+- `zones` (Attributes List) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zones))
 
 ### Optional
 
@@ -54,23 +50,18 @@ resource "cloudru_evolution_compute_image" "resource_image" {
 - `image_metadata` (Attributes List) Метаданные образа. (see [below for nested schema](#nestedatt--image_metadata))
 - `type` (String) Тип образа.
 - `updated_at` (String) Дата и время изменения образа.
-- `zones` (Attributes List) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zones))
 
-<a id="nestedatt--zone_identifiers"></a>
-### Nested Schema for `zone_identifiers`
-
-Required:
-
-- `value` (Attributes List) Идентификатор или название зоны доступности. (see [below for nested schema](#nestedatt--zone_identifiers--value))
-
-<a id="nestedatt--zone_identifiers--value"></a>
-### Nested Schema for `zone_identifiers.value`
+<a id="nestedatt--zones"></a>
+### Nested Schema for `zones`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
 
+Read-Only:
+
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--image_metadata"></a>
@@ -89,13 +80,3 @@ Read-Only:
 - `mandatory_group_display_name` (String) Отображаемое имя обязательной группы.
 - `name` (String) Название метаданных.
 - `sensitive` (Boolean) Флаг, указывающий, являются ли данные конфиденциальными.
-
-
-<a id="nestedatt--zones"></a>
-### Nested Schema for `zones`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

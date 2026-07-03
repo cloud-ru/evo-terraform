@@ -7,7 +7,7 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group_rule" "resource_security_group_rule" {
-  description = "ce607488-d484-4d64-b477-eb57878438c9"
+  description = "0ef688c8-6336-422d-8306-9ff16086238d"
   # Варианты значений параметра direction:
   # TRAFFIC_DIRECTION_INGRESS, TRAFFIC_DIRECTION_EGRESS
   direction = "TRAFFIC_DIRECTION_EGRESS"
@@ -16,16 +16,16 @@ resource "cloudru_evolution_compute_security_group_rule" "resource_security_grou
   ether_type = "ETHER_TYPE_IPV6"
   # Варианты значений параметра ip_protocol:
   # IP_PROTOCOL_TCP, IP_PROTOCOL_UDP, IP_PROTOCOL_ICMP, IP_PROTOCOL_ANY
-  ip_protocol       = "IP_PROTOCOL_ICMP"
-  port_range        = "f7e81c5b-5428-4b37-92de-4c8af39d9055"
-  remote_ip_prefix  = "3e01339e-1769-4d7a-a3cf-ecff4a4034f6"
-  security_group_id = "a9fef2cd-ac17-45b3-8858-80fc162531c1"
-
-  remote_security_group_identifier = {
+  ip_protocol      = "IP_PROTOCOL_TCP"
+  port_range       = "9d400786-4f37-435f-8901-95ec61a01896"
+  remote_ip_prefix = "7963adc0-b061-4d59-b09a-a67903ea56e3"
+  # Нужно заполнить одно из значений - remote_security_group
+  remote_security_group = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "f909e617-9b96-4c34-9e55-6d2bbbe33d2b"
-    name = "678233fa-ab06-47a2-9a2a-3fc795cd6f87"
+    id   = "28635908-88ae-4898-bc47-40b388729893"
+    name = "db90d6c7-7854-41f7-870a-5082f6053d6b"
   }
+  security_group_id = "89a79ba1-ebd1-4f99-b603-5d26cb39cb83"
 }
 ```
 
@@ -44,31 +44,24 @@ resource "cloudru_evolution_compute_security_group_rule" "resource_security_grou
 
 - `description` (String) Описание правила.
 - `remote_ip_prefix` (String) Префикс IP-адреса.
-- `remote_security_group_identifier` (Attributes) Параметры группы безопасности. Примечание: Это поле не может быть указано вместе с remote_ip_prefix. (see [below for nested schema](#nestedatt--remote_security_group_identifier))
+- `remote_security_group` (Attributes) Параметры группы безопасности. (see [below for nested schema](#nestedatt--remote_security_group))
 
 ### Read-Only
 
 - `id` (String) Идентификатор правила.
-- `remote_security_group` (Attributes) Параметры группы безопасности. (see [below for nested schema](#nestedatt--remote_security_group))
 - `security_group` (Attributes) Параметры группы безопасности. (see [below for nested schema](#nestedatt--security_group))
 - `status` (String) Статус правила группы безопасности.
 
-<a id="nestedatt--remote_security_group_identifier"></a>
-### Nested Schema for `remote_security_group_identifier`
+<a id="nestedatt--remote_security_group"></a>
+### Nested Schema for `remote_security_group`
 
 Optional:
 
 - `id` (String) Идентификатор группы безопасности.
 - `name` (String) Название группы безопасности.
 
-
-<a id="nestedatt--remote_security_group"></a>
-### Nested Schema for `remote_security_group`
-
 Read-Only:
 
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
 - `status` (String) Статус группы безопасности.
 
 

@@ -7,13 +7,12 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
-  magic_router_id = "45eb5df5-60f2-4ad3-9751-2af70ec9018a"
-  subnet          = "de938503-49d2-4dff-91cf-6bf9d88008e2"
-  description     = "9701726d-2621-4866-8f4e-4cc954761b6d"
-
+  magic_router_id = "8c87199f-59cd-4a56-85c7-bc0bf0c4a237"
+  subnet          = "d8ec33d9-88f1-4de8-b8b4-ffaa5e3e2688"
+  description     = "0558d2e6-b4c2-4fa9-ba9a-bff08b414851"
   next_hop_vpc = {
-    az_name           = "b128d540-bada-4b1e-827a-3e88646baca6"
-    vpc_connection_id = "d325a73e-85cc-4c73-b58f-8c7ace0479ad"
+    az_name           = "f271eb5d-172f-48ad-b4b8-d39d7e0df2c0"
+    vpc_connection_id = "63681f38-3298-424a-9918-fef9db944970"
   }
 }
 ```

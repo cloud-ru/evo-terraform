@@ -7,41 +7,37 @@
 
 ```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
-  project_id          = "34b3ca5b-1b31-4f16-a59c-adc858910272"
-  name                = "eb6ae6ce-473c-4f1d-8715-d4aa9112c231"
-  description         = "bee8db2c-543a-482a-a040-d0ad8fe9e18b"
-
-  zone_identifier     = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "52a3c6f9-b257-4fe8-84da-ebec9d9d7965"
-		name = "9a226a90-b054-4170-90be-2aac2d617321"
+  project_id = "f4770b30-eb30-431a-b73a-1e35001c006c"
+  zone = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "22822b5d-6b9c-4f59-8f1d-6e0f3a0abe96"
+    name = "0ea335b9-0676-42fa-bbfc-5c48979fc320"
   }
-  cloud_init_userdata = "a2cf0725-de50-47de-a74e-69618385fda0"
-
-  flavor_identifier   = {
-		# Нужно заполнить одно из значений - id, name.
-		id = "c65d9df1-ddd5-4303-9900-23b49a73e310"
-		name = "10de86b4-5af0-446b-a654-5aea19e7ab64"
+  name        = "4a4b4cee-d185-4d08-83a4-6cb824452027"
+  description = "8e8525a5-4ef9-4b88-a773-f804478791b4"
+  # Нужно заполнить одно из значений - flavor
+  flavor = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "7c64c4fb-c5ea-4400-b110-f89ff711f42f"
+    name = "d67e3d23-58fe-413f-a836-dfca1c43afd3"
   }
-  placement_group_id  = "259c5fc0-1fe8-4726-8b43-bfaa67988d43"
-
-  network_interfaces  = [{
-		interface_id = "1a9fd796-8a66-44c3-a5a6-02232e2b8c96"
+  placement_group = {
+    id = "e95cf362-4403-4115-af24-adba21bf91c3"
+  }
+  network_interfaces = [{
+    id = "fd277920-a804-46d8-9ddc-135eecffd029"
   }]
-
-
-  disk_identifiers    = [{
-		disk_id = "ea531a57-bdaa-44c1-8bc1-0f8bc5181cdf"
+  disks = [{
+    id = "eda96e44-ced5-46ee-8a48-ec966ad57c1d"
   }]
-
-
-  image_metadata      = {
-	51c66f13-8267-47f8-a9e0-bd63b5c412f4 = {
-		# Нужно заполнить одно из значений - string_value, int_value, bool_value.
-		string_value = "c7eb7ea1-f3c9-45a5-8eff-54a1acfdabc7"
-		int_value = 946472683
-		bool_value = true
-  }}
+  cloud_init_userdata = "0c75de20-9b05-4003-addc-3dc469c36e00"
+  image_metadata = {
+    "3c1b284d-cec6-4a70-b6a8-55d2d761b399" = {
+      # Нужно заполнить одно из значений - string_value, int_value, bool_value.
+      string_value = "dc84c50c-6943-430e-b1fe-920a8bb25607"
+      int_value    = 795576918
+      bool_value   = true
+  } }
 }
 ```
 
@@ -50,41 +46,36 @@ resource "cloudru_evolution_compute_vm" "resource_vm" {
 
 ### Required
 
-- `flavor_identifier` (Attributes) Параметры флейвора. (see [below for nested schema](#nestedatt--flavor_identifier))
+- `flavor` (Attributes) Параметры флейвора. (see [below for nested schema](#nestedatt--flavor))
 - `name` (String) Название виртуальной машины.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
 - `cloud_init_userdata` (String) Поле для автоматической настройки виртуальной машины при запуске.
 - `description` (String) Описание виртуальной машины.
-- `disk_identifiers` (Attributes List) Параметры дисков. Первый диск в списке станет загрузочным для виртуальной машины. (see [below for nested schema](#nestedatt--disk_identifiers))
+- `disks` (Attributes List) Параметры диска. (see [below for nested schema](#nestedatt--disks))
 - `image_metadata` (Attributes Map) Метаданные образа. Для некоторых образов поле является обязательным. (see [below for nested schema](#nestedatt--image_metadata))
 - `network_interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces))
-- `placement_group_id` (String) Идентификатор группы размещения.
+- `placement_group` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--placement_group))
 
 ### Read-Only
 
 - `created_at` (String) Дата и время создания виртуальной машины.
-- `disks` (Attributes List) Параметры диска. (see [below for nested schema](#nestedatt--disks))
-- `flavor` (Attributes) Параметры флейвора. (see [below for nested schema](#nestedatt--flavor))
 - `guest_agent_state` (String) Статус гостевого агента.
 - `icon` (String) Значок виртуальной машины в формате SVG.
 - `id` (String) Идентификатор виртуальной машины.
-- `interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--interfaces))
 - `locked` (Boolean) Признак виртуальной машины, заблокированной для изменений.
 - `metadata_fields` (Attributes List) Метаданные виртуальной машины. (see [below for nested schema](#nestedatt--metadata_fields))
-- `placement_group` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--placement_group))
 - `remote_console_protocol` (String) Тип удаленной консоли.
 - `remote_console_url` (String) WebSocket URL виртуальной консоли.
 - `remote_console_ws` (String) WebSocket URL удаленной консоли.
 - `status` (String) Статус виртуальной машины.
 - `updated_at` (String) Дата и время изменения виртуальной машины.
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--flavor_identifier"></a>
-### Nested Schema for `flavor_identifier`
+<a id="nestedatt--flavor"></a>
+### Nested Schema for `flavor`
 
 Optional:
 
@@ -92,21 +83,32 @@ Optional:
 - `name` (String) Название флейвора.
 
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
 
+Read-Only:
 
-<a id="nestedatt--disk_identifiers"></a>
-### Nested Schema for `disk_identifiers`
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
+
+
+<a id="nestedatt--disks"></a>
+### Nested Schema for `disks`
 
 Optional:
 
-- `disk_id` (String) Идентификатор диска.
+- `id` (String) Идентификатор диска.
+
+Read-Only:
+
+- `image_id` (String) Параметры образа.
+- `name` (String) Название диска.
+- `primary` (Boolean) Признак загрузочного диска.
+- `status` (String) Статус диска.
 
 
 <a id="nestedatt--image_metadata"></a>
@@ -124,38 +126,24 @@ Optional:
 
 Optional:
 
-- `interface_id` (String) Идентификатор сетевого интерфейса.
-
-
-<a id="nestedatt--disks"></a>
-### Nested Schema for `disks`
-
-Read-Only:
-
-- `id` (String) Идентификатор диска.
-- `image_id` (String) Параметры образа.
-- `name` (String) Название диска.
-- `primary` (Boolean) Признак загрузочного диска.
-- `status` (String) Статус диска.
-
-
-<a id="nestedatt--flavor"></a>
-### Nested Schema for `flavor`
-
-Read-Only:
-
-- `id` (String) Идентификатор флейвора.
-- `name` (String) Название флейвора.
-
-
-<a id="nestedatt--interfaces"></a>
-### Nested Schema for `interfaces`
-
-Read-Only:
-
 - `id` (String) Идентификатор сетевого интерфейса.
+
+Read-Only:
+
 - `name` (String) Название сетевого интерфейса.
 - `status` (String) Статус сетевого интерфейса.
+
+
+<a id="nestedatt--placement_group"></a>
+### Nested Schema for `placement_group`
+
+Optional:
+
+- `id` (String) Идентификатор группы размещения.
+
+Read-Only:
+
+- `name` (String) Название группы размещения.
 
 
 <a id="nestedatt--metadata_fields"></a>
@@ -168,41 +156,3 @@ Read-Only:
 - `metadata_id` (String) Идентификатор метаданных.
 - `name` (String) Название.
 - `value` (String) Значение.
-
-
-<a id="nestedatt--placement_group"></a>
-### Nested Schema for `placement_group`
-
-Read-Only:
-
-- `id` (String) Идентификатор группы размещения.
-- `name` (String) Название группы размещения.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.
-
-<!-- additional info generated by protoc-gen-go-terraform -->
-### Image metadata
-
-Поля метаданных образа можно получить через соответствующий датасорс: cloudru_evolution_compute_image_collection.
-
-После получения информации об образе необходимо просмотреть поля "image_metadata" - обращаем внимание на поле "mandatory_group", 
-например, public_key и linux_password относятся к одной "mandatory_group": "authentication".
-Для создания ВМ с данныим образом должен быть передан массив image_metadata - с полями, которые покрывают каждую mandatory_group. 
-Например, для примера выше либо public_key либо linux_password - так как они относятся к одной группе.
-
-```terraform
-image_metadata = {
-  public_key = {
-    string_value = "demo"
-  }
-}
-```
-

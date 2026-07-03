@@ -10,18 +10,14 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
   name       = "balancer-01"
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   vpc_id     = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-
   rules = [{
     name            = "rule-01"
     target_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-
     listeners = [{
       name        = "http-80"
       port        = 80
       target_port = 80
     }]
-
-
     health_check = {
       disabled            = true
       port                = 80
@@ -31,33 +27,27 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
       healthy_threshold   = 3
       # Нужно заполнить одно из значений - tcp, http.
       tcp = {}
-
       http = {
         path = "/health"
       }
     }
     algorithm = "ALG_ROUND_ROBIN"
   }]
-
   description = "Description"
-
-  internal_address_spec = {
+  internal_address = {
     allocate  = true
     subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     ipv_4     = "192.168.0.28/24"
   }
-
-  external_address_spec = {
+  external_address = {
     allocate = true
   }
-
-  availability_zone_specs = [{
-    subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e", "d7650912-c92b-4b9a-9e92-ba756ad822b4"]
+  availability_zone = [{
+    subnets = [ { id = "8fcc33c4-4580-4146-9b7f-e58943de078e"}, { id = "d7650912-c92b-4b9a-9e92-ba756ad822b4"} ]
     # Нужно заполнить одно из значений - id, name.
     id   = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     name = "ru.AZ-1"
   }]
-
 }
 ```
 
@@ -66,7 +56,7 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
 
 ### Required
 
-- `availability_zone_specs` (Attributes List) Список зон доступности, которые обслуживает балансировщик. (see [below for nested schema](#nestedatt--availability_zone_specs))
+- `availability_zone` (Attributes List) Список зон доступности, которые обслуживает балансировщик. (see [below for nested schema](#nestedatt--availability_zone))
 - `name` (String) Название балансировщика.
 - `project_id` (String) Идентификатор проекта, которому принадлежит балансировщик.
 - `rules` (Attributes List) Список правил балансировки. (see [below for nested schema](#nestedatt--rules))
@@ -75,8 +65,8 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
 ### Optional
 
 - `description` (String) Описание балансировщика.
-- `external_address_spec` (Attributes) Параметры внешнего (публичного) IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--external_address_spec))
-- `internal_address_spec` (Attributes) Параметры внутреннего IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--internal_address_spec))
+- `external_address` (Attributes) Параметры внешнего (публичного) IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--external_address))
+- `internal_address` (Attributes) Параметры внутреннего IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--internal_address))
 
 ### Read-Only
 
@@ -88,8 +78,8 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
 - `status` (String) Оперативный статус балансировщика.
 - `updated_at` (String) Время последнего обновления балансировщика.
 
-<a id="nestedatt--availability_zone_specs"></a>
-### Nested Schema for `availability_zone_specs`
+<a id="nestedatt--availability_zone"></a>
+### Nested Schema for `availability_zone`
 
 Required:
 
@@ -156,16 +146,16 @@ Required:
 
 
 
-<a id="nestedatt--external_address_spec"></a>
-### Nested Schema for `external_address_spec`
+<a id="nestedatt--external_address"></a>
+### Nested Schema for `external_address`
 
 Optional:
 
 - `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
 
 
-<a id="nestedatt--internal_address_spec"></a>
-### Nested Schema for `internal_address_spec`
+<a id="nestedatt--internal_address"></a>
+### Nested Schema for `internal_address`
 
 Optional:
 

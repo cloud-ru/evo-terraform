@@ -7,16 +7,13 @@
 
 ```terraform
 resource "cloudru_evolution_iam_user" "resource_user" {
-  email       = "5cec2c82-a095-4c7a-9568-1bdbd7b267b1"
-  first_name  = "2d481b2d-3ac4-4600-aaa1-0711feb0cbcb"
-  last_name   = "4b4b92bd-5bf8-4934-9365-00f42e2d8941"
-  middle_name = "62f8e0a0-5b19-4ad6-bf5c-0ad822e66960"
-  enabled     = false
+  email   = "d1412b63-393d-48ea-8e55-180384cfde77"
+  enabled = true
   # Варианты значений параметра account_type:
   # USER_ACCOUNT_TYPE_FEDERATED, USER_ACCOUNT_TYPE_LOCAL
-  account_type = "USER_ACCOUNT_TYPE_LOCAL"
-  customer_id  = "971ed607-d69a-48da-a29b-bf4e3a8473c3"
-  idp_id       = "3afe6252-63ff-451a-8a18-af602119d30a"
+  account_type = "USER_ACCOUNT_TYPE_FEDERATED"
+  customer_id  = "784d903e-fc2e-4a8c-96ec-5aedab9176ec"
+  idp_id       = "fa3f4d84-00c0-44bd-8ffa-38fde60f1fe5"
 }
 ```
 
@@ -25,20 +22,17 @@ resource "cloudru_evolution_iam_user" "resource_user" {
 
 ### Required
 
-- `account_type` (String) AccountType - тип аккаунта пользователя.
-- `customer_id` (String) CustomerId - идентификатор организации, в которую пользователь будет приглашен/добавлен.
-- `email` (String) Email - email адрес пользователя.
+- `account_type` (String) AccountType - тип учетной записи пользователя.
+- `customer_id` (String) CustomerID - идентификатор организации, в которую будет добавлен пользователь.
+- `email` (String) Email - электронная почта пользователя.
 
 ### Optional
 
 - `enabled` (Boolean) Enabled - флаг активности пользователя.
-- `first_name` (String) FirstName - имя пользователя.
-- `idp_id` (String) IDPID - идентификатор федерации, через которую будет входить пользователь Поддерживается только для федеративных пользователей.
-- `last_name` (String) LastName - фамилия пользователя.
-- `middle_name` (String) MiddleName - отчество пользователя.
+- `idp_id` (String) IDPID - идентификатор провайдера идентификации. Поддерживается только для федеративных пользователей.
 
 ### Read-Only
 
-- `created_at` (String) CreatedAt - дата создания пользователя.
+- `created_at` (String) CreatedAt - время создания пользователя.
 - `id` (String) ID - идентификатор пользователя.
-- `updated_at` (String) UpdatedAt - дата обновления пользователя.
+- `updated_at` (String) UpdatedAt - время последнего обновления пользователя.

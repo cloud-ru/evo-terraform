@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_subnet_collection" "datasource_subnet" {
-  project_id = "11cffa1f-a69d-4bd0-a006-0b5caa90e0a4"
-  page_size  = 2919871994326030600
-  filter     = "fd36806f-66c7-4e28-a2fc-fe9b469f16a2"
-  order_by   = "99a1d68f-310e-4c3b-b91c-5f584ce66b35"
+  project_id = "f13b688d-825c-40e0-b9b9-81e0942b42be"
+  page_size  = 5346722917825867550
+  filter     = "c5d9a399-82bf-4301-b24d-e0c5fb509c93"
+  order_by   = "115fce6b-a5c2-43de-9df8-87f9ee6ae094"
 }
 
 output "data-subnet" {

@@ -9,12 +9,10 @@
 resource "cloudru_evolution_nlb_target_group" "resource_target_group" {
   name       = "target-group-01"
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-
-  target_vm_specs = [{
+  target_vm = [{
     id           = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     interface_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   }]
-
 }
 ```
 
@@ -25,7 +23,7 @@ resource "cloudru_evolution_nlb_target_group" "resource_target_group" {
 
 - `name` (String) Название целевой группы, уникальное в пределах проекта.
 - `project_id` (String) Идентификатор проекта, в котором создана целевая группа.
-- `target_vm_specs` (Attributes List) Список виртуальных машин, входящих в целевую группу. (see [below for nested schema](#nestedatt--target_vm_specs))
+- `target_vm` (Attributes List) Список виртуальных машин, входящих в целевую группу. (see [below for nested schema](#nestedatt--target_vm))
 
 ### Read-Only
 
@@ -36,8 +34,8 @@ resource "cloudru_evolution_nlb_target_group" "resource_target_group" {
 - `updated_at` (String) Время последнего обновления целевой группы.
 - `vpc_id` (String) Идентификатор VPC, в которой находится целевая группа. Все цели в целевой группе, а также балансировщики, использующие ее, должны находиться в одной VPC.
 
-<a id="nestedatt--target_vm_specs"></a>
-### Nested Schema for `target_vm_specs`
+<a id="nestedatt--target_vm"></a>
+### Nested Schema for `target_vm`
 
 Required:
 

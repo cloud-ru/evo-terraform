@@ -7,15 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group" "resource_security_group" {
-  project_id  = "0185cbfa-19f3-4b12-8207-f099a071e65f"
-  name        = "a12c9e4d-73a9-4e8b-a228-f0058d3d4c1f"
-  description = "a6ab6a88-0c20-4556-a4eb-aac1b6cf703e"
-
-  zone_identifier = {
+  project_id = "95720fd1-1f81-4b49-8071-e65f9c112449"
+  zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "d3066ec2-2a9d-4a32-84e3-3b14e46a3764"
-    name = "14040f11-2a00-42c4-8206-5e551b2441c6"
+    id   = "77e402ac-71c6-461e-8c31-506913442122"
+    name = "43e187b4-af6d-479a-a980-98a9527ed4e2"
   }
+  name        = "ef5d1951-7b73-4614-8d30-818dce3f6be8"
+  description = "a2004fd2-617f-4b89-96a8-afd559adfb9e"
 }
 ```
 
@@ -26,7 +25,7 @@ resource "cloudru_evolution_compute_security_group" "resource_security_group" {
 
 - `name` (String) Название группы безопасности.
 - `project_id` (String) Идентификатор проекта.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
@@ -41,22 +40,15 @@ resource "cloudru_evolution_compute_security_group" "resource_security_group" {
 - `ingress_rules_count` (Number) Количество правил для входящего трафика.
 - `status` (String) Статус группы безопасности.
 - `updated_at` (String) Дата и время изменения группы безопасности.
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
 
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
 Read-Only:
 
 - `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.

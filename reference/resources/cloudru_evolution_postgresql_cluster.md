@@ -7,44 +7,39 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
-  name                        = "awesome-postgres-cluster"
-  description                 = "Production PostgreSQL cluster"
-  subnet_id                   = "00000000-0000-0000-0000-000000000000"
-  project_id                  = "00000000-0000-0000-0000-000000000000"
-  version                     = 17
-  specification_id            = "00000000-0000-0000-0000-000000000000"
-
-  storage                     = {
-		pg_data_gb = 100
-		pg_wal_gb = 40
+  name             = "awesome-postgres-cluster"
+  description      = "Production PostgreSQL cluster"
+  subnet_id        = "00000000-0000-0000-0000-000000000000"
+  project_id       = "00000000-0000-0000-0000-000000000000"
+  version          = 17
+  specification_id = "00000000-0000-0000-0000-000000000000"
+  storage = {
+    pg_data_gb = 100
+    pg_wal_gb  = 40
   }
-
-  pooler_config               = {
-		enabled = true
-		pool_mode = "TRANSACTION"
-
-		parameters = {
-	7634c248-e2da-426c-a12a-77f8629aaa46 = "95b1f811-3a11-4fd9-8c44-8f196c00ffe9"}
+  pooler_config = {
+    enabled   = true
+    pool_mode = "TRANSACTION"
+    parameters = {
+      "max_client_conn" = 100
+    }
   }
-
-  backup                      = {
-		schedule = "0 3 * * 0"
-		retention_policy_days = 14
+  backup = {
+    schedule              = "0 3 * * 0"
+    retention_policy_days = 14
   }
-
-  logging                     = {
-		enabled = true
-		log_group_id = "00000000-0000-0000-0000-000000000000"
+  logging = {
+    enabled      = true
+    log_group_id = "00000000-0000-0000-0000-000000000000"
   }
   initial_database            = "myapp_db"
   initial_database_lc_collate = "C"
   initial_database_lc_ctype   = "C"
   primary_standby_mode        = true
-
-  recovery_spec               = {
-		cluster_id = "00000000-0000-0000-0000-000000000000"
-		pitr = "Thu, 01 Jan 2026 12:00:00 UTC"
-		backup_id = "00000000-0000-0000-0000-000000000000"
+  recovery_spec = {
+    cluster_id = "00000000-0000-0000-0000-000000000000"
+    pitr       = "Thu, 01 Jan 2026 12:00:00 UTC"
+    backup_id  = "00000000-0000-0000-0000-000000000000"
   }
 }
 ```

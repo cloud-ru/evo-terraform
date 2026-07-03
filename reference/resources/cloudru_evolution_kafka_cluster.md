@@ -7,20 +7,20 @@
 
 ```terraform
 resource "cloudru_evolution_kafka_cluster" "resource_cluster" {
-  name                                  = "name-of-cluster_1"
-  description                           = "Some short text."
-  version_id                            = "00000000-0000-0000-0000-000000000000"
-  specification_id                      = "00000000-0000-0000-0000-000000000000"
-  brokers                               = 3
-  storage_gib                           = 40
-
-  logging                               = {
-		enabled = true
-		log_group_id = "00000000-0000-0000-0000-000000000000"
+  name             = "name-of-cluster_1"
+  description      = "Some short text."
+  version_id       = "00000000-0000-0000-0000-000000000000"
+  specification_id = "00000000-0000-0000-0000-000000000000"
+  brokers          = 3
+  storage_gib      = 40
+  logging = {
+    enabled      = true
+    log_group_id = "00000000-0000-0000-0000-000000000000"
   }
-
-  parameters                            = {
-	4369abb8-1ad0-4959-8259-576c407b0d36 = "658285d1-a5c0-4652-ba7e-2dd53fd9fd82"}
+  parameters = {
+    "auto.create.topics.enable"  = "true",
+    "default.replication.factor" = "2"
+  }
   subnet_id                             = "00000000-0000-0000-0000-000000000000"
   project_id                            = "00000000-0000-0000-0000-000000000000"
   ui_enabled                            = false

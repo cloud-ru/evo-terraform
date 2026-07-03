@@ -7,27 +7,27 @@
 
 ```terraform
 resource "cloudru_evolution_compute_disk" "resource_disk" {
-  project_id  = "886e0e4b-fc16-4bdb-b9d5-eb0b1d643454"
-  name        = "2f20b7c6-f9ec-4f60-bef6-4ba4cb9b8466"
-  description = "6098d640-6df9-4fd2-bd6d-0ffdccfc4e19"
-  size        = 1229413371
-  readonly    = false
-  shared      = true
-  encrypted   = false
+  project_id = "719821e9-ff09-4bcc-80d2-78b46aa0f8d4"
+  zone = {
+    # Нужно заполнить одно из значений - id, name.
+    id   = "afe9a809-61af-46d7-8452-81ac1f8a60ef"
+    name = "3a2fdd7b-5e88-44a4-9f29-c90f252aff8e"
+  }
+  name        = "ed92ded0-6504-4f26-b1ac-eb70b4d0f239"
+  description = "42a195ff-cd8c-4fd8-a612-fe30a4fad9ef"
+  size        = 958248668
+  readonly    = true
+  shared      = false
+  encrypted   = true
   bootable    = true
-
-  zone_identifier = {
+  disk_type = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "c30803d0-618f-4a84-a1a5-a4ca0b44f740"
-    name = "269528d6-3089-4fb1-b8a6-3b2a86ea8ce4"
+    id   = "513a4aa2-1fad-4a68-923f-9092bdeeddb3"
+    name = "2ffc0932-53ec-4f3f-ab43-9032bed9804e"
   }
-
-  disk_type_identifier = {
-    # Нужно заполнить одно из значений - id, name.
-    id   = "4d726d08-2d59-430a-8eef-08c68358cff0"
-    name = "5f4b6a77-fe63-4c9d-b0e8-4d1e22784f26"
+  image = {
+    id = "2dfe3b7c-781a-406a-8be8-d408a23fe5a3"
   }
-  image_id = "cfde685a-8c94-4072-9e30-c48dd95b5879"
 }
 ```
 
@@ -36,67 +36,65 @@ resource "cloudru_evolution_compute_disk" "resource_disk" {
 
 ### Required
 
-- `disk_type_identifier` (Attributes) Параметры типа диска. (see [below for nested schema](#nestedatt--disk_type_identifier))
+- `disk_type` (Attributes) Параметры типа диска. (see [below for nested schema](#nestedatt--disk_type))
 - `name` (String) Название диска.
 - `project_id` (String) Идентификатор проекта.
 - `size` (Number) Размер диска.
-- `zone_identifier` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone_identifier))
+- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
 ### Optional
 
 - `bootable` (Boolean) Признак загрузочного диска.
 - `description` (String) Описание диска.
 - `encrypted` (Boolean) Признак зашифрованного диска.
-- `image_id` (String) Идентификатор образа.
+- `image` (Attributes) Параметры образа. (see [below for nested schema](#nestedatt--image))
 - `readonly` (Boolean) Признак диска только для чтения.
 - `shared` (Boolean) Признак общедоступного диска.
 
 ### Read-Only
 
 - `created_at` (String) Дата и время создания диска.
-- `disk_type` (Attributes) Параметры типа диска. (see [below for nested schema](#nestedatt--disk_type))
 - `id` (String) Идентификатор диска.
-- `image` (Attributes) Параметры образа. (see [below for nested schema](#nestedatt--image))
 - `serial_id` (String) Серийный номер диска.
 - `status` (String) Статус диска.
 - `updated_at` (String) Дата и время изменения диска.
 - `vms` (Attributes List) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vms))
-- `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
-<a id="nestedatt--disk_type_identifier"></a>
-### Nested Schema for `disk_type_identifier`
+<a id="nestedatt--disk_type"></a>
+### Nested Schema for `disk_type`
 
 Optional:
 
 - `id` (String) Идентификатор типа диска.
 - `name` (String) Название типа диска.
 
+Read-Only:
 
-<a id="nestedatt--zone_identifier"></a>
-### Nested Schema for `zone_identifier`
+- `free_tier` (Boolean) Признак доступности типа диска для уровня бесплатного использования (free tier).
+
+
+<a id="nestedatt--zone"></a>
+### Nested Schema for `zone`
 
 Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
 
-
-<a id="nestedatt--disk_type"></a>
-### Nested Schema for `disk_type`
-
 Read-Only:
 
-- `free_tier` (Boolean) Признак доступности типа диска для уровня бесплатного использования (free tier).
-- `id` (String) Идентификатор типа диска.
-- `name` (String) Название типа диска.
+- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
 
 
 <a id="nestedatt--image"></a>
 ### Nested Schema for `image`
 
-Read-Only:
+Optional:
 
 - `id` (String) Идентификатор образа.
+
+Read-Only:
+
 - `name` (String) Название образа.
 
 
@@ -108,13 +106,3 @@ Read-Only:
 - `id` (String) Идентификатор виртуальной машины.
 - `name` (String) Название виртуальной машины.
 - `status` (String) Статус виртуальной машины.
-
-
-<a id="nestedatt--zone"></a>
-### Nested Schema for `zone`
-
-Read-Only:
-
-- `enabled` (Boolean) Флаг указывающий, доступна ли зона для использования.
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.
