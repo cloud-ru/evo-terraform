@@ -52,9 +52,8 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
 - `initial_database` (String) Название базы данных, которая будет создана в экземпляре сервиса по умолчанию.
 - `name` (String) Название кластера.
 - `project_id` (String) Идентификатор проекта.
-- `specification_id` (String) Идентификатор спецификации, назначенной кластеру.
+- `specification_id` (String) Идентификатор спецификации кластера. Ресурсы кластера типа `standard` нельзя изменить после создания.
 - `storage` (Attributes) Размеры дисков кластера. (see [below for nested schema](#nestedatt--storage))
-- `subnet_id` (String) Идентификатор подсети.
 - `version` (String) Версия продукта.
 
 ### Optional
@@ -63,10 +62,14 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
 - `description` (String) Описание кластера.
 - `initial_database_lc_collate` (String) Локаль сортировки базы данных, созданной по умолчанию. Нельзя изменить после создания кластера. Значение по умолчанию — `C`.
 - `initial_database_lc_ctype` (String) Локаль набора символов базы данных, созданной по умолчанию. Нельзя изменить после создания кластера. Значение по умолчанию — `C`.
+- `instances` (Number) Количество узлов кластера. Допустимые значения зависят от режима развертывания кластера: 1-2 узла для `standard`, 1-3 узла для `business`. Если в `subnet_ids` указано несколько подсетей, кластер считается мультизональным, и количество узлов должно совпадать с количеством подсетей.
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--logging))
 - `pooler_config` (Attributes) Конфигурация пулера соединений PgBouncer. (see [below for nested schema](#nestedatt--pooler_config))
-- `primary_standby_mode` (Boolean) Отказоустойчивость кластера. Возможные значения: - `true` — отказоустойчивая конфигурация с двумя синхронизированными узлами: основным и резервным. - `false` — одноузловая конфигурация.
+- `primary_standby_mode` (Boolean) Устарело. Используйте поле `instances`.
 - `recovery_spec` (Attributes) Параметры восстановления кластера. (see [below for nested schema](#nestedatt--recovery_spec))
+- `subnet_id` (String) Устарело. Используйте поле `subnet_ids`.
+- `subnet_ids` (List of String) Идентификаторы подсетей. Подсети определяют зоны доступности кластера. Если указано несколько подсетей, кластер считается мультизональным. Мультизональный режим доступен только для кластеров типа `business`. В этом случае количество подсетей должно совпадать с количеством узлов `instances`, а каждая подсеть должна находиться в отдельной зоне доступности. Список подсетей и их описание можно получить через API сервиса виртуальных машин в разделе [Subnets](https://cloud.ru/docs/virtual-machines/ug/topics/api-ref-v3#tag/Subnets).
+- `sync_replication_enabled` (Boolean) Не имеет эффекта.
 
 ### Read-Only
 
@@ -75,7 +78,6 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
 - `created_by` (String) Идентификатор пользователя, создавшего кластер.
 - `health` (String) Состояние кластера.
 - `id` (String) Идентификатор кластера.
-- `instances` (Number) Количество экземпляров.
 - `status` (String) Статус кластера.
 
 <a id="nestedatt--storage"></a>

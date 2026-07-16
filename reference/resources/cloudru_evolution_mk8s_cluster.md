@@ -295,7 +295,7 @@ Optional:
 <a id="nestedatt--network_plugin"></a>
 ### Nested Schema for `network_plugin`
 
-Optional:
+Required:
 
 - `calico` (Attributes) Настройки для использования Calico в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_plugin--calico))
 - `cilium` (Attributes) Настройки для использования Cilium в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_plugin--cilium))

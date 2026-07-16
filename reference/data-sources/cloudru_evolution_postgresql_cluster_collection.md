@@ -45,15 +45,17 @@ Read-Only:
 - `description` (String) Описание кластера.
 - `health` (String) Состояние кластера.
 - `id` (String) Идентификатор кластера.
-- `instances` (Number) Количество экземпляров.
+- `instances` (Number) Количество узлов кластера. Допустимые значения зависят от режима развертывания кластера: 1-2 узла для `standard`, 1-3 узла для `business`. Если в `subnet_ids` указано несколько подсетей, кластер считается мультизональным, и количество узлов должно совпадать с количеством подсетей.
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--clusters--logging))
 - `name` (String) Название кластера.
 - `pooler_config` (Attributes) Конфигурация пулера соединений PgBouncer. (see [below for nested schema](#nestedatt--clusters--pooler_config))
 - `project_id` (String) Идентификатор проекта.
-- `specification_id` (String) Идентификатор спецификации, назначенной кластеру.
+- `specification_id` (String) Идентификатор спецификации кластера. Ресурсы кластера типа `standard` нельзя изменить после создания.
 - `status` (String) Статус кластера.
 - `storage` (Attributes) Размеры дисков кластера. (see [below for nested schema](#nestedatt--clusters--storage))
-- `subnet_id` (String) Идентификатор подсети.
+- `subnet_id` (String) Устарело. Используйте поле `subnet_ids`.
+- `subnet_ids` (List of String) Идентификаторы подсетей. Подсети определяют зоны доступности кластера. Если указано несколько подсетей, кластер считается мультизональным. Мультизональный режим доступен только для кластеров типа `business`. В этом случае количество подсетей должно совпадать с количеством узлов `instances`, а каждая подсеть должна находиться в отдельной зоне доступности. Список подсетей и их описание можно получить через API сервиса виртуальных машин в разделе [Subnets](https://cloud.ru/docs/virtual-machines/ug/topics/api-ref-v3#tag/Subnets).
+- `sync_replication_enabled` (Boolean) Не имеет эффекта.
 - `version` (String) Версия продукта.
 
 <a id="nestedatt--clusters--backup"></a>

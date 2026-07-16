@@ -25,12 +25,9 @@ resource "cloudru_evolution_postgresql_user" "resource_user" {
 - `name` (String) Имя пользователя.
 - `password` (String) Пароль.
 
-### Optional
-
-- `granted_roles` (Attributes List) Назначенные роли. (see [below for nested schema](#nestedatt--granted_roles))
-
 ### Read-Only
 
+- `granted_roles` (Attributes List) Назначенные роли. (see [below for nested schema](#nestedatt--granted_roles))
 - `supported_roles` (Attributes List) Доступные роли. (see [below for nested schema](#nestedatt--supported_roles))
 
 <a id="nestedatt--granted_roles"></a>
