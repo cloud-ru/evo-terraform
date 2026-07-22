@@ -7,9 +7,9 @@
 
 ```terraform
 resource "cloudru_evolution_organization_project" "resource_project" {
-  name                 = "144afe60-42dd-4396-ba9a-2762ebd46b89"
-  description          = "835944ee-326b-49a1-b3ce-682383a9195a"
-  organization_unit_id = "616304f2-0dd5-4197-b04e-894153052b8e"
+  name                 = "f0ec8bcc-c703-40bd-ad90-ab0c9722d0ef"
+  description          = "fd4662dc-7af3-47e1-b08e-25dd29858db9"
+  organization_unit_id = "b7db997b-29d6-4abb-a660-475e63df2483"
 }
 ```
 

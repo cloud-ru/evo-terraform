@@ -16,9 +16,8 @@ resource "cloudru_evolution_baremetal_subnet" "resource_subnet" {
   is_default      = true
   vpc_id          = "893c68af-2ef0-452d-9ec2-c0f837e8adad"
   is_primary      = false
-  # Нужно заполнить одно из значений - vlan_id
-  vlan_id = 1
-  zone_id = "10B39F12-8041-4F73-BBFF-4AE20B162168"
+  vlan_id         = 1
+  zone_id         = "10B39F12-8041-4F73-BBFF-4AE20B162168"
 }
 ```
 

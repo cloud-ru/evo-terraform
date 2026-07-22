@@ -10,11 +10,11 @@ data "cloudru_evolution_baremetal_flavor_collection" "datasource_flavor" {
   project_id = "a3dab871-5355-49a8-817a-9c5e59fad149"
   filter     = "zone_id='10B39F12-8041-4F73-BBFF-4AE20B162168' AND cores_max=4"
   # Варианты значений параметра order_by:
-  # FLAVORS_ORDER_BY_MEM_SIZE, FLAVORS_ORDER_BY_NAME, FLAVORS_ORDER_BY_AVAILABLE_SERVERS, FLAVORS_ORDER_BY_CREATED_AT
+  # FLAVORS_ORDER_BY_MEM_SIZE
   order_by = "FLAVORS_ORDER_BY_MEM_SIZE"
   # Варианты значений параметра direction:
   # DIRECTION_ASC, DIRECTION_DESC
-  direction = "DIRECTION_DESC"
+  direction = "DIRECTION_ASC"
   page_size = 50
 }
 

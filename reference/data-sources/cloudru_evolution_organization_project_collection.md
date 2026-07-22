@@ -9,11 +9,11 @@
 data "cloudru_evolution_organization_project_collection" "datasource_project" {
   # Варианты значений параметра status:
   # PROJECT_STATUS_ENABLED, PROJECT_STATUS_DISABLED, PROJECT_STATUS_TERMINATING, PROJECT_STATUS_TERMINATED
-  status                = "PROJECT_STATUS_TERMINATED"
-  project_ids           = ["c4637dc0-13db-48cd-908b-a19786a7ab69", "a69603e7-160a-4e3a-8aef-1cf819f76eb4", "a01a7faa-fc50-47dc-8208-43921ecc1fed", "59ead560-7960-4ab4-9e98-21b2d51e352b", "3d18e324-033a-44e9-98ae-9800f80473ee", "c1a1efe2-b9dc-4df5-889d-b7745dc9351c", "744df8fd-9e7b-427c-8fc3-b29cc2abbf86", "4e95a8d8-edcf-4a4f-8759-b385c00a2bc6", "c0f964e5-7765-41b8-8cd0-93d5505bbe6a", "06398183-fb80-4aef-8fd2-02e84c2ec2e1"]
-  customer_ids          = ["dd38c7f2-c38c-4e23-a1c2-b59a144b8709", "57d294b3-75a8-4a8c-b4e8-20de65c9132c", "f832f2bd-6ed0-4d73-904c-f24134873b7b", "1a62eb28-2368-48b1-a410-24eb164cc0a9", "cff60501-04e1-46ff-8f6a-bc3308cc0cde", "e9343601-0d5d-406f-89b8-7d99e8fd3f5c", "c3ee5837-7d05-44fc-9c8e-61d6ab8cca4c", "88d74a1d-1eeb-491b-8c9e-39a88d6b2b13", "3a5ce20e-7a5b-4664-94b4-d6034d947211", "a9e4549e-afb2-453f-aa5a-cf696a53c8d5"]
-  organization_unit_ids = ["95990ce8-78ba-443b-b9e7-a242b7363a1a", "93a4577e-629e-4554-97f0-1d91513df74a", "f7cd583a-3c42-4628-9e62-b9769d5beb00", "fdb2d011-14da-4a3c-9ad3-02be9fe0a93e", "9980d5e9-99c1-48e9-9f7f-3afc544cf17a", "a8e335d0-dd55-4aad-be47-39970e785a33", "0a0ec9cc-0451-4b72-8fbe-301fc528bdce", "0f9fca93-d79a-4b41-a018-9145469a4819", "1646162d-fa99-4df2-a020-b36b3357c0ca", "7c0928a8-1792-4819-863d-8cb84a5636ce"]
-  page_size             = 6436083257814330658
+  status                = "PROJECT_STATUS_DISABLED"
+  project_ids           = ["d03ac4de-7012-42d0-b744-6b6ed7b206ae", "247cffa9-4208-4b4b-8f5e-619089795fae", "fda82347-3d13-4219-be6b-b508506c6d9f", "08b7dbbb-c351-4b50-bb59-47194669f9cb", "b0877c2a-f738-4a67-941b-3e34be76541a", "867c46d7-5397-42c0-bc75-36c963ffc857", "40fb9c69-1718-4f09-935b-c03af35ee935", "a56f6701-28bc-42bf-9937-0f09ab4b54d1", "668fb3bb-449a-451c-85cf-6ae86709a90a", "15106cdf-929b-43ab-9d12-ba571bb6b7c1"]
+  customer_ids          = ["52382a2b-dbbe-4d47-91ba-b7702fb88cee", "1c09bb9f-f39e-44c2-a99c-9cf3a7425307", "f086eb3a-dcbe-49e3-8b31-eedc803c5f72", "e4eb83cf-35af-4db6-9dd7-b26456bf7428", "ed5409c3-57f3-4833-96a0-029ca61e833b", "28a4c4c4-cd4a-47b7-9d89-a0556fba8de5", "947fd358-56bc-4658-b168-013fcf9e22c1", "a11bbe48-3e55-469b-8e11-31cff97a3fcd", "6424b144-13e1-4540-bd70-d8013b3cdc6c", "7b47c089-7ae6-4a95-a338-117da4b14808"]
+  organization_unit_ids = ["1b0833c0-e3a8-48cb-a112-e003d0c35e7c", "dfc810cc-1592-4483-8d1d-ba49059fea33", "c3a5cebb-fc77-412c-931c-be5eccc4d414", "61da5726-f0d9-4df2-8e28-32643e97f562", "bd3e85d5-60fe-4f7a-b64e-4b242de2b0e5", "3dcc26d9-00b5-419f-b78c-7a844c8f0d43", "fb2f0205-2430-42e0-a58e-2079864dbc5d", "18443fb1-fdf8-4687-82a8-f9ce8844eee4", "0e183784-e509-4d8a-ae22-fab462704b74", "4cc7b854-3c8a-48c6-99b6-96b1c38a6d33"]
+  page_size             = 1150989659438872258
 }
 
 output "data-project" {

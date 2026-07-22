@@ -9,11 +9,11 @@
 data "cloudru_evolution_iam_service_account_collection" "datasource_service_account" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "094a570a-0fa5-4dd1-afdf-fe35f34cc6f6"
-    project_id  = "ac779037-2be1-4bb4-86ab-d0543abc9f92"
+    customer_id = "43a09c9f-682c-4d83-98d6-52f998eba2e7"
+    project_id  = "dd6b375d-e0bf-4ed7-ba32-b890a2cc32ee"
   }
-  filter    = "31ff2ffb-ad56-4783-9986-535f1b35de7f"
-  page_size = 8044540430887661755
+  filter    = "bd26b01f-5d45-4712-8b7c-f940d63b615a"
+  page_size = 2325571546442785735
 }
 
 output "data-service_account" {

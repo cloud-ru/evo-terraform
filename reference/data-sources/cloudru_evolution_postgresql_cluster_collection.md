@@ -7,10 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_postgresql_cluster_collection" "datasource_cluster" {
-  project_id = "00000000-0000-0000-0000-000000000000"
-  page_size  = 100
-  # Нужно заполнить одно из значений - product_type
-  product_type = "postgres"
+  project_id   = "00000000-0000-0000-0000-000000000000"
+  page_size    = 100
+  product_type = "postgresql"
 }
 
 output "data-cluster" {
@@ -28,7 +27,7 @@ output "data-cluster" {
 ### Optional
 
 - `page_size` (Number) Максимальное количество результатов на странице ответа. Значение по умолчанию — 100. Максимальное значение — 1000.
-- `product_type` (String) Название продукта. По умолчанию `postgres`.
+- `product_type` (String) Название продукта. По умолчанию `postgresql`.
 
 ### Read-Only
 

@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_vm_collection" "datasource_vm" {
-  project_id = "87c2ba52-5016-4af2-81ff-d9630231711f"
-  page_size  = 5728502307537359973
-  filter     = "8d23eb09-acd9-49a0-afb1-230d727430cb"
-  order_by   = "97b72638-02a5-48c0-a636-71eadf621304"
+  project_id = "c4c8a2e6-c368-4a06-9545-5414dec26b72"
+  page_size  = 5869192849399957885
+  filter     = "dd96cabb-3a11-49db-9aea-625f3de38bf6"
+  order_by   = "c135debd-9284-4308-a917-b496946b7142"
 }
 
 output "data-vm" {
@@ -47,10 +47,10 @@ Read-Only:
 - `guest_agent_state` (String) Статус гостевого агента.
 - `icon` (String) Значок виртуальной машины в формате SVG.
 - `id` (String) Идентификатор виртуальной машины.
+- `interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--vms--interfaces))
 - `locked` (Boolean) Признак виртуальной машины, заблокированной для изменений.
 - `metadata_fields` (Attributes List) Метаданные виртуальной машины. (see [below for nested schema](#nestedatt--vms--metadata_fields))
 - `name` (String) Название виртуальной машины.
-- `network_interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--vms--network_interfaces))
 - `placement_group` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--vms--placement_group))
 - `project_id` (String) Идентификатор проекта.
 - `remote_console_protocol` (String) Тип удаленной консоли.
@@ -81,6 +81,16 @@ Read-Only:
 - `name` (String) Название флейвора.
 
 
+<a id="nestedatt--vms--interfaces"></a>
+### Nested Schema for `vms.interfaces`
+
+Read-Only:
+
+- `id` (String) Идентификатор сетевого интерфейса.
+- `name` (String) Название сетевого интерфейса.
+- `status` (String) Статус сетевого интерфейса.
+
+
 <a id="nestedatt--vms--metadata_fields"></a>
 ### Nested Schema for `vms.metadata_fields`
 
@@ -91,16 +101,6 @@ Read-Only:
 - `metadata_id` (String) Идентификатор метаданных.
 - `name` (String) Название.
 - `value` (String) Значение.
-
-
-<a id="nestedatt--vms--network_interfaces"></a>
-### Nested Schema for `vms.network_interfaces`
-
-Read-Only:
-
-- `id` (String) Идентификатор сетевого интерфейса.
-- `name` (String) Название сетевого интерфейса.
-- `status` (String) Статус сетевого интерфейса.
 
 
 <a id="nestedatt--vms--placement_group"></a>

@@ -7,8 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_postgresql_version_collection" "datasource_version" {
-  # Нужно заполнить одно из значений - product_type
-  product_type = "postgres"
+  product_type = "postgresql"
 }
 
 output "data-version" {
@@ -21,7 +20,7 @@ output "data-version" {
 
 ### Optional
 
-- `product_type` (String) Название продукта. По умолчанию `postgres`.
+- `product_type` (String) Название продукта. По умолчанию `postgresql`.
 
 ### Read-Only
 

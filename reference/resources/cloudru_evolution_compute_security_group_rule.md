@@ -7,25 +7,25 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group_rule" "resource_security_group_rule" {
-  description = "0cb8199a-8122-43e9-a705-71449c1f5fdd"
+  description = "0ef688c8-6336-422d-8306-9ff16086238d"
   # Варианты значений параметра direction:
   # TRAFFIC_DIRECTION_INGRESS, TRAFFIC_DIRECTION_EGRESS
   direction = "TRAFFIC_DIRECTION_EGRESS"
   # Варианты значений параметра ether_type:
   # ETHER_TYPE_IPV4, ETHER_TYPE_IPV6
-  ether_type = "ETHER_TYPE_IPV4"
+  ether_type = "ETHER_TYPE_IPV6"
   # Варианты значений параметра ip_protocol:
   # IP_PROTOCOL_TCP, IP_PROTOCOL_UDP, IP_PROTOCOL_ICMP, IP_PROTOCOL_ANY
-  ip_protocol      = "IP_PROTOCOL_UDP"
-  port_range       = "a462cb22-aaa7-4570-bcb8-3ddc9fe4744b"
-  remote_ip_prefix = "9ea7abaa-c9a0-4eaf-a13c-899fdbcbb6aa"
+  ip_protocol      = "IP_PROTOCOL_TCP"
+  port_range       = "9d400786-4f37-435f-8901-95ec61a01896"
+  remote_ip_prefix = "7963adc0-b061-4d59-b09a-a67903ea56e3"
   # Нужно заполнить одно из значений - remote_security_group
   remote_security_group = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "da2ac7cf-cc0a-4a78-8b37-db231c269d27"
-    name = "b2160da4-ed98-478c-b357-24004df3efe3"
+    id   = "28635908-88ae-4898-bc47-40b388729893"
+    name = "db90d6c7-7854-41f7-870a-5082f6053d6b"
   }
-  security_group_id = "f4659be9-6d39-4fec-8373-2de3a0038e1b"
+  security_group_id = "89a79ba1-ebd1-4f99-b603-5d26cb39cb83"
 }
 ```
 

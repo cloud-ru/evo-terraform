@@ -7,23 +7,23 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  project_id = "ebc3621a-4d7b-4ff8-ad87-14bb8d8ebdde"
+  project_id = "a91333fa-2939-408c-b3ee-34bd5eac4a97"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "8577454e-ed7c-4f2c-87d6-ad1063ccafb8"
-    name = "a1019fc9-1cb4-4c5a-b9bd-f6bf96e8408f"
+    id   = "98b01f01-e25c-4242-91fe-135f8b2f6605"
+    name = "fee60dd5-fc11-4037-8f8a-498201672ffe"
   }
-  name            = "4db1c1f5-5665-4021-9efe-3d22702e52f8"
-  description     = "c28540d8-947e-42f4-996d-f13189a7ca10"
-  vpc_id          = "5523df0f-2dee-490e-b810-bced362d87ba"
+  name            = "5592206b-d6b5-4aa3-a8ff-0983ddc2739d"
+  description     = "081d27b0-57a0-40f4-893d-67e600c7f660"
+  vpc_id          = "ab358605-c2fb-42f8-b9e4-f5d1609e2673"
   default         = true
-  subnet_address  = "7037f402-b628-486c-9e7d-0193e4025293"
-  routed_network  = true
-  default_gateway = "23e9d2de-33c0-4540-9732-775aece4fd9b"
+  subnet_address  = "6f317c13-32ef-47af-b967-86ce1a93bd14"
+  routed_network  = false
+  default_gateway = "5d877b46-ad9b-43d3-bc0a-0e07a0e4d60c"
   dns_servers = {
-    value = ["0c6a4765-130e-4fcb-b252-65cf172c4d3d", "aaf710ab-4eac-4ff1-b2ea-65f99ee89ecb", "33cf26e7-828b-4973-bcc2-9b49fb32d0e9", "ac24eb8d-dc8c-4a8f-9acc-56feac1e7261", "1b0f7d04-65ed-49ec-b242-15887600c5d6", "37771b22-85eb-4ad7-8422-2abe5f40422e", "ed579841-2d7f-4890-801e-ba81d39a2e22", "3fd8f492-5e90-4d92-93ae-2205b8ef0d9d", "e4fb7aee-3c5e-46fc-ae11-749369edfcd3", "5e887b91-d265-4276-8c15-a4a6308818aa"]
+    value = ["4b64b724-a3f8-442e-904a-3794aba3c797", "5e1c3e78-2fc8-45df-8e5c-11df5a543398", "f83e7d4a-5762-4215-8086-d14dabc90017", "045fdf52-f36f-47ea-8256-fcaf60544078", "81ac6e89-75c6-4b95-a3ac-714b88017c1f", "9526d9e2-f3b4-40f1-852e-ad1625d24503", "83862415-f037-407d-8f2a-4b2b40081877", "06a582cd-60ae-42fc-9cdc-ee3129b14118", "125805c9-c94b-45a1-a4c7-26effe0ef9b1", "eb615838-a2d4-46e9-8047-cf56107b7b1c"]
   }
-  prefix_length = 1976127240
+  prefix_length = 1307396155
 }
 ```
 

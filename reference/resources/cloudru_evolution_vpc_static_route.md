@@ -31,8 +31,7 @@ resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
       }]
     }
   }
-  subnet = "192.168.0.0/24"
-  # Нужно заполнить одно из значений - description
+  subnet      = "192.168.0.0/24"
   description = "Route to internal network"
 }
 ```

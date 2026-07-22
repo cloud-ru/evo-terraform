@@ -71,7 +71,7 @@ Read-Only:
 
 Read-Only:
 
-- `ipv4` (String) IP-адрес.
+- `ipv_4` (String) IP-адрес.
 
 
 
@@ -81,7 +81,7 @@ Read-Only:
 
 Read-Only:
 
-- `ipv4` (String) IP-адрес.
+- `ipv_4` (String) IP-адрес.
 
 
 <a id="nestedatt--balancers--internal_address"></a>
@@ -89,7 +89,7 @@ Read-Only:
 
 Read-Only:
 
-- `ipv4` (String) IP-адрес.
+- `ipv_4` (String) IP-адрес.
 - `subnet_id` (String) Идентификатор подсети, в которой находится IP-адрес.
 
 

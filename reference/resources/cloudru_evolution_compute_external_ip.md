@@ -7,17 +7,17 @@
 
 ```terraform
 resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
-  project_id = "11490883-c45e-43c2-8910-f4ff5296c770"
+  project_id = "dc98c6de-6e75-42c8-b0b6-c2dc44d3e938"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "7a96c5e0-0036-4c14-960b-ff9a0d1ef40d"
-    name = "889fc3b5-5f51-439f-bcbe-7f3f48659263"
+    id   = "cd013a45-3d2f-4017-96dc-f6f13c5ad36e"
+    name = "7d4da5a1-7f4e-49dc-8097-deeb4300fead"
   }
-  name        = "fdc738de-165f-4f74-b1f4-8edc06451bae"
-  description = "81664fd9-011c-44c6-857f-1cb63e4311af"
+  name        = "5902c9db-f2d9-4aff-858c-028f05572d90"
+  description = "15ec9993-6381-4a83-af1c-dcd4744b8e47"
   # Нужно заполнить одно из значений - interface
   network_interface = {
-    id = "e432e7c5-be16-4e03-83a1-8f6c390638fe"
+    id = "9248c978-1e98-4fb1-9be8-538e4cf03702"
   }
 }
 ```

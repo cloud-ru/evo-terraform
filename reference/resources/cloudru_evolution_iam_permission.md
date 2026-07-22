@@ -7,13 +7,13 @@
 
 ```terraform
 resource "cloudru_evolution_iam_permission" "resource_permission" {
-  resource_id = "34158313-cc71-4696-8732-bbdcb3688eab"
-  subject_id  = "2fc29719-8ea5-4366-80f9-7aebabd19a70"
-  expires_at  = "Wed, 22 Jul 2026 22:22:40 UTC"
+  resource_id = "c2189f86-27cb-4584-b4af-fa47131188a7"
+  subject_id  = "c6fab914-9468-4b87-a72b-c29c43a9c34b"
+  expires_at  = "Mon, 29 Jun 2026 09:37:53 UTC"
   role_identifier = {
     # Нужно заполнить одно из значений - role_name, role_id.
-    role_name = "36dc84d7-99bd-4166-a53d-a1ceec3f57e6"
-    role_id   = "1c09f18b-d5d2-473b-a5ea-39696b4c3c1c"
+    role_name = "5388a646-3df9-4f8d-8e67-7e7ffd92e456"
+    role_id   = "828258d7-5fd6-4ea9-b6dd-d39cda1c2e23"
   }
 }
 ```
@@ -23,12 +23,12 @@ resource "cloudru_evolution_iam_permission" "resource_permission" {
 
 ### Required
 
-- `expires_at` (String) Дата и время истечения срока действия разрешения в формате RFC 3339. Например, `2025-12-31T23:59:59Z`.
 - `resource_id` (String) Идентификатор ресурса.
 - `subject_id` (String) Идентификатор субъекта.
 
 ### Optional
 
+- `expires_at` (String) Дата и время истечения срока действия разрешения в формате RFC 3339. Например, `2025-12-31T23:59:59Z`.
 - `role_identifier` (Attributes) Роль для назначения. Обязательно должно быть указано одно из полей: `role` (deprecated), `role_name` или `role_id`. (see [below for nested schema](#nestedatt--role_identifier))
 
 ### Read-Only

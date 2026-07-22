@@ -9,10 +9,9 @@
 resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
   name             = "awesome-postgres-cluster"
   description      = "Production PostgreSQL cluster"
+  subnet_id        = "00000000-0000-0000-0000-000000000000"
   project_id       = "00000000-0000-0000-0000-000000000000"
   version          = 17
-  instances        = 2
-  subnet_ids       = ["00000000-0000-0000-0000-000000000000", "11111111-1111-1111-1111-111111111111"]
   specification_id = "00000000-0000-0000-0000-000000000000"
   storage = {
     pg_data_gb = 100
@@ -36,6 +35,7 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
   initial_database            = "myapp_db"
   initial_database_lc_collate = "C"
   initial_database_lc_ctype   = "C"
+  primary_standby_mode        = true
   recovery_spec = {
     cluster_id = "00000000-0000-0000-0000-000000000000"
     pitr       = "Thu, 01 Jan 2026 12:00:00 UTC"

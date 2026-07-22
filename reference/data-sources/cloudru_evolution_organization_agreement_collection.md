@@ -7,7 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_organization_agreement_collection" "datasource_agreement" {
-  customer_ids = ["cea3fd98-3942-48dd-9503-7bcc3a7a3309", "39387d01-5eb9-4397-ae87-8c8dbb18c24b", "2502a973-4ea0-4e59-96c2-e75bfd4cb10a", "55a1a9e3-8ac9-423a-af68-41a6a99248f4", "a9918d20-8913-4447-acbd-17068f7f8bbb", "e676e95b-acd1-481c-8e84-eb646181e615", "faa12f75-cca5-4c0b-86eb-c8b2e301046d", "03d26260-7d55-400f-b605-3c015c600c5f", "aeb75ca6-ea66-42da-aeae-3e54a5767ffc", "0948ccfd-e4f8-45d4-b027-8e0099586cb7"]
+  customer_ids = ["0fd947e3-801a-4ad9-92d3-4b958b20cc7d", "fbe92633-609b-4093-a29e-706b9fef02ff", "64ee5aa8-3fa4-4fc5-898b-4c7785312921", "cf9e3075-99f7-4d4a-82b6-6da647665e4e", "26ac254c-e0c6-49fc-820a-09ea4c2a1aaa", "43230da3-bdf5-4537-b5bf-02a157a4976d", "a917b815-20be-434f-82a8-f6f52e583de2", "aec94068-958c-417c-9390-d8ad6d7d5ecc", "f9d3533b-e515-4afb-88e2-538fec037838", "73939f03-d892-4ab5-bcab-8bb3ce7f23f7"]
 }
 
 output "data-agreement" {
