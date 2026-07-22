@@ -40,6 +40,7 @@ output "data-node_pool" {
 
 Read-Only:
 
+- `auto_repair` (Attributes) Параметры автоматического восстановления узлов. (see [below for nested schema](#nestedatt--node_pools--auto_repair))
 - `cluster_id` (String) Идентификатор кластера, в котором развернута группа узлов.
 - `created_at` (String) Дата и время создания группы узлов.
 - `created_by` (String) Идентификатор пользователя, создавшего группу узлов.
@@ -59,6 +60,14 @@ Read-Only:
 - `version` (String) Версия Kubernetes, которая используется на узлах группы.
 - `version_upgrade` (Attributes) Информация о доступных версиях Kubernetes для обновления группы узлов. (see [below for nested schema](#nestedatt--node_pools--version_upgrade))
 - `zone` (String) Зона доступности, в которой размещены узлы группы.
+
+<a id="nestedatt--node_pools--auto_repair"></a>
+### Nested Schema for `node_pools.auto_repair`
+
+Read-Only:
+
+- `enabled` (Boolean) Включение автоматического восстановления группы узлов. Возможные значения: true — автоматическое восстановление включено, false — автоматическое восстановление выключено. По умолчанию восстановление группы узлов включено.
+
 
 <a id="nestedatt--node_pools--labels"></a>
 ### Nested Schema for `node_pools.labels`

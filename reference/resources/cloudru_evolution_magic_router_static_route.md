@@ -7,12 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
-  magic_router_id = "8c87199f-59cd-4a56-85c7-bc0bf0c4a237"
-  subnet          = "d8ec33d9-88f1-4de8-b8b4-ffaa5e3e2688"
-  description     = "0558d2e6-b4c2-4fa9-ba9a-bff08b414851"
+  magic_router_id = "9bcff929-832d-4d7d-a032-9528163a7918"
+  subnet          = "52c002a1-a13e-401c-b33d-6c4bf138ff96"
+  # Нужно заполнить одно из значений - description
+  description = "cdfd65ac-847b-4a5a-a568-66056a34c2e5"
+  # Нужно заполнить одно из значений - next_hop_vpc, next_hop_magic_router
   next_hop_vpc = {
-    az_name           = "f271eb5d-172f-48ad-b4b8-d39d7e0df2c0"
-    vpc_connection_id = "63681f38-3298-424a-9918-fef9db944970"
+    az_name           = "bf4753c7-17c3-409b-af49-05768e69687a"
+    vpc_connection_id = "b6b50cb3-a308-489c-a697-42969d6ea01d"
   }
 }
 ```

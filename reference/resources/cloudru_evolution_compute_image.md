@@ -7,20 +7,20 @@
 
 ```terraform
 resource "cloudru_evolution_compute_image" "resource_image" {
-  project_id = "07677660-d887-456c-b441-7c237957b016"
+  project_id = "1631d15d-a604-439e-83db-ee44a3e3edef"
   zones = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "200aeb2f-ed52-4bf3-b2ff-d1e3c5b177fb"
-    name = "2dc4d32f-c59b-4cde-8f88-d267007a6079"
+    id   = "aad5e66f-4639-4c7f-8cde-a3a7cb149231"
+    name = "d1e6f365-e5d3-405f-abde-6e0c8a32d64d"
   }]
-  name               = "54c12af8-9326-4106-954e-61866965c19c"
-  description        = "7abaefec-dd4a-4d90-b817-2497bf6dfd0c"
-  display_name       = "16b97cfe-b0e6-4b4e-ad2a-6fc59e298b2b"
-  icon               = "df3ffad0-51a9-4bb2-a8bf-b60477f29a0b"
-  min_cpu            = 1291666341
-  min_ram            = 807201402
-  min_disk           = 960301947
-  user_data_template = "181cd74f-da5f-45df-a84a-057f22971aab"
+  name               = "472a3fbb-365b-4646-a13d-14739d3fad94"
+  description        = "c345c731-6940-4542-90a3-aa9dbbf43ece"
+  display_name       = "a93a0d7c-9a22-4328-9f0e-b3861db3c945"
+  icon               = "cff249c7-91b1-475d-bb1f-0e5146d6d496"
+  min_cpu            = 667533870
+  min_ram            = 2098616116
+  min_disk           = 2090095296
+  user_data_template = "123d6b26-71cc-40f8-b276-7f7fa33587fd"
 }
 ```
 

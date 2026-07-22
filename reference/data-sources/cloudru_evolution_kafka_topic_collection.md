@@ -36,12 +36,9 @@ output "data-topic" {
 <a id="nestedatt--topics"></a>
 ### Nested Schema for `topics`
 
-Required:
-
-- `name` (String) Имя Топика.
-
 Read-Only:
 
+- `name` (String) Имя Топика.
 - `num_partitions` (Number) Количество партиций.
 - `parameters` (Map of String) Параметры топика <имя параметра, значение>. Список поддерживаемых параметров и их описание доступны в разделе документации [Параметры топиков](https://cloud.ru/docs/paas-kafka/ug/topics/guides__topics-parameters).
 - `replication_factor` (Number) Фактор репликации.

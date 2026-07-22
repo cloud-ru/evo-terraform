@@ -42,6 +42,7 @@ Read-Only:
 - `id` (String) Идентификатор кластера.
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--clusters--logging))
 - `name` (String) Имя кластера.
+- `parameters` (Map of String) Параметры кластера <имя параметра, значение>. Список поддерживаемых параметров и их описание доступны в разделе документации [Параметры кластера](https://cloud.ru/docs/redis/ug/topics/guides__parameters__available-parameters-list).
 - `redis_hosts` (List of String) Адреса кластера.
 - `replicas` (Number) Количество реплик.
 - `shards` (Number) Количество шардов.

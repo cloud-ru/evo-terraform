@@ -37,25 +37,23 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
   }
   labels = {
     labels = {
-      "88d37a26-b1cb-4c03-bafc-ffc097e598b5" = "0fbd1488-a2a5-4a36-b882-6a3c267b5dfd"
-    }
+    "026a6a14-e3f2-4527-a0ae-29e44e6ce16a" = "d2bbd90d-ac85-4061-865e-acf03dc0ee9f" }
   }
   remote_access = {
     ssh_key_id = "00000000-0000-0000-0000-000000000000"
     username   = "cloudru"
   }
-
-  machine_configuration = {
+  auto_repair = {
+    enabled = true
+  }
+  machine_configuration_request = {
+    flavor_id = "00000000-0000-0000-0000-000000000000"
     disk = {
       type_name = "SSD"
       size      = 30
     }
-    flavor = {
-      flavor_id = "00000000-0000-0000-0000-000000000000"
-    }
   }
-
-  network_configuration = {
+  network_configuration_request = {
     nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
     security_group_id = "00000000-0000-0000-0000-000000000000"
   }
@@ -68,15 +66,16 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
 ### Required
 
 - `cluster_id` (String) Идентификатор кластера, в котором развернута группа узлов.
-- `machine_configuration` (Attributes) Описание инфраструктуры узлов группы. (see [below for nested schema](#nestedatt--machine_configuration))
+- `machine_configuration_request` (Attributes) Параметры конфигурации виртуальной машины. (see [below for nested schema](#nestedatt--machine_configuration_request))
 - `name` (String) Название группы узлов.
-- `network_configuration` (Attributes) Конфигурация сети узлов. (see [below for nested schema](#nestedatt--network_configuration))
+- `network_configuration_request` (Attributes) Конфигурация сети группы узлов. (see [below for nested schema](#nestedatt--network_configuration_request))
 - `scale_policy` (Attributes) Политика масштабирования группы узлов в кластере. (see [below for nested schema](#nestedatt--scale_policy))
 - `update_configuration` (Attributes) Политика обновления группы узлов. (see [below for nested schema](#nestedatt--update_configuration))
 - `version` (String) Версия Kubernetes, которая используется на узлах группы.
 
 ### Optional
 
+- `auto_repair` (Attributes) Параметры автоматического восстановления узлов. (see [below for nested schema](#nestedatt--auto_repair))
 - `labels` (Attributes) Набор меток (labels), применяемых к узлам в группе. (see [below for nested schema](#nestedatt--labels))
 - `remote_access` (Attributes) Конфигурация удаленного доступа к виртуальной машине в группе. (see [below for nested schema](#nestedatt--remote_access))
 - `taints` (Attributes) Список ограничений (taints), применяемых к узлам в группе. (see [below for nested schema](#nestedatt--taints))
@@ -86,6 +85,8 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
 - `created_at` (String) Дата и время создания группы узлов.
 - `created_by` (String) Идентификатор пользователя, создавшего группу узлов.
 - `id` (String) Идентификатор группы узлов.
+- `machine_configuration` (Attributes) Описание инфраструктуры узлов группы. (see [below for nested schema](#nestedatt--machine_configuration))
+- `network_configuration` (Attributes) Конфигурация сети узлов. (see [below for nested schema](#nestedatt--network_configuration))
 - `status` (String) Состояние группы узлов. Возможные значения: * `OBJECT_STATUS_PENDING` — группа узлов в ожидании подготовки к запуску. * `OBJECT_STATUS_PROVISIONING` — подготовка группы узлов к запуску. * `OBJECT_STATUS_RUNNING` — группа узлов запущена. * `OBJECT_STATUS_RESUMING` — работа группы узлов возобновляется. * `OBJECT_STATUS_DELETING` — группа узлов удаляется. * `OBJECT_STATUS_ERROR` — операция с группой узлов закончилась ошибкой. * `OBJECT_STATUS_SCALING_UP` — размер группы узлов увеличивается. * `OBJECT_STATUS_SCALING_DOWN` — размер группы узлов уменьшается. * `OBJECT_STATUS_STOPPING` — работа группы узлов останавливается. * `OBJECT_STATUS_STOPPED` — работа группы узлов остановлена. * `OBJECT_STATUS_SUSPENDING` — работа группы узлов приостанавливается из-за отсутствия средств. * `OBJECT_STATUS_SUSPENDED` — работа группы узлов приостановлена из-за отсутствия средств. * `OBJECT_STATUS_UPGRADING` — версия группы узлов обновляется. * `OBJECT_STATUS_EDITING` — параметры группы узлов редактируются.
 - `updated_at` (String) Дата и время последнего обновления группы узлов.
 - `updated_by` (String) Идентификатор пользователя, обновившего группу узлов.
@@ -93,58 +94,37 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
 - `version_upgrade` (Attributes) Информация о доступных версиях Kubernetes для обновления группы узлов. (see [below for nested schema](#nestedatt--version_upgrade))
 - `zone` (String) Зона доступности, в которой размещены узлы группы.
 
-<a id="nestedatt--machine_configuration"></a>
-### Nested Schema for `machine_configuration`
-
-Required:
-
-- `flavor` (Attributes) Шаблон конфигурации для виртуальной машины (ВМ). (see [below for nested schema](#nestedatt--machine_configuration--flavor))
-
-Optional:
-
-- `disk` (Attributes) Конфигурация диска. (see [below for nested schema](#nestedatt--machine_configuration--disk))
-
-<a id="nestedatt--machine_configuration--flavor"></a>
-### Nested Schema for `machine_configuration.flavor`
+<a id="nestedatt--machine_configuration_request"></a>
+### Nested Schema for `machine_configuration_request`
 
 Required:
 
 - `flavor_id` (String) Идентификатор шаблона конфигурации.
 
-Read-Only:
+Optional:
 
-- `cpu` (Number) Количество ядер процессора виртуальной машины.
-- `gpu` (Number) Количество графических процессоров, выделенных виртуальной машине.
-- `name` (String) Название шаблона конфигурации.
-- `oversubscription` (String) Коэффициент переподписки, например "1:3".
-- `ram` (Number) Оперативная память виртуальной машины в ГБ.
-- `type` (String) Тип шаблона конфигурации.
+- `disk` (Attributes) Конфигурация диска. (see [below for nested schema](#nestedatt--machine_configuration_request--disk))
 
-
-<a id="nestedatt--machine_configuration--disk"></a>
-### Nested Schema for `machine_configuration.disk`
+<a id="nestedatt--machine_configuration_request--disk"></a>
+### Nested Schema for `machine_configuration_request.disk`
 
 Optional:
 
-- `size` (Number) Размер подключенного диска в ГБ.
+- `size` (Number) Размер подключаемого диска в ГБ. Минимальный размер диска — 10 ГБ. Если размер диска не указан, используется установленное для кластера значение по умолчанию — 10 ГБ.
 - `type_name` (String) Название типа диска.
 
 
 
-<a id="nestedatt--network_configuration"></a>
-### Nested Schema for `network_configuration`
+<a id="nestedatt--network_configuration_request"></a>
+### Nested Schema for `network_configuration_request`
 
 Required:
 
-- `nodes_subnet_id` (String) Идентификатор сети узлов группы.
+- `nodes_subnet_id` (String) Идентификатор существующей сети узлов. Не должен пересекаться с сетью сервисов или сетью подов кластера.
 
 Optional:
 
 - `security_group_id` (String) Идентификатор группы безопасности.
-
-Read-Only:
-
-- `nodes_subnet_cidr` (String) Адрес сети узлов группы.
 
 
 <a id="nestedatt--scale_policy"></a>
@@ -198,6 +178,14 @@ Optional:
 
 
 
+<a id="nestedatt--auto_repair"></a>
+### Nested Schema for `auto_repair`
+
+Optional:
+
+- `enabled` (Boolean) Включение автоматического восстановления группы узлов. Возможные значения: true — автоматическое восстановление включено, false — автоматическое восстановление выключено. По умолчанию восстановление группы узлов включено.
+
+
 <a id="nestedatt--labels"></a>
 ### Nested Schema for `labels`
 
@@ -234,6 +222,48 @@ Optional:
 
 - `effect` (String) Применяемый эффект. Возможные значения: * `EFFECT_NO_EXECUTE` — запрещается планирование новых подов без соответствующих tolerations на узлах группы. Запущенные поды перемещаются на узлы других групп. * `EFFECT_NO_SCHEDULE` — запрещается планирование новых подов без соответствующих tolerations на узлах группы. Запущенные поды продолжат работу. * `EFFECT_PREFER_NO_SCHEDULE` — планирование подов без соответствующих tolerations на узлах в группе разрешается только, если на узлах других групп нет свободных ресурсов.
 
+
+
+<a id="nestedatt--machine_configuration"></a>
+### Nested Schema for `machine_configuration`
+
+Read-Only:
+
+- `disk` (Attributes) Конфигурация диска. (see [below for nested schema](#nestedatt--machine_configuration--disk))
+- `flavor` (Attributes) Шаблон конфигурации для виртуальной машины (ВМ). (see [below for nested schema](#nestedatt--machine_configuration--flavor))
+
+<a id="nestedatt--machine_configuration--disk"></a>
+### Nested Schema for `machine_configuration.disk`
+
+Read-Only:
+
+- `size` (Number) Размер подключенного диска в ГБ.
+- `type_name` (String) Название типа диска.
+
+
+<a id="nestedatt--machine_configuration--flavor"></a>
+### Nested Schema for `machine_configuration.flavor`
+
+Read-Only:
+
+- `cpu` (Number) Количество ядер процессора виртуальной машины.
+- `flavor_id` (String) Идентификатор шаблона конфигурации.
+- `gpu` (Number) Количество графических процессоров, выделенных виртуальной машине.
+- `name` (String) Название шаблона конфигурации.
+- `oversubscription` (String) Коэффициент переподписки, например "1:3".
+- `ram` (Number) Оперативная память виртуальной машины в ГБ.
+- `type` (String) Тип шаблона конфигурации.
+
+
+
+<a id="nestedatt--network_configuration"></a>
+### Nested Schema for `network_configuration`
+
+Read-Only:
+
+- `nodes_subnet_cidr` (String) Адрес сети узлов группы.
+- `nodes_subnet_id` (String) Идентификатор сети узлов группы.
+- `security_group_id` (String) Идентификатор группы безопасности.
 
 
 <a id="nestedatt--upgrade_info"></a>

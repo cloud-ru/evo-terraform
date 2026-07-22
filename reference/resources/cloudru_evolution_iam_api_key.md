@@ -7,22 +7,22 @@
 
 ```terraform
 resource "cloudru_evolution_iam_api_key" "resource_api_key" {
-  name               = "bc99ead3-da60-4162-aae7-f70f99ec865f"
-  description        = "da9c4633-2c57-42c5-9e49-260d02806846"
-  service_account_id = "5069edae-edac-482a-80dd-ba96c2c594b0"
-  product_codes      = ["60730614-e52f-4085-8679-7cd3a0da5c94", "6fcf5bc4-dcd2-4bfb-b859-f1cd7f79bb08", "4d9cdedb-dfb0-47e8-b36d-5d265d4f5afd", "73c88879-0c29-4633-ba82-583b42cd4cae", "16023cfe-6b35-4ff3-99bd-7bd68619116a", "4b89b209-4ebf-4c06-9d5d-8c8371b77534", "85e78be9-bd32-4364-b562-ed40a0aeeb75", "6478c737-0aa9-49c4-ae8c-bdd0aeaedbca", "0cdd709a-59be-49f6-b51e-b124776ddc68", "b8d1324d-28b1-4db7-800f-d04c49c3fdb9"]
+  name               = "72986071-47ce-4d52-b94f-132405678a7a"
+  description        = "1b2e6b28-4296-43b4-8e91-08c6c475fbea"
+  service_account_id = "66b58b18-4caa-4047-92ea-a6ac6c9c9b61"
+  product_codes      = ["d323a913-85f8-48bb-9b96-f2c53f9ab772", "653ea33d-7eec-46b2-b3da-1c1f726d34ab", "b87e08be-db28-47aa-a15e-453f1608a6ea", "3afe6bdd-69f5-4307-850c-b43606069fc7", "bc05f7dd-9dc7-4818-88e8-e92cf77589d3", "6a4ccf82-60f5-4ecc-b562-fadcfdd783f9", "7cc13ecd-147e-495d-b99a-add5553b8008", "fc4560ae-3fb8-41ef-8fa2-994b837ebe73", "8c19aa99-51ba-488f-8834-809bbd263c98", "efcbff3d-b99c-4fd0-b439-3900b743ca92"]
   restrictions = {
-    ip_addresses = ["b2584400-42be-457d-9f64-8b01c336d732", "ce70ba65-494f-44fd-8c2c-71862d270eec", "94f641a2-2f74-428b-a5dd-39993d4005b6", "6752109d-f25c-4338-809b-2cb4a5dfb3b0", "3c12bb86-43bd-4eda-8fd5-ba035e635d4d", "22d971fe-1db2-4e9c-bb7a-e7ddc7a76856", "41dc8d68-3fde-4327-af37-bbb2f651b6c5", "4b6c1aef-2e4c-4167-ad30-e9c96cbd8046", "f4296cfd-e32f-4f02-9ac9-de11fc9dba93", "1d8bb1a6-266d-4c05-ad7f-fe04e551627b"]
+    ip_addresses = ["c6f816b9-2f78-4c5b-a555-a500f69284f6", "91dd3285-9c02-4163-ad4d-bfb33ddfb5e0", "e23dc87b-1858-4107-8cd0-4c7917321eda", "a2f742ed-2fe5-4ec6-a050-fb4511b9102b", "2e1dd656-1321-4e7b-af6a-ae1c2caa9c30", "4857b8fe-20ac-42f0-b6d0-c1e1b6227cd1", "cd194310-f69b-420c-a218-809691788af4", "cae2cc71-c87b-432f-a744-c951b4e902d9", "f7a69319-7f0c-4ff4-a4f5-f953e1333222", "1fb328ea-a188-4b51-aa85-150182543a3c"]
     time_range = {
       time_slots = [{
-        start = 1961291163
-        end   = 1146248837
+        start = 633718602
+        end   = 302496984
       }]
-      timezone = 1753605921
+      timezone = 636593414
     }
   }
-  enabled    = true
-  expires_at = "Mon, 29 Jun 2026 09:37:53 UTC"
+  enabled    = false
+  expires_at = "Wed, 22 Jul 2026 22:22:40 UTC"
 }
 ```
 
@@ -34,13 +34,13 @@ resource "cloudru_evolution_iam_api_key" "resource_api_key" {
 - `enabled` (Boolean) Enabled - флаг активности API ключа.
 - `name` (String) Name - название API ключа.
 - `product_codes` (Set of String) ProductCodes - список кодов продуктов, для которых может быть применим API ключ.
+- `restrictions` (Attributes) Restrictions - ограничения использования API ключа. (see [below for nested schema](#nestedatt--restrictions))
 - `service_account_id` (String) ServiceAccountID - идентификатор сервисного аккаунта, для которого был выпущен API ключ.
 
 ### Optional
 
 - `description` (String) Description - описание API ключа.
 - `expires_at` (String) ExpiresAt - дата истечения API ключа.
-- `restrictions` (Attributes) Restrictions - ограничения использования API ключа. (see [below for nested schema](#nestedatt--restrictions))
 
 ### Read-Only
 

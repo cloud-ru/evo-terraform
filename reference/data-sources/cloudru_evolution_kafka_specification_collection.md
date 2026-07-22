@@ -7,9 +7,12 @@
 
 ```terraform
 data "cloudru_evolution_kafka_specification_collection" "datasource_specification" {
-  version_id           = "00000000-0000-0000-0000-000000000000"
+  # Нужно заполнить одно из значений - version_id
+  version_id = "00000000-0000-0000-0000-000000000000"
+  # Нужно заполнить одно из значений - availability_zone_id
   availability_zone_id = "00000000-0000-0000-0000-000000000000"
-  cluster_id           = "00000000-0000-0000-0000-000000000000"
+  # Нужно заполнить одно из значений - cluster_id
+  cluster_id = "00000000-0000-0000-0000-000000000000"
 }
 
 output "data-specification" {

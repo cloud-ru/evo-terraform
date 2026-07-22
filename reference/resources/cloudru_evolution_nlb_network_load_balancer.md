@@ -10,6 +10,14 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
   name       = "balancer-01"
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   vpc_id     = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  internal_address = {
+    ipv4      = "192.168.0.28/24"
+    subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+    allocate  = true
+  }
+  external_address = {
+    allocate = true
+  }
   rules = [{
     name            = "rule-01"
     target_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
@@ -33,21 +41,13 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
     }
     algorithm = "ALG_ROUND_ROBIN"
   }]
-  description = "Description"
-  internal_address = {
-    allocate  = true
-    subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-    ipv_4     = "192.168.0.28/24"
-  }
-  external_address = {
-    allocate = true
-  }
-  availability_zone = [{
-    subnets = [ { id = "8fcc33c4-4580-4146-9b7f-e58943de078e"}, { id = "d7650912-c92b-4b9a-9e92-ba756ad822b4"} ]
+  availability_zones = [{
+    subnet_ids = ["8fcc33c4-4580-4146-9b7f-e58943de078e", "d7650912-c92b-4b9a-9e92-ba756ad822b4"]
     # Нужно заполнить одно из значений - id, name.
     id   = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     name = "ru.AZ-1"
   }]
+  description = "Description"
 }
 ```
 
@@ -56,7 +56,7 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
 
 ### Required
 
-- `availability_zone` (Attributes List) Список зон доступности, которые обслуживает балансировщик. (see [below for nested schema](#nestedatt--availability_zone))
+- `availability_zones` (Attributes List) Список зон доступности, которые обслуживает балансировщик. (see [below for nested schema](#nestedatt--availability_zones))
 - `name` (String) Название балансировщика.
 - `project_id` (String) Идентификатор проекта, которому принадлежит балансировщик.
 - `rules` (Attributes List) Список правил балансировки. (see [below for nested schema](#nestedatt--rules))
@@ -65,21 +65,18 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
 ### Optional
 
 - `description` (String) Описание балансировщика.
-- `external_address` (Attributes) Параметры внешнего (публичного) IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--external_address))
-- `internal_address` (Attributes) Параметры внутреннего IP-адреса. Хотя бы один IP-адрес должен быть сконфигурирован. (see [below for nested schema](#nestedatt--internal_address))
+- `external_address` (Attributes) Внешний (публичный) IP-адрес балансировщика. (see [below for nested schema](#nestedatt--external_address))
+- `internal_address` (Attributes) Внутренний IP-адрес балансировщика. (see [below for nested schema](#nestedatt--internal_address))
 
 ### Read-Only
 
-- `availability_zones` (Attributes List) Список зон доступности, которые обслуживает балансировщик. (see [below for nested schema](#nestedatt--availability_zones))
 - `created_at` (String) Время создания балансировщика.
-- `external_address` (Attributes) Внешний (публичный) IP-адрес балансировщика. (see [below for nested schema](#nestedatt--external_address))
 - `id` (String) Идентификатор балансировщика.
-- `internal_address` (Attributes) Внутренний IP-адрес балансировщика. (see [below for nested schema](#nestedatt--internal_address))
 - `status` (String) Оперативный статус балансировщика.
 - `updated_at` (String) Время последнего обновления балансировщика.
 
-<a id="nestedatt--availability_zone"></a>
-### Nested Schema for `availability_zone`
+<a id="nestedatt--availability_zones"></a>
+### Nested Schema for `availability_zones`
 
 Required:
 
@@ -89,6 +86,27 @@ Optional:
 
 - `id` (String) Идентификатор зоны доступности.
 - `name` (String) Название зоны доступности.
+
+Read-Only:
+
+- `subnets` (Attributes List) Список внутренних подсетей в зоне доступности, из которых будут выделены IP-адреса для реплик балансировщика. Именно с этих IP-адресов сетевой трафик будет доставляться к целям. (see [below for nested schema](#nestedatt--availability_zones--subnets))
+
+<a id="nestedatt--availability_zones--subnets"></a>
+### Nested Schema for `availability_zones.subnets`
+
+Read-Only:
+
+- `id` (String) Идентификатор подсети.
+- `return_addrs` (Attributes List) Список IP-адресов обратного трафика балансировщика. Именно с этих IP-адресов трафик поступает на цели. (see [below for nested schema](#nestedatt--availability_zones--subnets--return_addrs))
+
+<a id="nestedatt--availability_zones--subnets--return_addrs"></a>
+### Nested Schema for `availability_zones.subnets.return_addrs`
+
+Read-Only:
+
+- `ipv4` (String) IP-адрес.
+
+
 
 
 <a id="nestedatt--rules"></a>
@@ -153,6 +171,10 @@ Optional:
 
 - `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
 
+Read-Only:
+
+- `ipv4` (String) IP-адрес.
+
 
 <a id="nestedatt--internal_address"></a>
 ### Nested Schema for `internal_address`
@@ -160,49 +182,5 @@ Optional:
 Optional:
 
 - `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
-- `ipv_4` (String) IP-адрес из указанной подсети, который должен быть назначен балансировщику.
-- `subnet_id` (String) Идентификатор подсети, из которой будет выделен IP-адрес. Обязательный параметр, если IP-адрес необходим.
-
-
-<a id="nestedatt--availability_zones"></a>
-### Nested Schema for `availability_zones`
-
-Read-Only:
-
-- `id` (String) Идентификатор зоны доступности.
-- `name` (String) Название зоны доступности.
-- `subnets` (Attributes List) Список внутренних подсетей в зоне доступности, из которых будут выделены IP-адреса для реплик балансировщика. Именно с этих IP-адресов сетевой трафик будет доставляться к целям. (see [below for nested schema](#nestedatt--availability_zones--subnets))
-
-<a id="nestedatt--availability_zones--subnets"></a>
-### Nested Schema for `availability_zones.subnets`
-
-Read-Only:
-
-- `id` (String) Идентификатор подсети.
-- `return_addrs` (Attributes List) Список IP-адресов обратного трафика балансировщика. Именно с этих IP-адресов трафик поступает на цели. (see [below for nested schema](#nestedatt--availability_zones--subnets--return_addrs))
-
-<a id="nestedatt--availability_zones--subnets--return_addrs"></a>
-### Nested Schema for `availability_zones.subnets.return_addrs`
-
-Read-Only:
-
-- `ipv_4` (String) IP-адрес.
-
-
-
-
-<a id="nestedatt--external_address"></a>
-### Nested Schema for `external_address`
-
-Read-Only:
-
-- `ipv_4` (String) IP-адрес.
-
-
-<a id="nestedatt--internal_address"></a>
-### Nested Schema for `internal_address`
-
-Read-Only:
-
-- `ipv_4` (String) IP-адрес.
+- `ipv4` (String) IP-адрес.
 - `subnet_id` (String) Идентификатор подсети, в которой находится IP-адрес.

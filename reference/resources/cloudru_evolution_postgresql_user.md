@@ -7,10 +7,7 @@
 
 ```terraform
 resource "cloudru_evolution_postgresql_user" "resource_user" {
-  name = "username"
-  granted_roles = [{
-    name = "pg_read_all_data"
-  }]
+  name       = "username"
   cluster_id = "00000000-0000-0000-0000-000000000000"
   password   = "SecurePass123!"
 }

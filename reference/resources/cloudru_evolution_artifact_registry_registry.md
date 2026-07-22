@@ -9,7 +9,7 @@
 resource "cloudru_evolution_artifact_registry_registry" "resource_registry" {
   name = "my-registry"
   # Варианты значений параметра registry_type:
-  # DEBIAN, RPM, GENERIC
+  # DEBIAN, RPM, GENERIC, PYPI
   registry_type               = "DOCKER"
   retention_policy_is_enabled = true
   retention_policy = {

@@ -7,9 +7,12 @@
 
 ```terraform
 data "cloudru_evolution_postgresql_specification_collection" "datasource_specification" {
+  # Нужно заполнить одно из значений - version_name
   version_name = 17
-  product_type = "postgresql"
-  cluster_id   = "00000000-0000-0000-0000-000000000000"
+  # Нужно заполнить одно из значений - product_type
+  product_type = "postgres"
+  # Нужно заполнить одно из значений - cluster_id
+  cluster_id = "00000000-0000-0000-0000-000000000000"
 }
 
 output "data-specification" {
@@ -23,7 +26,7 @@ output "data-specification" {
 ### Optional
 
 - `cluster_id` (String) Идентификатор кластера. Укажите для получения спецификаций, доступных для вертикального масштабирования кластера.
-- `product_type` (String) Название продукта. По умолчанию `postgresql`.
+- `product_type` (String) Название продукта. По умолчанию `postgres`.
 - `version_name` (String) Версия продукта. Укажите для получения спецификаций.
 
 ### Read-Only

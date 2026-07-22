@@ -29,12 +29,9 @@ output "data-user" {
 <a id="nestedatt--users"></a>
 ### Nested Schema for `users`
 
-Required:
-
-- `name` (String) Имя пользователя.
-
 Read-Only:
 
+- `name` (String) Имя пользователя.
 - `roles` (Attributes) Список ролей, назначенных пользователю. Если список пуст, пользователь не может выполнять никакие действия. (see [below for nested schema](#nestedatt--users--roles))
 
 <a id="nestedatt--users--roles"></a>

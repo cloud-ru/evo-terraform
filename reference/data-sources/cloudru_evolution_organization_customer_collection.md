@@ -7,7 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_organization_customer_collection" "datasource_customer" {
-  page_size = 5618319145548506381
+  page_size = 491330943602122255
 }
 
 output "data-customer" {

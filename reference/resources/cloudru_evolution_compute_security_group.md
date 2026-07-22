@@ -7,14 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group" "resource_security_group" {
-  project_id = "95720fd1-1f81-4b49-8071-e65f9c112449"
+  project_id = "ef678a8a-e3f1-4b08-8c36-b8d2652d1143"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "77e402ac-71c6-461e-8c31-506913442122"
-    name = "43e187b4-af6d-479a-a980-98a9527ed4e2"
+    id   = "8fcfaf9d-bf94-41ad-9357-63cee83be81b"
+    name = "2f59d61b-1970-4445-88d6-3c4179a5e661"
   }
-  name        = "ef5d1951-7b73-4614-8d30-818dce3f6be8"
-  description = "a2004fd2-617f-4b89-96a8-afd559adfb9e"
+  name        = "96fd7b44-e067-4e56-a941-16d206931140"
+  description = "bf67ee23-bd67-4688-8b90-c6f799faaeec"
 }
 ```
 

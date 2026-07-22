@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_flavor_collection" "datasource_flavor" {
-  project_id = "050d74f6-cded-4cd6-84d6-7af6e447e18a"
-  page_size  = 1065267924863250590
-  filter     = "a67d7423-9166-41e9-8866-524eaf7e6b6d"
-  order_by   = "ff1b8dc4-d376-4872-9e43-1bd15c1f566c"
+  project_id = "4cda3865-8504-418e-8676-feefb55a0d3e"
+  page_size  = 3307314410527898948
+  filter     = "4a67afbb-2f6c-4bca-b626-a76376527294"
+  order_by   = "4eecc344-359a-4762-a6a8-7b4fe76acbd4"
 }
 
 output "data-flavor" {

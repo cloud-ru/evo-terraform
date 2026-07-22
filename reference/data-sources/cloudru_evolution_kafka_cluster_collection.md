@@ -7,6 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_kafka_cluster_collection" "datasource_cluster" {
+  # Нужно заполнить одно из значений - product_type
   product_type = "kafka"
   project_id   = "00000000-0000-0000-0000-000000000000"
   page_size    = 20

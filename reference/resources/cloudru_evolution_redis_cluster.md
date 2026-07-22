@@ -20,6 +20,10 @@ resource "cloudru_evolution_redis_cluster" "resource_cluster" {
     enabled      = true
     log_group_id = "00000000-0000-0000-0000-000000000000"
   }
+  parameters = {
+    "appendonly"                                   = "false",
+    "client-output-buffer-limit-normal|hard-limit" = "1048576"
+  }
   user_description = "Some short text."
   subnet_id        = "00000000-0000-0000-0000-000000000000"
   project_id       = "00000000-0000-0000-0000-000000000000"
@@ -43,6 +47,7 @@ resource "cloudru_evolution_redis_cluster" "resource_cluster" {
 ### Optional
 
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--logging))
+- `parameters` (Map of String) Параметры кластера <имя параметра, значение>. Список поддерживаемых параметров и их описание доступны в разделе документации [Параметры кластера](https://cloud.ru/docs/redis/ug/topics/guides__parameters__available-parameters-list).
 - `storage_gb` (Number) Размер диска в гигабайтах. Используйте поле `storage_gib` вместо `storage_gb`.
 - `storage_gib` (Number) Размер диска в гигабайтах.
 - `user_description` (String) Пользовательское описание кластера.
