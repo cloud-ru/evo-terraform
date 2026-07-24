@@ -18,7 +18,6 @@ resource "cloudru_evolution_spark_spark" "resource_spark" {
   description           = "Spark cluster description"
   enabled_external_host = true
   log_group_id          = "0000-0000-0000-0000-0000"
-  # Нужно заполнить одно из значений - internal_s3_config, external_s3_config
   internal_s3_config = {
     tenant_id = "0000-0000-0000-0000-0000"
     bucket    = "bucket"

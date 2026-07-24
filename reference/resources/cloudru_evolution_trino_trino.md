@@ -7,29 +7,29 @@
 
 ```terraform
 resource "cloudru_evolution_trino_trino" "resource_trino" {
-  cluster_id  = "82601071-9d4c-4bec-9d93-b67b1d7466be"
-  project_id  = "6e0e976a-8d54-425c-bc79-64859c957974"
-  name        = "5eb71b54-6e41-461c-b7b9-96dcc1b395a0"
-  description = "21b332e8-0f7a-4afb-adba-ca840ff96b78"
+  cluster_id  = "df91e644-c363-49b7-844e-51fcc7e22ff9"
+  project_id  = "f74babe3-5282-4a32-b131-0edc561a3101"
+  name        = "053f685c-769e-4b44-8589-32f0b06a9a4f"
+  description = "07720874-0929-4640-81b1-a16f3c22916d"
   network_configuration = {
-    subnet_id = "d9a573a1-5d7c-4efd-9d52-800942141be5"
-    zone_id   = "9ec835a9-3cbf-4fe9-bdfe-f8dd388662c9"
+    subnet_id = "c60cf98b-5371-4691-86bc-a82fe6ac7db9"
+    zone_id   = "89811537-a79a-485f-b4cc-59c0f9756a92"
   }
   node_configuration = {
-    flavor_id = "86a82028-004e-49a1-b18f-1e741d4e97df"
-    min_count = 1301104263
-    max_count = 107338460
+    flavor_id = "4023b1d7-346e-498f-aded-f4c6931c96d6"
+    min_count = 1507496920
+    max_count = 2118776669
   }
   enable_public_host = true
   basic_auth = {
     users = [{
-      username           = "e669e466-8101-4237-b4de-5dec468e68c5"
-      password_secret_id = "896753e2-37eb-4c2c-a642-b93f8e6d285e"
+      username           = "0145fde1-14a0-494d-9d22-e84a8428ab0a"
+      password_secret_id = "79a508b6-e856-4303-9328-dc5396d6efb2"
     }]
   }
-  log_group_id = "6cd4de5f-8591-4cf5-a9d7-f8bdf806e272"
-  catalog_ids  = ["fcd36bed-9ef7-410a-877d-44da6137e2f9", "7c734345-8377-406e-a21e-3d09346bff51", "e77510bd-5acf-45cc-993c-999c39d1f669", "dc260858-b450-49b1-96ff-43c3a331f9a2", "56393680-e629-4ef6-b0fd-87bd2e8a600f", "70bbce79-18b0-4570-84d5-cea6596e9d6d", "ca28e6e5-20cd-42f3-987b-88d8bb2d54f6", "8b8b9b38-b793-4bcc-9bcf-50ecd957e0a7", "54ba3acb-82da-4970-b8a3-24d9c5b24ef5", "8468f82c-e78b-4d51-a2a0-9e562c6de70a"]
-  version_id   = "9078dd0d-28d3-40cf-9bf1-61f846f6fba9"
+  log_group_id = "a1093b00-6e46-424f-92d4-d5de0f41eb62"
+  catalog_ids  = ["83c358d4-8deb-484a-bf7a-d564997aa8cf", "82588dcc-eadb-4e20-9927-2e68a43b740d", "a3ce7647-5281-4b08-80c8-7b7756dae6e8", "97eb342f-b298-4866-88d3-7a67e1511a3d", "b335b4b2-f27f-44bf-b4d9-3635c2ac08be", "cc617d6a-a8e3-4efe-ac41-f1d8d21eeee7", "54b2e842-2e62-4b81-999b-b773a4050035", "0bef9035-9fef-453a-9051-04ee3f3a1f12", "6f95f4ca-37c6-44ee-922d-f96133a37ec6", "90eaf358-9900-4239-a0a4-bb4117e56e17"]
+  version_id   = "ad1edef4-6b3f-4ac5-9b5d-99a339d669d2"
 }
 ```
 
@@ -107,10 +107,10 @@ Required:
 Required:
 
 - `id` (String) Идентификатор версии.
+
+Read-Only:
+
+- `description` (String) Описание версии.
 - `managed_version` (String) Номер версии Managed Trino.
 - `name` (String) Название версии. Пример: 1.0.0 (478).
 - `oss_version` (String) Номер версии open source продукта Trino.
-
-Optional:
-
-- `description` (String) Описание версии.

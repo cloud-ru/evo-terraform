@@ -7,7 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_trino_version_collection" "datasource_version" {
-  project_id = "59484964-d214-4369-81da-c74b0bb76015"
+  project_id = "f9329eae-cf55-4414-b9ab-77f4ab973177"
 }
 
 output "data-version" {

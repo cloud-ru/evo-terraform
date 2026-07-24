@@ -29,23 +29,16 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
     enabled = true
     kek_id  = "00000000-0000-0000-0000-000000000000"
   }
-
-  control_plane = {
-    count   = 1
-    version = "v1.34.1"
-    zones   = ["00000000-0000-0000-0000-000000000000"]
-    machine_configuration = {
-      flavor = {
-        flavor_id = "00000000-0000-0000-0000-000000000000"
-      }
-    }
+  control_plane_zones   = ["00000000-0000-0000-0000-000000000000"]
+  control_plane_version = "v1.34.1"
+  sizing_configuration = {
+    master_count = 1
+    flavor_id    = "00000000-0000-0000-0000-000000000000"
   }
-
-  network_configuration = {
-    services_subnet_cidr  = "10.96.0.0/12"
-    pods_subnet_cidr      = "10.1.0.0/16"
-    kube_api_internet     = true
-    private_vip_subnet_id = "00000000-0000-0000-0000-000000000000"
+  network_configuration_request = {
+    services_subnet_cidr = "10.96.0.0/12"
+    pods_subnet_cidr     = "10.1.0.0/16"
+    kube_api_internet    = true
     network_plugin = {
       # Нужно заполнить одно из значений - cilium, calico.
       cilium = {
@@ -61,8 +54,8 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
         app_version = "v3.29.3"
       }
     }
+    private_vip_subnet_id = "00000000-0000-0000-0000-000000000000"
   }
-
   bootstrap_managed_addons = {
     horizontal_pod_autoscaling = {
       enabled = true
@@ -98,7 +91,6 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
 - `key_management_service` (Attributes) Параметры шифрования ресурсов кластера. (see [below for nested schema](#nestedatt--key_management_service))
 - `logging_service` (Attributes) Параметры логирования событий компонентов кластера. (see [below for nested schema](#nestedatt--logging_service))
 - `monitoring_service` (Attributes) Параметры мониторинга компонентов кластера. (see [below for nested schema](#nestedatt--monitoring_service))
-- `network_plugin` (Attributes) Плагин CNI для обеспечения сетевой связности и сетевых политик в кластере. (see [below for nested schema](#nestedatt--network_plugin))
 - `release_channel` (String) Релизный канал, на который подписан кластер.
 
 ### Read-Only
@@ -123,7 +115,7 @@ Required:
 
 Optional:
 
-- `zones` (List of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — три и более.
+- `zones` (Set of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — три и более.
 
 Read-Only:
 
@@ -190,6 +182,7 @@ Required:
 
 Required:
 
+- `network_plugin` (Attributes) Плагин CNI для обеспечения сетевой связности и сетевых политик в кластере. (see [below for nested schema](#nestedatt--network_configuration--network_plugin))
 - `private_vip_subnet_id` (String) Идентификатор подсети, из которой выделен внутренний IP-адрес.
 
 Optional:
@@ -204,6 +197,35 @@ Read-Only:
 - `nodes_subnet_cidr` (String) Адрес подсети узлов плоскости управления.
 - `nodes_subnet_id` (String) Идентификатор подсети узлов плоскости управления.
 - `vpc_id` (String) Идентификатор VPC.
+
+<a id="nestedatt--network_configuration--network_plugin"></a>
+### Nested Schema for `network_configuration.network_plugin`
+
+Optional:
+
+- `calico` (Attributes) Настройки для использования Calico в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_configuration--network_plugin--calico))
+- `cilium` (Attributes) Настройки для использования Cilium в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_configuration--network_plugin--cilium))
+
+<a id="nestedatt--network_configuration--network_plugin--calico"></a>
+### Nested Schema for `network_configuration.network_plugin.calico`
+
+Optional:
+
+- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
+- `enabled` (Boolean) Опция использования Calico в качестве CNI-плагина кластера.
+- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
+
+
+<a id="nestedatt--network_configuration--network_plugin--cilium"></a>
+### Nested Schema for `network_configuration.network_plugin.cilium`
+
+Optional:
+
+- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
+- `enabled` (Boolean) Опция использования Cilium в качестве CNI-плагина кластера.
+- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
+
+
 
 <a id="nestedatt--network_configuration--cp_endpoints"></a>
 ### Nested Schema for `network_configuration.cp_endpoints`
@@ -290,35 +312,6 @@ Optional:
 Optional:
 
 - `enabled` (Boolean) Включение/выключение мониторинга компонентов кластера. Возможные значения: true — мониторинг включен, false — мониторинг выключен. По умолчанию мониторинг включен.
-
-
-<a id="nestedatt--network_plugin"></a>
-### Nested Schema for `network_plugin`
-
-Required:
-
-- `calico` (Attributes) Настройки для использования Calico в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_plugin--calico))
-- `cilium` (Attributes) Настройки для использования Cilium в качестве CNI-плагина. (see [below for nested schema](#nestedatt--network_plugin--cilium))
-
-<a id="nestedatt--network_plugin--calico"></a>
-### Nested Schema for `network_plugin.calico`
-
-Optional:
-
-- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
-- `enabled` (Boolean) Опция использования Calico в качестве CNI-плагина кластера.
-- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
-
-
-<a id="nestedatt--network_plugin--cilium"></a>
-### Nested Schema for `network_plugin.cilium`
-
-Optional:
-
-- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
-- `enabled` (Boolean) Опция использования Cilium в качестве CNI-плагина кластера.
-- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
-
 
 
 <a id="nestedatt--node_pools"></a>

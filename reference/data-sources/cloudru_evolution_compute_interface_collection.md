@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_interface_collection" "datasource_interface" {
-  project_id = "dbe9527d-7d4c-4bc5-93e4-8565b95a7acf"
-  page_size  = 6115365232052073295
-  filter     = "420839ba-dc97-4656-975d-e6f429377557"
+  project_id = "112228b5-a13b-401f-a1ba-3729dd25bb2c"
+  page_size  = 6297931383209692942
+  filter     = "f3aa5858-4688-4fc8-a874-1dfcce4fbe4a"
 }
 
 output "data-interface" {
@@ -39,9 +39,9 @@ output "data-interface" {
 Read-Only:
 
 - `allowed_address_pairs` (Attributes) Разрешенные пары адресов. (see [below for nested schema](#nestedatt--interfaces--allowed_address_pairs))
+- `attach_external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--interfaces--attach_external_ip))
 - `created_at` (String) Дата и время создания сетевого интерфейса.
 - `description` (String) Описание интерфейса.
-- `external_ip` (Attributes) Параметры публичного IP. (see [below for nested schema](#nestedatt--interfaces--external_ip))
 - `id` (String) Идентификатор интерфейса.
 - `interface_security_enabled` (Boolean) Возможность добавить сетевой интерфейс в группу безопасности: true — можно, false — нельзя.
 - `ip_address` (String) IP-адрес.
@@ -73,8 +73,8 @@ Read-Only:
 
 
 
-<a id="nestedatt--interfaces--external_ip"></a>
-### Nested Schema for `interfaces.external_ip`
+<a id="nestedatt--interfaces--attach_external_ip"></a>
+### Nested Schema for `interfaces.attach_external_ip`
 
 Read-Only:
 

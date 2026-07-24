@@ -7,17 +7,18 @@
 
 ```terraform
 resource "cloudru_evolution_trino_catalog" "resource_catalog" {
-  project_id  = "e71a0dba-89d3-4d89-8c82-2cf212eda524"
-  name        = "2e1574a7-50bb-4cfd-8898-225d7425dd63"
-  description = "37c42cfd-8c50-4091-a2c1-4fbfb6626807"
+  project_id  = "bc50ddca-2d30-4194-9448-4ec6587797a9"
+  name        = "e1c379f6-dbbb-42f9-b246-79becd579357"
+  description = "c3e94146-45dd-4fdd-8071-ae57a6a48bed"
+  # Нужно заполнить одно из значений - postgresql, mysql, oracle, mariadb, mssql, clickhouse, mongodb, metastore, iceberg, connection_hub, kafka
   postgresql = {
-    host               = "7fb58796-4363-4b65-b7c6-5d2e688bd749"
-    port               = 1533250649
-    user               = "eb3408a9-bc48-42eb-aded-d080c925c681"
-    password_secret_id = "6c9fc5f9-1fb4-43cf-b131-9f3da929a71a"
-    database           = "a10bffd1-724a-4d63-9219-646d013abfaa"
+    host               = "6dec43d9-8127-4297-ace3-adebdc7d8e9a"
+    port               = 1934969966
+    user               = "4f99ea97-ee36-469b-889f-8a24ae9de041"
+    password_secret_id = "c3134701-5b5f-470d-898b-b79d82d28141"
+    database           = "fc01f66b-6ed1-4287-90fd-9ac2736e30d6"
     extra_properties = {
-    "986754c4-dfed-44c5-bd36-2223402c9593" = "c037ddb7-ea79-47de-97ef-357b4de1263e" }
+    "5938e5a2-f57a-4de3-a8d4-5e7d54a284d3" = "75b43cb0-5277-4501-8b83-5bcd0c04d17f" }
   }
 }
 ```

@@ -9,12 +9,12 @@
 resource "cloudru_evolution_iam_service_account" "resource_service_account" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "fa94caeb-a268-4820-9f94-3ad92e1dffc1"
-    project_id  = "d46b9eac-11fb-4263-8f98-def2f4e7ad82"
+    customer_id = "3c2a1a9b-d875-47fe-a508-8b364f7bf6bf"
+    project_id  = "da23e8c1-22ff-4d49-be9a-6b22d3147094"
   }
-  name        = "0d135702-02bc-4601-aa0c-8fc6663e8ac5"
-  description = "b26917df-a209-4209-bed6-40ac86abe544"
-  enabled     = false
+  name        = "3bc2457e-7843-418f-a2c2-7366e5231798"
+  description = "03463b37-916d-4950-b1ff-589358b280d0"
+  enabled     = true
 }
 ```
 

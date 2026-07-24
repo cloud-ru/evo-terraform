@@ -7,22 +7,22 @@
 
 ```terraform
 resource "cloudru_evolution_iam_api_key" "resource_api_key" {
-  name               = "bc99ead3-da60-4162-aae7-f70f99ec865f"
-  description        = "da9c4633-2c57-42c5-9e49-260d02806846"
-  service_account_id = "5069edae-edac-482a-80dd-ba96c2c594b0"
-  product_codes      = ["60730614-e52f-4085-8679-7cd3a0da5c94", "6fcf5bc4-dcd2-4bfb-b859-f1cd7f79bb08", "4d9cdedb-dfb0-47e8-b36d-5d265d4f5afd", "73c88879-0c29-4633-ba82-583b42cd4cae", "16023cfe-6b35-4ff3-99bd-7bd68619116a", "4b89b209-4ebf-4c06-9d5d-8c8371b77534", "85e78be9-bd32-4364-b562-ed40a0aeeb75", "6478c737-0aa9-49c4-ae8c-bdd0aeaedbca", "0cdd709a-59be-49f6-b51e-b124776ddc68", "b8d1324d-28b1-4db7-800f-d04c49c3fdb9"]
+  name               = "a8ace115-c27f-4394-b4fd-88d3fe5ad221"
+  description        = "83c6086a-84db-4607-80a5-9ba42a806075"
+  service_account_id = "d934cf0f-e482-4a07-86b0-8c1f42c45f0e"
+  product_codes      = ["b0f0346d-c064-460f-8a7a-9f3ab10a5dad", "d75c5373-0acc-4a5b-b577-73f3082e0c3d", "9aa4d703-f881-4803-af77-e1f8e487db05", "dc24cc95-387d-4535-8567-b05d803cf86a", "5ca769aa-63b1-4f8c-a7f0-bcf3f1f44e80", "6c602a5e-f90e-41be-b194-42a1251ec3ea", "8657ddba-83ef-48fc-b86d-a2765f430de9", "f082e121-d60f-4562-b353-a91093b34eb2", "0d1ea6ff-a519-4255-a652-03faf80aa4d2", "6e357d0c-4ef2-452e-bb9f-60d893d8518a"]
   restrictions = {
-    ip_addresses = ["b2584400-42be-457d-9f64-8b01c336d732", "ce70ba65-494f-44fd-8c2c-71862d270eec", "94f641a2-2f74-428b-a5dd-39993d4005b6", "6752109d-f25c-4338-809b-2cb4a5dfb3b0", "3c12bb86-43bd-4eda-8fd5-ba035e635d4d", "22d971fe-1db2-4e9c-bb7a-e7ddc7a76856", "41dc8d68-3fde-4327-af37-bbb2f651b6c5", "4b6c1aef-2e4c-4167-ad30-e9c96cbd8046", "f4296cfd-e32f-4f02-9ac9-de11fc9dba93", "1d8bb1a6-266d-4c05-ad7f-fe04e551627b"]
+    ip_addresses = ["45cc3fdf-2843-49a9-979d-1f5f72f1116b", "97686d9f-3907-436d-bac1-40a1d0316565", "2f966684-6a4d-43a3-b380-bdb221d625d1", "7915882b-db5c-4003-bbc2-f62d7a587f6b", "ea071377-f658-4005-a92f-5b660998242a", "bfb6920f-3ec3-44f2-beab-71aa9bad95ec", "65abdf81-2c7d-41ab-9b69-03d694bb3111", "9d1f67c2-d689-4b69-93b5-2d56f1acc98f", "351653b8-b153-476a-94b0-31bfcc089d52", "9db90858-4ee5-4678-ae8a-0031f70cf071"]
     time_range = {
       time_slots = [{
-        start = 1961291163
-        end   = 1146248837
+        start = 1451651059
+        end   = 1906732899
       }]
-      timezone = 1753605921
+      timezone = 217574206
     }
   }
-  enabled    = true
-  expires_at = "Mon, 29 Jun 2026 09:37:53 UTC"
+  enabled    = false
+  expires_at = "Fri, 24 Jul 2026 15:22:02 UTC"
 }
 ```
 

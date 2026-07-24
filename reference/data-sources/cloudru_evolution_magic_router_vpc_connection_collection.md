@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_magic_router_vpc_connection_collection" "datasource_vpc_connection" {
-  page_size       = 4272755538
-  project_id      = "2109fcf8-d539-4735-b6c2-841f2d06078b"
-  magic_router_id = "3ca1cd43-a519-474b-aa08-6cd987a95653"
+  page_size       = 422651925
+  project_id      = "f56c09aa-56d2-405e-99ca-885c88024c5a"
+  magic_router_id = "db0be4ee-3674-40a6-a413-ef83c49d6ae9"
 }
 
 output "data-vpc_connection" {

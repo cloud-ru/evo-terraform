@@ -7,23 +7,23 @@
 
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
-  project_id = "a91333fa-2939-408c-b3ee-34bd5eac4a97"
+  project_id = "2d9e3231-8953-4eb7-81a1-aefa1f922d5d"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "98b01f01-e25c-4242-91fe-135f8b2f6605"
-    name = "fee60dd5-fc11-4037-8f8a-498201672ffe"
+    id   = "7169a50c-4672-4f42-b5e1-2049d49539f5"
+    name = "d457a0a1-94e8-47d8-8200-2a3cb21eaf17"
   }
-  name            = "5592206b-d6b5-4aa3-a8ff-0983ddc2739d"
-  description     = "081d27b0-57a0-40f4-893d-67e600c7f660"
-  vpc_id          = "ab358605-c2fb-42f8-b9e4-f5d1609e2673"
-  default         = true
-  subnet_address  = "6f317c13-32ef-47af-b967-86ce1a93bd14"
-  routed_network  = false
-  default_gateway = "5d877b46-ad9b-43d3-bc0a-0e07a0e4d60c"
+  name            = "c5f69c2d-43e2-4d1b-b68c-5ab8ae5f47f5"
+  description     = "e33d6c1a-1415-4228-bf92-81ffd99ffff5"
+  vpc_id          = "8db69e7d-fb25-4080-a1f1-8da146b142e8"
+  default         = false
+  subnet_address  = "3eb96d43-3263-4950-91b0-235927a9ebed"
+  routed_network  = true
+  default_gateway = "577a1955-7e70-45b9-a1d6-25d6db2ff169"
   dns_servers = {
-    value = ["4b64b724-a3f8-442e-904a-3794aba3c797", "5e1c3e78-2fc8-45df-8e5c-11df5a543398", "f83e7d4a-5762-4215-8086-d14dabc90017", "045fdf52-f36f-47ea-8256-fcaf60544078", "81ac6e89-75c6-4b95-a3ac-714b88017c1f", "9526d9e2-f3b4-40f1-852e-ad1625d24503", "83862415-f037-407d-8f2a-4b2b40081877", "06a582cd-60ae-42fc-9cdc-ee3129b14118", "125805c9-c94b-45a1-a4c7-26effe0ef9b1", "eb615838-a2d4-46e9-8047-cf56107b7b1c"]
+    value = ["52291664-30ea-4369-b63e-2ca3c920148b", "f2ab4922-31aa-4cc3-8f79-9a5d401f132e", "8790bd89-37f0-4de3-a6b0-c0421359260b", "83f398ca-bf12-480f-88d3-ad6e45ab9772", "e8b4d6d4-13af-4675-9c72-cd30bdf56e6a", "61088022-0b85-4ff2-862c-3ca8994a2449", "5c5d0e01-31c6-4fa9-9b0b-8784ec46f86c", "7fbeaaf3-1c8b-481f-b468-8a0479869fff", "3251139b-c355-42bf-a125-a9b388382ebe", "bf0f46f1-869b-4e55-ae7c-692b2f6894e8"]
   }
-  prefix_length = 1307396155
+  prefix_length = 1137625968
 }
 ```
 

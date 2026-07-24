@@ -7,6 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_kafka_version_collection" "datasource_version" {
+  # Нужно заполнить одно из значений - product_type
   product_type = "kafka"
 }
 

@@ -7,41 +7,41 @@
 
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
-  project_id = "f32ce910-3b6b-4687-b67b-551688dbd596"
+  project_id = "18932b0d-0262-4250-a98d-1640469301fe"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "1ab255dc-2e7a-4484-b4b2-72821ec770bb"
-    name = "591e736c-1dec-4644-9722-550b99d4ee34"
+    id   = "c479c8c8-5929-419a-ab6d-133c9c73ec26"
+    name = "7b94e036-0877-4a91-9e8f-30b7bbe3f15a"
   }
-  name                       = "404aa452-fefa-4ecd-97e4-7b8a85596ad1"
-  description                = "7e076fd1-a75c-4e1d-bda5-386aad6f351c"
-  ip_address                 = "7e9c2358-5847-49ef-93a3-5b746044f6c0"
+  name                       = "c6fec850-b83f-4f86-b77b-cb608455699c"
+  description                = "18c0f7c8-5165-479e-b81f-a51118314c3c"
+  ip_address                 = "d66d6edf-bd66-4f7c-b3e0-62d8146378f4"
   interface_security_enabled = true
   # Нужно заполнить одно из значений - new_external_ip, attach_external_ip
   attach_external_ip = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "3546a7d5-25a3-4bfc-8c26-a067e4d16089"
-    name = "b2adad17-d8c5-439c-a6be-2a7fa97312ab"
+    id   = "b153be71-ed04-4ccf-9f93-dfea9d5af667"
+    name = "a8e36805-0a92-4f14-869a-5f9e0a4bb8fe"
   }
   allowed_address_pairs = {
     value = [{
-      ip_address  = "3be17319-5903-4164-b264-298d1707c051"
-      mac_address = "78ffbee1-6377-4148-ab07-3cd1910f6ef4"
+      ip_address  = "08302a5f-fb0b-4223-b01e-efd85ada1e8e"
+      mac_address = "c78f4c5e-76c6-4ec6-a25d-f9a2f8bb16b2"
     }]
   }
   # Варианты значений параметра type:
   # INTERFACE_TYPE_REGULAR, INTERFACE_TYPE_SYSTEM, INTERFACE_TYPE_SERVICE, INTERFACE_TYPE_GATEWAY, INTERFACE_TYPE_FIP, INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_VIP
-  type = "INTERFACE_TYPE_FIP"
+  type = "INTERFACE_TYPE_VIP"
   vm = {
-    id = "cb47cfb0-6801-40cc-9e8d-fc9cdfaf870f"
+    id = "d1bfdad6-4609-4507-b6ab-8ed7cb57d3d9"
   }
   subnet = {
-    id = "839073bf-e901-4744-91f9-0c5c555d068e"
+    id = "d4a84bd0-945b-45dd-95ac-468254a7493a"
   }
   security_groups = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "37fee44e-21bd-4fdd-9ca2-82663cbc61b2"
-    name = "d3cbeb6f-60d4-42bb-b0fd-ed0d372024e9"
+    id   = "4c4abd20-902c-4c48-8b9c-e7679a139412"
+    name = "09766674-df01-4cb6-aa92-a4a159f77fdd"
   }]
 }
 ```

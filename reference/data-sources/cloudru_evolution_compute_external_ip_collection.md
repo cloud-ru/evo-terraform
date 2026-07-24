@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_external_ip_collection" "datasource_external_ip" {
-  project_id = "c954965d-6a1e-4e8a-91e2-6ea53901cdb2"
-  page_size  = 6744767659612950736
-  filter     = "1d471de0-5c73-43a6-a641-24dde82001e9"
-  order_by   = "b8116e41-ad35-4a9e-8c39-15430b1c2529"
+  project_id = "fbe992a0-883d-4a6a-b6e3-1cd22b371412"
+  page_size  = 7985616876915377796
+  filter     = "bd169786-0cb8-4516-a694-3651c9cb28f9"
+  order_by   = "b6834f4c-91ef-4244-898c-940e3671d965"
 }
 
 output "data-external_ip" {
@@ -43,25 +43,15 @@ Read-Only:
 - `created_at` (String) Дата и время создания публичного IP-адреса.
 - `description` (String) Описание публичного IP-адреса.
 - `id` (String) Идентификатор публичного IP-адреса.
-- `interface` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--external_ips--interface))
 - `ip_address` (String) IP-адрес.
 - `name` (String) Название публичного IP-адреса.
 - `nat_gateway` (Attributes) Параметры SNAT-шлюза. (see [below for nested schema](#nestedatt--external_ips--nat_gateway))
+- `network_interface` (Attributes) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--external_ips--network_interface))
 - `project_id` (String) Идентификатор проекта.
 - `status` (String) Статус публичного IP-адреса.
 - `updated_at` (String) Дата и время изменения публичного IP-адреса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--external_ips--vm))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--external_ips--zone))
-
-<a id="nestedatt--external_ips--interface"></a>
-### Nested Schema for `external_ips.interface`
-
-Read-Only:
-
-- `id` (String) Идентификатор сетевого интерфейса.
-- `name` (String) Название сетевого интерфейса.
-- `status` (String) Статус сетевого интерфейса.
-
 
 <a id="nestedatt--external_ips--nat_gateway"></a>
 ### Nested Schema for `external_ips.nat_gateway`
@@ -71,6 +61,16 @@ Read-Only:
 - `id` (String) Идентификатор SNAT-шлюза.
 - `name` (String) Название SNAT-шлюза.
 - `status` (String) Статус SNAT-шлюза.
+
+
+<a id="nestedatt--external_ips--network_interface"></a>
+### Nested Schema for `external_ips.network_interface`
+
+Read-Only:
+
+- `id` (String) Идентификатор сетевого интерфейса.
+- `name` (String) Название сетевого интерфейса.
+- `status` (String) Статус сетевого интерфейса.
 
 
 <a id="nestedatt--external_ips--vm"></a>

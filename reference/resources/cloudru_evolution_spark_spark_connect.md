@@ -10,24 +10,24 @@ resource "cloudru_evolution_spark_spark_connect" "resource_spark_connect" {
   spark_id = "0000-0000-0000-0000-0000"
   # Нужно заполнить одно из значений - base_image, custom_image
   base_image = {
-	id = "0000-0000-0000-0000-0000"
+    id = "0000-0000-0000-0000-0000"
   }
   custom_image = {
-	custom_image_uri = "cr.cloud.ru/my-project/my-spark-image:latest"
+    custom_image_uri = "cr.cloud.ru/my-project/my-spark-image:latest"
   }
   configuration = {
-	config_spark = {
-	  "spark.driver.extraJavaOptions" = "-Dlog4j.configuration=file:log4j.properties"
-	}
+    config_spark = {
+      "spark.driver.extraJavaOptions" = "-Dlog4j.configuration=file:log4j.properties"
+    }
   }
   server = {
-	cores  = 1
-	memory = "1g"
+    cores  = 1
+    memory = "1g"
   }
   executor = {
-	count  = 1
-	cores  = 1
-	memory = "1g"
+    count  = 1
+    cores  = 1
+    memory = "1g"
   }
 }
 ```

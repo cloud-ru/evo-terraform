@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_security_group_rule_collection" "datasource_security_group_rule" {
-  security_group_id = "545b11a6-b7d8-4d4f-8959-7c4ac67fb2ff"
-  page_size         = 656810392283560583
-  filter            = "1c30d858-3e8e-40fc-ad97-8aaf216dab94"
-  order_by          = "db5b92d8-c797-42e8-876f-d4e27526d930"
+  security_group_id = "96a43b79-db75-48e1-be2e-16042d53e4c5"
+  page_size         = 138067074406791452
+  filter            = "3e8b53de-a581-4e6d-a9d5-d02c5814494e"
+  order_by          = "c449be95-0166-41cc-9749-1318136e5893"
 }
 
 output "data-security_group_rule" {

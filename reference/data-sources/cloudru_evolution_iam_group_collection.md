@@ -9,10 +9,10 @@
 data "cloudru_evolution_iam_group_collection" "datasource_group" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "a49076a4-0285-4aa2-84ab-0aeac1b3e453"
-    project_id  = "a1f58239-3669-4f40-89a1-2234ab569bbb"
+    customer_id = "565cf457-db84-4938-8113-ad0445103b37"
+    project_id  = "3ccf4778-7959-4581-95b6-68b6ccb8f16a"
   }
-  page_size = 9150228870293307040
+  page_size = 8898218516828971703
 }
 
 output "data-group" {

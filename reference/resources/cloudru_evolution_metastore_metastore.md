@@ -21,6 +21,7 @@ resource "cloudru_evolution_metastore_metastore" "resource_metastore" {
     max_nodes = 3
   }
   log_group_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  # Нужно заполнить одно из значений - fs_internal_s_3, fs_external_s_3
   fs_internal_s3 = {
     tenant_id  = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     bucket     = "my-bucket"

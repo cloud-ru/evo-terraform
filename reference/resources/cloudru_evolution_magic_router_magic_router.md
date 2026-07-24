@@ -7,13 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_magic_router_magic_router" "resource_magic_router" {
-  project_id  = "dab787a4-be05-46d3-a335-3ba09f6b805b"
-  name        = "346b6d51-fea1-4232-9e32-58eeb281edff"
-  description = "bbfdf155-5177-42e5-a6d9-077b1df0354b"
-  tag_ids     = ["21e2c083-2dd7-4d7b-920a-46132a2639d5", "05508f20-7843-4277-9b46-b953c472d0aa", "2f6d69fe-b7b5-44e7-8e91-54fcbcce36ce", "7b858dc2-01e2-4ff4-a52b-e86579f2d39c", "b1964dc8-a8a5-4d37-882d-5aa9b80d9f12", "e7e13a73-3f16-48bf-a88c-6d4ffee1c2f8", "3afa1b9c-8c78-496e-86fe-4c937b1fabb8", "db4a2a28-98f1-4041-b797-2fe7f210d470", "bec36ca4-7ae8-420b-9fdf-3dae68d35305", "991c7b71-7890-406f-bfc2-abf8af3afb14"]
+  project_id = "06609d1e-2306-4fb1-9d1d-611623d996c8"
+  name       = "719fbe06-99cf-47c6-92ee-058da1eb0f72"
+  # Нужно заполнить одно из значений - description
+  description = "85bfb14f-9eb7-45c3-8b1e-ba68ffd40c6a"
+  tag_ids     = ["8bf3c55f-ea9e-4614-a3db-697fa567a910", "44b5a4f4-faf6-4b4a-a3e0-90b49e7d67f3", "ef7ac492-6df4-4e0f-baec-b364d2fdec05", "0ce1c871-7091-484f-962c-c77f22f8f5fd", "7559d248-49ea-43ef-bc29-3ebccab0ca50", "a24b7915-ec6e-4ee4-a769-80d924445c0c", "802ed938-729a-4ed7-ad9f-86d30f0fc559", "77c50203-b0cb-4457-a950-6a608ca39f62", "d4157fcc-aaca-4786-b6f6-d0d1a21b1220", "5e209cef-b1cf-4443-80a2-39459063aa9d"]
   vpc_connections = [{
-    vpc_id = "8c3b9ede-8a4b-4780-b5d2-ae91652ce1ec"
-    name   = "c7137650-8477-45ef-8b2f-a854cadb83c9"
+    vpc_id = "6e379ebd-033c-4954-866b-6e140f2dc8d7"
+    name   = "24fbdf0c-b85f-4c93-ae81-3d4159791e95"
   }]
 }
 ```

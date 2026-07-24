@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_trino_catalog_collection" "datasource_catalog" {
-  project_id = "74f54b78-6128-4dc7-a3fa-703ef97a51fa"
-  page_size  = 2790622508095933271
-  filter     = "f11f5d6e-2c5a-486f-86c5-3038801a128c"
+  project_id = "a44c954a-9d80-4e9e-92f7-a522ff30db38"
+  page_size  = 1322127699933913679
+  filter     = "2d547b64-bcff-4bcb-be24-8c1f5f38c12b"
 }
 
 output "data-catalog" {

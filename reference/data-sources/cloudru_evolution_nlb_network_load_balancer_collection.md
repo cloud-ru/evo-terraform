@@ -71,7 +71,7 @@ Read-Only:
 
 Read-Only:
 
-- `ipv_4` (String) IP-адрес.
+- `ipv4` (String) IP-адрес.
 
 
 
@@ -79,17 +79,25 @@ Read-Only:
 <a id="nestedatt--balancers--external_address"></a>
 ### Nested Schema for `balancers.external_address`
 
+Optional:
+
+- `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
+
 Read-Only:
 
-- `ipv_4` (String) IP-адрес.
+- `ipv4` (String) IP-адрес.
 
 
 <a id="nestedatt--balancers--internal_address"></a>
 ### Nested Schema for `balancers.internal_address`
 
+Optional:
+
+- `allocate` (Boolean) Необходимость выделения IP-адреса: `true` — IP-адрес будет выделен, `false` — не будет. По умолчанию: `false`.
+
 Read-Only:
 
-- `ipv_4` (String) IP-адрес.
+- `ipv4` (String) IP-адрес.
 - `subnet_id` (String) Идентификатор подсети, в которой находится IP-адрес.
 
 

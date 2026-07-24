@@ -7,16 +7,16 @@
 
 ```terraform
 resource "cloudru_evolution_iam_group" "resource_group" {
-  name        = "6d6c2d89-448e-4fad-97da-15bab8dd2e28"
-  description = "c3593418-38b1-4492-adaa-020bd4a719ee"
+  name        = "201acd7c-efca-4468-95d0-f817b10f7446"
+  description = "63b36857-96da-47b6-b406-6ffec71e9090"
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "2f52b3b5-ee3b-4bb7-9de4-9a1f3061add5"
-    project_id  = "798e14b6-9260-4bbc-8bf8-9f05e0bb1455"
+    customer_id = "887b80e6-edf4-40cd-bba3-c4dcee9d3e5f"
+    project_id  = "2886e7b6-120d-4052-be48-d8eb797eff2a"
   }
   ldap_attributes = {
-    distinguished_name = "fb8cb544-9c25-4f7c-8a04-86c5e50a110f"
-    provider_id        = "09c17227-9216-43d8-b084-4e381f723929"
+    distinguished_name = "13d79707-7b00-4470-be8e-7f380f393719"
+    provider_id        = "ffafeaac-c9fb-4756-ba52-998704fa1c19"
   }
 }
 ```

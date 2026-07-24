@@ -76,7 +76,7 @@ Read-Only:
 - `machine_configuration` (Attributes) Описание инфраструктуры мастер-узлов. (see [below for nested schema](#nestedatt--clusters--control_plane--machine_configuration))
 - `upgrade_info` (Attributes) Информация о процессе обновления плоскости управления кластера. (see [below for nested schema](#nestedatt--clusters--control_plane--upgrade_info))
 - `version` (String) Версия Kubernetes.
-- `zones` (List of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — три и более.
+- `zones` (Set of String) Идентификаторы зон доступности, в которых будут размещены узлы плоскости управления. Для зонального кластера указывается идентификатор одной зоны, для регионального — три и более.
 
 <a id="nestedatt--clusters--control_plane--machine_configuration"></a>
 ### Nested Schema for `clusters.control_plane.machine_configuration`
@@ -161,6 +161,7 @@ Read-Only:
 
 - `cp_endpoints` (Attributes List) Адреса плоскости управления. (see [below for nested schema](#nestedatt--clusters--network_configuration--cp_endpoints))
 - `kube_api_internet` (Boolean) Признак публикации kube-apiserver в интернет.
+- `network_plugin` (Attributes) Плагин CNI для обеспечения сетевой связности и сетевых политик в кластере. (see [below for nested schema](#nestedatt--clusters--network_configuration--network_plugin))
 - `nodes_subnet_cidr` (String) Адрес подсети узлов плоскости управления.
 - `nodes_subnet_id` (String) Идентификатор подсети узлов плоскости управления.
 - `pods_subnet_cidr` (String) Адрес подсети подов.
@@ -175,6 +176,35 @@ Read-Only:
 
 - `address` (String) Адрес плоскости управления кластера в формате "https://domain:port".
 - `network` (String) Тип сети, которой принадлежит адрес. Возможные значения: * `NETWORK_TYPE_PRIVATE` — приватная пользовательская сеть (RFC1918). * `NETWORK_TYPE_PUBLIC` — публичная пользовательская сеть (интернет).
+
+
+<a id="nestedatt--clusters--network_configuration--network_plugin"></a>
+### Nested Schema for `clusters.network_configuration.network_plugin`
+
+Read-Only:
+
+- `calico` (Attributes) Настройки для использования Calico в качестве CNI-плагина. (see [below for nested schema](#nestedatt--clusters--network_configuration--network_plugin--calico))
+- `cilium` (Attributes) Настройки для использования Cilium в качестве CNI-плагина. (see [below for nested schema](#nestedatt--clusters--network_configuration--network_plugin--cilium))
+
+<a id="nestedatt--clusters--network_configuration--network_plugin--calico"></a>
+### Nested Schema for `clusters.network_configuration.network_plugin.calico`
+
+Read-Only:
+
+- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
+- `enabled` (Boolean) Опция использования Calico в качестве CNI-плагина кластера.
+- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
+
+
+<a id="nestedatt--clusters--network_configuration--network_plugin--cilium"></a>
+### Nested Schema for `clusters.network_configuration.network_plugin.cilium`
+
+Read-Only:
+
+- `app_version` (String) Версия приложения в формате SemVer согласно версионированию поставщика.
+- `enabled` (Boolean) Опция использования Cilium в качестве CNI-плагина кластера.
+- `version` (String) Версия плагина в формате SemVer согласно версионированию Managed Kubernetes.
+
 
 
 

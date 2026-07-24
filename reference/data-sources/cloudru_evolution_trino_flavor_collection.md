@@ -7,8 +7,8 @@
 
 ```terraform
 data "cloudru_evolution_trino_flavor_collection" "datasource_flavor" {
-  project_id = "60ed5ad3-8260-4ccc-ad1b-5a7cbf869dc5"
-  page_size  = 8180362972695925318
+  project_id = "25bc29bd-ad8a-4cbf-a448-9145a39720b1"
+  page_size  = 6883574816413392934
 }
 
 output "data-flavor" {

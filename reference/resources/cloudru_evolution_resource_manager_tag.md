@@ -7,16 +7,16 @@
 
 ```terraform
 resource "cloudru_evolution_resource_manager_tag" "resource_tag" {
-  description = "98303382-d87f-4a3f-a8b4-04840a0a0c07"
+  description = "a5747509-3c83-471a-adb0-4bbfaaa1bc4f"
   # Варианты значений параметра color:
   # GREY, PRIMARY, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, PINK
-  color = "YELLOW"
+  color = "BLUE"
   # Варианты значений параметра status:
   # ENABLED, DISABLED
-  status     = "ENABLED"
-  project_id = "ed081689-19b7-4385-ae27-d7056a57ada5"
-  key        = "ddc9018a-cd4c-4c49-aca8-e3ce9a6a3f9a"
-  value      = "79dfc321-14e0-4b51-aab9-f1c5418b54cf"
+  status     = "DISABLED"
+  project_id = "d1f516e8-ec8a-4c7f-a435-b38d37888d0b"
+  key        = "364516a1-5fe2-44c3-87f3-e6a539adf2d9"
+  value      = "89f17a8b-c962-4263-86dd-2c1980639c79"
 }
 ```
 

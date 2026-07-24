@@ -7,13 +7,14 @@
 
 ```terraform
 resource "cloudru_evolution_iam_user" "resource_user" {
-  email   = "d1412b63-393d-48ea-8e55-180384cfde77"
-  enabled = true
+  email   = "272bf348-da81-4c9d-a0b9-2cebe1a8145b"
+  enabled = false
   # Варианты значений параметра account_type:
   # USER_ACCOUNT_TYPE_FEDERATED, USER_ACCOUNT_TYPE_LOCAL
   account_type = "USER_ACCOUNT_TYPE_FEDERATED"
-  customer_id  = "784d903e-fc2e-4a8c-96ec-5aedab9176ec"
-  idp_id       = "fa3f4d84-00c0-44bd-8ffa-38fde60f1fe5"
+  customer_id  = "fa9fe98c-cfce-4185-a9ab-9cd82b40282a"
+  # Нужно заполнить одно из значений - idp_id
+  idp_id = "aef9da8e-bd09-4c10-8cf9-77c2dbe3e7ca"
 }
 ```
 

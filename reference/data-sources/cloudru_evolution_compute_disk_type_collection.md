@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_disk_type_collection" "datasource_disk_type" {
-  project_id = "ebc43031-d94f-4a0c-9b13-544dafdf69d4"
-  page_size  = 8401465486183326985
-  filter     = "f703f058-ccc0-4209-b959-5904de235b3a"
+  project_id = "1ecde689-7a63-4239-996d-8c197268c2fa"
+  page_size  = 1620079402291133040
+  filter     = "41c16968-030a-4509-820c-3831dbc4e7e5"
 }
 
 output "data-disk_type" {

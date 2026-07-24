@@ -37,25 +37,23 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
   }
   labels = {
     labels = {
-      "88d37a26-b1cb-4c03-bafc-ffc097e598b5" = "0fbd1488-a2a5-4a36-b882-6a3c267b5dfd"
-    }
+    "83f4e072-8e07-4c8b-bdd3-895e9556f4b6" = "c3e1a044-06f2-43ff-a973-aa72fd9c948c" }
   }
   remote_access = {
     ssh_key_id = "00000000-0000-0000-0000-000000000000"
     username   = "cloudru"
   }
-
-  machine_configuration = {
+  auto_repair = {
+    enabled = true
+  }
+  machine_configuration_request = {
+    flavor_id = "00000000-0000-0000-0000-000000000000"
     disk = {
       type_name = "SSD"
       size      = 30
     }
-    flavor = {
-      flavor_id = "00000000-0000-0000-0000-000000000000"
-    }
   }
-
-  network_configuration = {
+  network_configuration_request = {
     nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
     security_group_id = "00000000-0000-0000-0000-000000000000"
   }
