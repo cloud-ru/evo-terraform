@@ -1,13 +1,15 @@
-- [ВНИМАНИЕ: minor release 2.1.3](#внимание-minor-release-213)
+- [ВНИМАНИЕ: minor release 2.1.4](#внимание-minor-release-214)
 - [Быстрый старт](#быстрый-старт)
 - [Структура репозитория](#структура-репозитория)
 - [Поддерживаемые ресурсы](#поддерживаемые-ресурсы)
 - [Обратная связь](#обратная-связь)
 
-## ВНИМАНИЕ: minor release 2.1.3
+## ВНИМАНИЕ: minor release 2.1.4
 
-**Вышел релиз провайдера 2.1.3 (minor update).
-Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.3.md)!**
+**Вышел релиз провайдера 2.1.4 (minor update).
+Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.4.md)!**
+
+Документация из директорий ``guides`` и ``troubleshooting`` находится в разделах [Инструкции](https://cloud.ru/docs/terraform-evolution/ug/topics/guides?source-platform=Evolution) и [Решение проблем](https://cloud.ru/docs/terraform-evolution/ug/topics/troubleshooting?source-platform=Evolution) на официальном сайте Cloud.ru
 
 ## Быстрый старт
 
@@ -17,16 +19,11 @@
 
 ```
 .
-├── guides/                         — инструкции по использованию провайдера
-│   ├── state_lock_gitlab.md        — инструкция по блокировке состояния
-│   ├── timeouts.md                 - инструкция по использованию таймаутов в провайдере
-│   └── vm_create_full.md           - инструкция по созданию ВМ
 ├── reference/                      — справочник по всем ресурсам и data sources провайдера
 │   ├── data-sources/               — описание источников данных (data source)
 │   ├── resources/                  — описание управляемых ресурсов (resource)
 │   └── main.tf                     — пример основного конфигурационного файла, с метаданными провайдера (id проекта, ключ сервисного аккаунта)
-├── releases/                       — release notes по версиям провайдера
-└── troubleshooting/                — гайд по решению типичных проблем
+└── releases/                       — release notes по версиям провайдера
 ```
 
 ## Поддерживаемые ресурсы
@@ -49,6 +46,8 @@
 | IAM | Сервисные аккаунты, ключи доступа, группы |
 | Spark | Фреймворк для обработки и анализа больших объемов данных |
 | Trino | Система для выполнения SQL-запросов |
+| Managed BI | Сервис бизнес аналитики |
+| Managed Clickhouse | Управляемая СУБД |
 
 Полный список поддерживаемых ресурсов и датасорсов — в папке [reference](reference/).
 
