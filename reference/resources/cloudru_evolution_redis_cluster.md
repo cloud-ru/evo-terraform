@@ -1,3 +1,4 @@
+
 # cloudru_evolution_redis_cluster (Resource)
 
 
@@ -16,9 +17,9 @@ resource "cloudru_evolution_redis_cluster" "resource_cluster" {
   # STANDALONE, CLUSTER
   type = "STANDALONE"
   # Поле shards является неизменяемым. При изменении значения ресурс будет пересоздан.
-  shards = 3
+  shards = 1
   # Поле replicas является неизменяемым. При изменении значения ресурс будет пересоздан.
-  replicas    = 2
+  replicas    = 1
   storage_gib = 15
   # Поле logging является неизменяемым. При изменении значения ресурс будет пересоздан.
   logging = {

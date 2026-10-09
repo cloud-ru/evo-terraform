@@ -5,7 +5,7 @@ terraform {
       # Если вы используете dev_overrides в .terraformc, то полное имя
       # провайдера будет cloud.ru/cloudru/cloud
       source  = "cloudru/cloud"
-      version = "2.1.3"
+      version = "2.1.4"
     }
   }
 }
@@ -18,8 +18,13 @@ provider "cloudru" {
 
   # Создайте персональный ключ доступа для сервисного аккаунта в личном кабинете
   # по инструкции: https://cloud.ru/docs/console_api/ug/topics/guides__api_key?source-platform=Evolution.
-  # Вставьте в поля auth_key_id и auth_secret соответствующие значения.
-  # NOTE: Это обязательные параметры
+  # NOTE: Это опциональные параметры.
+  # Значения auth_key_id и auth_secret в конфигурации имеют приоритет.
+  # Если параметр не указан, используется соответствующая переменная окружения:
+  # AUTH_KEY_ID для auth_key_id и AUTH_SECRET для auth_secret.
+  # Для использования переменных окружения удалите или закомментируйте
+  # соответствующие строки ниже. Пустая строка не включает fallback.
+  # Если итоговое значение любого из параметров пустое, провайдер вернёт ошибку.
   auth_key_id = ""
   auth_secret = ""
 
@@ -71,6 +76,12 @@ provider "cloudru" {
 
     # Redis
     redis_endpoint = "redis.api.cloud.ru:443"
+
+    # PostgreSQL
+    postgresql_endpoint = "postgresql.api.cloud.ru:443"
+
+    # Clickhouse
+    clickhouse_endpoint = "clickhouse.api.cloud.ru:443"
     # ===
 
     # === Продукты группы DataPlatform ===
@@ -82,9 +93,15 @@ provider "cloudru" {
 
     # Metastore
     metastore_endpoint = "dataplatform.api.cloud.ru:443"
+
+    # BI
+    bi_endpoint = "dataplatform.api.cloud.ru:443"
+    
+    # Data Platform
+    dataplatform_endpoint = "dataplatform.api.cloud.ru:443"
     # ===
 
-    # Artefact Registry
+    # Artifact Registry
     artifact_registry_endpoint = "ar.api.cloud.ru:443"
 
     # Объектное хранилище (S3)
@@ -93,6 +110,7 @@ provider "cloudru" {
     # Работа с организациями
     cloud_platform_endpoint = "organization.api.cloud.ru:443"
 
+    # Менеджер ресурсов
     rm_endpoint = "resource-manager.api.cloud.ru"
   }
 }

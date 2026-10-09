@@ -7,30 +7,30 @@
 ```terraform
 resource "cloudru_evolution_trino_trino" "resource_trino" {
   # Поле cluster_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  cluster_id = "a9bbe1c6-8ea9-472a-8631-21865ed998dd"
+  cluster_id = "4015d8ec-c35b-47fb-be7d-4941ba3174a9"
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id  = "96893b19-cab3-4d76-832e-e2e706ae784f"
-  name        = "f48977f7-1c62-4926-aca8-89eb32076f1c"
-  description = "c60582d1-23a3-4354-95fc-25e25d67fa2b"
+  project_id  = "425c89c9-e3bc-499d-9fad-026893b481ee"
+  name        = "782ac767-8e3f-407d-905a-efca320a86e9"
+  description = "2e40df30-7ae3-459b-8ad6-a25da513e94c"
   network_configuration = {
-    subnet_id = "4df54007-c9c8-4f0a-98bb-f8cd07d1bf41"
-    zone_id   = "1f276b64-6ec3-4bd6-95d0-6fb9987b4410"
+    subnet_id = "6a7e4af9-adb4-4c2f-ba9f-b83fdaaef8d4"
+    zone_id   = "0df51f8f-e7e9-4dc7-9a3d-f445864c7d89"
   }
   node_configuration = {
-    flavor_id = "b570f7d9-76dd-4869-8f7e-a998ad58d3b7"
-    min_count = 140925146
-    max_count = 685940844
+    flavor_id = "7ec7d131-ff83-4345-b4d9-7dd4a375eeaa"
+    min_count = 2007416737
+    max_count = 1603513722
   }
-  enable_public_host = true
+  enable_public_host = false
   basic_auth = {
     users = [{
-      username           = "2581292e-67c5-415c-9c95-2ba39963e476"
-      password_secret_id = "b5829284-0be9-400b-af0c-d9af13a805b2"
+      username           = "8b8a8e66-f6c9-4e1e-b334-9660a258f4c0"
+      password_secret_id = "dc4cfcff-fa73-4788-af5e-fcdbebafcb28"
     }]
   }
-  log_group_id = "5823fbbf-b6ad-4f31-bb88-03bdc6dfbc9b"
-  catalog_ids  = ["bcc608de-6559-4065-92f2-554b64e7469b", "49ce1092-8af6-454f-b40f-73d06ccfbb96", "d4cc41fe-223a-482b-9103-fd8bd518496c", "9d760ae4-c650-4b03-91d7-55b2cba067d3", "76600577-d296-4511-a050-8d995666f3c8", "5481e8f6-19e8-496a-981e-aac9998cbdc4", "157195d3-1cec-4e1d-8995-7139cae00ef6", "15aa2ec5-7592-4868-8ec3-85b603183410", "e101ccf5-f1a5-4355-8940-4bbaaefcba72", "bbea683a-136a-4b21-82c7-d6e7d4dca5be"]
-  version_id   = "4889e3c5-f819-4374-ac95-da7e16c6c891"
+  log_group_id = "72fe7dfc-3696-45f2-8233-8cf05d8105e2"
+  catalog_ids  = ["9c0a9547-777d-4054-909c-2a2570975daf", "7acd4867-2111-4178-b062-384c8403d2de", "8775ae27-f227-4f49-89e2-7f9881c7d25c", "946b599e-8ba2-4e5b-9150-1e4151677a68", "74e69f4d-74ee-48d4-a082-405b9325141d", "e83d0c55-78ed-42f3-acb0-cd542384ead3", "4ec5feff-d8ae-47d0-ab7f-2ded72ae3c1a", "0cca3dd1-e6da-49da-a245-90acc499e126", "8dad7e79-957c-4ce6-93c3-bd550bf90496", "6c3a05f7-fa73-4888-8e56-95e41ab9f749"]
+  version_id   = "7ac4185d-294e-4da8-a4ee-5406cf56a7d1"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

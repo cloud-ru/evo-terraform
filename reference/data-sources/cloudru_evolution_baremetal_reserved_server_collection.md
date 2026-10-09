@@ -73,6 +73,7 @@ Read-Only:
 - `log_group` (Attributes) Лог-группа для Logaas. Если пустая, для сервера не настроено логирование в Logaas. (see [below for nested schema](#nestedatt--reserved_servers--log_group))
 - `login` (String) Логин учетной записи в ОС, установленной на сервере.
 - `name` (String) Название арендованного сервера.
+- `partitions` (Attributes List) Партиции для разметки дисков сервера. (see [below for nested schema](#nestedatt--reserved_servers--partitions))
 - `power_status` (String) Статус питания.
 - `project_id` (String) Идентификатор проекта.
 - `public_key` (String) Публичный SSH-ключ для подключения к серверу.
@@ -209,6 +210,27 @@ Read-Only:
 - `retention_period` (Number) Период хранения логов.
 - `status` (String) Статус лог-группы.
 - `type` (String) Тип лог-группы.
+
+
+<a id="nestedatt--reserved_servers--partitions"></a>
+### Nested Schema for `reserved_servers.partitions`
+
+Read-Only:
+
+- `disk_id` (String) Идентификатор типоразмера дисков, используемых в партиции.
+- `disks_count` (Number) Количество дисков, которые объединяются в рамках партиции.
+- `raid` (String) Тип RAID, в который объединяются диски партиции.
+- `volumes` (Attributes List) Логические тома, размещающиеся на партиции. (see [below for nested schema](#nestedatt--reserved_servers--partitions--volumes))
+
+<a id="nestedatt--reserved_servers--partitions--volumes"></a>
+### Nested Schema for `reserved_servers.partitions.volumes`
+
+Read-Only:
+
+- `fs_type` (String) Тип файловой системы тома.
+- `mountpoint` (String) Точка монтирования тома.
+- `size` (Number) Размер тома в GB. Значение 0 означает, что том занимает все оставшееся место в партиции.
+
 
 
 <a id="nestedatt--reserved_servers--updated_by"></a>

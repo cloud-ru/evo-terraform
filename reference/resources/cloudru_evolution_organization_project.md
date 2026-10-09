@@ -6,9 +6,9 @@
 
 ```terraform
 resource "cloudru_evolution_organization_project" "resource_project" {
-  name                 = "5960390f-8f44-4017-95e2-9500fb006794"
-  description          = "78d35788-b187-4ed6-9afb-244257db2bc5"
-  organization_unit_id = "55ed1c89-f53a-41cf-b52d-6c38b1d83fff"
+  name                 = "61dad2fa-f125-4879-b58e-cfc2f856f710"
+  description          = "4971270f-9588-40f7-9b5a-7a77b7a799cf"
+  organization_unit_id = "041e00ae-6bf7-4bd6-9adf-6e22d4d2fdb0"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

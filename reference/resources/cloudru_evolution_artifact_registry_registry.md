@@ -1,3 +1,4 @@
+
 # cloudru_evolution_artifact_registry_registry (Resource)
 
 
@@ -74,7 +75,7 @@ resource "cloudru_evolution_artifact_registry_registry" "resource_registry" {
 - `retention_policy_is_enabled` (Boolean) Флаг включения политики удаления артефактов для реестра.
 - `tariff` (String) Тип тарифа для реестра.
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
-- `upstream` (Attributes) Параметры настройки кэширующих реестров. (see [below for nested schema](#nestedatt--upstream))
+- `upstream` (Attributes) Параметры настройки кеширующих реестров. (see [below for nested schema](#nestedatt--upstream))
 
 ### Read-Only
 
@@ -112,9 +113,9 @@ Optional:
 Optional:
 
 - `artifact_ttl` (Number) Время хранения артефактов, сек.
-- `login_id` (String) UUID логина для доступа к кэшируемому адресу из SCM.
+- `login_id` (String) UUID логина для доступа к кешируемому адресу из SCM.
 - `metadata_ttl` (Number) Время хранения метаданных артефактов, сек.
 - `mirror` (Boolean) Флаг режима зеркалирования.
-- `password_id` (String) UUID пароля для доступа к кэшируемому адресу из SCM.
+- `password_id` (String) UUID пароля для доступа к кешируемому адресу из SCM.
 - `soft_delete` (Boolean) Флаг "мягкого" удаления артефактов.
-- `url` (String) Адрес, откуда будут браться артефакты.
+- `url` (String) Адрес, откуда берутся артефакты.

@@ -8,7 +8,7 @@
 resource "cloudru_evolution_kafka_user" "resource_user" {
   name = "some_user-1"
   roles = {
-    value = ["96a11fa5-231e-4327-980f-8a1be29be0b0", "0e8edca7-a7f8-49fb-a271-cb4c599a0f86", "29990e8c-6f50-466b-8ca6-cdc4b630086c", "649d6268-84ed-484f-9426-b5f2ea6333f1", "2de6646e-30a6-42d8-a019-6ce77ec71e2c", "2e2cb7fd-aaf5-4542-8f4e-c724e89c3db0", "1dd69bc5-a13f-4ac8-bfb5-c55a3ec8aebd", "b4513743-2e2f-4f23-bf58-45bbfcf4996f", "f68d64ab-e382-4c02-9da0-05c0b913bdd9", "ff3541b7-f03d-461d-a6dc-f024fbfdb0da"]
+    value = ["3ceb3b53-6fbe-4edf-b0b5-e28ec248ba04", "b338abe2-8dba-4702-80a0-3cf2f2fee9b2", "12320885-d262-484a-9fdc-fbfc2617b964", "848024eb-a618-4fba-b65d-438c7a4ddd44", "a4243c63-e4d8-44ba-aa8a-8214f85bd838", "80c6882e-de9e-4ecc-a978-3770708245b9", "262f0197-24ca-4411-9461-5db49822bbcc", "d6acd3a2-494e-4ca8-a9dc-84f061e29c4a", "6c24e984-6983-4d8a-a8ff-6f922a2c2e23", "0be83e1a-7632-44b0-b996-e074f9b8c30c"]
   }
   cluster_id = "00000000-0000-0000-0000-000000000000"
   password   = "some_pass"

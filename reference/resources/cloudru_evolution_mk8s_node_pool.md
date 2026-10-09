@@ -20,7 +20,9 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
     }
   }
   network_configuration = {
-    nodes_subnet_id   = "00000000-0000-0000-0000-000000000000"
+    # Поле nodes_subnet_id является неизменяемым. При изменении значения ресурс будет пересоздан.
+    nodes_subnet_id = "00000000-0000-0000-0000-000000000000"
+    # Поле security_group_id является неизменяемым. При изменении значения ресурс будет пересоздан.
     security_group_id = "00000000-0000-0000-0000-000000000000"
   }
   update_configuration = {
@@ -50,7 +52,7 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
   }
   labels = {
     labels = {
-    "74c41959-53a1-4891-8b1f-da2e12815489" = "fb56f0d2-cbe2-47ac-9998-0e0a6589bb6f" }
+    "49922c08-cee1-41d0-96fc-cf25593b1d23" = "a469c4ac-3e87-4da2-b065-6ef801e99f22" }
   }
   # Поле remote_access является неизменяемым. При изменении значения ресурс будет пересоздан.
   remote_access = {

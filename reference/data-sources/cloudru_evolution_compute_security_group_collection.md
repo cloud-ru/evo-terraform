@@ -6,10 +6,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_security_group_collection" "datasource_security_group" {
-  project_id = "c4074d04-51f4-4ad2-9cad-275afa82c17a"
-  page_size  = 9011333237411015864
-  filter     = "de399f8a-98d5-49ae-a8ef-4c4aa4275925"
-  order_by   = "13d3a621-5f08-407d-8b84-54065e4aff7c"
+  project_id = "d0d17579-77da-478d-bf61-563de89b3992"
+  page_size  = 5204709379187219125
+  filter     = "51e8e898-00e6-4fed-af79-d7f294bee35e"
+  order_by   = "12402e5e-10e8-4841-a295-afddb2f2106d"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

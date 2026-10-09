@@ -6,8 +6,8 @@
 
 ```terraform
 data "cloudru_evolution_iam_permission_collection" "datasource_permission" {
-  filter    = "fb2f3034-985f-4ac4-972b-928ee743d1e8"
-  page_size = 1842660279708334110
+  filter    = "fd2ea2ad-ab40-4884-956c-1dd3006a36a6"
+  page_size = 5997995533242933913
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

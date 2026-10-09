@@ -6,17 +6,17 @@
 
 ```terraform
 resource "cloudru_evolution_resource_manager_tag" "resource_tag" {
-  description = "1aa7b334-41b3-4339-af45-3d287d7c61ee"
+  description = "159885a2-cf8e-4dd0-bc07-a6f09a686ecc"
   # Варианты значений параметра color:
   # GREY, PRIMARY, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, PINK
-  color = "VIOLET"
+  color = "ORANGE"
   # Варианты значений параметра status:
   # ENABLED, DISABLED
-  status = "DISABLED"
+  status = "ENABLED"
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "db947418-b393-4354-a22f-deb515fa5298"
-  key        = "e3025d12-3a5c-417f-a7c8-1082ec7bb66c"
-  value      = "4e8a48d9-981c-49cb-bd8f-29f93ca5b205"
+  project_id = "fc3b0a6b-c73f-4a95-a35c-e1d26020fecf"
+  key        = "69ccbc9c-12c0-476a-b66d-ac3600a9a3bf"
+  value      = "e58f90da-c429-454e-a4ec-d716867f0898"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

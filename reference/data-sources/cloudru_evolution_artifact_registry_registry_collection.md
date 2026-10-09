@@ -1,3 +1,4 @@
+
 # cloudru_evolution_artifact_registry_registry_collection (Data Source)
 
 
@@ -64,7 +65,7 @@ Read-Only:
 - `status` (String) Статус реестра.
 - `tariff` (String) Тип тарифа для реестра.
 - `updated_at` (String) Время последнего обновления реестра.
-- `upstream` (Attributes) Параметры настройки кэширующих реестров. (see [below for nested schema](#nestedatt--registries--upstream))
+- `upstream` (Attributes) Параметры настройки кеширующих реестров. (see [below for nested schema](#nestedatt--registries--upstream))
 
 <a id="nestedatt--registries--retention_policy"></a>
 ### Nested Schema for `registries.retention_policy`
@@ -85,9 +86,9 @@ Read-Only:
 Read-Only:
 
 - `artifact_ttl` (Number) Время хранения артефактов, сек.
-- `login_id` (String) UUID логина для доступа к кэшируемому адресу из SCM.
+- `login_id` (String) UUID логина для доступа к кешируемому адресу из SCM.
 - `metadata_ttl` (Number) Время хранения метаданных артефактов, сек.
 - `mirror` (Boolean) Флаг режима зеркалирования.
-- `password_id` (String) UUID пароля для доступа к кэшируемому адресу из SCM.
+- `password_id` (String) UUID пароля для доступа к кешируемому адресу из SCM.
 - `soft_delete` (Boolean) Флаг "мягкого" удаления артефактов.
-- `url` (String) Адрес, откуда будут браться артефакты.
+- `url` (String) Адрес, откуда берутся артефакты.

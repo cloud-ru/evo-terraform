@@ -6,7 +6,7 @@
 
 ```terraform
 data "cloudru_evolution_organization_agreement_collection" "datasource_agreement" {
-  customer_ids = ["c28efe6a-b494-4db1-99f7-25d0fa47b3f3", "b59804aa-0951-4419-9dba-951fc7324e33", "38bc9faf-1a12-432e-9dd2-f91737685fb0", "cf53e651-4c53-444d-b2c5-28b38b0fc56e", "2086beda-7e3a-460f-abea-57603c72dc68", "93882e5f-7fc5-455e-9c95-21e075dc5c29", "717784d0-62a0-44bf-a87d-f42a3644eb7c", "a1b109e7-f8a0-4c1f-9ce7-264c68c58ee4", "36c676cd-89b7-43c1-a997-78ba50ce1ff0", "aa63b830-1f1e-4c56-bee2-368a8e215ba2"]
+  customer_ids = ["20fccbd6-fb8a-4130-94d2-5bff4fd4fcb4", "6c3e876d-421d-4c9b-9159-27c73b09a862", "ff1e34f1-cb70-4235-9700-c21547f7ec9d", "18934154-ff1d-4520-a1ee-b6d5164a6b94", "1701fcd0-1e5c-4e3a-815e-b6d96feb82a2", "48c42c3c-d571-4669-9d41-1a9f60fabfa0", "ab969123-7934-4487-bece-556b9b4839bf", "982de2f9-1b15-4501-b3db-21dc56e7a7f0", "cec3c50f-4bf4-442f-8ac3-510069532ed0", "77ec8187-0fa2-4dc7-aa00-ec2e43c122be"]
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

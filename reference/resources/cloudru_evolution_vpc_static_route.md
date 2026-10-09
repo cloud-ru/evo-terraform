@@ -1,3 +1,4 @@
+
 # cloudru_evolution_vpc_static_route (Resource)
 
 
@@ -6,8 +7,10 @@
 
 ```terraform
 resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
-  vpc_id     = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  vpc_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  # Поле next_hop является неизменяемым. При изменении значения ресурс будет пересоздан.
   next_hop = {
     # Нужно заполнить одно из значений - magic_router, virtual_machine, vip.
     magic_router = {
@@ -30,6 +33,7 @@ resource "cloudru_evolution_vpc_static_route" "resource_static_route" {
       }]
     }
   }
+  # Поле subnet является неизменяемым. При изменении значения ресурс будет пересоздан.
   subnet      = "192.168.0.0/24"
   description = "Route to internal network"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.

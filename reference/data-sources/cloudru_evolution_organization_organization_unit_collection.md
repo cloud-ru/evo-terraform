@@ -6,9 +6,9 @@
 
 ```terraform
 data "cloudru_evolution_organization_organization_unit_collection" "datasource_organization_unit" {
-  customer_ids          = ["6f19eb1c-9718-43a3-9e13-e3ae7d591275", "8b69b438-5b38-46c3-b8c4-134e4de135d3", "4fe21fe7-14de-44c8-8752-74c00415a8e8", "7b7582fe-33b0-42db-87a1-1add746e2f4f", "66217378-1ebd-4059-9c1c-8ed805f7d007", "0c123b6c-f070-4822-9e15-81cb5de7078c", "b4d4b17f-7a98-4ec9-98c9-cde8eda4cab3", "7541fe15-f46f-49b0-80bd-3487fef48792", "438b306a-dc9a-4cfe-9acb-592427cb65ea", "ed119a88-96c9-4b64-8287-31994bc7f4b0"]
-  organization_unit_ids = ["fe997e63-768d-4114-bf44-48cf86d06932", "41d0d89a-1550-409f-a10d-d6b92995f0f9", "e03e1b4d-5caf-41a0-b436-02cf2338fe5a", "e0405186-8211-44e8-993e-2b3e6c8a3935", "c48753f9-9f70-47b8-855b-9b211531b1b4", "6e1ce13e-200d-4718-9a07-125212089924", "ac6deed3-cbab-4962-918b-2ac980d22285", "4aa5c8be-5d62-4c2a-9116-28c4e6ba3d19", "1d49ee93-17eb-4898-b895-8b00b2cf8caa", "fd015b16-bc40-44df-b8bd-d5f4c7da8c87"]
-  page_size             = 4742042857459109350
+  customer_ids          = ["27408a3c-f256-44ea-94ef-112b8c7834c8", "8af56b18-05f4-4a8f-b41a-f25192be9bd3", "b8e855df-ca1b-4643-b85b-341fe8d8d079", "2b40e380-8b76-429a-988b-81b084d018db", "f9d93b8b-540a-4d60-aba2-0ff5b0b8b27a", "b7c20b7a-a706-459a-bfb7-5d9f94b358a8", "a0829386-0a84-4a86-af05-754c6d9e1cee", "a6a556cb-de1f-4a29-bcd0-165ac20c48d4", "8fc143c3-b2f8-47c4-bd4f-81fdb55ff758", "4e2420b0-ad85-4301-970d-a4e646aab82d"]
+  organization_unit_ids = ["e1088ae6-0c46-4113-8b34-46381d68e95c", "f21513a9-548a-4b1a-b8c5-afe4d2fcbc90", "9e2fa161-da37-4758-ac8d-46e306c21b9b", "d74906d5-a11a-4b8b-82d5-7c9fc4524811", "1e6e73d5-c945-4517-b51d-fd6b40df12ae", "dd5c885f-e219-4eff-8a45-c66aea0c60f1", "56602af3-1b8a-48c1-97ee-3a0f9fad578d", "978aa55e-429f-4296-86d9-fe4243c2c163", "f2a549f0-bb5f-4326-8400-b76b6fd3090e", "ec6e65ee-cd34-4086-938d-93c23dbe2866"]
+  page_size             = 7745916649449330454
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

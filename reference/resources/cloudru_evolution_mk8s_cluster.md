@@ -10,8 +10,10 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
   project_id = "00000000-0000-0000-0000-000000000000"
   control_plane = {
-    zones   = ["00000000-0000-0000-0000-000000000000"]
-    count   = 1
+    # Поле zones является неизменяемым. При изменении значения ресурс будет пересоздан.
+    zones = ["00000000-0000-0000-0000-000000000000"]
+    count = 1
+    # Поле version является неизменяемым. При изменении значения ресурс будет пересоздан.
     version = "v1.34.1"
     machine_configuration = {
       flavor = {
@@ -20,9 +22,13 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
     }
   }
   network_configuration = {
-    services_subnet_cidr  = "10.96.0.0/12"
-    pods_subnet_cidr      = "10.1.0.0/16"
-    kube_api_internet     = true
+    # Поле services_subnet_cidr является неизменяемым. При изменении значения ресурс будет пересоздан.
+    services_subnet_cidr = "10.96.0.0/12"
+    # Поле pods_subnet_cidr является неизменяемым. При изменении значения ресурс будет пересоздан.
+    pods_subnet_cidr = "10.1.0.0/16"
+    # Поле kube_api_internet является неизменяемым. При изменении значения ресурс будет пересоздан.
+    kube_api_internet = true
+    # Поле private_vip_subnet_id является неизменяемым. При изменении значения ресурс будет пересоздан.
     private_vip_subnet_id = "00000000-0000-0000-0000-000000000000"
     # Поле network_plugin является неизменяемым. При изменении значения ресурс будет пересоздан.
     network_plugin = {
@@ -55,7 +61,7 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
   }
   # Варианты значений параметра release_channel:
   # RELEASE_CHANNEL_RAPID, RELEASE_CHANNEL_REGULAR, RELEASE_CHANNEL_STABLE
-  release_channel = "RELEASE_CHANNEL_RAPID"
+  release_channel = "RELEASE_CHANNEL_STABLE"
   # Поле audit_service является неизменяемым. При изменении значения ресурс будет пересоздан.
   audit_service = {
     # Поле enabled является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -73,6 +79,7 @@ resource "cloudru_evolution_mk8s_cluster" "resource_cluster" {
     # Поле kek_id является неизменяемым. При изменении значения ресурс будет пересоздан.
     kek_id = "00000000-0000-0000-0000-000000000000"
   }
+  # Поле bootstrap_managed_addons является неизменяемым. При изменении значения ресурс будет пересоздан.
   bootstrap_managed_addons = {
     horizontal_pod_autoscaling = {
       enabled = true
