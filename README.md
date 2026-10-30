@@ -1,13 +1,13 @@
-- [ВНИМАНИЕ: minor release 2.1.5](#внимание-minor-release-214)
+- [ВНИМАНИЕ: minor release 2.1.6](#внимание-minor-release-214)
 - [Быстрый старт](#быстрый-старт)
 - [Структура репозитория](#структура-репозитория)
 - [Поддерживаемые ресурсы](#поддерживаемые-ресурсы)
 - [Обратная связь](#обратная-связь)
 
-## ВНИМАНИЕ: minor release 2.1.5
+## ВНИМАНИЕ: minor release 2.1.6
 
-**Вышел релиз провайдера 2.1.5 (minor update).
-Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.5.md)!**
+**Вышел релиз провайдера 2.1.6 (minor update).
+Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.6.md)!**
 
 Документация из директорий ``guides`` и ``troubleshooting`` находится в разделах [Инструкции](https://cloud.ru/docs/terraform-evolution/ug/topics/guides?source-platform=Evolution) и [Решение проблем](https://cloud.ru/docs/terraform-evolution/ug/topics/troubleshooting?source-platform=Evolution) на официальном сайте Cloud.ru
 

@@ -5,7 +5,7 @@ terraform {
       # Если вы используете dev_overrides в .terraformc, то полное имя
       # провайдера будет cloud.ru/cloudru/cloud
       source  = "cloudru/cloud"
-      version = "2.1.4"
+      version = "2.1.6"
     }
   }
 }
