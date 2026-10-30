@@ -1,3 +1,4 @@
+
 # cloudru_evolution_iam_api_key (Resource)
 
 
@@ -6,23 +7,23 @@
 
 ```terraform
 resource "cloudru_evolution_iam_api_key" "resource_api_key" {
-  name               = "6c7451e7-bcf7-4636-8d2d-3f6d1d46fa8b"
-  description        = "12f63858-73e7-40bb-b90a-9a762e1e8255"
-  service_account_id = "ce2f112e-cc40-4398-9fb4-1013e425eec0"
-  product_codes      = ["edc28381-7fc3-4c88-a4b3-6f4a2b247504", "0a9c4f24-ea48-487b-818d-39bf615bc909", "f3febc9f-e09d-4138-93b2-ce8dcb16ad07", "8b45b501-843e-474b-9aab-04be4602ff98", "2f82dfb6-6086-491b-a832-8ff2bd12de61", "cc646819-55c1-43d1-87f6-873208180b4c", "7b1299b5-9bef-4096-8481-dbc75eb87bce", "a6f13209-55bb-47f5-8456-b336b017db85", "10257821-26b3-4a87-b3bf-2f34b08d81e5", "5b619829-5691-48f7-b951-fe407f513394"]
+  name               = "0dc1f4ba-feb0-4518-95a5-31f0445061cc"
+  description        = "bc6be5eb-0c4f-41c0-80c5-5d8cc9b5ab38"
+  service_account_id = "2a10b95e-a9e1-41ac-b13c-73d0e71260f5"
+  product_codes      = ["04744acb-c60a-4e99-a56c-a05cbb9c7d82", "c2b65d09-d7a9-484a-9322-beb7a366296f", "12c32852-e02c-43c0-8af4-130781fc4eea", "79c9de64-d3bb-43ca-967a-bfa90a762a53", "36f5dd21-8441-45b7-b9b8-ca5ba4dd8152", "788a145c-adb0-45d9-b611-44312f2c8b30", "a7355b5e-bfca-449d-b017-5aa75eaebc91", "32f8688b-d384-4f31-8e72-d08c0feae7ac", "229b3cce-c966-4882-b266-34ae1c9cf499", "311c9e21-df61-40d0-9b8c-fbba6494398e"]
   restrictions = {
-    ip_addresses = ["867458ec-e234-4425-a42d-a2ea7ece8b78", "c0ccf956-ad01-46fe-8403-eef80e594362", "1e1005e9-67e1-4f02-adef-22be18f30ced", "7b497eec-0996-4ef4-91ce-365d5332e267", "e3d4ae1e-3ebe-4902-ae96-506276215502", "c49824f2-654a-444d-bccc-3b63089b7a3d", "d59c38d3-e78d-4c34-9b9d-6b451519af6a", "ed5c5f7f-bad1-4fef-909c-5ddaaaf92d48", "03475c0d-7765-4cdf-8695-e6d48f136696", "f0699ae5-a98e-431f-a075-1bdf359daa96"]
+    ip_addresses = ["e7b4ba17-6870-44a7-9dbc-4733a4065398", "f19cf059-0f25-434a-8362-079ef8c07b0e", "db681d50-951e-4f66-ac08-37c99d9426a4", "18078749-1e6a-4618-88d0-f2fd64c8d432", "fa3dec2e-ced1-4348-a282-c0fae387ca64", "9ec4cd6c-c86c-40cc-a31b-4bb5aea726a5", "bc80e9bd-1689-4d74-a0fc-315554cb7989", "9ce09c12-5371-4900-bd64-5cdf9ce1086b", "7bae3451-8d91-4b20-bcd5-49e2a4409158", "cbcdf906-3620-4bd4-9c23-0deda2e82f4b"]
     time_range = {
       time_slots = [{
-        start = 2105895937
-        end   = 1678743029
+        start = 1202441269
+        end   = 1888654458
       }]
-      timezone = 428581916
+      timezone = 339772541
     }
   }
-  enabled = false
+  enabled = true
   # Поле expires_at является неизменяемым. При изменении значения ресурс будет пересоздан.
-  expires_at = "Wed, 06 May 1942 10:04:36 UTC"
+  expires_at = "Tue, 27 Sep 1932 14:00:46 UTC"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"
@@ -58,7 +59,7 @@ resource "cloudru_evolution_iam_api_key" "resource_api_key" {
 
 - `created_at` (String) CreatedAt - дата создания API ключа.
 - `id` (String) ID - идентификатор API ключа.
-- `secret` (String) Secret - секрет API ключа. Заполняется только в ответе на запрос создания API ключа.
+- `secret` (String, Sensitive) Secret - секрет API ключа. Заполняется только в ответе на запрос создания API ключа.
 - `updated_at` (String) UpdatedAt - дата обновления API ключа.
 
 <a id="nestedatt--restrictions"></a>

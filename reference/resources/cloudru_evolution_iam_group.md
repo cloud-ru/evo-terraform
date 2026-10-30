@@ -1,3 +1,4 @@
+
 # cloudru_evolution_iam_group (Resource)
 
 
@@ -6,16 +7,16 @@
 
 ```terraform
 resource "cloudru_evolution_iam_group" "resource_group" {
-  name        = "9bb6e3d0-9c5e-4794-b6be-f77cb9f37b76"
-  description = "b0f7c7f0-f195-4c52-a1b9-084b50806a40"
+  name        = "4c51a728-4397-4de7-978e-2254a00605f8"
+  description = "b44959c9-3211-4fe7-9767-d50dcc2e0ea3"
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "fd0afb48-f079-49d5-89cf-a9928d235687"
-    project_id  = "db177125-c13a-4025-9658-e23e41397690"
+    customer_id = "958ae5e6-9c88-4b12-aa8d-d04fa7dc287c"
+    project_id  = "f15c1c26-f4a5-4ce9-9a0c-324a91a5b9b9"
   }
   ldap_attributes = {
-    distinguished_name = "88d60af3-129f-442b-9bd4-51c83431dd7b"
-    provider_id        = "3ad7dae1-1a8c-4d5f-89a6-0fb0a709d18a"
+    distinguished_name = "b52bcdae-108c-4360-8633-9790aa1026aa"
+    provider_id        = "ace0a562-94ad-4aca-a9c1-f3e821dceb29"
   }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

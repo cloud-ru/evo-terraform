@@ -1,3 +1,4 @@
+
 # cloudru_evolution_iam_service_account (Resource)
 
 
@@ -8,12 +9,12 @@
 resource "cloudru_evolution_iam_service_account" "resource_service_account" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "e1d0f1b6-d215-4c79-b8b5-ae8aecd6f567"
-    project_id  = "d7490b42-00f1-4267-931f-1fc2ae0fe71e"
+    customer_id = "1c7c8e09-28f9-4b1f-9404-f41201651967"
+    project_id  = "a9257c22-a069-4314-bc3d-ad9ef7d57655"
   }
-  name        = "102596e2-7ce9-478d-ae59-9be1830525fa"
-  description = "6db804e1-7968-496b-ba67-63f2c7c7507f"
-  enabled     = false
+  name        = "b85d7cd4-d728-4b9d-be52-82f626513b1c"
+  description = "7a5096d3-de58-437d-8928-5f2c8b971b9f"
+  enabled     = true
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

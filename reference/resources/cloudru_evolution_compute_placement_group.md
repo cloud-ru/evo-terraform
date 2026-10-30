@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_placement_group (Resource)
 
 
@@ -7,13 +8,13 @@
 ```terraform
 resource "cloudru_evolution_compute_placement_group" "resource_placement_group" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id  = "6a3327b8-4dd7-4ca5-99f0-b817b8852b77"
-  name        = "979e61c8-8b95-46fb-ba85-ee2f1d788b0b"
-  description = "7e367777-c147-448d-a86f-d52f8f5a4115"
+  project_id  = "8cef4a36-0a22-475c-8e98-f12a6911a35c"
+  name        = "5a3d047c-1498-46e3-9cdb-3c237e22ca22"
+  description = "f6553fd3-3d0a-4df9-97c2-8c79b95e72a7"
   # Поле policy является неизменяемым. При изменении значения ресурс будет пересоздан.
   # Варианты значений параметра policy:
   # PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY, PLACEMENT_GROUP_POLICY_ANTI_AFFINITY
-  policy = "PLACEMENT_GROUP_POLICY_SOFT_ANTI_AFFINITY"
+  policy = "PLACEMENT_GROUP_POLICY_ANTI_AFFINITY"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

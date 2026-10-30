@@ -1,14 +1,15 @@
-# cloudru_evolution_trino_trino_collection (Data Source)
+
+# cloudru_evolution_data_platform_trino_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_trino_trino_collection" "datasource_trino" {
-  project_id = "f57ace9d-d460-426f-855b-9fa747a56d32"
-  page_size  = 1554520000529655117
-  filter     = "ccf0100e-f760-40ce-9ae2-b29496fd2f8f"
+data "cloudru_evolution_data_platform_trino_collection" "datasource_trino" {
+  project_id = "c86a382e-f443-4155-b970-d01a81f2fa01"
+  page_size  = 4983534804196534427
+  filter     = "a132f6da-bca1-4c79-bf21-9b035ec73900"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -16,7 +17,7 @@ data "cloudru_evolution_trino_trino_collection" "datasource_trino" {
 }
 
 output "data-trino" {
-  value = data.cloudru_evolution_trino_trino_collection.datasource_trino.trinos[0]
+  value = data.cloudru_evolution_data_platform_trino_collection.datasource_trino.trinos[0]
 }
 ```
 

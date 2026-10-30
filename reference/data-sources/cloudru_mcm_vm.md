@@ -1,20 +1,21 @@
+
 # cloudru_mcm_vm (Data Source)
 
-
+Список виртуальных машин проекта.
 
 ## Example Usage
 
 ```terraform
-data "cloudru_mcm_vm" "vms" {
-    # NOTE: Это опциональный параметр
-    filter {
-        # NOTE: Это опциональный параметр, по умолчанию используется project_id указанный в секции provider
-        project_id = "00000000-0000-0000-0000-000000000000"
-    }
+data "cloudru_mcm_vm" "all" {
+  # Условия отбора (необязательно).
+  filter {
+    # Идентификатор проекта. Если не задан, берётся project_id провайдера.
+    project_id = "a997b23e-3fce-4636-9bf8-5d264c3d1c06"
+  }
 }
 
-output "vms_list" {
-    value = data.cloudru_mcm_vm.vms.resources
+output "vm_names" {
+  value = [for vm in data.cloudru_mcm_vm.all.resources : vm.name]
 }
 ```
 
@@ -23,18 +24,18 @@ output "vms_list" {
 
 ### Optional
 
-- `filter` (Block, Optional) (see [below for nested schema](#nestedblock--filter))
+- `filter` (Block, Optional) Условия отбора. (see [below for nested schema](#nestedblock--filter))
 
 ### Read-Only
 
-- `resources` (Block List) (see [below for nested schema](#nestedblock--resources))
+- `resources` (Block List) Найденные виртуальные машины. (see [below for nested schema](#nestedblock--resources))
 
 <a id="nestedblock--filter"></a>
 ### Nested Schema for `filter`
 
 Optional:
 
-- `project_id` (String)
+- `project_id` (String) Идентификатор проекта. Если не задан, берётся `project_id` провайдера.
 
 
 <a id="nestedblock--resources"></a>
@@ -42,29 +43,30 @@ Optional:
 
 Read-Only:
 
-- `cpu` (Number)
-- `floating_ips` (Attributes List) (see [below for nested schema](#nestedatt--resources--floating_ips))
-- `guest_os` (String)
-- `hard_disks` (Attributes List) (see [below for nested schema](#nestedatt--resources--hard_disks))
-- `id` (String)
-- `memory` (Number)
-- `name` (String)
-- `network_interfaces` (Attributes List) (see [below for nested schema](#nestedatt--resources--network_interfaces))
-- `power_state` (String)
-- `project_id` (String)
-- `server_group` (String)
-- `storage_size` (Number)
-- `virtualization_type` (String)
+- `cpu` (Number) Количество виртуальных процессоров.
+- `floating_ips` (Attributes List) Плавающие IP-адреса машины. (see [below for nested schema](#nestedatt--resources--floating_ips))
+- `guest_os` (String) Название гостевой операционной системы.
+- `hard_disks` (Attributes List) Диски машины. (see [below for nested schema](#nestedatt--resources--hard_disks))
+- `id` (String) Идентификатор виртуальной машины.
+- `memory` (Number) Объём оперативной памяти в МиБ.
+- `name` (String) Название виртуальной машины.
+- `network_interfaces` (Attributes List) Сетевые интерфейсы машины. (see [below for nested schema](#nestedatt--resources--network_interfaces))
+- `power_state` (String) Состояние питания машины.
+- `project_id` (String) Идентификатор проекта.
+- `server_group` (String) Название группы размещения, в которую входит машина.
+- `storage_size` (Number) Суммарный размер дисков машины в МиБ.
+- `tags` () Теги машины.
+- `virtualization_type` (String) Тип платформы виртуализации, на которой размещена машина.
 
 <a id="nestedatt--resources--floating_ips"></a>
 ### Nested Schema for `resources.floating_ips`
 
 Read-Only:
 
-- `external_network` (String)
-- `floating_ip` (String)
-- `id` (String)
-- `network` (String)
+- `external_network` (String) Название внешней сети, из которой выделен адрес.
+- `floating_ip` (String) Плавающий IP-адрес.
+- `id` (String) Идентификатор плавающего IP-адреса.
+- `network` (String) Название внутренней сети машины.
 
 
 <a id="nestedatt--resources--hard_disks"></a>
@@ -72,12 +74,12 @@ Read-Only:
 
 Read-Only:
 
-- `bootable` (Boolean)
-- `controller` (String)
-- `id` (String)
-- `mode` (String)
-- `name` (String)
-- `size_mb` (Number)
+- `bootable` (Boolean) Признак загрузочного диска.
+- `controller` (String) Контроллер, к которому подключён диск.
+- `id` (String) Идентификатор диска.
+- `mode` (String) Режим работы диска.
+- `name` (String) Название диска.
+- `size_mb` (Number) Размер диска в МиБ.
 
 
 <a id="nestedatt--resources--network_interfaces"></a>
@@ -85,10 +87,10 @@ Read-Only:
 
 Read-Only:
 
-- `adapter` (String)
-- `id` (String)
-- `ip_address` (String)
-- `name` (String)
-- `network` (String)
-- `power` (Boolean)
-- `security_groups` (List of String)
+- `adapter` (String) Тип сетевого адаптера.
+- `id` (String) Идентификатор сетевого интерфейса.
+- `ip_address` (String) Внутренний IP-адрес интерфейса.
+- `name` (String) Название сетевого интерфейса.
+- `network` (String) Название сети, к которой подключён интерфейс.
+- `power` (Boolean) Признак подключённого интерфейса.
+- `security_groups` (List of String) Названия групп безопасности, назначенных интерфейсу.

@@ -60,6 +60,7 @@ Read-Only:
 - `id` (String) Идентификатор кластера.
 - `instances` (Number) Количество узлов кластера. Допустимые значения зависят от режима развертывания кластера: 1-2 узла для `standard`, 1-3 узла для `business`. Если в `subnet_ids` указано несколько подсетей, кластер считается мультизональным, и количество узлов должно совпадать с количеством подсетей.
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--clusters--logging))
+- `maintenance_window` (Attributes) Окно проведения технического обслуживания. (see [below for nested schema](#nestedatt--clusters--maintenance_window))
 - `name` (String) Название кластера.
 - `pooler_config` (Attributes) Конфигурация пулера соединений PgBouncer. (see [below for nested schema](#nestedatt--clusters--pooler_config))
 - `project_id` (String) Идентификатор проекта.
@@ -87,6 +88,28 @@ Read-Only:
 
 - `enabled` (Boolean) Признак отправки логов кластера. По умолчанию `false` — логи не отправляются.
 - `log_group_id` (String) Идентификатор лог-группы, в которую отправляются логи. Если значение не задано, будет использоваться лог-группа проекта по умолчанию — `default`.
+
+
+<a id="nestedatt--clusters--maintenance_window"></a>
+### Nested Schema for `clusters.maintenance_window`
+
+Read-Only:
+
+- `anytime` (Attributes) Техническое обслуживание в любое время. (see [below for nested schema](#nestedatt--clusters--maintenance_window--anytime))
+- `weekly_maintenance_window` (Attributes) Техническое обслуживание по расписанию. (see [below for nested schema](#nestedatt--clusters--maintenance_window--weekly_maintenance_window))
+
+<a id="nestedatt--clusters--maintenance_window--anytime"></a>
+### Nested Schema for `clusters.maintenance_window.anytime`
+
+
+<a id="nestedatt--clusters--maintenance_window--weekly_maintenance_window"></a>
+### Nested Schema for `clusters.maintenance_window.weekly_maintenance_window`
+
+Read-Only:
+
+- `day` (String) День недели проведения технического обслуживания.
+- `hour` (Number) Час начала окна по UTC в диапазоне 1-24 (00:00-23:00).
+
 
 
 <a id="nestedatt--clusters--pooler_config"></a>

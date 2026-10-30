@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_nat_gateway (Resource)
 
 
@@ -7,17 +8,17 @@
 ```terraform
 resource "cloudru_evolution_compute_nat_gateway" "resource_nat_gateway" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "ec29079e-f973-4685-b90e-bd17425a17ec"
+  project_id = "8d6c13a5-7ca6-46e7-94f8-e3b904045a10"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "d8841751-b545-49a4-85f5-c79cad0dc75b"
-    name = "b4b77843-e9b9-4936-ad79-adcd8e6b7329"
+    id   = "4329a1dc-70c0-4c73-9e3f-7995b30a599d"
+    name = "09c1b21d-da25-47d2-aee7-3bc79904380d"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "5987219e-3017-4fa1-b67e-b4c4f7828b4b"
-  description = "e7fdabe9-3302-403a-a3f8-8c5da37e2cbb"
+  name        = "60d98a3d-2e6e-41ba-8eff-7943ad099d10"
+  description = "f592d626-bb1c-4250-897f-db3e2e7c4ffd"
   # Поле vpc_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  vpc_id = "7fca9d5b-1744-4963-9b73-7339f368df66"
+  vpc_id = "7e679de2-6d52-40dd-a2fa-1ae33f86e3c3"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

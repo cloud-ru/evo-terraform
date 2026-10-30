@@ -1,13 +1,14 @@
-# cloudru_evolution_trino_flavor_collection (Data Source)
+
+# cloudru_evolution_data_platform_trino_flavor_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_trino_flavor_collection" "datasource_flavor" {
-  project_id = "85ab8f9c-b88e-4de0-bc7b-50e480f18092"
-  page_size  = 707692934666209364
+data "cloudru_evolution_data_platform_trino_flavor_collection" "datasource_flavor" {
+  project_id = "3c53f580-157e-49d4-8dd5-009b3917a3f7"
+  page_size  = 6019906262201126282
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -15,7 +16,7 @@ data "cloudru_evolution_trino_flavor_collection" "datasource_flavor" {
 }
 
 output "data-flavor" {
-  value = data.cloudru_evolution_trino_flavor_collection.datasource_flavor.flavors[0]
+  value = data.cloudru_evolution_data_platform_trino_flavor_collection.datasource_flavor.flavors[0]
 }
 ```
 

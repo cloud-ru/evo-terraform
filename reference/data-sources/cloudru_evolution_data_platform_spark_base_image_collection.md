@@ -1,11 +1,12 @@
-# cloudru_evolution_spark_base_image_collection (Data Source)
+
+# cloudru_evolution_data_platform_spark_base_image_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_spark_base_image_collection" "datasource_base_image" {
+data "cloudru_evolution_data_platform_spark_base_image_collection" "datasource_base_image" {
   project_id = "0000-0000-0000-0000-0000"
   page_size  = 100
   filter     = "name=base-image-1"
@@ -16,7 +17,7 @@ data "cloudru_evolution_spark_base_image_collection" "datasource_base_image" {
 }
 
 output "data-base_image" {
-  value = data.cloudru_evolution_spark_base_image_collection.datasource_base_image.base_images[0]
+  value = data.cloudru_evolution_data_platform_spark_base_image_collection.datasource_base_image.base_images[0]
 }
 ```
 
@@ -29,8 +30,8 @@ output "data-base_image" {
 
 ### Optional
 
-- `filter` (String) Фильтр для списка образов. Фильтровать можно по полю [BaseImage.name]. Пример: name=base-image-name.
-- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше [page_size], сервис возвращает [next_page_token], который используется в [ListBaseImagesResponse]. Значение [page_size] по умолчанию 1000.
+- `filter` (String) Фильтр для списка образов. Фильтровать можно по полю `BaseImage.name`. Пример: `name=base-image-name`.
+- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше `page_size`, сервис возвращает `next_page_token`, который используется в `ListBaseImagesResponse`. Значение `page_size` по умолчанию 1000.
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
 
 ### Read-Only

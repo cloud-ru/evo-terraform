@@ -1,12 +1,13 @@
-# cloudru_evolution_trino_version_collection (Data Source)
+
+# cloudru_evolution_data_platform_spark_version_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_trino_version_collection" "datasource_version" {
-  project_id = "81b01825-5ca8-415b-8c3b-a85e3392bfd1"
+data "cloudru_evolution_data_platform_spark_version_collection" "datasource_version" {
+  project_id = "0000-0000-0000-0000-0000"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -14,7 +15,7 @@ data "cloudru_evolution_trino_version_collection" "datasource_version" {
 }
 
 output "data-version" {
-  value = data.cloudru_evolution_trino_version_collection.datasource_version.trino_versions[0]
+  value = data.cloudru_evolution_data_platform_spark_version_collection.datasource_version.spark_versions[0]
 }
 ```
 
@@ -31,7 +32,7 @@ output "data-version" {
 
 ### Read-Only
 
-- `trino_versions` (Attributes List) Список версий Trino. (see [below for nested schema](#nestedatt--trino_versions))
+- `spark_versions` (Attributes List) Список доступных версий Managed Spark. (see [below for nested schema](#nestedatt--spark_versions))
 
 <a id="nestedblock--timeouts"></a>
 ### Nested Schema for `timeouts`
@@ -41,13 +42,12 @@ Optional:
 - `read` (String) A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
 
 
-<a id="nestedatt--trino_versions"></a>
-### Nested Schema for `trino_versions`
+<a id="nestedatt--spark_versions"></a>
+### Nested Schema for `spark_versions`
 
 Read-Only:
 
-- `description` (String) Описание версии.
-- `id` (String) Идентификатор версии.
-- `managed_version` (String) Номер версии Managed Trino.
-- `name` (String) Название версии. Пример: 1.0.0 (478).
-- `oss_version` (String) Номер версии open source продукта Trino.
+- `description` (String) Описание.
+- `managed_spark_version` (String) Номер версии Managed Spark.
+- `name` (String) Название.
+- `version_id` (String) Идентификатор версии.

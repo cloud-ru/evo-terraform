@@ -1,28 +1,23 @@
 
-# cloudru_evolution_cluster_cluster_collection (Data Source)
+# cloudru_evolution_data_platform_cluster_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_cluster_cluster_collection" "datasource_cluster" {
+data "cloudru_evolution_data_platform_cluster_collection" "datasource_cluster" {
   project_id = "00000000-0000-0000-0000-000000000000"
   page_size  = 20
   filter     = "name=Cluster-name"
-  // Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
+  # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
-  }
-  // Игнорировать изменения таймаутов: это предотвращает  лишние обновления ресурса при смене значений таймаутов в конфигурации
-  // Но следует учитывать, что метод delete в ресурсе читает значение таймаута из стейта и, если его нужно изменить, то этот блок стоит закомментировать
-  lifecycle {
-    ignore_changes = [timeouts]
   }
 }
 
 output "data-cluster" {
-  value = data.cloudru_evolution_cluster_cluster_collection.datasource_cluster.clusters[0]
+  value = data.cloudru_evolution_data_platform_cluster_collection.datasource_cluster.clusters[0]
 }
 ```
 

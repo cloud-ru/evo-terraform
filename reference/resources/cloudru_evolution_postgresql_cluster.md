@@ -38,6 +38,14 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
     enabled      = true
     log_group_id = "00000000-0000-0000-0000-000000000000"
   }
+  maintenance_window = {
+    # Нужно заполнить одно из значений - anytime, weekly_maintenance_window.
+    anytime = {}
+    weekly_maintenance_window = {
+      day  = "SAT"
+      hour = 2
+    }
+  }
   initial_database            = "myapp_db"
   initial_database_lc_collate = "C"
   initial_database_lc_ctype   = "C"
@@ -80,6 +88,7 @@ resource "cloudru_evolution_postgresql_cluster" "resource_cluster" {
 - `initial_database_lc_ctype` (String) Локаль набора символов базы данных, созданной по умолчанию. Нельзя изменить после создания кластера. Значение по умолчанию — `C`.
 - `instances` (Number) Количество узлов кластера. Допустимые значения зависят от режима развертывания кластера: 1-2 узла для `standard`, 1-3 узла для `business`. Если в `subnet_ids` указано несколько подсетей, кластер считается мультизональным, и количество узлов должно совпадать с количеством подсетей.
 - `logging` (Attributes) Параметры интеграции с сервисом Клиентского логирования. (see [below for nested schema](#nestedatt--logging))
+- `maintenance_window` (Attributes) Окно проведения технического обслуживания. (see [below for nested schema](#nestedatt--maintenance_window))
 - `pooler_config` (Attributes) Конфигурация пулера соединений PgBouncer. (see [below for nested schema](#nestedatt--pooler_config))
 - `primary_standby_mode` (Boolean, Deprecated) Устарело. Используйте поле `instances`.
 - `recovery_spec` (Attributes) Параметры восстановления кластера. (see [below for nested schema](#nestedatt--recovery_spec))
@@ -125,6 +134,28 @@ Optional:
 
 - `enabled` (Boolean) Признак отправки логов кластера. По умолчанию `false` — логи не отправляются.
 - `log_group_id` (String) Идентификатор лог-группы, в которую отправляются логи. Если значение не задано, будет использоваться лог-группа проекта по умолчанию — `default`.
+
+
+<a id="nestedatt--maintenance_window"></a>
+### Nested Schema for `maintenance_window`
+
+Optional:
+
+- `anytime` (Attributes) Техническое обслуживание в любое время. (see [below for nested schema](#nestedatt--maintenance_window--anytime))
+- `weekly_maintenance_window` (Attributes) Техническое обслуживание по расписанию. (see [below for nested schema](#nestedatt--maintenance_window--weekly_maintenance_window))
+
+<a id="nestedatt--maintenance_window--anytime"></a>
+### Nested Schema for `maintenance_window.anytime`
+
+
+<a id="nestedatt--maintenance_window--weekly_maintenance_window"></a>
+### Nested Schema for `maintenance_window.weekly_maintenance_window`
+
+Required:
+
+- `day` (String) День недели проведения технического обслуживания.
+- `hour` (Number) Час начала окна по UTC в диапазоне 1-24 (00:00-23:00).
+
 
 
 <a id="nestedatt--pooler_config"></a>

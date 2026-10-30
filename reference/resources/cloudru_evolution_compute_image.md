@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_image (Resource)
 
 
@@ -7,25 +8,25 @@
 ```terraform
 resource "cloudru_evolution_compute_image" "resource_image" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "cf8c4f02-0ca9-4a2f-a2a5-0f44b5572af8"
+  project_id = "4053337c-59e6-4a57-a63e-bd8c3b042fe2"
   zones = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "314394ef-3a5e-4591-ad68-940f52f63518"
-    name = "f818577a-7086-4383-a2b9-fb6fa5660da5"
+    id   = "1b0c5d7a-0a21-499b-ab27-67d237c6f981"
+    name = "19ce2eee-0c7f-480b-a3f9-3ec5238c24fb"
   }]
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name         = "8216aba3-e469-4a85-aa16-e5861a074745"
-  description  = "9929ff7c-545c-4e92-ad16-659119d82b60"
-  display_name = "7b1b206b-2600-4f13-afa0-518a6f56d9a3"
-  icon         = "285d62cc-6bf5-4ebe-aef5-c49502cd603b"
+  name         = "faef2fed-5430-4eae-8371-5dee8fe235e9"
+  description  = "074ab088-d25a-4429-aaeb-9959502c9fcb"
+  display_name = "b85afb72-4f8f-4df2-b030-6e01c3a60841"
+  icon         = "a6ecf2d8-d1a3-40bd-a026-d2af19a5928a"
   # Поле min_cpu является неизменяемым. При изменении значения ресурс будет пересоздан.
-  min_cpu = 1040511384
+  min_cpu = 1341394039
   # Поле min_ram является неизменяемым. При изменении значения ресурс будет пересоздан.
-  min_ram = 896825248
+  min_ram = 1412504826
   # Поле min_disk является неизменяемым. При изменении значения ресурс будет пересоздан.
-  min_disk = 130118413
+  min_disk = 923137380
   # Поле user_data_template является неизменяемым. При изменении значения ресурс будет пересоздан.
-  user_data_template = "5b860a77-ac03-4947-801c-4b2b9e48a014"
+  user_data_template = "e9551770-50cb-4c36-bd01-c513541f653c"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

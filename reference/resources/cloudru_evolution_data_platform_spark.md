@@ -1,11 +1,12 @@
-# cloudru_evolution_spark_spark (Resource)
+
+# cloudru_evolution_data_platform_spark (Resource)
 
 
 
 ## Example Usage
 
 ```terraform
-resource "cloudru_evolution_spark_spark" "resource_spark" {
+resource "cloudru_evolution_data_platform_spark" "resource_spark" {
   # Поле cluster_id является неизменяемым. При изменении значения ресурс будет пересоздан.
   cluster_id = "0000-0000-0000-0000-0000"
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -69,7 +70,7 @@ resource "cloudru_evolution_spark_spark" "resource_spark" {
 
 - `cluster_id` (String) Идентификатор кластера.
 - `compute_configuration` (Attributes) Параметры конфигурации вычислительных ресурсов. (see [below for nested schema](#nestedatt--compute_configuration))
-- `enabled_external_host` (Boolean) Флаг разрешает или запрещает внешний хост.
+- `enabled_external_host` (Boolean) Подключение через внешний хост: * `true` — подключение через внешний хост разрешено. * `false` — подключение через внешний хост запрещено.
 - `log_group_id` (String) Идентификатор группы логирования.
 - `name` (String) Название.
 - `network_configuration` (Attributes) Конфигурация сети. (see [below for nested schema](#nestedatt--network_configuration))
@@ -93,7 +94,7 @@ resource "cloudru_evolution_spark_spark" "resource_spark" {
 - `id` (String) Идентификатор инстанса Managed Spark.
 - `s3_eventlog_url` (String) URL директории с логами Spark в хранилище S3.
 - `spark_connect_id` (String) Идентификатор Spark Connect.
-- `status` (String) Статус инстанса Managed Spark.
+- `status` (String) Статус инстанса Managed Spark: * `SPARK_STATUS_PENDING` — инстанс находится в ожидании. * `SPARK_STATUS_CREATING` — инстанс создается. * `SPARK_STATUS_RUNNING` — инстанс готов к работе. * `SPARK_STATUS_RESUMING` — инстанс возобновляет работу. * `SPARK_STATUS_UPDATING` — инстанс обновляется. * `SPARK_STATUS_DELETED` — инстанс удален. * `SPARK_STATUS_DELETING` — инстанс удаляется. * `SPARK_STATUS_ERROR` — инстанс находится в состоянии ошибки. * `SPARK_STATUS_SUSPENDING` — инстанс приостанавливается. * `SPARK_STATUS_SUSPENDED` — инстанс приостановлен. * `SPARK_STATUS_FAILED` — ошибка в работе инстанса. * `SPARK_STATUS_STOPPING` — инстанс останавливается. * `SPARK_STATUS_STOPPED` — инстанс остановлен.
 - `updated_at` (String) Время обновления.
 - `updated_by` (String) Идентификатор обновившего пользователя.
 - `version` (Attributes) Версия Managed Spark. (see [below for nested schema](#nestedatt--version))
@@ -166,3 +167,44 @@ Read-Only:
 - `managed_spark_version` (String) Номер версии Managed Spark.
 - `name` (String) Название.
 - `version_id` (String) Идентификатор версии.
+
+## Зависимости
+
+### Project ID
+
+Нужное значение для идентификатора проекта (``project_id``) можно получить из поля ``projects.id`` с помощью датасорса ``cloudru_evolution_organization_project_collection``.
+
+### Cluster ID
+
+Нужное значение для идентификатора кластера (``cluster_id``) можно получить из поля ``clusters.id`` с помощью датасорса ``cloudru_evolution_data_platform_cluster_collection``. Если нужного кластера не существует, его можно создать с помощью ресурса ``cloudru_evolution_data_platform_cluster``.
+
+### Compute configuration
+
+- Нужное значение для флейвора (``compute_configuration.flavor_id``) можно получить из поля ``flavors.id`` с помощью датасорса ``cloudru_evolution_data_platform_spark_flavor_collection``.
+- Значения ``min_nodes`` и ``max_nodes`` должны находиться в диапазоне ``flavors.min_node_count``–``flavors.max_node_count`` выбранного флейвора.
+
+### Log group ID
+
+Можно получить через консоль → раздел **Мониторинг и логи** → **Лог-группы**. В списке лог-групп будет отображаться UUID каждой.
+
+### Internal S3 config
+
+- В ``internal_s3_config.tenant_id`` указывается идентификатор арендатора Object Storage, который также используется в настройке провайдера ``object_storage_tenant_id``.
+- В ``internal_s3_config.bucket`` указывается имя бакета Evolution Object Storage. Бакет можно создать с помощью ресурса ``cloudru_evolution_obs_bucket`` и использовать его атрибут ``bucket``.
+
+### Network configuration
+
+- Нужное значение для подсети (``network_configuration.subnet_id``) можно получить из поля ``subnets.id`` с помощью датасорса ``cloudru_evolution_compute_subnet_collection``.
+- Нужное значение для идентификатора зоны доступности (``network_configuration.zone_id``) находится в поле ``subnets.zone.id`` выбранной подсети. Список зон также можно получить из поля ``zones.id`` датасорса ``cloudru_evolution_compute_zone_collection``.
+
+Подсеть, зона доступности и флейвор должны быть доступны в проекте, в котором создается экземпляр Managed Spark.
+
+### User
+
+В ``user.password_secret_id`` указывается идентификатор секрета из Secret Manager, содержащего пароль пользователя Spark History.
+
+Для внешнего S3-хранилища в ``external_s3_config.access_key_secret_id`` и ``external_s3_config.secret_key_secret_id`` указываются идентификаторы секретов из Secret Manager, содержащих соответственно ключ доступа и секретный ключ. Идентификаторы секретов можно получить в консоли в разделе **Secret Manager**.
+
+### Version ID
+
+Нужное значение для версии (``version_id``) можно получить из поля ``spark_versions.version_id`` с помощью датасорса ``cloudru_evolution_data_platform_spark_version_collection``.

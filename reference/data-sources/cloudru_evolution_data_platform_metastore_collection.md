@@ -1,11 +1,12 @@
-# cloudru_evolution_metastore_metastore_collection (Data Source)
+
+# cloudru_evolution_data_platform_metastore_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_metastore_metastore_collection" "datasource_metastore" {
+data "cloudru_evolution_data_platform_metastore_collection" "datasource_metastore" {
   cluster_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 100
@@ -17,7 +18,7 @@ data "cloudru_evolution_metastore_metastore_collection" "datasource_metastore" {
 }
 
 output "data-metastore" {
-  value = data.cloudru_evolution_metastore_metastore_collection.datasource_metastore.metastores[0]
+  value = data.cloudru_evolution_data_platform_metastore_collection.datasource_metastore.metastores[0]
 }
 ```
 

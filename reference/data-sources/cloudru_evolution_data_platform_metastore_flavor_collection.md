@@ -1,11 +1,12 @@
-# cloudru_evolution_metastore_flavor_collection (Data Source)
+
+# cloudru_evolution_data_platform_metastore_flavor_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_metastore_flavor_collection" "datasource_flavor" {
+data "cloudru_evolution_data_platform_metastore_flavor_collection" "datasource_flavor" {
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 100
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
@@ -15,7 +16,7 @@ data "cloudru_evolution_metastore_flavor_collection" "datasource_flavor" {
 }
 
 output "data-flavor" {
-  value = data.cloudru_evolution_metastore_flavor_collection.datasource_flavor.flavors[0]
+  value = data.cloudru_evolution_data_platform_metastore_flavor_collection.datasource_flavor.flavors[0]
 }
 ```
 

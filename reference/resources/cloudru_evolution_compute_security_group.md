@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_security_group (Resource)
 
 
@@ -7,15 +8,15 @@
 ```terraform
 resource "cloudru_evolution_compute_security_group" "resource_security_group" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "aa67ff23-a6a3-4d66-b116-ae1c35bac666"
+  project_id = "714329c2-6604-47da-a59b-fb32e7f734bf"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "ef92d278-b5df-4b81-9800-997006569ea3"
-    name = "b2a8f048-0916-463c-b6f6-b2417ba67f6f"
+    id   = "58174aef-3e3e-4c54-ab96-64a24e3ebdbd"
+    name = "34e62e40-57e5-4463-a574-ebeb973b00f2"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "e4914788-bfcb-496d-b475-6aaa747ae4db"
-  description = "b1fc0fe5-5587-4213-95b3-d55b4b346c39"
+  name        = "43ba6387-b3fd-4455-a215-05df7b534dcb"
+  description = "389434a3-a8b0-4f11-9318-93c66b77d043"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

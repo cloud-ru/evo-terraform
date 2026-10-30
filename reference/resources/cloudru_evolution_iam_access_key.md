@@ -1,3 +1,4 @@
+
 # cloudru_evolution_iam_access_key (Resource)
 
 
@@ -6,9 +7,9 @@
 
 ```terraform
 resource "cloudru_evolution_iam_access_key" "resource_access_key" {
-  service_account_id = "98b9eaea-f3d2-4095-bcd7-0e4ca6c33dbe"
-  description        = "419f77bf-fe9f-4d0f-86fe-b8cf8cbecef6"
-  ttl                = "6c90510e-f712-4d2c-9ae9-8fc4880625e8"
+  service_account_id = "aa90f41e-b0ae-4fa0-96c1-71d51cff70d7"
+  description        = "9150ca3a-fd97-4297-abac-3f8ec5ce3077"
+  ttl                = "1b961cfb-809e-4838-8114-46a07be18dae"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"
@@ -42,7 +43,7 @@ resource "cloudru_evolution_iam_access_key" "resource_access_key" {
 - `expired_at` (String) ExpiredAt - дата истечения ключа доступа.
 - `id` (String) ID - идентификатор ключа доступа.
 - `key_id` (String) KeyID - login для получения токена доступа.
-- `secret` (String) Secret - секрет для получения токена доступа. Заполняется только в ответе на запрос создания ключа доступа.
+- `secret` (String, Sensitive) Secret - секрет для получения токена доступа. Заполняется только в ответе на запрос создания ключа доступа.
 - `updated_at` (String) UpdatedAt - дата обновления ключа доступа.
 
 <a id="nestedblock--timeouts"></a>

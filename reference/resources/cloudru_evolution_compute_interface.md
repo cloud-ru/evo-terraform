@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_interface (Resource)
 
 
@@ -7,46 +8,46 @@
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "0c5e1463-c340-477f-b8f4-5072a023bb70"
+  project_id = "45e332e6-0c98-4488-bec8-1e2e2ee42744"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "4abd3b7f-0241-43bb-a094-b3a53b298079"
-    name = "e0d62965-9b6f-4ee0-aae3-960403c8d836"
+    id   = "7d07c14c-8eef-4e2c-a41e-ea7a344e683a"
+    name = "be5cb1e3-a7aa-4a70-9e62-d732671d469b"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "083a991c-c84e-467b-aded-7250af3258c4"
-  description = "4446ba00-3063-4a76-81a1-d57a4598bcbb"
+  name        = "e0916e75-bc35-4e20-b43e-10c97dde3536"
+  description = "84c05823-b873-4202-82a9-8891ecbe346b"
   # Поле ip_address является неизменяемым. При изменении значения ресурс будет пересоздан.
-  ip_address                 = "82e35288-c549-4fcd-9ae1-5082bdc037cc"
+  ip_address                 = "7cfa8a44-b51b-4133-8582-382383c72bae"
   interface_security_enabled = true
   # Нужно заполнить одно из значений - new_external_ip, attach_external_ip
   attach_external_ip = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "31e513a6-9de6-4622-b012-3cedcb90a656"
-    name = "049090b4-bb25-4e9f-ad3e-a73436314bde"
+    id   = "85ba1aea-0f90-4edc-a285-67650bfe9851"
+    name = "d39385e2-36e4-4b2b-be77-dbe1f85b0954"
   }
   allowed_address_pairs = {
     value = [{
-      ip_address  = "db18b906-0856-4cc2-aa80-d92c1c14bf89"
-      mac_address = "b5009e36-267d-4aaa-80ea-f4613b2ef120"
+      ip_address  = "6245bb35-6835-4916-873a-2f21acf8e5a8"
+      mac_address = "00099f76-3c14-437c-af3c-bd3e96dfb592"
     }]
   }
   # Поле type является неизменяемым. При изменении значения ресурс будет пересоздан.
   # Варианты значений параметра type:
   # INTERFACE_TYPE_REGULAR, INTERFACE_TYPE_SYSTEM, INTERFACE_TYPE_SERVICE, INTERFACE_TYPE_GATEWAY, INTERFACE_TYPE_FIP, INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_VIP
-  type = "INTERFACE_TYPE_SERVICE"
+  type = "INTERFACE_TYPE_DIRECT_IP"
   vm = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "8ab0bef7-7cc5-45f8-829e-61d081220c18"
+    id = "a7cc6161-e2c6-41e9-a6dc-6e80c81133eb"
   }
   subnet = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "2cd06dd5-fe31-4ec2-bcac-7a4d6b7cfe48"
+    id = "3e524dc6-448c-4845-a56e-ed7a0abed792"
   }
   security_groups = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "05e3155d-8765-4471-962e-4e3e87e80524"
-    name = "e1d3be23-c951-46c6-bf99-8f9490aa655b"
+    id   = "14dbf12b-bafe-4460-a7a8-b453a4b8c10b"
+    name = "1c3f9332-886d-43d3-9b63-d114a920a586"
   }]
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

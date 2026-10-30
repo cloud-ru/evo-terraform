@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_security_group_rule (Resource)
 
 
@@ -6,24 +7,24 @@
 
 ```terraform
 resource "cloudru_evolution_compute_security_group_rule" "resource_security_group_rule" {
-  description = "f80ba7b2-32e3-442f-ba6f-ce6f8d9263f5"
+  description = "209f813c-51dd-40ea-ade6-2f89244d4a80"
   # Варианты значений параметра direction:
   # TRAFFIC_DIRECTION_INGRESS, TRAFFIC_DIRECTION_EGRESS
   direction = "TRAFFIC_DIRECTION_INGRESS"
   # Варианты значений параметра ether_type:
   # ETHER_TYPE_IPV4, ETHER_TYPE_IPV6
-  ether_type = "ETHER_TYPE_IPV4"
+  ether_type = "ETHER_TYPE_IPV6"
   # Варианты значений параметра ip_protocol:
   # IP_PROTOCOL_TCP, IP_PROTOCOL_UDP, IP_PROTOCOL_ICMP, IP_PROTOCOL_ANY
-  ip_protocol      = "IP_PROTOCOL_TCP"
-  port_range       = "c25b1833-0b98-4e8b-b207-0ece04068e81"
-  remote_ip_prefix = "6ab8cbfb-caa8-4146-aceb-0e4812dfaf66"
+  ip_protocol      = "IP_PROTOCOL_ANY"
+  port_range       = "8b5bc6f8-35e7-4ae6-8e94-f4e7fe0222ff"
+  remote_ip_prefix = "4c0121d4-221d-4b4b-8a45-d7a8b59bafd1"
   remote_security_group = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "2e9b284a-462b-454f-ae80-0b9df81c876e"
-    name = "204e32e6-e96a-4811-bd68-d89bd26d2a0d"
+    id   = "c26cc542-19ea-4f55-916f-8cad0b00b9a8"
+    name = "1580a141-2faf-4aff-bae0-bcba311c045c"
   }
-  security_group_id = "ad969f14-3946-45fa-8568-d7b82c536ab6"
+  security_group_id = "2a7b62bd-b1c2-4489-baeb-7d0554611f27"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

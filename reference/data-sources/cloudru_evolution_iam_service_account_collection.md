@@ -1,3 +1,4 @@
+
 # cloudru_evolution_iam_service_account_collection (Data Source)
 
 
@@ -8,11 +9,11 @@
 data "cloudru_evolution_iam_service_account_collection" "datasource_service_account" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "2e40f129-84ce-4df0-9266-a31de2ffb9b1"
-    project_id  = "f3882d4f-d67c-4d80-9528-31890c6240e6"
+    customer_id = "0d9b99db-fd64-4570-8c74-28914709b662"
+    project_id  = "86a43143-f01e-415d-8b99-e58a572376ad"
   }
-  filter    = "7fbe5e4f-4a78-456a-b462-3a70e448863b"
-  page_size = 5273311036801220830
+  filter    = "5e956608-2790-48ad-9ab9-a046db261cd7"
+  page_size = 1702821528056728855
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_disk_type_collection (Data Source)
 
 
@@ -6,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_disk_type_collection" "datasource_disk_type" {
-  project_id = "774fdf91-7f47-440c-8f5e-8c11302a7557"
-  page_size  = 6766994294656722297
-  filter     = "a9f702ad-11a1-4e8e-a7c2-c5e38605d024"
+  project_id = "93d24c57-9a0e-44f5-911a-d6be4ddf30e1"
+  page_size  = 569195775235246642
+  filter     = "fc3a83aa-a4ac-4422-a5f4-f4ee13c79ed9"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

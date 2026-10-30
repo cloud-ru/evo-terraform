@@ -1,3 +1,4 @@
+
 # cloudru_evolution_kafka_topic_collection (Data Source)
 
 
@@ -51,6 +52,6 @@ Optional:
 Read-Only:
 
 - `name` (String) Имя Топика.
-- `num_partitions` (Number) Количество партиций.
+- `num_partitions` (Number) Количество партиций. При обновлении топика количество партиций можно только увеличивать.
 - `parameters` (Map of String) Параметры топика <имя параметра, значение>. Список поддерживаемых параметров и их описание доступны в разделе документации [Параметры топиков](https://cloud.ru/docs/paas-kafka/ug/topics/guides__topics-parameters).
 - `replication_factor` (Number) Фактор репликации.

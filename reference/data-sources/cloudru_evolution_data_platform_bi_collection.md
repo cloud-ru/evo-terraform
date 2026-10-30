@@ -1,12 +1,12 @@
 
-# cloudru_evolution_bi_bi_collection (Data Source)
+# cloudru_evolution_data_platform_bi_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_bi_bi_collection" "datasource_bi" {
+data "cloudru_evolution_data_platform_bi_collection" "datasource_bi" {
   cluster_id = "00000000-0000-4000-8000-000000000000"
   project_id = "00000000-0000-4000-8000-000000000000"
   page_size  = 100
@@ -18,7 +18,7 @@ data "cloudru_evolution_bi_bi_collection" "datasource_bi" {
 }
 
 output "data-bi" {
-  value = data.cloudru_evolution_bi_bi_collection.datasource_bi.bis[0]
+  value = data.cloudru_evolution_data_platform_bi_collection.datasource_bi.bis[0]
 }
 ```
 

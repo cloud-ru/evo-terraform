@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_subnet (Resource)
 
 
@@ -7,28 +8,28 @@
 ```terraform
 resource "cloudru_evolution_compute_subnet" "resource_subnet" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "da93b659-0822-432c-b201-0cbab9c8d7e6"
+  project_id = "e661d2e3-4fe1-4cb7-b05b-425a1ecdae0f"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "5186c54f-1ec9-4b58-9c78-148d87f2b2fe"
-    name = "12118c69-7b90-4aa0-be95-b9d8a605286a"
+    id   = "54812e2a-9c48-4023-8eb0-f6f93985aced"
+    name = "56d8cec2-4c95-4852-8e71-523b4506d153"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "13c3d7b1-5e56-41d5-aac4-980776b689b9"
-  description = "5e84538d-8460-424e-ae85-fe1fb2dbc5e0"
+  name        = "ca2e74a6-3ec5-4938-9ea1-e15231b083c5"
+  description = "cae24fdc-cabc-4081-be98-bdbef53e997b"
   # Поле vpc_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  vpc_id  = "f8273151-354d-400d-8baa-cdbd53e9e39b"
+  vpc_id  = "5ac2e70c-6c5d-49d1-8c52-214cfbd02baf"
   default = true
   # Поле subnet_address является неизменяемым. При изменении значения ресурс будет пересоздан.
-  subnet_address = "3a3f7d4a-a18e-4af2-a202-0871e8109bdb"
+  subnet_address = "c740a390-b065-4297-84c8-7a12a7502846"
   # Поле routed_network является неизменяемым. При изменении значения ресурс будет пересоздан.
   routed_network = false
   # Поле default_gateway является неизменяемым. При изменении значения ресурс будет пересоздан.
-  default_gateway = "5eca56e8-387f-48e0-99f9-d5a4682271ae"
+  default_gateway = "11108763-8efc-4c8e-89da-dc363ebbef90"
   dns_servers = {
-    value = ["8486c9af-e57a-4c24-9ca5-861b0b42f745", "1d198371-2969-4072-9970-e2d072006a5c", "08845698-3863-44d5-a30a-6b0a8f8ebebd", "eea1d3f8-ac36-4544-a5b1-c78f972dae7f", "bd17bb29-e9cc-4374-b3cd-461e3bff4958", "3c54d24d-86c9-4171-bbfa-454ddd0821ea", "9bf867c1-b384-42eb-a0f2-8b522d06d4c7", "1439ac43-b8a7-4da7-924e-c7344ed9da51", "61d64516-b776-4f64-9cc6-70efeb5ab13c", "08da0cbc-7402-4f7a-bf9a-67c35d50b5b9"]
+    value = ["575208ca-5ab7-4e14-b30c-52cfaba7b465", "4f05d2d9-b95d-416a-9e1e-44ac70a713a3", "aa2b4085-4ddd-4c4f-b903-91ac38498ec5", "eaba05f9-b6b4-487d-a104-ae31c8086e16", "ad2462af-4562-4695-a231-768b973538df", "b442b4a9-1333-4b97-a750-4c6f626b31e1", "7ff223d7-6dff-4f66-828c-5e6f816931db", "844e1c47-16de-4c33-8e00-8de92a441a78", "1a600c84-d2ba-4a5e-929f-8b6f3e2f927b", "791a3573-5c1e-4967-852a-ecb7aaffe958"]
   }
-  prefix_length = 384166316
+  prefix_length = 1580965191
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     create = "60m"

@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_vm (Resource)
 
 
@@ -7,36 +8,37 @@
 ```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "c5c3c689-2bc6-424b-8a37-d0443ca6064a"
+  project_id = "4af89a7d-ec81-467d-90ec-d6a5fec9b8f7"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "ae2effc9-c35a-4cc5-87a1-1317a52f3fd4"
-    name = "dc54f418-9776-407a-bd41-d2265672fd93"
+    id   = "5c4353fe-f414-4793-aa96-9dae3d7552ed"
+    name = "4f6f11fd-3098-42e9-a02d-22d58bb45a82"
   }
-  name        = "4bf49ae1-c3a1-4cab-9011-c4a4d391d0cb"
-  description = "cd7f3a8d-c209-44bf-aa98-c71f68418501"
+  name        = "1c34bd24-dd71-4a45-9afb-5dcf4388bf0c"
+  description = "66aae149-53d6-495b-a18d-4dfa759dea4f"
   flavor = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "28f6e8bb-8934-4b48-af83-8ccfc33a5630"
-    name = "914e999b-60c5-465e-9c30-cb36cd63625c"
+    id   = "c60ab504-9e58-405a-a88a-2f62137fb525"
+    name = "9f1571a8-3cd9-40a3-80e7-f4b1d06293fc"
   }
   placement_group = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "e07ad3de-d353-4566-aa9d-356efb6e692f"
+    id = "c925ec48-e258-403b-b4c9-c19d0f5cb76b"
   }
   network_interfaces = [{
-    id = "56d1bd30-6a40-44d7-838c-4deb21b14677"
+    # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
+    id = "2f5dedd3-1f79-47bf-b75f-913df0cdb623"
   }]
   disks = [{
-    id = "0eda2e5e-9e81-40ea-9bee-9ada57796865"
+    id = "821c9632-9bc4-4456-9292-5f4c1cd6b8c7"
   }]
-  cloud_init_userdata = "a2e553fb-8010-4741-bc47-31997ba277ee"
+  cloud_init_userdata = "ca788540-a9a9-4166-979a-be5b348c01e4"
   image_metadata = {
-    "5c04fb51-66c9-4710-8d66-a9e3ad4e7acb" = {
+    "0bce05ad-a50a-4038-b33f-30b67a138fd6" = {
       # Нужно заполнить одно из значений - string_value, int_value, bool_value.
-      string_value = "6a3385f3-ec3b-449a-a2d5-f7ba633a4915"
-      int_value    = 407856610
-      bool_value   = true
+      string_value = "9893560e-985b-462e-893d-4ac495f413c1"
+      int_value    = 447374414
+      bool_value   = false
   } }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

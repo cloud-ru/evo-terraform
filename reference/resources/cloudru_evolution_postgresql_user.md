@@ -34,7 +34,7 @@ resource "cloudru_evolution_postgresql_user" "resource_user" {
 
 - `cluster_id` (String) Идентификатор кластера.
 - `name` (String) Имя пользователя.
-- `password` (String) Пароль.
+- `password` (String, Sensitive) Пароль.
 
 ### Optional
 

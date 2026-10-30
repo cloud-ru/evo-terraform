@@ -9,7 +9,7 @@
 resource "cloudru_evolution_clickhouse_user" "resource_user" {
   name = "some_user-1"
   granted_roles = {
-    value = ["be456677-081c-4e5c-b20a-ba9993dd4a04", "5658830d-e917-4123-9d71-1a3cbad0b073", "8ebc8119-9318-4920-85d0-22640c57286e", "7809775f-51a1-4962-ae03-7f845bcab687", "1a58e4c9-1e78-40fb-8a7f-32ef8c90e55a", "e6a29bc3-33d6-4523-adab-21ab96697255", "25dc9702-8590-439a-9bcc-e572547dcd06", "bb0d2d79-a1f2-486d-ab3c-8eedef3577ef", "dd9bba91-169a-4277-9a5a-73ea04ee34a8", "8e39fa0a-6fef-454a-9512-5214f58bf83e"]
+    value = ["e7038578-dbb0-4829-97d0-0a520096bc50", "7e5e6ac0-9f6c-489c-bc8e-26c6a948cdc1", "20e6e20c-94db-4cb3-a063-54027d5bc912", "5cde9621-20df-4545-b85c-04c41f3f0a96", "aed77ab0-d025-4167-bc6d-e928e634d55f", "db9d0487-820e-408d-b333-97b5c7a02547", "f2a6d22d-4abc-44d4-81ca-62e2fcf201ae", "eadca46a-f8df-43d0-a122-a0f2a10ca75a", "555410fa-0cdd-4875-af2b-a8617269f7df", "e013c4d0-fb7c-4574-ac10-645a6d484803"]
   }
   cluster_id = "00000000-0000-0000-0000-000000000000"
   # Поле password является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -35,7 +35,7 @@ resource "cloudru_evolution_clickhouse_user" "resource_user" {
 
 - `cluster_id` (String) Идентификатор кластера.
 - `name` (String) Имя пользователя.
-- `password` (String) Пароль.
+- `password` (String, Sensitive) Пароль.
 
 ### Optional
 

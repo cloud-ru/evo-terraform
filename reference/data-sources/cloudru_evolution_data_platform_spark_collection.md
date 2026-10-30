@@ -1,11 +1,12 @@
-# cloudru_evolution_spark_spark_collection (Data Source)
+
+# cloudru_evolution_data_platform_spark_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_spark_spark_collection" "datasource_spark" {
+data "cloudru_evolution_data_platform_spark_collection" "datasource_spark" {
   cluster_id = "0000-0000-0000-0000-0000"
   project_id = "0000-0000-0000-0000-0000"
   page_size  = 100
@@ -17,7 +18,7 @@ data "cloudru_evolution_spark_spark_collection" "datasource_spark" {
 }
 
 output "data-spark" {
-  value = data.cloudru_evolution_spark_spark_collection.datasource_spark.sparks[0]
+  value = data.cloudru_evolution_data_platform_spark_collection.datasource_spark.sparks[0]
 }
 ```
 
@@ -31,8 +32,8 @@ output "data-spark" {
 
 ### Optional
 
-- `filter` (String) Фильтр для списка инстансов. Фильтровать можно по полю [Spark.name]. Пример: name=spark-instance-name.
-- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше [page_size], сервис возвращает [next_page_token], который используется в [ListSparksResponse]. Значение [page_size] по умолчанию 1000.
+- `filter` (String) Фильтр для списка инстансов. Фильтровать можно по полю `Spark.name`. Пример: `name=spark-instance-name`.
+- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше `page_size`, сервис возвращает `next_page_token`, который используется в `ListSparksResponse`. Значение `page_size` по умолчанию 1000.
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
 
 ### Read-Only
@@ -57,7 +58,7 @@ Read-Only:
 - `created_at` (String) Время создания.
 - `created_by` (String) Идентификатор создавшего пользователя.
 - `description` (String) Описание.
-- `enabled_external_host` (Boolean) Флаг разрешает или запрещает внешний хост.
+- `enabled_external_host` (Boolean) Подключение через внешний хост: * `true` — подключение через внешний хост разрешено. * `false` — подключение через внешний хост запрещено.
 - `external_s3_config` (Attributes) Конфигурация параметров внешнего хранилища S3. (see [below for nested schema](#nestedatt--sparks--external_s3_config))
 - `hs_external_host` (String) URL внешнего хоста Spark History.
 - `hs_internal_host` (String) URL внутреннего хоста Spark History.
@@ -69,7 +70,7 @@ Read-Only:
 - `project_id` (String) Идентификатор проекта.
 - `s3_eventlog_url` (String) URL директории с логами Spark в хранилище S3.
 - `spark_connect_id` (String) Идентификатор Spark Connect.
-- `status` (String) Статус инстанса Managed Spark.
+- `status` (String) Статус инстанса Managed Spark: * `SPARK_STATUS_PENDING` — инстанс находится в ожидании. * `SPARK_STATUS_CREATING` — инстанс создается. * `SPARK_STATUS_RUNNING` — инстанс готов к работе. * `SPARK_STATUS_RESUMING` — инстанс возобновляет работу. * `SPARK_STATUS_UPDATING` — инстанс обновляется. * `SPARK_STATUS_DELETED` — инстанс удален. * `SPARK_STATUS_DELETING` — инстанс удаляется. * `SPARK_STATUS_ERROR` — инстанс находится в состоянии ошибки. * `SPARK_STATUS_SUSPENDING` — инстанс приостанавливается. * `SPARK_STATUS_SUSPENDED` — инстанс приостановлен. * `SPARK_STATUS_FAILED` — ошибка в работе инстанса. * `SPARK_STATUS_STOPPING` — инстанс останавливается. * `SPARK_STATUS_STOPPED` — инстанс остановлен.
 - `updated_at` (String) Время обновления.
 - `updated_by` (String) Идентификатор обновившего пользователя.
 - `user` (Attributes) Пользователь Managed Spark для доступа к Spark History. (see [below for nested schema](#nestedatt--sparks--user))

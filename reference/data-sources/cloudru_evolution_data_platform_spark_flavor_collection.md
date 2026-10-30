@@ -1,11 +1,12 @@
-# cloudru_evolution_spark_flavor_collection (Data Source)
+
+# cloudru_evolution_data_platform_spark_flavor_collection (Data Source)
 
 
 
 ## Example Usage
 
 ```terraform
-data "cloudru_evolution_spark_flavor_collection" "datasource_flavor" {
+data "cloudru_evolution_data_platform_spark_flavor_collection" "datasource_flavor" {
   project_id = "0000-0000-0000-0000-0000"
   page_size  = 100
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
@@ -15,7 +16,7 @@ data "cloudru_evolution_spark_flavor_collection" "datasource_flavor" {
 }
 
 output "data-flavor" {
-  value = data.cloudru_evolution_spark_flavor_collection.datasource_flavor.flavors[0]
+  value = data.cloudru_evolution_data_platform_spark_flavor_collection.datasource_flavor.flavors[0]
 }
 ```
 
@@ -28,7 +29,7 @@ output "data-flavor" {
 
 ### Optional
 
-- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше [page_size], сервис возвращает [next_page_token], который используется в [ListSparkFlavorsResponse]. Значение [page_size] по умолчанию 1000.
+- `page_size` (Number) Максимальное количество результатов на странице ответа. Если значение больше `page_size`, сервис возвращает `next_page_token`, который используется в `ListSparkFlavorsResponse`. Значение `page_size` по умолчанию 1000.
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
 
 ### Read-Only
@@ -72,4 +73,4 @@ Read-Only:
 Read-Only:
 
 - `gpu` (Number) Количество GPU.
-- `type` (String) Тип GPU.
+- `type` (String) Тип GPU: * `GPU_A100` — графический процессор с 80 ГБ видеопамяти. * `GPU_H100` — графический процессор 80 ГБ видеопамяти. * `GPU_V100` — графический процессор c 32 ГБ видеопамяти.

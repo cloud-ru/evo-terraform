@@ -1,11 +1,12 @@
-# cloudru_evolution_spark_spark_connect (Resource)
+
+# cloudru_evolution_data_platform_spark_connect (Resource)
 
 
 
 ## Example Usage
 
 ```terraform
-resource "cloudru_evolution_spark_spark_connect" "resource_spark_connect" {
+resource "cloudru_evolution_data_platform_spark_connect" "resource_spark_connect" {
   # Поле spark_id является неизменяемым. При изменении значения ресурс будет пересоздан.
   spark_id = "0000-0000-0000-0000-0000"
   # Поле base_image является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -79,7 +80,7 @@ resource "cloudru_evolution_spark_spark_connect" "resource_spark_connect" {
 - `id` (String) Идентификатор Spark Connect.
 - `internal_connect_url` (String) URL подключения из внутренней сети.
 - `internal_ui_url` (String) URL внутреннего хоста.
-- `status` (String) Статусы Spark Connect.
+- `status` (String) Статусы Spark Connect: * `SPARK_CONNECT_STATUS_PROVISIONING` — Spark Connect устанавливается. * `SPARK_CONNECT_STATUS_NOTREADY` — Spark Connect не готов к работе. * `SPARK_CONNECT_STATUS_READY` — Spark Connect установлен и готов к работе. * `SPARK_CONNECT_STATUS_FAILED` — Spark Connect не установлен. * `SPARK_CONNECT_STATUS_DELETED` — Spark Connect удален.
 - `updated_at` (String) Время обновления.
 - `updated_by` (String) Идентификатор пользователя, обновившего Spark Connect.
 
@@ -143,3 +144,15 @@ Optional:
 - `create` (String) A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
 - `delete` (String) A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs.
 - `update` (String) A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours).
+
+## Зависимости
+
+### Spark ID
+
+Нужное значение для идентификатора экземпляра Managed Spark (``spark_id``) можно получить из поля ``sparks.id`` с помощью датасорса ``cloudru_evolution_data_platform_spark_collection``. Если нужного экземпляра не существует, его можно создать с помощью ресурса ``cloudru_evolution_data_platform_spark``.
+
+### Base image ID
+
+Если используется базовый образ, нужное значение для ``base_image.id`` можно получить из поля ``base_images.id`` с помощью датасорса ``cloudru_evolution_data_platform_spark_base_image_collection``.
+
+Укажите только один источник образа: ``base_image`` или ``custom_image``.

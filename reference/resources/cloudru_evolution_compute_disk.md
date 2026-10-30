@@ -1,3 +1,4 @@
+
 # cloudru_evolution_compute_disk (Resource)
 
 
@@ -7,16 +8,16 @@
 ```terraform
 resource "cloudru_evolution_compute_disk" "resource_disk" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "04dd19c5-1e7f-4689-9f0c-14c93d84918e"
+  project_id = "10e6495c-b261-41b0-879e-59b3eae980c6"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "9f46a788-3d85-4457-a4d2-29ce54939360"
-    name = "2c0e7bef-588d-4626-adf1-2b93d76af042"
+    id   = "693242ef-0aed-4d3f-955b-77026da2d28d"
+    name = "947732b3-22b8-4982-97ca-a5f73fd7df97"
   }
-  name        = "9bd30711-010a-4419-82f5-9e13a62cd292"
-  description = "972f10ab-b2dd-49aa-88a6-e2c6462abaec"
-  size        = 819564265
-  readonly    = false
+  name        = "0e5b0d11-075e-4557-9d5e-b5c1757a1060"
+  description = "9adc5911-8028-4822-bc3a-b628dc875450"
+  size        = 1712137635
+  readonly    = true
   shared      = true
   encrypted   = true
   # Поле bootable является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -24,12 +25,12 @@ resource "cloudru_evolution_compute_disk" "resource_disk" {
   disk_type = {
     # Нужно заполнить одно из значений - id, name.
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id   = "1010eaa7-e2dc-4054-962c-88d068c058ab"
-    name = "e89437e4-6c7f-4b3d-b901-b21c3d3755dc"
+    id   = "ff5228c7-9acc-4994-8c7b-b7113866f25a"
+    name = "0832a2d3-b3e0-49bf-b3dd-d108fa1cf0b4"
   }
   image = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "dbca36a9-ec38-4b17-96c4-55c71f4b6c15"
+    id = "75d3bb21-4da0-4683-a745-a03d74c878e2"
   }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

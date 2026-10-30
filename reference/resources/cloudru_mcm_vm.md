@@ -1,124 +1,56 @@
+
 # cloudru_mcm_vm (Resource)
 
-
+Виртуальная машина на платформе виртуализации.
 
 ## Example Usage
 
 ```terraform
-resource "cloudru_mcm_vm" "vm1" {
-  # NOTE: Это вычисляемый параметр
-  # id = "543"
-  
-  # NOTE: Это обязательный параметр
-  name = "test-terraform-virtual-machine-001"
+resource "cloudru_mcm_vm" "web" {
+  # Название виртуальной машины. Поле неизменяемое: при изменении ресурс будет пересоздан.
+  name = "vm-web-01"
 
-  # NOTE: Это обязательный параметр
-  template = "cirros-0.5.3-x86_64-disk"
-  
-  # NOTE: Это обязательный параметр
-  resource_pool = "m1.nano"
-  
-  # NOTE: Это обязательный параметр
-  datastore = "ds1"
-  
-  # NOTE: Для vcenter это обязательный параметр, для openstack это вычисляемый параметр
-  # cpu = 16
-  
-  # NOTE: Для vcenter это обязательный параметр, для openstack это вычисляемый параметр
-  # memory = 1024 # Mb
+  # Название шаблона (образа), из которого создаётся машина. Поле неизменяемое.
+  template = "ubuntu-22.04"
 
-  # NOTE: Это вычисляемый параметр
-  # guest_os = "Ubuntu Linux (64-bit)"
-  
-  # NOTE: Это вычисляемый параметр
-  # storage_size = 10240
+  # Название пула ресурсов, в котором размещается машина. Поле неизменяемое.
+  resource_pool = "pool-01"
 
-  # NOTE: Это вычисляемый параметр
-  # virtualization_type = "openstack"
+  # Название хранилища, в котором размещаются диски машины. Поле неизменяемое.
+  datastore = "datastore-01"
 
-  # NOTE: Это вычисляемый параметр
-  # power_state = "poweredOn"
+  # Количество виртуальных процессоров (1–64) и объём памяти в МиБ (512–65536).
+  # Меняются без пересоздания машины.
+  cpu    = 4
+  memory = 8192
 
-  # NOTE: Это опциональный параметр, по умолчанию используется project_id указанный в секции provider
-  # project_id = "00000000-0000-0000-0000-000000000000"
-
-  # NOTE: Это опциональный параметр
-  userdata = filebase64("./userdata.yml")
-
-  # NOTE: Это опциональный параметр
-  # Группа размещения для машины
-  server_group = "sg"
-
-  # NOTE: Это обязательный параметр, минимум один диск должен быть указан.
-  # Возможна модификация размеров дисков с ограниченими:
-  # - первый диск - загрузочный - для openstack нельзя модифицировать, для vcenter можно только увеличить;
-  # - для openstack возможно только увеличение размера.
+  # Диски машины, минимум один. Первый диск — загрузочный.
+  # Диски можно добавлять, удалять и увеличивать; уменьшение не поддерживается.
   hard_disks = [
-    {
-      # NOTE: Это вычисляемый параметр
-      # controller = "lsilogic-1000"
-
-      # NOTE: Это вычисляемый параметр
-      # id = "11619"
-
-      # NOTE: Это вычисляемый параметр
-      # mode = "persistent"
-
-      # NOTE: Это вычисляемый параметр
-      # name = "disk-1000-0"
-
-      # NOTE: Это обязательный параметр
-      size_mb = 1024
-    }
+    { size_mb = 51200 },
+    { size_mb = 102400 },
   ]
 
-  # NOTE: Это обязательный параметр, минимум один интерфейс должен быть указан.
-  # Не возможна модификация элементов списка, только добавление и удаление.
+  # Сетевые интерфейсы, минимум один. В security_groups указываются названия групп безопасности.
   network_interfaces = [
     {
-      # NOTE: Это вычисляемый параметр
-      # adapter = "vmxnet3"
-
-      # NOTE: Это вычисляемый параметр
-      # id = "12180"
-
-      # NOTE: Это вычисляемый параметр
-      # ip_address = ""
-
-      # NOTE: Это вычисляемый параметр
-      # name = "ethernet-0"
-
-      # NOTE: Это обязательный параметр
-      network = "private"
-
-      # NOTE: Это вычисляемый параметр
-      # power = true
-
-      # NOTE: Это опциональный параметр
-      security_groups = [
-        "sg1",
-        "sg2"
-      ]
-    }
+      network         = "net-01"
+      security_groups = [cloudru_mcm_security_group.web.name]
+    },
   ]
 
-  # NOTE: Это опциональный параметр. Работает только для Openstack
-  # Не возможна модификация элементов списка, только добавление и удаление.
-  floating_ips = [
-    {
-      # NOTE: Это вычисляемый параметр
-      # id = "98789"
+  # Название группы размещения (необязательно).
+  server_group = cloudru_mcm_server_group.web.name
 
-      # NOTE: Это обязательный параметр
-      network = "private"
+  # Конфигурация cloud-init в открытом виде, например SSH-ключи. Провайдер сам кодирует её в base64.
+  userdata = <<-CLOUDINIT
+    #cloud-config
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExample user@example
+  CLOUDINIT
 
-      # NOTE: Это обязательный параметр
-      external_network = "public"
-
-      # NOTE: Это вычисляемый параметр
-      # floating_ip = "192.168.122.252"
-    }
-  ]
+  # Теги машины.
+  tags = ["env:dev", "team:web"]
 }
 ```
 
@@ -127,44 +59,45 @@ resource "cloudru_mcm_vm" "vm1" {
 
 ### Required
 
-- `datastore` (String)
-- `hard_disks` (Attributes List) (see [below for nested schema](#nestedatt--hard_disks))
-- `name` (String)
-- `network_interfaces` (Attributes List) (see [below for nested schema](#nestedatt--network_interfaces))
-- `resource_pool` (String)
-- `template` (String)
+- `datastore` (String) Название хранилища, в котором размещаются диски машины. При изменении ресурс будет пересоздан.
+- `hard_disks` (Attributes List) Диски машины, минимум один. Первый диск — загрузочный. Диски можно добавлять, удалять и увеличивать; уменьшение размера не поддерживается. (see [below for nested schema](#nestedatt--hard_disks))
+- `name` (String) Название виртуальной машины. При изменении ресурс будет пересоздан.
+- `network_interfaces` (Attributes List) Сетевые интерфейсы машины, минимум один. (see [below for nested schema](#nestedatt--network_interfaces))
+- `resource_pool` (String) Название пула ресурсов, в котором размещается машина. При изменении ресурс будет пересоздан.
+- `template` (String) Название шаблона (образа), из которого создаётся машина. При изменении ресурс будет пересоздан.
 
 ### Optional
 
-- `cpu` (Number) the number of cpu cores, required for vcenter vm
-- `floating_ips` (Attributes List) (see [below for nested schema](#nestedatt--floating_ips))
-- `memory` (Number) the virtual memory in Mb, required for vcenter vm
-- `project_id` (String)
-- `server_group` (String)
-- `userdata` (String)
+- `cpu` (Number) Количество виртуальных процессоров, от 1 до 64. Если не задано, значение определяет платформа.
+- `floating_ips` (Attributes List) Плавающие IP-адреса машины. (see [below for nested schema](#nestedatt--floating_ips))
+- `memory` (Number) Объём оперативной памяти в МиБ, от 512 до 65536. Если не задано, значение определяет платформа.
+- `project_id` (String) Идентификатор проекта. Если не задан, берётся `project_id` провайдера. При изменении ресурс будет пересоздан.
+- `server_group` (String) Название группы размещения, в которую входит машина.
+- `tags` (Set of String) Теги машины.
+- `userdata` (String) Конфигурация cloud-init в открытом виде, например для добавления SSH-ключей. Провайдер сам кодирует её в base64.
 
 ### Read-Only
 
-- `guest_os` (String)
-- `id` (String) The ID of this resource.
-- `power_state` (String)
-- `storage_size` (Number)
-- `virtualization_type` (String)
+- `guest_os` (String) Название гостевой операционной системы, определённое по шаблону.
+- `id` (String) Идентификатор виртуальной машины.
+- `power_state` (String) Состояние питания машины.
+- `storage_size` (Number) Суммарный размер дисков машины в МиБ.
+- `virtualization_type` (String) Тип платформы виртуализации, на которой размещена машина.
 
 <a id="nestedatt--hard_disks"></a>
 ### Nested Schema for `hard_disks`
 
 Required:
 
-- `size_mb` (Number)
+- `size_mb` (Number) Размер диска в МиБ, не меньше 1024.
 
 Read-Only:
 
-- `bootable` (Boolean)
-- `controller` (String)
-- `id` (String)
-- `mode` (String)
-- `name` (String)
+- `bootable` (Boolean) Признак загрузочного диска.
+- `controller` (String) Контроллер, к которому подключён диск.
+- `id` (String) Идентификатор диска.
+- `mode` (String) Режим работы диска.
+- `name` (String) Название диска.
 
 
 <a id="nestedatt--network_interfaces"></a>
@@ -172,19 +105,19 @@ Read-Only:
 
 Required:
 
-- `network` (String)
+- `network` (String) Название сети, к которой подключается интерфейс.
 
 Optional:
 
-- `security_groups` (List of String)
+- `security_groups` (List of String) Названия групп безопасности, назначенных интерфейсу. Список не может быть пустым: снять с интерфейса все группы нельзя. Если не задан, остаются группы платформы.
 
 Read-Only:
 
-- `adapter` (String)
-- `id` (String)
-- `ip_address` (String)
-- `name` (String)
-- `power` (Boolean)
+- `adapter` (String) Тип сетевого адаптера.
+- `id` (String) Идентификатор сетевого интерфейса.
+- `ip_address` (String) Внутренний IP-адрес интерфейса.
+- `name` (String) Название сетевого интерфейса.
+- `power` (Boolean) Признак подключённого интерфейса.
 
 
 <a id="nestedatt--floating_ips"></a>
@@ -192,10 +125,40 @@ Read-Only:
 
 Required:
 
-- `external_network` (String)
-- `network` (String)
+- `external_network` (String) Название внешней сети, из которой выделяется адрес.
+- `network` (String) Название внутренней сети машины, к интерфейсу в которой привязывается адрес.
 
 Read-Only:
 
-- `floating_ip` (String)
-- `id` (String)
+- `floating_ip` (String) Выделенный плавающий IP-адрес.
+- `id` (String) Идентификатор плавающего IP-адреса.
+
+## Import
+
+Import is supported using the following syntax:
+
+The [`terraform import` command](https://developer.hashicorp.com/terraform/cli/commands/import) can be used, for example:
+
+```shell
+# Замените <vm_id> на идентификатор виртуальной машины.
+terraform import cloudru_mcm_vm.web '<vm_id>'
+```
+
+<!-- additional info generated by protoc-gen-go-terraform -->
+### Зависимости
+
+#### Template, Resource Pool, Datastore, Network
+
+Значения ``template``, ``resource_pool``, ``datastore`` и ``network_interfaces.network`` — названия объектов платформы виртуализации, доступных проекту. Их можно посмотреть в консоли MCM.
+
+#### Security Groups
+
+В ``network_interfaces.security_groups`` указываются названия групп безопасности — атрибут ``name`` ресурса ``cloudru_mcm_security_group`` или датасорса ``cloudru_mcm_security_group``.
+
+#### Server Group
+
+В ``server_group`` указывается название группы размещения — атрибут ``name`` ресурса ``cloudru_mcm_server_group``.
+
+### Ограничения
+
+- Размер диска можно только увеличить.
