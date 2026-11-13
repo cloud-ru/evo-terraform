@@ -1,13 +1,15 @@
-- [ВНИМАНИЕ: minor release 2.1.6](#внимание-minor-release-214)
+- [ВНИМАНИЕ: minor release 2.1.7](#внимание-minor-release-217)
 - [Быстрый старт](#быстрый-старт)
 - [Структура репозитория](#структура-репозитория)
 - [Поддерживаемые ресурсы](#поддерживаемые-ресурсы)
 - [Обратная связь](#обратная-связь)
 
-## ВНИМАНИЕ: minor release 2.1.6
+## ВНИМАНИЕ: minor release 2.1.7
 
-**Вышел релиз провайдера 2.1.6 (minor update).
-Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.6.md)!**
+**Вышел релиз провайдера 2.1.7 (minor update).
+Внимательно ознакомьтесь с [release note](https://github.com/cloud-ru/evo-terraform/blob/main/releases/2.1.7.md)!**
+
+> **Важно!** Минимальные поддерживаемые версии - Terraform v1.7.0 и OpenTofu v1.12.0. В более ранних версиях есть ошибка, из-за которой некоторые сценарии миграции и импорта, включая генерацию манифеста, могут завершаться некорректно. Начиная с указанных версий ошибка исправлена.
 
 Документация из директорий ``guides`` и ``troubleshooting`` находится в разделах [Инструкции](https://cloud.ru/docs/terraform-evolution/ug/topics/guides?source-platform=Evolution) и [Решение проблем](https://cloud.ru/docs/terraform-evolution/ug/topics/troubleshooting?source-platform=Evolution) на официальном сайте Cloud.ru
 
@@ -44,8 +46,8 @@
 | Redis | In-memory база данных |
 | Managed PostgreSQL | Управляемая СУБД |
 | IAM | Сервисные аккаунты, ключи доступа, группы |
-| Spark | Фреймворк для обработки и анализа больших объемов данных |
-| Trino | Система для выполнения SQL-запросов |
+| Managed Spark | Фреймворк для обработки и анализа больших объемов данных |
+| Managed Trino | Система для выполнения SQL-запросов |
 | Managed BI | Сервис бизнес аналитики |
 | Managed Clickhouse | Управляемая СУБД |
 
