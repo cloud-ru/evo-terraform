@@ -7,8 +7,8 @@
 
 ```terraform
 data "cloudru_evolution_data_platform_trino_flavor_collection" "datasource_flavor" {
-  project_id = "3c53f580-157e-49d4-8dd5-009b3917a3f7"
-  page_size  = 6019906262201126282
+  project_id = "92b43c51-f7c3-405c-a40c-3cb0018c55f0"
+  page_size  = 2964949195852433986
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

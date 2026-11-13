@@ -1,3 +1,4 @@
+
 # cloudru_evolution_magic_router_static_route (Resource)
 
 
@@ -12,7 +13,6 @@ resource "cloudru_evolution_magic_router_static_route" "resource_static_route" {
   subnet = "192.168.0.0/24"
   # Поле description является неизменяемым. При изменении значения ресурс будет пересоздан.
   description = "Description"
-  # Поле next_hop_vpc является неизменяемым. При изменении значения ресурс будет пересоздан.
   # Нужно заполнить одно из значений - next_hop_vpc, next_hop_magic_router
   next_hop_vpc = {
     # Поле az_name является неизменяемым. При изменении значения ресурс будет пересоздан.

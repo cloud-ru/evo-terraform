@@ -8,17 +8,17 @@
 ```terraform
 resource "cloudru_evolution_compute_external_ip" "resource_external_ip" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "bbb348ff-57bf-41b6-9209-d1c95fde1b6e"
+  project_id = "a3933b9d-7d14-437c-8d02-35955632fb8f"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "da29d412-052e-41a7-9f18-da97cdca197b"
-    name = "aed368ee-49a4-496f-9b34-aaa7059d0651"
+    id   = "52318228-ca28-4688-875d-c5446dd9318c"
+    name = "8d87d7a0-c223-496e-996f-f2b674d02ea6"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "ed2bc4cd-9340-4311-af96-cc3f24effe07"
-  description = "60e49d47-bda7-460c-a1ef-7ec75fc93cdd"
+  name        = "9c61e59a-a978-4b5f-88fb-8260e060d9ec"
+  description = "ce457a34-f9b6-4bc6-9915-8dc950cc9a46"
   network_interface = {
-    id = "5dc536f6-daa7-41ec-92de-e910ab6ea538"
+    id = "e840ef9a-aabc-4f2c-93b0-8ae989c34a64"
   }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

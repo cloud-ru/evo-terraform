@@ -1,3 +1,4 @@
+
 # cloudru_evolution_organization_customer_collection (Data Source)
 
 
@@ -6,7 +7,7 @@
 
 ```terraform
 data "cloudru_evolution_organization_customer_collection" "datasource_customer" {
-  page_size = 4209623924875430909
+  page_size = 1958583280524814275
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

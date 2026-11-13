@@ -8,18 +8,18 @@
 ```terraform
 resource "cloudru_evolution_data_platform_trino_catalog" "resource_catalog" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id  = "204c9a6c-c606-4a5b-8d72-fd82b3819109"
-  name        = "6d6dc7fc-42ee-48df-b882-d2d3db554d00"
-  description = "2b4df669-82af-4356-9a45-1e724799ce4e"
+  project_id  = "f02e7162-bfab-416a-ac9c-8e27023009f9"
+  name        = "0d6630e5-d238-46da-835d-09ac80fd4bcf"
+  description = "88912a7a-1ff6-480e-a6b8-2887b5896dda"
   # Нужно заполнить одно из значений - postgresql, mysql, oracle, mariadb, mssql, clickhouse, mongodb, metastore, iceberg, connection_hub, kafka
   postgresql = {
-    host               = "0e0fc3e8-4471-40b6-947b-f51d724cd445"
-    port               = 1997583445
-    user               = "4fed5e6b-c6e0-4843-ba95-17cf5a48d3eb"
-    password_secret_id = "614fb66d-817c-4f6b-ac14-d6412d03bd31"
-    database           = "3b7080e6-dc98-4547-b9b8-1796bd9457f8"
+    host               = "25f52cb8-a708-4e44-8051-1f5a5d46ede2"
+    port               = 1943412356
+    user               = "82141932-e15f-480f-8db6-f61a1ffcc738"
+    password_secret_id = "972a968f-fef1-4b06-9d19-e436efe985c4"
+    database           = "129c90a6-0c5f-4ede-b200-ff37d12ab97e"
     extra_properties = {
-    "c3f0ea89-d7ca-4f00-9ffc-ae77bc21656f" = "ea418ed9-5c88-4bbb-8ff3-737f1aebad4a" }
+    "e356121c-c681-4128-9eaf-bad4f43e6f0f" = "81144def-3c62-4311-a085-4fdb5496fd1c" }
   }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {

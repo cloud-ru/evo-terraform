@@ -1,3 +1,4 @@
+
 # cloudru_evolution_organization_quota_usage_collection (Data Source)
 
 
@@ -6,12 +7,12 @@
 
 ```terraform
 data "cloudru_evolution_organization_quota_usage_collection" "datasource_quota_usage" {
-  resource_type_codes = ["f29dd8a1-e984-49e5-946a-1693ce9ac99d", "6023933a-2a8b-4042-89f7-61ce1c91757c", "afb89e99-2ac9-49d2-8fdb-a4646311b4a2", "6e704076-73b5-4846-9e7e-eaee25056e8e", "416ddbc0-c1de-4dfa-be5f-6d4db09299af", "f06692ac-f10e-4c5d-83bf-9f1da7807b1a", "fc378c8f-84ed-47a9-9a74-644e5712fdad", "a9956209-3f26-4504-8aef-ee23a2f701ca", "1439079b-e245-4a50-b8c3-a62492b809f7", "42c3c42b-caa3-4e3f-add7-96515595cfcb"]
+  resource_type_codes = ["7ce0f37e-8df6-490f-b59e-81b24da7a99f", "75772cfe-8a78-400c-83c6-190169362a4a", "b9341003-4440-40ed-8a17-9c2348aa11ba", "e8e61e12-06a2-4294-bbe0-7326bb5a4d1a", "dea6d442-9080-495a-8ee0-a76ef7b27aeb", "3dafae4a-ac39-4631-a0b4-478059d0bf90", "80079421-630f-4d7f-adde-d5754e8efdf9", "6a01f861-7c43-46c5-b681-acd87a171107", "9a894081-e050-4b47-92f4-d924a02a44da", "06ec81e0-48f0-4e8d-ba80-21f1ca67122e"]
   # Варианты значений параметра subject_type_codes:
   # QUOTA_SUBJECT_TYPE_CUSTOMER, QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT, QUOTA_SUBJECT_TYPE_PROJECT
-  subject_type_codes = ["QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_PROJECT", "QUOTA_SUBJECT_TYPE_PROJECT", "QUOTA_SUBJECT_TYPE_PROJECT", "QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT"]
-  subject_ids        = ["ae877e6d-5c20-4c70-a81d-55e162c2a14f", "132aff9e-44c1-4713-aa1e-7d4b5bc30001", "c7d3dbe4-eabe-481b-a86a-3dcdede11667", "11c55939-7a10-4f05-b1db-3fac0ff72eaa", "95be2f1e-5d91-4374-b554-994a8550ea5a", "24e1ac1f-c241-426e-8b0b-1467ecad44ee", "b2f482d1-a78f-4d1c-a6fc-4fa71af37665", "775c8cf1-1e3d-4119-98cc-2ac9a08071a7", "023be844-efc4-4719-9fcb-cf7857c24fe7", "12a3d311-03b6-4656-a4fc-023e328e9456"]
-  page_size          = 9152197103169051598
+  subject_type_codes = ["QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_PROJECT", "QUOTA_SUBJECT_TYPE_PROJECT", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_ORGANIZATION_UNIT", "QUOTA_SUBJECT_TYPE_CUSTOMER", "QUOTA_SUBJECT_TYPE_PROJECT"]
+  subject_ids        = ["252d16f1-f8b7-4fc5-8ce0-e7ec96f14c8f", "466b49db-88eb-4446-8833-d87070b9ff21", "8274ea37-6560-45ab-bdb5-f5595a23106c", "c94fc0ea-b605-4d39-bd4c-59d96f46295a", "6d1caa80-d5d7-45cf-9fd8-5eae3be3f11a", "fbd69e83-77a5-43f7-8e51-8e70340bdd04", "d0ca0498-f6db-4e89-8ba1-f5a315c66fbd", "22366f15-b699-477a-b534-55ff57a328b3", "eb4337f2-1afd-42ef-b92d-87178bc4948c", "e6d1a9da-ff38-4944-96b0-10e3ad012c80"]
+  page_size          = 6234333283446405488
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

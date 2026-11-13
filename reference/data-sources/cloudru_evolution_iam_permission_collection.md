@@ -7,8 +7,8 @@
 
 ```terraform
 data "cloudru_evolution_iam_permission_collection" "datasource_permission" {
-  filter    = "81e22388-c350-419b-a73c-563b012e586f"
-  page_size = 586193076856164965
+  filter    = "5a8b77e6-d8f3-47cf-98c1-2658a39ae75f"
+  page_size = 7897643903149113791
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -35,6 +35,7 @@ output "data-permission" {
 ### Read-Only
 
 - `permissions` (Attributes List) Список разрешений. (see [below for nested schema](#nestedatt--permissions))
+- `role_id` (String) Идентификатор роли для назначения. Может использоваться для любой роли.
 
 <a id="nestedblock--timeouts"></a>
 ### Nested Schema for `timeouts`

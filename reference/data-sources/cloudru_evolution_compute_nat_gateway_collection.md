@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_nat_gateway_collection" "datasource_nat_gateway" {
-  project_id = "576997fd-a130-414f-a11f-9c902310b73e"
-  page_size  = 6466535787671913763
-  filter     = "2c9a840c-1d53-45d8-af99-e310b636058c"
-  order_by   = "e087ccc6-6a31-4a04-ade4-6b5eadbc9da1"
+  project_id = "4e1d9e5b-0978-4e5a-8656-0408cdf68af9"
+  page_size  = 3016579216682108729
+  filter     = "ea0a4d9f-1b12-4094-96bb-f9946bd95f71"
+  order_by   = "9e52a9f8-8f11-4656-8ad4-32818a5932b4"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

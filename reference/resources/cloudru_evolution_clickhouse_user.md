@@ -9,7 +9,7 @@
 resource "cloudru_evolution_clickhouse_user" "resource_user" {
   name = "some_user-1"
   granted_roles = {
-    value = ["e7038578-dbb0-4829-97d0-0a520096bc50", "7e5e6ac0-9f6c-489c-bc8e-26c6a948cdc1", "20e6e20c-94db-4cb3-a063-54027d5bc912", "5cde9621-20df-4545-b85c-04c41f3f0a96", "aed77ab0-d025-4167-bc6d-e928e634d55f", "db9d0487-820e-408d-b333-97b5c7a02547", "f2a6d22d-4abc-44d4-81ca-62e2fcf201ae", "eadca46a-f8df-43d0-a122-a0f2a10ca75a", "555410fa-0cdd-4875-af2b-a8617269f7df", "e013c4d0-fb7c-4574-ac10-645a6d484803"]
+    value = ["48d449a3-b111-47ff-a510-f40d4b135877", "fedbbc59-1966-4586-bd41-77768e6090bc", "2479f336-871e-4478-b905-261dcd4222d4", "721c5605-cc22-4963-a0d1-13ca2feb014c", "57ca5382-c3b5-4c11-8b7d-3a0ac38bd805", "b9a9f6a5-a9e8-44e5-ae5b-761ec42a17ef", "d40d1134-1e8d-43c4-a115-032ade2104fa", "d7c6bc9d-1533-4728-9d58-cf75a3e0cf16", "32db4253-f70e-432a-a421-edf716bd4615", "88f72411-4ccb-4929-8651-f6ed2710fcd1"]
   }
   cluster_id = "00000000-0000-0000-0000-000000000000"
   # Поле password является неизменяемым. При изменении значения ресурс будет пересоздан.
@@ -51,7 +51,7 @@ resource "cloudru_evolution_clickhouse_user" "resource_user" {
 
 Optional:
 
-- `value` (List of String) The repeated string value.
+- `value` (Set of String) The repeated string value.
 
 
 <a id="nestedblock--timeouts"></a>

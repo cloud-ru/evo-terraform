@@ -8,37 +8,37 @@
 ```terraform
 resource "cloudru_evolution_compute_vm" "resource_vm" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "4af89a7d-ec81-467d-90ec-d6a5fec9b8f7"
+  project_id = "05f0da65-6dc6-4003-9185-5b67571cc421"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "5c4353fe-f414-4793-aa96-9dae3d7552ed"
-    name = "4f6f11fd-3098-42e9-a02d-22d58bb45a82"
+    id   = "e6eda9c3-44aa-47b7-9480-b2ad71ca64d9"
+    name = "5ff00ca4-6ba7-42b3-9ef4-5a3dcd37c9a3"
   }
-  name        = "1c34bd24-dd71-4a45-9afb-5dcf4388bf0c"
-  description = "66aae149-53d6-495b-a18d-4dfa759dea4f"
+  name        = "26cd9213-514c-4a10-ac39-73198ec30e5e"
+  description = "a988adef-10ca-454a-82e8-dd97e50097cd"
   flavor = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "c60ab504-9e58-405a-a88a-2f62137fb525"
-    name = "9f1571a8-3cd9-40a3-80e7-f4b1d06293fc"
+    id   = "582b35a0-7427-4564-b7b4-8b7bee883540"
+    name = "308c1dd2-76e9-4d1f-8871-ca68319bf0ac"
   }
   placement_group = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "c925ec48-e258-403b-b4c9-c19d0f5cb76b"
+    id = "d2b4af21-d2d0-4cdd-880c-b547a14f5528"
   }
   network_interfaces = [{
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "2f5dedd3-1f79-47bf-b75f-913df0cdb623"
+    id = "aabf8424-f164-4569-9d4a-a788a920f27b"
   }]
   disks = [{
-    id = "821c9632-9bc4-4456-9292-5f4c1cd6b8c7"
+    id = "0fa5c574-a8ee-4155-952f-d6fdc9b627b1"
   }]
-  cloud_init_userdata = "ca788540-a9a9-4166-979a-be5b348c01e4"
+  cloud_init_userdata = "5b901fc3-fcf0-4c5e-b923-d95f1928c05a"
   image_metadata = {
-    "0bce05ad-a50a-4038-b33f-30b67a138fd6" = {
+    "963f91e4-cd3f-4937-9f32-d91cf18bcfd4" = {
       # Нужно заполнить одно из значений - string_value, int_value, bool_value.
-      string_value = "9893560e-985b-462e-893d-4ac495f413c1"
-      int_value    = 447374414
-      bool_value   = false
+      string_value = "c5363ec5-d2dc-47de-95ad-70d0d74423b7"
+      int_value    = 1029441545
+      bool_value   = true
   } }
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
@@ -70,7 +70,7 @@ resource "cloudru_evolution_compute_vm" "resource_vm" {
 - `description` (String) Описание виртуальной машины.
 - `disks` (Attributes List) Параметры диска. (see [below for nested schema](#nestedatt--disks))
 - `image_metadata` (Attributes Map) Метаданные образа. Для некоторых образов поле является обязательным. (see [below for nested schema](#nestedatt--image_metadata))
-- `network_interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces))
+- `network_interfaces` (Attributes Set) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--network_interfaces))
 - `placement_group` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--placement_group))
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
 

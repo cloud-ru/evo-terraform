@@ -9,6 +9,10 @@
 data "cloudru_evolution_nlb_target_group_collection" "datasource_target_group" {
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 10
+  # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
+  timeouts {
+    read = "10m"
+  }
 }
 
 output "data-target_group" {

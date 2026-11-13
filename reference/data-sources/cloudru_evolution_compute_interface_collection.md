@@ -7,9 +7,9 @@
 
 ```terraform
 data "cloudru_evolution_compute_interface_collection" "datasource_interface" {
-  project_id = "88ce9c77-d98b-4ae9-b6af-e5aa0962a4c2"
-  page_size  = 5766038379775652926
-  filter     = "0a7215e9-a90d-4bcf-a4be-7ed5f0367620"
+  project_id = "6942d87f-45ff-41c1-8aa2-297ca1c6b3aa"
+  page_size  = 66913525697641655
+  filter     = "96f14531-df79-4644-b628-8fac24650e0b"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -64,7 +64,7 @@ Read-Only:
 - `security_groups` (Attributes List) Параметры групп безопасности. (see [below for nested schema](#nestedatt--interfaces--security_groups))
 - `status` (String) Статус интерфейса.
 - `subnet` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--interfaces--subnet))
-- `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы:DIRECT_IP, REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
+- `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы: INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
 - `updated_at` (String) Дата и время изменения сетевого интерфейса.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--interfaces--vm))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--interfaces--zone))

@@ -8,46 +8,46 @@
 ```terraform
 resource "cloudru_evolution_compute_interface" "resource_interface" {
   # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
-  project_id = "45e332e6-0c98-4488-bec8-1e2e2ee42744"
+  project_id = "62a3407a-809a-42e5-94e7-48049085d5d5"
   zone = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "7d07c14c-8eef-4e2c-a41e-ea7a344e683a"
-    name = "be5cb1e3-a7aa-4a70-9e62-d732671d469b"
+    id   = "85e47e59-9007-4136-ac46-e1b962657fe9"
+    name = "c856d473-a2ab-4e7b-aed4-b5d81b3b115d"
   }
   # Поле name является неизменяемым. При изменении значения ресурс будет пересоздан.
-  name        = "e0916e75-bc35-4e20-b43e-10c97dde3536"
-  description = "84c05823-b873-4202-82a9-8891ecbe346b"
+  name        = "1cd77536-b7ca-4c48-91e4-2bf535b25c06"
+  description = "d7c6f6aa-3e0f-4c82-ad57-154a7038f7e1"
   # Поле ip_address является неизменяемым. При изменении значения ресурс будет пересоздан.
-  ip_address                 = "7cfa8a44-b51b-4133-8582-382383c72bae"
+  ip_address                 = "fdab8e20-b10e-4928-b54c-8cf46e2844bf"
   interface_security_enabled = true
   # Нужно заполнить одно из значений - new_external_ip, attach_external_ip
   attach_external_ip = {
     # Нужно заполнить одно из значений - id, name.
-    id   = "85ba1aea-0f90-4edc-a285-67650bfe9851"
-    name = "d39385e2-36e4-4b2b-be77-dbe1f85b0954"
+    id   = "36dd1526-232d-4841-a3f8-97a7149e12d4"
+    name = "d2cca01c-26f3-4174-b2cf-2f40a31a081b"
   }
   allowed_address_pairs = {
     value = [{
-      ip_address  = "6245bb35-6835-4916-873a-2f21acf8e5a8"
-      mac_address = "00099f76-3c14-437c-af3c-bd3e96dfb592"
+      ip_address  = "70f97fbb-9e55-4513-ab75-63ad8d3b28f1"
+      mac_address = "6e6cb83f-4f2b-41e3-811d-0a259830a96a"
     }]
   }
   # Поле type является неизменяемым. При изменении значения ресурс будет пересоздан.
   # Варианты значений параметра type:
   # INTERFACE_TYPE_REGULAR, INTERFACE_TYPE_SYSTEM, INTERFACE_TYPE_SERVICE, INTERFACE_TYPE_GATEWAY, INTERFACE_TYPE_FIP, INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_VIP
-  type = "INTERFACE_TYPE_DIRECT_IP"
+  type = "INTERFACE_TYPE_SYSTEM"
   vm = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "a7cc6161-e2c6-41e9-a6dc-6e80c81133eb"
+    id = "dc480ad9-9905-4cbc-b0f5-3b119da4a484"
   }
   subnet = {
     # Поле id является неизменяемым. При изменении значения ресурс будет пересоздан.
-    id = "3e524dc6-448c-4845-a56e-ed7a0abed792"
+    id = "76eb1459-fb63-46f3-bccd-5fdfc37c08b3"
   }
   security_groups = [{
     # Нужно заполнить одно из значений - id, name.
-    id   = "14dbf12b-bafe-4460-a7a8-b453a4b8c10b"
-    name = "1c3f9332-886d-43d3-9b63-d114a920a586"
+    id   = "ac42fa02-9f04-40cd-8b87-b9106d844756"
+    name = "989a8538-b3fe-4f5f-8d4d-b8f091de35eb"
   }]
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
@@ -70,7 +70,6 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 
 - `name` (String) Название интерфейса.
 - `project_id` (String) Идентификатор проекта.
-- `security_groups` (Attributes List) Параметры групп безопасности. (see [below for nested schema](#nestedatt--security_groups))
 - `subnet` (Attributes) Параметры подсети. (see [below for nested schema](#nestedatt--subnet))
 - `zone` (Attributes) Параметры зоны доступности. (see [below for nested schema](#nestedatt--zone))
 
@@ -81,8 +80,9 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 - `description` (String) Описание интерфейса.
 - `interface_security_enabled` (Boolean) Возможность добавить сетевой интерфейс в группу безопасности: true — можно, false — нельзя.
 - `ip_address` (String) IP-адрес.
+- `security_groups` (Attributes List) Параметры групп безопасности. (see [below for nested schema](#nestedatt--security_groups))
 - `timeouts` (Block, Optional) (see [below for nested schema](#nestedblock--timeouts))
-- `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы:DIRECT_IP, REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
+- `type` (String) Тип интерфейса, определяемый параметрами подсети и виртуальной машины. В публичном API доступны следующие типы: INTERFACE_TYPE_DIRECT_IP, INTERFACE_TYPE_REGULAR. Внутри системы поддерживаются дополнительные типы для системных и сервисных объектов.
 - `vm` (Attributes) Параметры виртуальной машины. (see [below for nested schema](#nestedatt--vm))
 
 ### Read-Only
@@ -92,19 +92,6 @@ resource "cloudru_evolution_compute_interface" "resource_interface" {
 - `primary` (Boolean) Признак основного сетевого интерфейса.
 - `status` (String) Статус интерфейса.
 - `updated_at` (String) Дата и время изменения сетевого интерфейса.
-
-<a id="nestedatt--security_groups"></a>
-### Nested Schema for `security_groups`
-
-Optional:
-
-- `id` (String) Идентификатор группы безопасности.
-- `name` (String) Название группы безопасности.
-
-Read-Only:
-
-- `status` (String) Статус группы безопасности.
-
 
 <a id="nestedatt--subnet"></a>
 ### Nested Schema for `subnet`
@@ -166,6 +153,19 @@ Read-Only:
 - `status` (String) Статус публичного IP-адреса.
 
 
+<a id="nestedatt--security_groups"></a>
+### Nested Schema for `security_groups`
+
+Optional:
+
+- `id` (String) Идентификатор группы безопасности.
+- `name` (String) Название группы безопасности.
+
+Read-Only:
+
+- `status` (String) Статус группы безопасности.
+
+
 <a id="nestedblock--timeouts"></a>
 ### Nested Schema for `timeouts`
 
@@ -192,6 +192,10 @@ Read-Only:
 ### Зависимости
 
 #### Security groups
+
+При `interface_security_enabled = true` поле `security_groups` необязательно: допускаются `null`, `[]` и непустой список. Значение `interface_security_enabled` по умолчанию — `true`. При переключении защиты с `false` на `true` можно не передавать группы безопасности, а настроить их отдельным обновлением.
+
+При `interface_security_enabled = false` поле `security_groups` задавать нельзя, включая `[]`: удали его из конфигурации или задай `null`. При включённой защите `security_groups = []` отправляет пустой список для очистки групп; `null` не отправляет поле в запросе.
 
 Нужные значения для групп безопасности (``id`` или ``name``) можно получить с помощью датасорса ``cloudru_evolution_compute_security_group_collection``. Если нужной Вам группы безопасности не существует, то ее можно создать с помощью ресурса ``cloudru_evolution_compute_security_group``.
 

@@ -53,7 +53,7 @@ resource "cloudru_evolution_mk8s_node_pool" "resource_node_pool" {
   }
   labels = {
     labels = {
-    "a8785159-8647-4006-9ae4-c2d38416aa3a" = "f1906fad-d708-4c31-a844-b69a355d6553" }
+    "f676e696-5205-4cbb-ad69-dccbe527ca85" = "d22b3cf9-609a-4f9c-a6ec-7b14335bf007" }
   }
   # Поле remote_access является неизменяемым. При изменении значения ресурс будет пересоздан.
   remote_access = {

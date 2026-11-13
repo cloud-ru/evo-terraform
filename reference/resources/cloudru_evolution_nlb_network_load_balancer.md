@@ -7,11 +7,13 @@
 
 ```terraform
 resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_balancer" {
-  name       = "balancer-01"
+  name = "balancer-01"
+  # Поле project_id является неизменяемым. При изменении значения ресурс будет пересоздан.
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
-  vpc_id     = "8fcc33c4-4580-4146-9b7f-e58943de078e"
+  # Поле vpc_id является неизменяемым. При изменении значения ресурс будет пересоздан.
+  vpc_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   internal_address = {
-    ipv4      = "192.168.0.28/24"
+    ipv4      = "192.168.0.28"
     subnet_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
     allocate  = true
   }
@@ -26,6 +28,8 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
       port        = 80
       target_port = 80
     }]
+    transport      = "TRANSPORT_TCP"
+    proxy_protocol = "PROTO_PROXY_V2"
     health_check = {
       disabled            = true
       port                = 80
@@ -36,7 +40,9 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
       # Нужно заполнить одно из значений - tcp, http.
       tcp = {}
       http = {
-        path = "/health"
+        path           = "/health"
+        host           = "example.com"
+        proxy_protocol = true
       }
     }
     algorithm = "ALG_ROUND_ROBIN"
@@ -48,6 +54,17 @@ resource "cloudru_evolution_nlb_network_load_balancer" "resource_network_load_ba
     name = "ru.AZ-1"
   }]
   description = "Description"
+  # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
+  timeouts {
+    create = "60m"
+    update = "30m"
+    delete = "20m"
+  }
+  # Игнорировать изменения таймаутов: это предотвращает  лишние обновления ресурса при смене значений таймаутов в конфигурации
+  # Но следует учитывать, что метод delete в ресурсе читает значение таймаута из стейта и, если его нужно изменить, то этот блок стоит закомментировать
+  lifecycle {
+    ignore_changes = [timeouts]
+  }
 }
 ```
 

@@ -61,7 +61,7 @@ resource "cloudru_evolution_baremetal_reserved_server" "resource_reserved_server
 - `kernel_slug` (String) Название ядра операционной системы.
 - `login` (String) Логин учетной записи в ОС, установленной на сервере.
 - `name` (String) Название арендованного сервера.
-- `password` (String) Пароль пользователя ОС.
+- `password` (String, Sensitive) Пароль пользователя ОС.
 - `project_id` (String) Идентификатор проекта.
 - `public_key_id` (String) Идентификатор публичного SSH-ключа пользователя ОС.
 - `subnet_id` (String) Идентификатор подсети.

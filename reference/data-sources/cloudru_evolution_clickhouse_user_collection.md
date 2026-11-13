@@ -56,4 +56,4 @@ Read-Only:
 
 Read-Only:
 
-- `value` (List of String) The repeated string value.
+- `value` (Set of String) The repeated string value.

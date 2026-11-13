@@ -9,10 +9,10 @@
 data "cloudru_evolution_iam_group_collection" "datasource_group" {
   target = {
     # Нужно заполнить одно из значений - customer_id, project_id.
-    customer_id = "adfe15fd-ec95-4327-8a90-4367c4083166"
-    project_id  = "30b2297d-73fa-4b67-8e92-f211ecbd4ae7"
+    customer_id = "b67b9af0-a407-4822-a7e0-26288cd3ac4a"
+    project_id  = "3613abca-ecc8-4f3c-9945-5d1481154f14"
   }
-  page_size = 6786758346164689426
+  page_size = 998055352638859280
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"

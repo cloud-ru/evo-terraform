@@ -7,10 +7,10 @@
 
 ```terraform
 data "cloudru_evolution_compute_vm_collection" "datasource_vm" {
-  project_id = "f3a5428c-02ec-4cf7-ba11-7a2a93f501a6"
-  page_size  = 5500118408949289017
-  filter     = "e471c05b-3bcc-452e-86d4-fec39cdc7061"
-  order_by   = "00717935-5388-4963-92d7-aa86a2727567"
+  project_id = "6a0cfb28-7cf5-4f2c-bac7-776953ce9c21"
+  page_size  = 8806839135075976720
+  filter     = "1c48565a-4734-46a8-a62b-054bb6ef137b"
+  order_by   = "b38d6cf5-f19c-4234-9527-927a12134b3e"
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
@@ -63,7 +63,7 @@ Read-Only:
 - `locked` (Boolean) Признак виртуальной машины, заблокированной для изменений.
 - `metadata_fields` (Attributes List) Метаданные виртуальной машины. (see [below for nested schema](#nestedatt--vms--metadata_fields))
 - `name` (String) Название виртуальной машины.
-- `network_interfaces` (Attributes List) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--vms--network_interfaces))
+- `network_interfaces` (Attributes Set) Параметры сетевого интерфейса. (see [below for nested schema](#nestedatt--vms--network_interfaces))
 - `placement_group` (Attributes) Параметры группы размещения. (see [below for nested schema](#nestedatt--vms--placement_group))
 - `project_id` (String) Идентификатор проекта.
 - `remote_console_protocol` (String) Тип удаленной консоли.

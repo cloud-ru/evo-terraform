@@ -9,6 +9,10 @@
 data "cloudru_evolution_nlb_network_load_balancer_collection" "datasource_network_load_balancer" {
   project_id = "8fcc33c4-4580-4146-9b7f-e58943de078e"
   page_size  = 10
+  # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
+  timeouts {
+    read = "10m"
+  }
 }
 
 output "data-network_load_balancer" {

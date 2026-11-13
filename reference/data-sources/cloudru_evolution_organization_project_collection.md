@@ -1,3 +1,4 @@
+
 # cloudru_evolution_organization_project_collection (Data Source)
 
 
@@ -8,11 +9,11 @@
 data "cloudru_evolution_organization_project_collection" "datasource_project" {
   # Варианты значений параметра status:
   # PROJECT_STATUS_ENABLED, PROJECT_STATUS_DISABLED, PROJECT_STATUS_TERMINATING, PROJECT_STATUS_TERMINATED
-  status                = "PROJECT_STATUS_DISABLED"
-  project_ids           = ["68e8f03b-2734-405e-ba7e-d27e8a9cc3d2", "c47d6bd6-4d33-4074-ba76-42f51496ed9e", "de35f815-ab8e-479c-be13-6313dc99dace", "b187f22b-b0a0-4504-b8df-ad7672727294", "9a0555ab-9a60-4bce-9528-dc0a3b27104e", "71e3b0f3-c8b4-4d5c-99a4-db16af9b60b7", "d94d5cc6-65ea-4c5a-8089-37498a56880b", "b303f4c3-822e-4ce1-926c-7b7174658356", "65cd9b6d-85c7-432a-8685-375de7435250", "46261758-be08-49b1-99c1-6be616fa8ce2"]
-  customer_ids          = ["926691c5-75c2-4666-9c0d-718b09a0b288", "944dcfe4-b442-47e4-a8ff-e7057b0bfd8d", "6dab50e5-a086-4292-a2b4-fe657c3491b9", "46ee7f01-0a27-4df9-9af6-dfb96ff72d3d", "04ed8edb-f051-484c-8cd0-88f6d2ddeed9", "c79441ca-9c97-463f-a5f1-0ff864ec430e", "f1a3667c-ff7f-46c3-94b8-c96d779da1c2", "5856c31a-558d-4c49-a90a-362d58f3afbd", "eb975861-07c0-4dd2-b63f-db5a67440f9a", "ca811b8e-7598-4058-95de-5bda41eb1a0e"]
-  organization_unit_ids = ["ee3f042b-90f1-442c-8cfd-0abc5349c6df", "c5f7183f-7c96-4690-ac79-47fa68447288", "df1c3fdc-2b67-45cb-a801-fb4b20743ab4", "f1a1972e-319d-4bdf-a7ef-ce7809d8557a", "10b51d28-05b2-485d-9361-53c183e0ff63", "c1df5bda-8f43-4100-bef2-b04fc0eb9a74", "6765eea0-56f9-4297-9ecd-3c431e943b60", "35f0c3c9-ec0f-4604-9eca-790445fa0e1d", "895ca842-647d-4f6b-8122-96e892e6971e", "81b1230f-9265-49c5-ac2b-cb9f66ebf594"]
-  page_size             = 1086930509009987671
+  status                = "PROJECT_STATUS_TERMINATED"
+  project_ids           = ["5dee8c66-363c-4eac-8ab3-469cdadeaa51", "80a520b7-5ba0-4e98-a0ce-6c87dacbf5f5", "a811f3a1-8c14-4be1-9444-38a53fa937f6", "ab071bae-29ad-4e10-b6d7-dd29f229927f", "9f7dfdb1-7eaf-4de2-b034-49c56eab6553", "1a83d7d2-c8d3-4a9e-9602-5435443710de", "da95b17c-a236-48e9-bcb3-0bb829fc543a", "d3525c09-d061-48bf-a3b7-8ff1804f2395", "46bed53d-7f5f-4d0a-95ac-5c14193ed3d4", "a35eab7b-3a0a-4dfd-9215-4656656d8034"]
+  customer_ids          = ["536935f7-bcba-47f0-b84d-9234053e76f0", "e22a0919-388c-4183-9490-49055479ee45", "281fecfc-2c77-43d1-b856-4384ab31a608", "e3443f68-72c8-40e7-8421-e8a126f58f39", "99a5e673-7c7a-494d-b1c7-b50869cb140e", "68821864-46ff-4f2a-8cad-304a7e75d305", "34e37731-f7aa-4694-8f17-6ec9b2588fa1", "71f40e4d-d7e0-4fff-8423-865162750e81", "ac4bb129-d599-4477-9bd0-3e9c5e41d80e", "930b1c7e-6f8b-4bb9-810a-594d4595625e"]
+  organization_unit_ids = ["1ad7e5cb-7cfd-49c4-ab3d-c7284a5eec3a", "40b55310-219a-4a60-a40e-f1a831fb4ab3", "8c653397-1363-420f-9e96-729ff6e4c9ee", "890bb640-0581-49ed-97e3-4db301c2366a", "372370b1-832f-494c-b38f-dcaf4db6b0e1", "d3095481-8bbd-48f7-aeaa-c1bfec82d71e", "cd68499c-de6d-46f0-a55d-1e738b186906", "bc3fb309-464d-4da7-a1fb-a4726f5d95e6", "f9620959-a88d-4ced-9478-83fc59545c1b", "b5318b20-bafb-4c02-bd57-920dc47e51c5"]
+  page_size             = 6564405613898119147
   # Позволяет переопределить дефолтный таймаут провайдера для определенного метода. Если нужно указать бесконечный таймаут, то нужно указать например 0s, тогда таймаута не будет.
   timeouts {
     read = "10m"
